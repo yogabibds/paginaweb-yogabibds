@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home — Universo Laia</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="brand">Gabriela Barbosa</div>
+    <nav class="menu">
+      <a id="nav-home" href="index.html">Home</a>
+      <a id="nav-about" href="about.html">About</a>
+      <a id="nav-projects" href="projects.html">Projects</a>
+      <a id="nav-contact" href="contact.html">Contact</a>
+    </nav>
+    <div class="langs">
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="section hero">
+    <div class="container">
+      <h1 class="t1" data-i18n="hero_title">Knowledge drives, technology multiplies.</h1>
+      <p class="t2" data-i18n="hero_sub">Purpose‑driven education, human technology and a conscious lifestyle.</p>
+      <p><a class="btn primary" href="projects.html" data-i18n="open_projects">Open Projects</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid photos" id="home-photos"></div>
+      <p class="small">Troque as imagens em <code>/assets/img/photos/</code>. Cada foto abre um projeto.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
+</footer>
+<script src="assets/js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{buildPhotos('#home-photos')});</script>
+</body></html>

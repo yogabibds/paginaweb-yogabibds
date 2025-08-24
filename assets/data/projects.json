@@ -1,0 +1,26 @@
+[
+  {
+    "key": "layapet",
+    "name": "Layapet",
+    "desc": "Compassion project for pets and community.",
+    "url": "#"
+  },
+  {
+    "key": "laiamusic",
+    "name": "Laia Music",
+    "desc": "Preserving Edney Fernandes' musical legacy.",
+    "url": "https://laiamusictesting.netlify.app/"
+  },
+  {
+    "key": "laiamind",
+    "name": "Laia Mind",
+    "desc": "Yoga, meditation and well‑being.",
+    "url": "#"
+  },
+  {
+    "key": "laiaacademy",
+    "name": "Laia Academy",
+    "desc": "Languages with practical, multicultural focus.",
+    "url": "#"
+  }
+]

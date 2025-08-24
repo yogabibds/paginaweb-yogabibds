@@ -1,0 +1,3 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'>
+<defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='#00E5FF'/><stop offset='1' stop-color='#7C4DFF'/></linearGradient></defs>
+<rect width='800' height='800' rx='24' fill='url(#g)'/><text x='400' y='420' text-anchor='middle' fill='#001018' font-family='Inter,Arial' font-weight='800' font-size='56'>Yoga</text></svg>

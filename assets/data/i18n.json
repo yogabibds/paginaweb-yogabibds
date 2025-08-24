@@ -1,0 +1,50 @@
+{
+  "pt": {
+    "nav_home": "Home",
+    "nav_about": "About",
+    "nav_projects": "Projects",
+    "nav_contact": "Contact",
+    "hero_title": "Knowledge drives, technology multiplies.",
+    "hero_sub": "Purpose‑driven education, human technology and a conscious lifestyle.",
+    "open_projects": "Open Projects",
+    "about_title": "Who I am",
+    "about_body": "Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.\n\nI'm the founder of Universo Laia, integrating education, technology, music and well‑being. I love yoga, meditation, innovation and education.\n\nI'm also a medical student developing projects that blend academic knowledge, social impact and human‑centered tech.",
+    "cultures_title": "Culturas que me transformaram",
+    "stories": "Stories",
+    "projects_title": "Projects",
+    "contact_title": "Contacts",
+    "contact_hint": "Reach me here:"
+  },
+  "es": {
+    "nav_home": "Home",
+    "nav_about": "About",
+    "nav_projects": "Projects",
+    "nav_contact": "Contact",
+    "hero_title": "El conocimiento impulsa, la tecnología multiplica.",
+    "hero_sub": "Educación con propósito, tecnología humana y un estilo de vida consciente.",
+    "open_projects": "Abrir proyectos",
+    "about_title": "Quién soy",
+    "about_body": "Hola, soy Gabriela Barbosa de Sousa, de Brasil. Hablo portugués, español y practico inglés.\n\nSoy fundadora de Universo Laia, integrando educación, tecnología, música y bienestar. Me encanta el yoga, la meditación, la innovación y la educación.\n\nTambién soy estudiante de Medicina, desarrollando proyectos con impacto social y tecnología centrada en las personas.",
+    "cultures_title": "Culturas que me transformaron",
+    "stories": "Historias",
+    "projects_title": "Proyectos",
+    "contact_title": "Contactos",
+    "contact_hint": "Hablemos por aquí:"
+  },
+  "en": {
+    "nav_home": "Home",
+    "nav_about": "About",
+    "nav_projects": "Projects",
+    "nav_contact": "Contact",
+    "hero_title": "Knowledge drives, technology multiplies.",
+    "hero_sub": "Purpose‑driven education, human technology and a conscious lifestyle.",
+    "open_projects": "Open project",
+    "about_title": "Who I am",
+    "about_body": "Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.\n\nI'm the founder of Universo Laia, integrating education, technology, music and well‑being. I love yoga, meditation, innovation and education.\n\nI'm also a medical student developing projects that blend academic knowledge, social impact and human‑centered tech.",
+    "cultures_title": "Cultures that transformed me",
+    "stories": "Stories",
+    "projects_title": "Projects",
+    "contact_title": "Contacts",
+    "contact_hint": "Reach me here:"
+  }
+}

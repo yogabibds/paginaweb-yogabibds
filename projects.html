@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects — Universo Laia</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="brand">Gabriela Barbosa</div>
+    <nav class="menu">
+      <a id="nav-home" href="index.html">Home</a>
+      <a id="nav-about" href="about.html">About</a>
+      <a id="nav-projects" href="projects.html">Projects</a>
+      <a id="nav-contact" href="contact.html">Contact</a>
+    </nav>
+    <div class="langs">
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="section">
+    <div class="container">
+      <h1 data-i18n="projects_title">Projects</h1>
+      <div class="grid cards-2" id="projects-grid"></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
+</footer>
+<script src="assets/js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{buildProjects('#projects-grid')});</script>
+</body></html>
