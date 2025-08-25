@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home — Universo Laia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container brandbar">
+    <div class="navrow">
+      <div class="brand">Gabriela Barbosa</div>
+      <nav class="menu">
+        <a id="nav-home" href="index.html">Home</a>
+        <a id="nav-about" href="about.html">About</a>
+        <a id="nav-projects" href="projects.html">Projects</a>
+        <a id="nav-contact" href="contact.html">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-lang="pt">PT</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero section">
+    <div class="container">
+      <h1 id="hero-1">Knowledge drives, technology multiplies.</h1>
+      <p id="hero-2">Purpose-driven education, human technology and a conscious lifestyle.</p>
+      <p><a class="button" href="projects.html" id="open-label">Open project</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="circle-row" id="home-circles"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
+</footer>
+<script src="assets/js/app.js"></script>
+
+<script>document.addEventListener('DOMContentLoaded',()=>{buildCircles('#home-circles')});</script>
+</body></html>

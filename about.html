@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Universo Laia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container brandbar">
+    <div class="navrow">
+      <div class="brand">Gabriela Barbosa</div>
+      <nav class="menu">
+        <a id="nav-home" href="index.html">Home</a>
+        <a id="nav-about" href="about.html">About</a>
+        <a id="nav-projects" href="projects.html">Projects</a>
+        <a id="nav-contact" href="contact.html">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-lang="pt">PT</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <h2 id="title-who">Who I am</h2>
+      <div class="card">
+        <p>Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.</p>
+        <p>I'm the founder of Universo Laia, integrating education, technology, music and well‑being. I love yoga, meditation, innovation and education.</p>
+        <p>I'm also a medical student developing projects that blend academic knowledge, social impact and human‑centered tech.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 id="title-cultures">Cultures that transformed me</h2>
+      <p class="small">Highlights of places I've lived/visited.</p>
+      <div class="list" id="stories"></div>
+      <p class="small">Edit them in <code>assets/data/stories.json</code>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
+</footer>
+<script src="assets/js/app.js"></script>
+
+<script>document.addEventListener('DOMContentLoaded',()=>{buildStories('#stories')});</script>
+</body></html>
