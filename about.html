@@ -1,50 +1,64 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About — Universo Laia</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Universo Laia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand">Gabriela Barbosa</div>
-    <nav class="menu">
-      <a id="nav-home" href="index.html">Home</a>
-      <a id="nav-about" href="about.html">About</a>
-      <a id="nav-projects" href="projects.html">Projects</a>
-      <a id="nav-contact" href="contact.html">Contact</a>
-    </nav>
-    <div class="langs">
-      <button class="lang-btn" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="es">ES</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+  <header class="header">
+    <div class="container brandbar">
+      <div class="navrow">
+        <div class="brand">Gabriela Barbosa</div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="lang">
+          <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
-<main>
-  <section class="section">
-    <div class="container">
-      <h1 data-i18n="about_title">Who I am</h1>
-      <div class="card"><p style="white-space:pre-line" data-i18n="about_body">
-Hi, I'm Gabriela Barbosa de Sousa, from Brazil...
-      </p></div>
-    </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <div class="container">
-      <h2 data-i18n="cultures_title">Culturas que me transformaram</h2>
-      <div class="list" id="stories"></div>
-    </div>
-  </section>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Who I am</h1>
+        <div class="card">
+          <p>Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.</p>
+          <p>I’m the founder of Universo Laia, integrating education, technology, music and well-being.</p>
+          <p>I’m also a medical student developing projects that blend academic knowledge, social impact and human-centered tech.</p>
+        </div>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid photos" id="about-photos"></div>
-      <p class="small">As fotos abaixo também abrem seus projetos.</p>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
-</footer>
-<script src="assets/js/app.js"></script>
-<script>document.addEventListener('DOMContentLoaded',()=>{buildStories('#stories');buildPhotos('#about-photos')});</script>
-</body></html>
+        <h2 style="margin-top:2rem;">About me — areas</h2>
+        <!-- bolinhas ficam aqui, não na Home -->
+        <div class="circles-grid">
+          <a class="circle" href="cultures.html">Travel</a>
+          <a class="circle" href="mind.html">Yoga</a>
+          <a class="circle" href="https://laiamusic.netlify.app/" target="_blank">Music</a>
+          <a class="circle" href="https://proyectolaia.netlify.app/" target="_blank">Languages</a>
+          <a class="circle" href="https://laiatech.netlify.app/" target="_blank">Tech</a>
+          <a class="circle" href="medicine.html">Medicine</a>
+        </div>
+
+        <h2 style="margin-top:2rem;">Cultures that transformed me</h2>
+        <div class="cards-grid">
+          <div class="card"><strong>Argentina</strong><br>Córdoba • Rosario • UNR</div>
+          <div class="card"><strong>Bahia</strong></div>
+          <div class="card"><strong>São Paulo</strong></div>
+          <div class="card"><strong>Panamá</strong></div>
+          <div class="card"><strong>Curaçao</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+  <script src="assets/js/app.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',()=>{if(window.applyNavLabels)applyNavLabels();if(window.initLangButtons)initLangButtons();});</script>
+</body>
+</html>
