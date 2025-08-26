@@ -41,27 +41,60 @@ function initLangButtons(){
 }
 
 async function buildCircles(selector){
-  const wrap = $(selector); if(!wrap) return;
+  const wrap = (s=>document.querySelector(s))(selector); if(!wrap) return;
   wrap.innerHTML = '';
-  const imgs = [1,2,3,4,5,6].map(i=>`assets/img/photos/sq-${i}.svg`);
-  const links = [
-    'about-cultures.html',
-    'https://laiamind.netlify.app/',
-    'https://laiamusic.netlify.app/',
-    'https://proyectolaia.netlify.app/',
-    'https://laiatech.netlify.app/',
-    'medicine.html'
-  ];
-  imgs.forEach((src,i)=>{
-    const a = document.createElement('a');
-    a.href = links[i]; a.target = (links[i].startsWith('http')?'_blank':'_self'); a.rel='noopener';
-    const c = document.createElement('div'); c.className = 'circle';
-    c.style.backgroundImage = `url('${src}')`;
-    a.appendChild(c);
-    wrap.appendChild(a);
-  });
-}
 
+  // tenta suas fotos nestas extensões (nessa ordem)
+  const exts = ['jpg','png','jpeg','svg'];
+  function pickExisting(i, cb){
+    let k = 0;
+    const tryNext = ()=>{
+      if(k >= exts.length){ cb(`assets/img/photos/sq-${i}.svg`); return; } // fallback pro placeholder
+      const url = `assets/img/photos/sq-${i}.` + exts[k++];
+      const img = new Image();
+      img.onload = ()=>cb(url);
+      img.onerror = tryNext;
+      img.src = url;
+    };
+    tryNext();
+  }
+
+  // links dos círculos
+  let links = null;
+  try {
+    const r = await fetch('assets/data/circles.json');
+    if (r.ok) links = (await r.json()).map(x => x.href || '#');
+  } catch(e) {}
+  if (!links) {
+    try {
+      const projs = await (await fetch('assets/data/projects.json')).json();
+      links = projs.map(p=>p.url || '#');
+    } catch(e) { links = []; }
+  }
+  while (links.length < 6) links.push('#');
+
+  // monta 6 círculos
+  for (let i=1;i<=6;i++){
+    await new Promise(resolve => {
+      pickExisting(i, (src)=>{
+        const a = document.createElement('a');
+        a.href = links[i-1];
+        a.target = links[i-1].startsWith('http') ? '_blank' : '_self';
+        a.rel = 'noopener';
+
+        const c = document.createElement('div');
+        c.className = 'circle';
+        c.style.backgroundImage = `url('${src}')`;
+        c.style.backgroundSize = 'cover';
+        c.style.backgroundPosition = 'center';
+
+        a.appendChild(c);
+        wrap.appendChild(a);
+        resolve();
+      });
+    });
+  }
+}
 async function buildProjects(selector){
   const wrap = $(selector); if(!wrap) return;
   const data = await j('assets/data/projects.json');
