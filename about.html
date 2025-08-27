@@ -1,1 +1,60 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>About</title><link rel='stylesheet' href='assets/css/style.css'></head><body>About page</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Universo Laia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container brandbar">
+      <div class="navrow">
+        <div class="brand">Gabriela Barbosa</div>
+        <nav class="menu">
+          <a id="nav-home" href="index.html">Home</a>
+          <a id="nav-about" href="about.html" class="active">About</a>
+          <a id="nav-projects" href="projects.html">Projects</a>
+          <a id="nav-contact" href="contact.html">Contact</a>
+        </nav>
+        <div class="lang">
+          <button data-lang="pt">PT</button>
+          <button data-lang="es">ES</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 data-i18n="about.title">Who I am</h1>
+        <div class="card" style="display:grid;grid-template-columns:1fr 220px;gap:1rem;align-items:center">
+          <div>
+            <p>Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.</p>
+            <p>I’m the founder of Universo Laia, integrating education, technology, music and well-being.</p>
+            <p>I’m also a medical student developing projects that blend academic knowledge, social impact and human-centered tech.</p>
+          </div>
+          <img src="assets/img/photos/profile.jpg" alt="Gabriela" style="width:220px;height:220px;border-radius:12px;object-fit:cover;border:1px solid var(--border)">
+        </div>
+
+        <h2 style="margin-top:2rem;" data-i18n="about.areas">About me — areas</h2>
+        <div class="circles-grid">
+          <a class="circle" href="cultures.html" style="background-image:url('assets/img/photos/sq-1.jpg')">Travel</a>
+          <a class="circle" href="https://laiamind.netlify.app/" target="_blank" style="background-image:url('assets/img/photos/sq-2.jpg')">Yoga</a>
+          <a class="circle" href="https://laiamusic.netlify.app/" target="_blank" style="background-image:url('assets/img/photos/sq-3.jpg')">Music</a>
+          <a class="circle" href="https://proyectolaia.netlify.app/" target="_blank" style="background-image:url('assets/img/photos/sq-4.jpg')">Languages</a>
+          <a class="circle" href="https://laiatech.netlify.app/" target="_blank" style="background-image:url('assets/img/photos/sq-5.jpg')">Tech</a>
+          <a class="circle" href="medicine.html" style="background-image:url('assets/img/photos/sq-6.jpg')">Medicine</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
