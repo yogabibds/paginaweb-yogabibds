@@ -1,34 +1,66 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projects — Universo Laia</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Universo Laia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand">Gabriela Barbosa</div>
-    <nav class="menu">
-      <a id="nav-home" href="index.html">Home</a>
-      <a id="nav-about" href="about.html">About</a>
-      <a id="nav-projects" href="projects.html">Projects</a>
-      <a id="nav-contact" href="contact.html">Contact</a>
-    </nav>
-    <div class="langs">
-      <button class="lang-btn" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="es">ES</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+  <header class="header">
+    <div class="container brandbar">
+      <div class="navrow">
+        <div class="brand">Gabriela Barbosa</div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="lang">
+          <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
-<main>
-  <section class="section">
-    <div class="container">
-      <h1 data-i18n="projects_title">Projects</h1>
-      <div class="grid cards-2" id="projects-grid"></div>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
-</footer>
-<script src="assets/js/app.js"></script>
-<script>document.addEventListener('DOMContentLoaded',()=>{buildProjects('#projects-grid')});</script>
-</body></html>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Projects</h1>
+        <div class="cards-grid">
+          <div class="card">
+            <h2>Layapet</h2>
+            <p>Compassion project for pets and community.</p>
+            <a class="button" href="#" target="_blank">Open project</a>
+          </div>
+          <div class="card">
+            <h2>Laia Music</h2>
+            <p>Preserving Edney Fernandes' musical legacy.</p>
+            <a class="button" href="https://laiamusic.netlify.app/" target="_blank">Open project</a>
+          </div>
+          <div class="card">
+            <h2>Laia Mind</h2>
+            <p>Yoga, meditation and well-being.</p>
+            <a class="button" href="https://laiamind.netlify.app/" target="_blank">Open project</a>
+          </div>
+          <div class="card">
+            <h2>Laia Academy</h2>
+            <p>Languages with practical, multicultural focus.</p>
+            <a class="button" href="https://proyectolaia.netlify.app/" target="_blank">Open project</a>
+          </div>
+          <div class="card">
+            <h2>Laia Tech</h2>
+            <p>Consulting in tech and digital innovation.</p>
+            <a class="button" href="https://laiatech.netlify.app/" target="_blank">Open project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+  <script src="assets/js/app.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',()=>{if(window.applyNavLabels)applyNavLabels();if(window.initLangButtons)initLangButtons();});</script>
+</body>
+</html>
