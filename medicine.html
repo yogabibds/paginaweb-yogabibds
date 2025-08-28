@@ -1,35 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Medicine — Universo Laia</title>
+  <title data-i18n="title.medicine">Medicine — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<script src="assets/js/app.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // aplica rótulos do menu e textos
-    if (typeof applyNavLabels === 'function') applyNavLabels();
-    if (typeof initLangButtons === 'function') initLangButtons();
-    if (typeof applyTranslations === 'function') applyTranslations();
-  });
-</script>
-
 <body>
   <header class="header">
     <div class="container brandbar">
       <div class="navrow">
-        <div class="brand">Gabriela Barbosa</div>
+        <a class="brand" href="index.html">Gabriela Barbosa</a>
         <nav class="menu">
-          <a id="nav-home" href="index.html">Home</a>
-          <a id="nav-about" href="about.html">About</a>
-          <a id="nav-projects" href="projects.html">Projects</a>
-          <a id="nav-contact" href="contact.html">Contact</a>
+          <a id="nav-home" href="index.html" data-i18n="nav.home">Home</a>
+          <a id="nav-about" href="about.html" data-i18n="nav.about">About</a>
+          <a id="nav-projects" href="projects.html" data-i18n="nav.projects">Projects</a>
+          <a id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
         </nav>
-        <div class="lang">
-          <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
-        </div>
+        <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
       </div>
     </div>
   </header>
@@ -37,26 +25,32 @@
   <main>
     <section class="section">
       <div class="container">
-        <h1 data-i18n="medicine.title">Medicine</h1>
+        <h2 data-i18n="med.title">Medicine</h2>
+        <p data-i18n="med.p1">
+          Medical student at Universidad Nacional de Rosario (UNR), Rosario — Argentina.
+        </p>
 
-        <div class="card">
-          <h2>UNR</h2>
-          <p>Universidad Nacional de Rosario — minha formação, meus estudos e pesquisas.</p>
-
-          <div class="circles-grid">
-            <a class="circle" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTQyNjEzMjE1NDAzMDIw?story_media_id=3166435111330807865&igsh=bW53OHkxYThqcnVt" target="_blank" style="background:#1e2740">UNR</a>
-          </div>
-
-          <p style="margin-top:1rem">
-            <a class="button" href="https://www.unr.edu.ar" target="_blank">Site oficial</a>
-          </p>
-
-          <h3 style="margin-top:1.5rem">Publicações (DOI)</h3>
-          <ul>
-            <li><a target="_blank" href="https://doi.org/10.22533/at.ed.1594672409077">Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para LCT</a></li>
-            <li><a target="_blank" href="https://doi.org/10.25248/REAS.e19108.2025">Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</a></li>
-          </ul>
+        <div class="chip-row">
+          <!-- Destaque UNR -->
+          <a class="chip" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTQyNjEzMjE1NDAzMDIw?story_media_id=3166435111330807865&igsh=bW53OHkxYThqcnVt" target="_blank" rel="noopener" data-i18n="med.unr.highlight">
+            UNR highlight
+          </a>
+          <a class="chip" href="https://www.unr.edu.ar" target="_blank" rel="noopener">UNR website</a>
         </div>
+
+        <h3 data-i18n="med.pubtitle">Scientific publications (DOI)</h3>
+        <ul class="pub-list">
+          <li>
+            <a href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank" rel="noopener">
+              Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral
+            </a>
+          </li>
+          <li>
+            <a href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank" rel="noopener">
+              Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
