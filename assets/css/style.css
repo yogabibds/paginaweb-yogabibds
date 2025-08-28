@@ -49,18 +49,10 @@ body{
   box-shadow:0 8px 30px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.06)}
 .circle:hover{transform:translateY(-2px) scale(1.01)}
 
-/* Projects (logos em círculo) */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.2rem}
-.project-item{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1rem;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:center;text-align:center}
-.project-item:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.35)}
-.project-circle{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(110% 110% at 20% 15%,#53d3ff33,#6c7bff33 45%,#0000 60%),linear-gradient(135deg,#58c7f1 0%,#6b63ff 100%);
-  border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.28);margin-bottom:.75rem;overflow:hidden}
-.project-circle img{max-width:72%;max-height:72%;object-fit:contain;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
-.project-item h3{margin:.25rem 0 .35rem;font-weight:800}
-.project-item p{margin:0;color:#cdd6e5;font-size:.98rem}
-.project-item a.button{margin-top:.8rem}
+/* Projects: logo em círculo branco */
+.project-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:1.5rem;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:.18s}
+.project-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.35)}
+.project-circle{width:112px;height:112px;border-radius:50%;margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 6px 18px rgba(0,0,0
 
 /* Contact */
 .icon-grid{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
