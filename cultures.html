@@ -6,6 +6,16 @@
   <title>Cultures — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<script src="assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // aplica rótulos do menu e textos
+    if (typeof applyNavLabels === 'function') applyNavLabels();
+    if (typeof initLangButtons === 'function') initLangButtons();
+    if (typeof applyTranslations === 'function') applyTranslations();
+  });
+</script>
+
 <body>
   <header class="header">
     <div class="container brandbar">
