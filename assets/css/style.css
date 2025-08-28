@@ -83,3 +83,61 @@ body{
   .about-hero{grid-template-columns:1fr}
   .about-hero img{justify-self:start}
 }
+/* === Projects – layout e visual === */
+.projects-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.5rem;
+  margin-top:1rem;
+}
+@media(min-width:760px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+.project-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:1.5rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.project-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 36px rgba(0,0,0,.35);
+  border-color:rgba(255,255,255,.12);
+}
+
+.project-head{
+  display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;
+}
+
+.project-logo{
+  width:104px;height:104px;flex:0 0 104px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 6px 18px rgba(0,0,0,.15), inset 0 0 0 6px rgba(255,255,255,.7);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.project-logo img{
+  width:78%;height:78%;object-fit:contain;display:block;
+  filter:none;
+}
+
+.project-title{font-size:1.4rem;font-weight:800;letter-spacing:.2px;margin:0}
+.project-desc{opacity:.9;line-height:1.55;margin:.25rem 0 1rem;max-width:42ch}
+
+.project-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+
+/* botão mais elegante */
+.button.grad{
+  background:linear-gradient(135deg,#7a5cff,#19c6d1);
+  border:none;color:#0c0f14;
+  font-weight:800;letter-spacing:.2px;
+  padding:.85rem 1.1rem;border-radius:14px;
+  box-shadow:0 10px 28px rgba(25,198,209,.25);
+}
+.button.grad:hover{transform:translateY(-2px) scale(1.02)}
+
