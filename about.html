@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="title_about">About — Universo Laia</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <!-- NAVBAR -->
   <header class="header">
     <div class="container brandbar">
       <div class="navrow">
         <div class="brand">Gabriela Barbosa</div>
         <nav class="menu">
-          <a id="nav-home" href="index.html" data-i18n="nav_home">Home</a>
-          <a id="nav-about" href="about.html" class="active" data-i18n="nav_about">About</a>
-          <a id="nav-projects" href="projects.html" data-i18n="nav_projects">Projects</a>
-          <a id="nav-contact" href="contact.html" data-i18n="nav_contact">Contact</a>
+          <a id="nav-home" href="index.html" data-i18n="nav.home">Home</a>
+          <a id="nav-about" href="about.html" class="active" data-i18n="nav.about">About</a>
+          <a id="nav-projects" href="projects.html" data-i18n="nav.projects">Projects</a>
+          <a id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
         </nav>
         <div class="lang">
           <button data-lang="pt">PT</button>
@@ -28,69 +28,92 @@
   </header>
 
   <main>
+    <!-- WHO I AM -->
     <section class="section">
       <div class="container">
-        <h2 data-i18n="about_title">Who I am</h2>
+        <h2 data-i18n="about.title">Who I am</h2>
 
-        <!-- bloco com texto + foto -->
-        <div class="about-flex">
+        <div class="about-card">
+          <!-- Coloque sua foto em: assets/img/photos/profile.jpg -->
+          <img class="about-photo" src="assets/img/photos/profile.jpg" alt="Gabriela Barbosa" />
           <div class="about-text">
-            <p data-i18n="about_p1">
+            <p data-i18n="about.p1">
               Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.
             </p>
-            <p data-i18n="about_p2">
-              I'm the founder of Universo Laia, integrating education, technology, music and well-being.
+            <p data-i18n="about.p2">
+              I'm the founder of Universo Laia, integrating education, technology, music and well-being. I love yoga, meditation, innovation and education.
             </p>
-            <p data-i18n="about_p3">
+            <p data-i18n="about.p3">
               I'm also a medical student developing projects that blend academic knowledge, social impact and human-centered tech.
             </p>
-          </div>
-          <div class="about-photo">
-            <!-- coloque sua foto aqui -->
-            <img src="assets/img/photos/profile.jpg" alt="Gabriela photo">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ÁREAS (bolinhas com suas fotos) -->
+    <!-- AREAS -->
     <section class="section">
       <div class="container">
-        <h3 data-i18n="areas_title">Areas</h3>
-        <div class="chips-grid">
-          <a class="chip" href="cultures.html">
-            <img src="assets/img/photos/travel.jpg" alt="Travel">
-            <span data-i18n="area_travel">Travel</span>
+        <h2 data-i18n="areas.title">Areas</h2>
+
+        <!-- Cada círculo é branco e usa suas fotos. Coloque os arquivos conforme indicado. -->
+        <div class="circle-grid">
+          <a class="circle white" href="cultures.html" title="Travel">
+            <img src="assets/img/photos/travel.jpg" alt="Travel" />
+            <span data-i18n="areas.travel">Travel</span>
           </a>
-          <a class="chip" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
-            <img src="assets/img/photos/yoga.jpg" alt="Yoga">
-            <span data-i18n="area_yoga">Yoga</span>
+
+          <a class="circle white" href="https://laiamind.netlify.app/" target="_blank" rel="noopener" title="Yoga / Laia Mind">
+            <img src="assets/img/photos/yoga.jpg" alt="Yoga" />
+            <span data-i18n="areas.yoga">Yoga</span>
           </a>
-          <a class="chip" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener">
-            <img src="assets/img/photos/music.jpg" alt="Music">
-            <span data-i18n="area_music">Music</span>
+
+          <a class="circle white" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener" title="Music / Laia Music">
+            <img src="assets/img/photos/music.jpg" alt="Music" />
+            <span data-i18n="areas.music">Music</span>
           </a>
-          <a class="chip" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
-            <img src="assets/img/photos/languages.jpg" alt="Languages">
-            <span data-i18n="area_languages">Languages</span>
+
+          <a class="circle white" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener" title="Languages / Laia Academy">
+            <img src="assets/img/photos/languages.jpg" alt="Languages" />
+            <span data-i18n="areas.languages">Languages</span>
           </a>
-          <a class="chip" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
-            <img src="assets/img/photos/tech.jpg" alt="Tech">
-            <span data-i18n="area_tech">Tech</span>
+
+          <a class="circle white" href="https://laiatech.netlify.app/" target="_blank" rel="noopener" title="Tech / Laia Tech">
+            <img src="assets/img/photos/tech.jpg" alt="Tech" />
+            <span data-i18n="areas.tech">Tech</span>
           </a>
-          <a class="chip" href="medicine.html">
-            <img src="assets/img/photos/medicine.jpg" alt="Medicine">
-            <span data-i18n="area_medicine">Medicine</span>
+
+          <a class="circle white" href="medicine.html" title="Medicine">
+            <img src="assets/img/photos/medicine.jpg" alt="Medicine" />
+            <span data-i18n="areas.medicine">Medicine</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CULTURES TEASER -->
+    <section class="section">
+      <div class="container">
+        <h2 data-i18n="cult.title">Cultures that transformed me</h2>
+
+        <div class="card">
+          <p data-i18n="cult.desc">
+            Stories and places that shaped my path — Argentina, Bahia, São Paulo, Panamá and Curaçao.
+          </p>
+          <p>
+            <a class="button" href="cultures.html" data-i18n="cult.open">Open cultures page</a>
+          </p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
   </footer>
 
+  <!-- JS -->
   <script src="assets/js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
