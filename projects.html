@@ -3,112 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projects — Universo Laia</title>
+  <title data-i18n="title_projects">Projects — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg">
 </head>
 <body>
-  <!-- NAVBAR -->
   <header class="header">
     <div class="container brandbar">
       <div class="navrow">
         <div class="brand">Gabriela Barbosa</div>
         <nav class="menu">
-          <a id="nav-home" href="index.html">Home</a>
-          <a id="nav-about" href="about.html">About</a>
-          <a id="nav-projects" class="active" href="projects.html">Projects</a>
-          <a id="nav-contact" href="contact.html">Contact</a>
+          <a id="nav-home" href="index.html" data-i18n="nav_home">Home</a>
+          <a id="nav-about" href="about.html" data-i18n="nav_about">About</a>
+          <a id="nav-projects" href="projects.html" class="active" data-i18n="nav_projects">Projects</a>
+          <a id="nav-contact" href="contact.html" data-i18n="nav_contact">Contact</a>
         </nav>
         <div class="lang">
           <button data-lang="pt">PT</button>
           <button data-lang="es">ES</button>
-          <button data-lang="en" class="active">EN</button>
+          <button data-lang="en">EN</button>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- TÍTULO -->
     <section class="section">
       <div class="container">
-        <h2 id="projects-title">Projects</h2>
+        <h2 data-i18n="projects_title">Projects</h2>
 
-        <!-- GRID DE PROJETOS -->
-        <div class="projects-grid">
+        <!-- Laia Music -->
+        <article class="card project-card">
+          <div class="project-circle">
+            <img src="assets/img/logos/laia-music.png" alt="Laia Music logo">
+          </div>
+          <h3>Laia Music</h3>
+          <p data-i18n="prj_music_desc">
+            Preserving Edney Fernandes' musical legacy.
+          </p>
+          <p><a class="button" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener" data-i18n="cta_open">Open Projects</a></p>
+        </article>
 
-          <!-- LAIA MUSIC -->
-          <article class="project-card">
-            <div class="project-head">
-              <div class="project-logo">
-                <img src="assets/images/logos/laia-music.png" alt="Laia Music logo">
-              </div>
-              <h3 class="project-title" id="proj-music-title">Laia Music</h3>
-            </div>
-            <p class="project-desc" id="proj-music-desc">
-              Preservando e difundindo o legado musical de Edney Fernandes.
-            </p>
-            <div class="project-actions">
-              <a class="button grad" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener">
-                <span id="cta-open-1">Open Projects</span>
-              </a>
-            </div>
-          </article>
+        <!-- Laia Mind -->
+        <article class="card project-card">
+          <div class="project-circle">
+            <img src="assets/img/logos/laia-mind.png" alt="Laia Mind logo">
+          </div>
+          <h3>Laia Mind</h3>
+          <p data-i18n="prj_mind_desc">Yoga, meditation and well-being.</p>
+          <p><a class="button" href="https://laiamind.netlify.app/" target="_blank" rel="noopener" data-i18n="cta_open">Open Projects</a></p>
+        </article>
 
-          <!-- LAIA MIND -->
-          <article class="project-card">
-            <div class="project-head">
-              <div class="project-logo">
-                <img src="assets/images/logos/laia-mind.png" alt="Laia Mind logo">
-              </div>
-              <h3 class="project-title" id="proj-mind-title">Laia Mind</h3>
-            </div>
-            <p class="project-desc" id="proj-mind-desc">
-              Yoga, meditação e bem-estar.
-            </p>
-            <div class="project-actions">
-              <a class="button grad" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
-                <span id="cta-open-2">Open Projects</span>
-              </a>
-            </div>
-          </article>
+        <!-- Laia Academy -->
+        <article class="card project-card">
+          <div class="project-circle">
+            <img src="assets/img/logos/laia-academy.png" alt="Laia Academy logo">
+          </div>
+          <h3>Laia Academy</h3>
+          <p data-i18n="prj_acad_desc">Languages with practical, multicultural focus.</p>
+          <p><a class="button" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener" data-i18n="cta_open">Open Projects</a></p>
+        </article>
 
-          <!-- LAIA ACADEMY -->
-          <article class="project-card">
-            <div class="project-head">
-              <div class="project-logo">
-                <img src="assets/images/logos/laia-academy.png" alt="Laia Academy logo">
-              </div>
-              <h3 class="project-title" id="proj-acad-title">Laia Academy</h3>
-            </div>
-            <p class="project-desc" id="proj-acad-desc">
-              Idiomas com foco multicultural e prático.
-            </p>
-            <div class="project-actions">
-              <a class="button grad" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
-                <span id="cta-open-3">Open Projects</span>
-              </a>
-            </div>
-          </article>
+        <!-- Laia Tech -->
+        <article class="card project-card">
+          <div class="project-circle">
+            <img src="assets/img/logos/laia-tech.png" alt="Laia Tech logo">
+          </div>
+          <h3>Laia Tech</h3>
+          <p data-i18n="prj_tech_desc">Consulting and human-centered digital solutions.</p>
+          <p><a class="button" href="https://laiatech.netlify.app/" target="_blank" rel="noopener" data-i18n="cta_open">Open Projects</a></p>
+        </article>
 
-          <!-- LAIA TECH -->
-          <article class="project-card">
-            <div class="project-head">
-              <div class="project-logo">
-                <img src="assets/images/logos/laia-tech.png" alt="Laia Tech logo">
-              </div>
-              <h3 class="project-title" id="proj-tech-title">Laia Tech</h3>
-            </div>
-            <p class="project-desc" id="proj-tech-desc">
-              Consultoria e soluções digitais centradas no humano.
-            </p>
-            <div class="project-actions">
-              <a class="button grad" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
-                <span id="cta-open-4">Open Projects</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
       </div>
     </section>
   </main>
@@ -117,13 +82,12 @@
     <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script src="assets/js/app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      if(window.applyNavLabels) applyNavLabels();
-      if(window.initLangButtons) initLangButtons();
-      if(window.applyTranslations) applyTranslations();
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof applyNavLabels === 'function') applyNavLabels();
+      if (typeof initLangButtons === 'function') initLangButtons();
+      if (typeof applyTranslations === 'function') applyTranslations();
     });
   </script>
 </body>
