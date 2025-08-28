@@ -3,19 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Home — Universo Laia</title>
+  <title data-i18n="title_home">Home — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg">
 </head>
-<script src="assets/js/app.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // aplica rótulos do menu e textos
-    if (typeof applyNavLabels === 'function') applyNavLabels();
-    if (typeof initLangButtons === 'function') initLangButtons();
-    if (typeof applyTranslations === 'function') applyTranslations();
-  });
-</script>
-
 <body>
   <!-- NAVBAR -->
   <header class="header">
@@ -23,10 +14,10 @@
       <div class="navrow">
         <div class="brand">Gabriela Barbosa</div>
         <nav class="menu">
-          <a id="nav-home" href="index.html" class="active">Home</a>
-          <a id="nav-about" href="about.html">About</a>
-          <a id="nav-projects" href="projects.html">Projects</a>
-          <a id="nav-contact" href="contact.html">Contact</a>
+          <a id="nav-home" href="index.html" class="active" data-i18n="nav_home">Home</a>
+          <a id="nav-about" href="about.html" data-i18n="nav_about">About</a>
+          <a id="nav-projects" href="projects.html" data-i18n="nav_projects">Projects</a>
+          <a id="nav-contact" href="contact.html" data-i18n="nav_contact">Contact</a>
         </nav>
         <div class="lang">
           <button data-lang="pt">PT</button>
@@ -37,15 +28,14 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- MAIN -->
   <main>
+    <!-- HERO -->
     <section class="hero section">
       <div class="container">
-        <h1 data-i18n="hero.h1">Knowledge drives, technology multiplies.</h1>
-        <p data-i18n="hero.h2">
-          Purpose-driven education, human technology and a conscious lifestyle.
-        </p>
-        <p><a class="button" href="projects.html" data-i18n="hero.cta">Open Projects</a></p>
+        <h1 id="hero-1" data-i18n="hero_h1">Knowledge drives, technology multiplies.</h1>
+        <p id="hero-2" data-i18n="hero_p">Purpose-driven education, human technology and a conscious lifestyle.</p>
+        <p><a class="button" href="projects.html" data-i18n="cta_open">Open Projects</a></p>
       </div>
     </section>
   </main>
@@ -54,6 +44,14 @@
   <footer class="footer">
     <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
   </footer>
+
   <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof applyNavLabels === 'function') applyNavLabels();
+      if (typeof initLangButtons === 'function') initLangButtons();
+      if (typeof applyTranslations === 'function') applyTranslations();
+    });
+  </script>
 </body>
 </html>
