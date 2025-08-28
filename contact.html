@@ -6,15 +6,6 @@
   <title>Contact — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<script src="assets/js/app.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // aplica rótulos do menu e textos
-    if (typeof applyNavLabels === 'function') applyNavLabels();
-    if (typeof initLangButtons === 'function') initLangButtons();
-    if (typeof applyTranslations === 'function') applyTranslations();
-  });
-</script>
 <body>
   <header class="header">
     <div class="container brandbar">
@@ -44,32 +35,32 @@
         <div class="icon-grid">
           <div class="icon-col">
             <a class="icon-btn" href="mailto:gabibds@icloud.com" title="Email">✉️</a>
-            <div class="icon-caption">Email</div>
+            <div class="icon-caption" data-i18n="contact.email">Email</div>
           </div>
           <div class="icon-col">
             <a class="icon-btn" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank">in</a>
-            <div class="icon-caption">LinkedIn</div>
+            <div class="icon-caption" data-i18n="contact.linkedin">LinkedIn</div>
           </div>
           <div class="icon-col">
             <a class="icon-btn" href="https://instagram.com/yogabibds" target="_blank">📷</a>
-            <div class="icon-caption">Instagram</div>
+            <div class="icon-caption" data-i18n="contact.instagram">Instagram</div>
           </div>
           <div class="icon-col">
             <a class="icon-btn" href="https://github.com/yogabibds" target="_blank">💻</a>
-            <div class="icon-caption">GitHub</div>
+            <div class="icon-caption" data-i18n="contact.github">GitHub</div>
           </div>
           <div class="icon-col">
             <a class="icon-btn" href="https://wa.me/" target="_blank">🟢</a>
-            <div class="icon-caption">WhatsApp</div>
+            <div class="icon-caption" data-i18n="contact.whatsapp">WhatsApp</div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
-  </footer>
+  <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+
+  <!-- JS -->
   <script src="assets/js/app.js"></script>
 </body>
 </html>
