@@ -1,35 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Cultures — Universo Laia</title>
+  <title data-i18n="title.cultures">Cultures — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<script src="assets/js/app.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // aplica rótulos do menu e textos
-    if (typeof applyNavLabels === 'function') applyNavLabels();
-    if (typeof initLangButtons === 'function') initLangButtons();
-    if (typeof applyTranslations === 'function') applyTranslations();
-  });
-</script>
-
 <body>
   <header class="header">
     <div class="container brandbar">
       <div class="navrow">
-        <div class="brand">Gabriela Barbosa</div>
+        <a class="brand" href="index.html">Gabriela Barbosa</a>
         <nav class="menu">
-          <a id="nav-home" href="index.html">Home</a>
-          <a id="nav-about" href="about.html">About</a>
-          <a id="nav-projects" href="projects.html">Projects</a>
-          <a id="nav-contact" href="contact.html">Contact</a>
+          <a id="nav-home" href="index.html" data-i18n="nav.home">Home</a>
+          <a id="nav-about" href="about.html" data-i18n="nav.about">About</a>
+          <a id="nav-projects" href="projects.html" data-i18n="nav.projects">Projects</a>
+          <a id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
         </nav>
-        <div class="lang">
-          <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
-        </div>
+        <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
       </div>
     </div>
   </header>
@@ -37,41 +25,45 @@
   <main>
     <section class="section">
       <div class="container">
-        <h1 data-i18n="cultures.title">Cultures that transformed me</h1>
+        <h2 data-i18n="cultures.title">Cultures that transformed me</h2>
 
-        <div class="cards-grid">
-          <div class="card">
-            <h2>Argentina</h2>
-            <p>País que me acolheu para estudar e viver. Minha base afetiva e acadêmica.</p>
-            <div class="icon-grid">
-              <a class="icon-btn" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank" title="Córdoba">CBA</a>
-              <a class="icon-btn" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank" title="Rosario">ROS</a>
+        <div class="culture-list">
+          <article class="culture-card">
+            <h3>Argentina</h3>
+            <p data-i18n="cultures.arg.desc">Where I live and study — stories and moments that shaped me.</p>
+            <div class="chip-row">
+              <a class="chip" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank" rel="noopener">Córdoba</a>
+              <a class="chip" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank" rel="noopener">Rosario</a>
             </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <h2>Bahia (BR)</h2>
-            <p>Minhas raízes culturais, música e alegria.</p>
-            <a class="button" target="_blank" href="https://www.instagram.com/stories/highlights/18054605081571365/">Ver highlights</a>
-          </div>
+          <article class="culture-card">
+            <h3>Panamá</h3>
+            <div class="chip-row">
+              <a class="chip" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank" rel="noopener">Highlights</a>
+            </div>
+          </article>
 
-          <div class="card">
-            <h2>São Paulo (BR)</h2>
-            <p>Trabalho, estudo e conexões internacionais.</p>
-            <a class="button" target="_blank" href="https://www.instagram.com/stories/highlights/17970345023356845/">Ver highlights</a>
-          </div>
+          <article class="culture-card">
+            <h3>Bahia</h3>
+            <div class="chip-row">
+              <a class="chip" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank" rel="noopener">Highlights</a>
+            </div>
+          </article>
 
-          <div class="card">
-            <h2>Panamá</h2>
-            <p>Porta de entrada para novas perspectivas na América Latina.</p>
-            <a class="button" target="_blank" href="https://www.instagram.com/stories/highlights/18074948018054911/">Ver highlights</a>
-          </div>
+          <article class="culture-card">
+            <h3>São Paulo</h3>
+            <div class="chip-row">
+              <a class="chip" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank" rel="noopener">Highlights</a>
+            </div>
+          </article>
 
-          <div class="card">
-            <h2>Curaçao</h2>
-            <p>Beleza natural e diversidade cultural do Caribe.</p>
-            <a class="button" target="_blank" href="https://www.instagram.com/stories/highlights/18173849404351038/">Ver highlights</a>
-          </div>
+          <article class="culture-card">
+            <h3>Curaçao</h3>
+            <div class="chip-row">
+              <a class="chip" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank" rel="noopener">Highlights</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
