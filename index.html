@@ -1,44 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home — Universo LAIA</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/app.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home — Universo Laia</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container brandbar">
-      <div class="navrow">
-        <a class="brand" href="index.html" data-i18n="brand">Gabriela Barbosa</a>
-        <nav class="menu">
-          <a href="index.html"    data-i18n="nav.home"    class="active">Home</a>
-          <a href="about.html"    data-i18n="nav.about">About</a>
-          <a href="projects.html" data-i18n="nav.projects">Projects</a>
-          <a href="contact.html"  data-i18n="nav.contact">Contact</a>
-        </nav>
-        <div class="lang">
-          <button data-lang="pt">PT</button>
-          <button data-lang="es">ES</button>
-          <button data-lang="en">EN</button>
-        </div>
+<header class="header">
+  <div class="container brandbar">
+    <div class="navrow">
+      <div class="brand">Gabriela Barbosa</div>
+      <nav class="menu">
+        <a id="nav-home" href="index.html" class="active">Home</a>
+        <a id="nav-about" href="about.html">About</a>
+        <a id="nav-projects" href="projects.html">Projects</a>
+        <a id="nav-contact" href="contact.html">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-lang="pt">PT</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="en">EN</button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero section">
-      <div class="container">
-        <h1 data-i18n="home.h1">Knowledge drives, technology multiplies.</h1>
-        <p data-i18n="home.sub">Purpose-driven education, human technology and a conscious lifestyle.</p>
-        <p><a class="button" href="projects.html" data-i18n="home.cta">Open Projects</a></p>
-      </div>
-    </section>
-  </main>
+<main>
+  <section class="section">
+    <div class="container">
+      <h1 data-i18n="hero_h1">Knowledge drives, technology multiplies.</h1>
+      <p data-i18n="hero_p">Purpose-driven education, human technology and a conscious lifestyle.</p>
+      <p><a class="button" href="projects.html" data-i18n="hero_cta">Open Projects</a></p>
+    </div>
+  </section>
+</main>
 
-  <footer class="footer">
-    <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
-  </footer>
+<footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>
