@@ -1,92 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title data-i18n="nav.about">About — Universo Laia</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Universo Laia</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container brandbar">
-      <div class="navrow">
-        <div class="brand">Gabriela Barbosa</div>
-        <nav class="menu">
-          <a id="nav-home" href="index.html" data-i18n="nav.home">Home</a>
-          <a id="nav-about" href="about.html" class="active" data-i18n="nav.about">About</a>
-          <a id="nav-projects" href="projects.html" data-i18n="nav.projects">Projects</a>
-          <a id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
-        </nav>
-        <div class="lang">
-          <button data-lang="pt">PT</button>
-          <button data-lang="es">ES</button>
-          <button data-lang="en">EN</button>
-        </div>
+<header class="header">
+  <div class="container brandbar">
+    <div class="navrow">
+      <div class="brand">Gabriela Barbosa</div>
+      <nav class="menu">
+        <a id="nav-home" href="index.html">Home</a>
+        <a id="nav-about" class="active" href="about.html">About</a>
+        <a id="nav-projects" href="projects.html">Projects</a>
+        <a id="nav-contact" href="contact.html">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="section">
+<main>
+  <section class="section">
     <div class="container">
-      <h1 data-i18n="about.title">Who I am</h1>
-
-      <div class="about-grid">
-        <figure class="about-photo">
-          <img src="assets/img/photo-gabi.jpg" alt="Gabriela photo" loading="lazy">
-        </figure>
-        <div class="about-text">
-          <p data-i18n="about.p1">
-            Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.
-          </p>
-          <p data-i18n="about.p2">
-            I'm the founder of Universo Laia, integrating education, technology, music and well-being.
-          </p>
-        </div>
+      <h1 data-i18n="about_title">Who I am</h1>
+      <div class="about-hero">
+        <div class="about-photo"><img src="assets/img/photos/about.jpg" alt="Gabriela" loading="lazy"></div>
+        <div><p data-i18n="about_bio">
+          Hi, I'm Gabriela Barbosa de Sousa…
+        </p></div>
       </div>
 
-      <h2 class="mt-40" data-i18n="areas.title">Areas</h2>
+      <h2 style="margin-top:26px" data-i18n="areas">Areas</h2>
 
-      <div class="areas-grid">
-        <a class="area" href="cultures.html">
-          <div class="area-circle"><img src="assets/img/areas/travel.jpg" alt="Travel"></div>
-          <span data-i18n="areas.travel">Travel</span>
+      <!-- circles → links -->
+      <div class="grid-3">
+        <a class="card project-card" href="cultures.html#travel">
+          <div class="circle"><img class="fill" src="assets/img/photos/travel.jpg" alt="Travel"></div>
+          <h3 data-i18n="travel">Travel</h3>
         </a>
 
-        <a class="area" href="projects.html#laia-mind">
-          <div class="area-circle"><img src="assets/img/areas/yoga.jpg" alt="Yoga"></div>
-          <span data-i18n="areas.yoga">Yoga</span>
+        <a class="card project-card" href="projects.html#laia-mind">
+          <div class="circle"><img class="fill" src="assets/img/photos/yoga.jpg" alt="Yoga"></div>
+          <h3 data-i18n="yoga">Yoga</h3>
         </a>
 
-        <a class="area" href="projects.html#laia-music">
-          <div class="area-circle"><img src="assets/img/areas/music.jpg" alt="Music"></div>
-          <span data-i18n="areas.music">Music</span>
+        <a class="card project-card" href="projects.html#laia-music">
+          <div class="circle"><img class="fill" src="assets/img/photos/music.jpg" alt="Music"></div>
+          <h3 data-i18n="music">Music</h3>
         </a>
 
-        <a class="area" href="projects.html#laia-academy">
-          <div class="area-circle"><img src="assets/img/areas/languages.jpg" alt="Languages"></div>
-          <span data-i18n="areas.languages">Languages</span>
+        <a class="card project-card" href="projects.html#laia-academy">
+          <div class="circle"><img class="fill" src="assets/img/photos/languages.jpg" alt="Languages"></div>
+          <h3 data-i18n="languages">Languages</h3>
         </a>
 
-        <a class="area" href="projects.html#laia-tech">
-          <div class="area-circle"><img src="assets/img/areas/tech.jpg" alt="Tech"></div>
-          <span data-i18n="areas.tech">Tech</span>
+        <a class="card project-card" href="projects.html#laia-tech">
+          <div class="circle"><img class="fill" src="assets/img/photos/tech.jpg" alt="Tech"></div>
+          <h3 data-i18n="tech">Tech</h3>
         </a>
 
-        <a class="area" href="medicine.html">
-          <div class="area-circle"><img src="assets/img/areas/medicine.jpg" alt="Medicine"></div>
-          <span data-i18n="areas.medicine">Medicine</span>
+        <a class="card project-card" href="medicine.html">
+          <div class="circle"><img class="fill" src="assets/img/photos/medicine.jpg" alt="Medicine"></div>
+          <h3 data-i18n="medicine">Medicine</h3>
         </a>
       </div>
     </div>
-  </main>
+  </section>
+</main>
 
-  <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
-
-  <script src="assets/js/app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      applyNavLabels(); initLangButtons(); applyTranslations();
-    });
-  </script>
+<footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
