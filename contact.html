@@ -1,82 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- NAV -->
-  <header class="header">
-    <div class="container brandbar">
-      <div class="navrow">
-        <div class="brand">Gabriela Barbosa</div>
-        <nav class="menu">
-          <a id="nav-home" href="index.html">Home</a>
-          <a id="nav-about" href="about.html">About</a>
-          <a id="nav-projects" href="projects.html">Projects</a>
-          <a id="nav-contact" href="contact.html" class="active">Contact</a>
-        </nav>
-        <div class="lang">
-          <button data-lang="pt">PT</button>
-          <button data-lang="es">ES</button>
-          <button data-lang="en">EN</button>
-        </div>
+<header class="header">
+  <div class="container brandbar">
+    <div class="navrow">
+      <div class="brand">Gabriela Barbosa</div>
+      <nav class="menu">
+        <a id="nav-home" href="index.html">Home</a>
+        <a id="nav-about" href="about.html">About</a>
+        <a id="nav-projects" href="projects.html">Projects</a>
+        <a id="nav-contact" href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h2 id="contact-title">Contacts</h2>
-        <p class="contact-note" id="contact-note">Reach me here:</p>
+<main>
+  <section class="section">
+    <div class="container">
+      <h2 data-i18n="titles.contact">Contacts</h2>
+      <p class="contact-note" data-i18n="contact.note">Reach me here:</p>
 
-        <div class="icon-grid">
-          <div class="icon-col">
-            <a class="icon-btn" href="mailto:gabibds@icloud.com" aria-label="Email">
-              <img src="assets/images/icons/email.png" alt="">
-            </a>
-            <div class="icon-caption">Email</div>
-          </div>
-
-          <div class="icon-col">
-            <a class="icon-btn" href="https://www.instagram.com/yogabibds" target="_blank" rel="noopener" aria-label="Instagram">
-              <img src="assets/images/icons/instagram.png" alt="">
-            </a>
-            <div class="icon-caption">Instagram</div>
-          </div>
-
-          <div class="icon-col">
-            <a class="icon-btn" href="https://github.com/yogabibds" target="_blank" rel="noopener" aria-label="GitHub">
-              <img src="assets/images/icons/github.png" alt="">
-            </a>
-            <div class="icon-caption">GitHub</div>
-          </div>
-
-          <div class="icon-col">
-            <a class="icon-btn" href="https://wa.me/5493412280994" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <img src="assets/images/icons/whatsapp.png" alt="">
-            </a>
-            <div class="icon-caption">WhatsApp</div>
-          </div>
-        </div>
+      <div class="icon-grid">
+        <a class="icon-btn" href="mailto:gabibds@icloud.com" aria-label="Email">
+          <img src="assets/img/icons/email.png" alt="">
+        </a>
+        <a class="icon-btn" href="https://www.instagram.com/yogabibds" target="_blank" aria-label="Instagram">
+          <img src="assets/img/icons/instagram.png" alt="">
+        </a>
+        <a class="icon-btn" href="https://github.com/yogabibds" target="_blank" aria-label="GitHub">
+          <img src="assets/img/icons/github.png" alt="">
+        </a>
+        <a class="icon-btn" href="https://wa.me/5493412280994" target="_blank" aria-label="WhatsApp">
+          <img src="assets/img/icons/whatsapp.png" alt="">
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer class="footer">
-    <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
-  </footer>
-
-  <script src="assets/js/app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof applyNavLabels==='function') applyNavLabels();
-      if (typeof initLangButtons==='function') initLangButtons();
-      if (typeof applyTranslations==='function') applyTranslations();
-    });
-  </script>
-</body>
-</html>
+<footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+<script src="assets/js/app.js"></script>
+</body></html>
