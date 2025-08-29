@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Cultures — Universo Laia</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cultures — Universo Laia</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header class="header">
@@ -15,36 +16,44 @@
         <a id="nav-projects" href="projects.html">Projects</a>
         <a id="nav-contact" href="contact.html">Contact</a>
       </nav>
-      <div class="lang">
-        <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
-      </div>
+      <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
     </div>
   </div>
 </header>
 
 <main>
-  <section class="section">
+  <section id="travel" class="section">
     <div class="container">
-      <h2 data-i18n="titles.cultures">Cultures that transformed me</h2>
+      <h1>Cultures that transformed me</h1>
+      <div class="culture-grid" style="margin-top:14px">
+        <a class="circle small" href="#cordoba"><img class="fill" src="assets/img/photos/travel.jpg" alt="Córdoba"></a>
+        <a class="circle small" href="#rosario"><img class="fill" src="assets/img/photos/travel.jpg" alt="Rosario"></a>
+        <a class="circle small" href="#curacao"><img class="fill" src="assets/img/photos/travel.jpg" alt="Curaçao"></a>
+        <a class="circle small" href="#bahia"><img class="fill" src="assets/img/photos/travel.jpg" alt="Bahia"></a>
+      </div>
 
-      <article class="card">
-        <h3>Argentina</h3>
-        <p data-i18n="cultures.arg.text">Where I live and study — stories and moments that shaped me.</p>
-        <div class="area-grid">
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/img/photos/travel.jpg" alt=""></div>
-            <span>Córdoba</span>
-          </div>
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/img/photos/travel.jpg" alt=""></div>
-            <span>Rosario</span>
-          </div>
-        </div>
-      </article>
+      <!-- Exemplos de destaques -->
+      <div id="cordoba" class="card" style="margin-top:20px">
+        <h3>Córdoba</h3>
+        <p>Breve texto do destaque…</p>
+      </div>
+      <div id="rosario" class="card">
+        <h3>Rosario</h3>
+        <p>Breve texto…</p>
+      </div>
+      <div id="curacao" class="card">
+        <h3>Curaçao</h3>
+        <p>Breve texto…</p>
+      </div>
+      <div id="bahia" class="card">
+        <h3>Bahia</h3>
+        <p>Breve texto…</p>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
 <script src="assets/js/app.js"></script>
-</body></html>
+</body>
+</html>
