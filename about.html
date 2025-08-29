@@ -3,30 +3,60 @@
 <title>About — Universo Laia</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
 <header class="header"><div class="container brandbar"><div class="navrow">
-<div class="brand"><span>Gabriela</span><span>Barbosa</span></div>
-<nav class="menu">
-  <a id="nav-home" href="index.html">Home</a>
-  <a id="nav-about" class="active" href="about.html">About</a>
-  <a id="nav-projects" href="projects.html">Projects</a>
-  <a id="nav-contact" href="contact.html">Contact</a>
-</nav>
-<div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+  <div class="brand"><span>Gabriela</span><span>Barbosa</span></div>
+  <nav class="menu">
+    <a id="nav-home" href="index.html">Home</a>
+    <a id="nav-about" class="active" href="about.html">About</a>
+    <a id="nav-projects" href="projects.html">Projects</a>
+    <a id="nav-contact" href="contact.html">Contact</a>
+  </nav>
+  <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
 </div></div></header>
-<main class="section"><div class="container"><h2 data-i18n="title-about">Who I am</h2>
-<div class="split card"><div>
-  <p data-i18n="about.p1">Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.</p>
-  <p data-i18n="about.p2">I'm the founder of Universo Laia, integrating education, technology, music and well-being.</p>
-  <p data-i18n="about.p3">I'm also a medical student developing projects that blend academic knowledge, social impact and human-centered tech.</p>
-</div>
-<div class="about-photo" style="aspect-ratio:1/1;"><img src="assets/images/photos/about.jpg" alt="Gabriela" onerror="this.style.display='none';this.parentElement.classList.add('circle','no-logo');this.parentElement.setAttribute('data-fallback','GABI')"></div></div>
-<h3 style="margin-top:30px" data-i18n="title-areas">Areas</h3>
-<div class="area-grid">
-  <a class="area-col" href="cultures.html"><div class="area-circle circle" data-fallback="Travel"><img src="assets/images/photos/travel.jpg" alt="Travel" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')"></div><div class="area-caption" data-i18n="areas.travel">Travel</div></a>
-  <a class="area-col" href="https://laiamind.netlify.app/" target="_blank" rel="noopener"><div class="area-circle circle" data-fallback="Yoga"><img src="assets/images/photos/yoga.jpg" alt="Yoga" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')"></div><div class="area-caption" data-i18n="areas.yoga">Yoga</div></a>
-  <a class="area-col" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener"><div class="area-circle circle" data-fallback="Music"><img src="assets/images/photos/music.jpg" alt="Music" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')"></div><div class="area-caption" data-i18n="areas.music">Music</div></a>
-  <a class="area-col" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener"><div class="area-circle circle" data-fallback="Languages"><img src="assets/images/photos/languages.jpg" alt="Languages" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')"></div><div class="area-caption" data-i18n="areas.languages">Languages</div></a>
-  <a class="area-col" href="https://laiatech.netlify.app/" target="_blank" rel="noopener"><div class="area-circle circle" data-fallback="Tech"><img src="assets/images/photos/tech.jpg" alt="Tech" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')"></div><div class="area-caption" data-i18n="areas.tech">Tech</div></a>
-  <a class="area-col" href="medicine.html"><div class="area-circle circle" data-fallback="Medicine"><img src="assets/images/photos/medicine.jpg" alt="Medicine" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')"></div><div class="area-caption" data-i18n="areas.medicine">Medicine</div></a>
-</div></div></main>
+<main class="section"><div class="container">
+  <h2 data-i18n="titles.about">Who I am</h2>
+  <div class="split card">
+    <div>
+      <p data-i18n="about.p1">Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.</p>
+      <p data-i18n="about.p2">I'm the founder of Universo Laia, integrating education, technology, music and well-being.</p>
+      <p data-i18n="about.p3">I'm also a medical student developing projects that blend academic knowledge, social impact and human-centered tech.</p>
+    </div>
+    <div class="about-photo" style="aspect-ratio:1/1;">
+      <img src="assets/img/photos/about.jpg" alt="Gabriela" onerror="this.style.display='none';this.parentElement.classList.add('circle','no-logo');this.parentElement.setAttribute('data-fallback','GABI')">
+    </div>
+  </div>
+  <h3 style="margin-top:30px" data-i18n="titles.areas">Areas</h3>
+  <div class="area-grid">
+    <a class="area-col" href="cultures.html">
+      <div class="area-circle circle" data-fallback="Travel">
+        <img src="assets/img/photos/travel.jpg" alt="Travel" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')">
+      </div><div class="area-caption" data-i18n="areas.travel">Travel</div>
+    </a>
+    <a class="area-col" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
+      <div class="area-circle circle" data-fallback="Yoga">
+        <img src="assets/img/photos/yoga.jpg" alt="Yoga" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')">
+      </div><div class="area-caption" data-i18n="areas.yoga">Yoga</div>
+    </a>
+    <a class="area-col" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener">
+      <div class="area-circle circle" data-fallback="Music">
+        <img src="assets/img/photos/music.jpg" alt="Music" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')">
+      </div><div class="area-caption" data-i18n="areas.music">Music</div>
+    </a>
+    <a class="area-col" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
+      <div class="area-circle circle" data-fallback="Languages">
+        <img src="assets/img/photos/languages.jpg" alt="Languages" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')">
+      </div><div class="area-caption" data-i18n="areas.languages">Languages</div>
+    </a>
+    <a class="area-col" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
+      <div class="area-circle circle" data-fallback="Tech">
+        <img src="assets/img/photos/tech.jpg" alt="Tech" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')">
+      </div><div class="area-caption" data-i18n="areas.tech">Tech</div>
+    </a>
+    <a class="area-col" href="medicine.html">
+      <div class="area-circle circle" data-fallback="Medicine">
+        <img src="assets/img/photos/medicine.jpg" alt="Medicine" onerror="this.style.display='none';this.closest('.circle').classList.add('no-logo')">
+      </div><div class="area-caption" data-i18n="areas.medicine">Medicine</div>
+    </a>
+  </div>
+</div></main>
 <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
 <script src="assets/js/app.js"></script></body></html>
