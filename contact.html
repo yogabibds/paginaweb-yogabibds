@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Universo LAIA</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/app.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="nav.contact">Contact — Universo Laia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header class="header">
-  <div class="container brandbar">
-    <div class="navrow">
-      <a class="brand" href="index.html" data-i18n="brand">Gabriela Barbosa</a>
-      <nav class="menu">
-        <a href="index.html"    data-i18n="nav.home">Home</a>
-        <a href="about.html"    data-i18n="nav.about">About</a>
-        <a href="projects.html" data-i18n="nav.projects">Projects</a>
-        <a href="contact.html"  data-i18n="nav.contact" class="active">Contact</a>
-      </nav>
-      <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+  <header class="header">
+    <div class="container brandbar">
+      <div class="navrow">
+        <div class="brand">Gabriela Barbosa</div>
+        <nav class="menu">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="projects.html" data-i18n="nav.projects">Projects</a>
+          <a class="active" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang">
+          <button data-lang="pt">PT</button>
+          <button data-lang="es">ES</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="section">
-  <div class="container">
-    <h2 data-i18n="contact.title">Contacts</h2>
-    <p class="contact-note" data-i18n="contact.note">Reach me here:</p>
+  <main class="section">
+    <div class="container">
+      <h1 data-i18n="contact.title">Contacts</h1>
+      <p class="contact-note" data-i18n="contact.note">Reach me here:</p>
 
-    <div class="icon-grid">
-      <a class="icon-btn" href="mailto:gabibds@icloud.com" aria-label="Email">
-        <img src="assets/img/icons/email.svg" alt="" />
-      </a>
-      <a class="icon-btn" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank" aria-label="LinkedIn">
-        <img src="assets/img/icons/instagram.svg" alt="" style="display:none" />
-        <img src="assets/img/icons/linkedin.svg" alt=""/>
-      </a>
-      <a class="icon-btn" href="https://instagram.com/yogabibds" target="_blank" aria-label="Instagram">
-        <img src="assets/img/icons/instagram.svg" alt="" />
-      </a>
-      <a class="icon-btn" href="https://github.com/yogabibds" target="_blank" aria-label="GitHub">
-        <img src="assets/img/icons/github.svg" alt="" />
-      </a>
-      <a class="icon-btn" href="https://wa.me/5493412280994" target="_blank" aria-label="WhatsApp">
-        <img src="assets/img/icons/whatsapp.svg" alt="" />
-      </a>
+      <div class="icon-grid">
+        <div class="icon-col">
+          <a class="icon-btn" aria-label="Email" href="mailto:gabibds@icloud.com">
+            <img src="assets/img/icons/email.png" alt="Email" width="28" height="28">
+          </a>
+          <div class="icon-caption">Email</div>
+        </div>
+
+        <div class="icon-col">
+          <a class="icon-btn" aria-label="Instagram" target="_blank" href="https://instagram.com/yogabibds">
+            <img src="assets/img/icons/instagram.png" alt="Instagram" width="28" height="28">
+          </a>
+          <div class="icon-caption">Instagram</div>
+        </div>
+
+        <div class="icon-col">
+          <a class="icon-btn" aria-label="GitHub" target="_blank" href="https://github.com/yogabibds">
+            <img src="assets/img/icons/github.png" alt="GitHub" width="28" height="28">
+          </a>
+          <div class="icon-caption">GitHub</div>
+        </div>
+
+        <div class="icon-col">
+          <a class="icon-btn" aria-label="WhatsApp" target="_blank" href="https://wa.me/5493412280994">
+            <img src="assets/img/icons/whatsapp.png" alt="WhatsApp" width="28" height="28">
+          </a>
+          <div class="icon-caption">WhatsApp</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-</main>
+  </main>
 
-<footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+  <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',()=>{applyNavLabels();initLangButtons();applyTranslations();});</script>
 </body>
 </html>
