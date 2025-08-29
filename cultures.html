@@ -1,8 +1,6 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cultures — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -10,7 +8,7 @@
 <header class="header">
   <div class="container brandbar">
     <div class="navrow">
-      <div class="brand"><span>Gabriela</span><span>Barbosa</span></div>
+      <div class="brand">Gabriela Barbosa</div>
       <nav class="menu">
         <a id="nav-home" href="index.html">Home</a>
         <a id="nav-about" href="about.html">About</a>
@@ -18,58 +16,35 @@
         <a id="nav-contact" href="contact.html">Contact</a>
       </nav>
       <div class="lang">
-        <button data-lang="pt">PT</button>
-        <button data-lang="es">ES</button>
-        <button data-lang="en">EN</button>
+        <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
       </div>
     </div>
   </div>
 </header>
 
-<main class="section">
-  <div class="container">
-    <h2 data-i18n="titles.cultures">Cultures that transformed me</h2>
+<main>
+  <section class="section">
+    <div class="container">
+      <h2 data-i18n="titles.cultures">Cultures that transformed me</h2>
 
-    <div class="card" style="margin-top:16px">
-      <h3>Argentina</h3>
-      <p>Where I live and study — stories and moments that shaped me.</p>
-      <div class="area-grid" style="margin-top:10px">
-        <a class="area-col" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank">
-          <div class="photo-round" style="width:112px;height:112px;"><img src="assets/img/photos/travel.jpg" alt=""></div>
-          <div class="area-caption">Córdoba</div>
-        </a>
-        <a class="area-col" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank">
-          <div class="photo-round" style="width:112px;height:112px;"><img src="assets/img/photos/travel.jpg" alt=""></div>
-          <div class="area-caption">Rosario</div>
-        </a>
-      </div>
+      <article class="card">
+        <h3>Argentina</h3>
+        <p data-i18n="cultures.arg.text">Where I live and study — stories and moments that shaped me.</p>
+        <div class="area-grid">
+          <div class="area-card">
+            <div class="photo-round"><img src="assets/img/photos/travel.jpg" alt=""></div>
+            <span>Córdoba</span>
+          </div>
+          <div class="area-card">
+            <div class="photo-round"><img src="assets/img/photos/travel.jpg" alt=""></div>
+            <span>Rosario</span>
+          </div>
+        </div>
+      </article>
     </div>
-
-    <div class="card"><h3>Bahia</h3>
-      <a class="button" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank" rel="noopener">Open</a>
-    </div>
-
-    <div class="card"><h3>São Paulo</h3>
-      <a class="button" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank" rel="noopener">Open</a>
-    </div>
-
-    <div class="card"><h3>Panamá</h3>
-      <a class="button" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank" rel="noopener">Open</a>
-    </div>
-
-    <div class="card"><h3>Curaçao</h3>
-      <a class="button" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank" rel="noopener">Open</a>
-    </div>
-  </div>
+  </section>
 </main>
 
 <footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
 <script src="assets/js/app.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (typeof applyTranslations==='function') applyTranslations();
-    if (typeof initLangButtons==='function') initLangButtons();
-  });
-</script>
-</body>
-</html>
+</body></html>
