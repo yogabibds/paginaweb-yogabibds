@@ -1,101 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>About — Universo Laia</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- NAV -->
-  <header class="header">
-    <div class="container brandbar">
-      <div class="navrow">
-        <div class="brand">Gabriela Barbosa</div>
-        <nav class="menu">
-          <a id="nav-home" href="index.html">Home</a>
-          <a id="nav-about" href="about.html" class="active">About</a>
-          <a id="nav-projects" href="projects.html">Projects</a>
-          <a id="nav-contact" href="contact.html">Contact</a>
-        </nav>
-        <div class="lang">
-          <button data-lang="pt">PT</button>
-          <button data-lang="es">ES</button>
-          <button data-lang="en">EN</button>
+<header class="header">
+  <div class="container brandbar">
+    <div class="navrow">
+      <div class="brand">Gabriela Barbosa</div>
+      <nav class="menu">
+        <a id="nav-home" href="index.html">Home</a>
+        <a id="nav-about" href="about.html" class="active">About</a>
+        <a id="nav-projects" href="projects.html">Projects</a>
+        <a id="nav-contact" href="contact.html">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <h2 data-i18n="titles.about">Who I am</h2>
+      <div class="about-hero">
+        <div class="about-photo">
+          <img src="assets/img/photos/about.jpg" alt="Gabriela" onerror="this.src='assets/img/photos/travel.jpg'">
+        </div>
+        <div class="about-text">
+          <p data-i18n="about.p1">Hi, I'm Gabriela...</p>
+          <p data-i18n="about.p2">I'm the founder...</p>
+          <p data-i18n="about.p3">I'm also a medical student...</p>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- QUEM SOU -->
-    <section class="section">
-      <div class="container">
-        <h2 id="about-title">Who I am</h2>
-        <div class="about-hero">
-          <div class="about-photo">
-            <img src="assets/images/photos/travel.jpg" alt="Gabriela photo">
-          </div>
-          <div class="about-text" id="about-text">
-            Hi, I'm Gabriela Barbosa de Sousa, from Brazil. I speak Portuguese, Spanish and I’m practicing English.
-            I'm the founder of Universo Laia, integrating education, technology, music and well-being.
-          </div>
+  <section class="section">
+    <div class="container">
+      <h2 data-i18n="titles.areas">Areas</h2>
+      <div class="area-grid">
+        <div class="area-card">
+          <div class="photo-round"><img src="assets/img/photos/travel.jpg" alt=""></div>
+          <a href="cultures.html" data-i18n="areas.travel">Travel</a>
+        </div>
+        <div class="area-card">
+          <div class="photo-round"><img src="assets/img/photos/yoga.jpg" alt=""></div>
+          <a href="projects.html#laia-mind" data-i18n="areas.yoga">Yoga</a>
+        </div>
+        <div class="area-card">
+          <div class="photo-round"><img src="assets/img/photos/music.jpg" alt=""></div>
+          <a href="projects.html#laia-music" data-i18n="areas.music">Music</a>
+        </div>
+        <div class="area-card">
+          <div class="photo-round"><img src="assets/img/photos/languages.jpg" alt=""></div>
+          <a href="projects.html#laia-academy" data-i18n="areas.languages">Languages</a>
+        </div>
+        <div class="area-card">
+          <div class="photo-round"><img src="assets/img/photos/tech.jpg" alt=""></div>
+          <a href="projects.html#laia-tech" data-i18n="areas.tech">Tech</a>
+        </div>
+        <div class="area-card">
+          <div class="photo-round"><img src="assets/img/photos/medicine.jpg" alt=""></div>
+          <a href="medicine.html" data-i18n="areas.medicine">Medicine</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</main>
 
-    <!-- ÁREAS -->
-    <section class="section">
-      <div class="container">
-        <h2 id="about-areas">Areas</h2>
-
-        <div class="area-grid">
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/images/photos/travel.jpg" alt="Travel"></div>
-            <a href="cultures.html" id="area-travel">Travel</a>
-          </div>
-
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/images/photos/yoga.jpg" alt="Yoga"></div>
-            <a href="projects.html#laia-mind" id="area-yoga">Yoga</a>
-          </div>
-
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/images/photos/music.jpg" alt="Music"></div>
-            <a href="projects.html#laia-music" id="area-music">Music</a>
-          </div>
-
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/images/photos/languages.jpg" alt="Languages"></div>
-            <a href="projects.html#laia-academy" id="area-languages">Languages</a>
-          </div>
-
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/images/photos/tech.jpg" alt="Tech"></div>
-            <a href="projects.html#laia-tech" id="area-tech">Tech</a>
-          </div>
-
-          <div class="area-card">
-            <div class="photo-round"><img src="assets/images/photos/medicine.jpg" alt="Medicine"></div>
-            <a href="medicine.html" id="area-medicine">Medicine</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container small">© 2025 Gabriela Barbosa — LAIA</div>
-  </footer>
-
-  <script src="assets/js/app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof applyNavLabels==='function') applyNavLabels();
-      if (typeof initLangButtons==='function') initLangButtons();
-      if (typeof applyTranslations==='function') applyTranslations();
-    });
-  </script>
-</body>
-</html>
+<footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
+<script src="assets/js/app.js"></script>
+</body></html>
