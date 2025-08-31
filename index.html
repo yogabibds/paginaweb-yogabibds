@@ -1,56 +1,22 @@
-
-<!doctype html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gabriela Barbosa — LAIA</title>
-  <meta name="description" content="Educação, tecnologia, música e bem-estar — por Gabriela Barbosa.">
-  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
-</head>
-<body>
-  <header class="header">
-    <div class="brandbar">
-      <div class="container navrow">
-        <div class="brand" id="brand">Gabriela</div>
-        <nav class="menu" aria-label="Primary">
-          <a id="nav-home" href="#home">Início</a>
-          <a id="nav-about" href="#about">Sobre mim</a>
-          <a id="nav-projects" href="#projects">Projetos</a>
-          <a id="nav-contact" href="#contact">Contato</a>
-          <div class="lang" aria-label="Idioma">
-            <button data-lang="pt" onclick="setLang('pt')">PT</button>
-            <button data-lang="es" onclick="setLang('es')">ES</button>
-            <button data-lang="en" onclick="setLang('en')">EN</button>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section id="home" class="hero container">
-      <h1 id="hero-title" class="fade">Ideias que inspiram. Tecnologias que transformam.</h1>
-      <p id="hero-sub">Educação com propósito, tecnologia humana e estilo de vida consciente.</p>
-      <a id="hero-cta" class="button" href="#projects">Ver projetos</a>
-    </section>
-
-    <section id="projects" class="section container">
-      <h2 id="projects-title">Meus Projetos</h2>
-      <div id="projects-grid" class="grid" data-animate></div>
-    </section>
-
-    <section id="contact" class="section container">
-      <h2 id="contact-title">Contatos</h2>
-      <div id="contact-list" class="list" data-animate></div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container" id="footer">© 2025 Gabriela Barbosa — LAIA</div>
-  </footer>
-
-<script src="assets/js/main.js?v=2"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gabriela Barbosa — LAIA</title>
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<header class="site-header">
+  <div class="brand">Gabriela Barbosa</div>
+  <nav class="nav">
+    <a href="index.html" id="nav-home" data-i18n="nav.home">Home</a>
+    <a href="about.html" id="nav-about" data-i18n="nav.about">About</a>
+    <a href="projects.html" id="nav-projects" data-i18n="nav.projects">Projects</a>
+    <a href="contact.html" id="nav-contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+</header>
+<main class="container">
+<section class="hero section">
+  <h1 data-i18n="home.title">Knowledge drives, technology multiplies.</h1>
+  <p class="muted" data-i18n="home.subtitle">Purpose-driven education, human technology and a conscious lifestyle.</p>
+  <a class="btn" data-i18n="home.cta" href="projects.html">Open Projects</a>
+</section>
+</main><footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
+<script src="assets/js/app.js"></script></body></html>
