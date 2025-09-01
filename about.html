@@ -14,13 +14,47 @@
 </header>
 <main class="container">
 <section class="section">
-  <h2 data-i18n="about.title">Who I am</h2>
+  <h2 class="section-title" data-i18n="about.title">Quem eu sou</h2>
+
   <div class="about-grid">
-    <div class="about-photo"><img class="fit-cover" src="assets/img/photos/about.jpg" alt="Gabriela"></div>
-    <div class="about-text">
-      <p data-i18n="about.text1">Hi, I'm Gabriela...</p>
-      <p data-i18n="about.text2">I'm the founder...</p>
-    </div>
+    <figure class="about-photo">
+      <img src="assets/img/photos/about.jpg"
+           alt="Gabriela"
+           data-i18n-alt="about.photoAlt" />
+      <figcaption>Gabriela</figcaption>
+    </figure>
+
+    <!-- IMPORTANTE: nada de texto fixo aqui; deixa o JS preencher -->
+    <div class="about-text" data-i18n="about.lead"></div>
+  </div>
+
+  <h3 class="section-subtitle" data-i18n="about.areas">Áreas</h3>
+
+  <div class="areas">
+    <a id="area-travel"    class="area" href="#">
+      <img src="assets/img/photos/travel.jpg" alt="">
+      <span data-i18n="about.aTravel">Viagens</span>
+    </a>
+    <a id="area-yoga"      class="area" href="#">
+      <img src="assets/img/photos/yoga.jpg" alt="">
+      <span data-i18n="about.aYoga">Yoga</span>
+    </a>
+    <a id="area-music"     class="area" href="#">
+      <img src="assets/img/photos/music.jpg" alt="">
+      <span data-i18n="about.aMusic">Música</span>
+    </a>
+    <a id="area-languages" class="area" href="#">
+      <img src="assets/img/photos/languages.jpg" alt="">
+      <span data-i18n="about.aLang">Idiomas</span>
+    </a>
+    <a id="area-tech"      class="area" href="#">
+      <img src="assets/img/photos/tech.jpg" alt="">
+      <span data-i18n="about.aTech">Tech</span>
+    </a>
+    <a id="area-medicine"  class="area" href="#">
+      <img src="assets/img/photos/medicine.jpg" alt="">
+      <span data-i18n="about.aMed">Medicina</span>
+    </a>
   </div>
 </section>
 <section class="section">
