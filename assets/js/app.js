@@ -232,3 +232,96 @@ document.addEventListener('DOMContentLoaded', ()=>{
   wireContactIcons();
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 });
+/* ==== i18n – ampliar dicionário com as chaves do herói ==== */
+window.i18n = window.i18n || {};
+
+/* Mescla chaves sem sobrescrever o que você já tem */
+function mergeI18n(extra){ for(const [k,v] of Object.entries(extra)){ i18n[k] = {...(i18n[k]||{}), ...v}; } }
+
+mergeI18n({
+  pt:{
+    "home.hero.title":"Bem-vinda ao meu universo.",
+    "home.hero.lead":"Conhecimento move, tecnologia multiplica — com propósito humano.",
+    "home.hero.cta":"Abrir Projetos"
+  },
+  es:{
+    "home.hero.title":"Bienvenida a mi universo.",
+    "home.hero.lead":"El conocimiento impulsa, la tecnología multiplica — con propósito humano.",
+    "home.hero.cta":"Abrir Proyectos"
+  },
+  en:{
+    "home.hero.title":"Welcome to my universe.",
+    "home.hero.lead":"Knowledge drives, technology multiplies — with human purpose.",
+    "home.hero.cta":"Open Projects"
+  }
+});
+
+/* Frases rotativas por idioma */
+const rotatingPhrases = {
+  pt: [
+    "Aprender é meu superpoder.",
+    "Saúde, música e tecnologia — o meu trio.",
+    "Respira. Cria. Compartilha."
+  ],
+  es: [
+    "Aprender es mi superpoder.",
+    "Salud, música y tecnología — mi trío.",
+    "Respira. Crea. Comparte."
+  ],
+  en: [
+    "Learning is my superpower.",
+    "Health, music and technology — my trio.",
+    "Breathe. Create. Share."
+  ],
+};
+
+/* Atualiza texto por data-i18n (respeita seu sistema atual) */
+function applyI18n(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
+  });
+}
+
+/* Integra com seus botões de idioma (PT/ES/EN) */
+(function hookLang(){
+  const buttons = document.querySelectorAll("[data-lang]");
+  if(!buttons.length) return;
+  buttons.forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const lang = b.getAttribute("data-lang");
+      localStorage.setItem("lang", lang);
+      applyI18n(lang);
+      startRotator(lang);
+    });
+  });
+  const initial = localStorage.getItem("lang") || "pt";
+  applyI18n(initial);
+  startRotator(initial);
+})();
+
+/* Rotator de frases na Home */
+let rotTimer=null, idx=0;
+function startRotator(lang){
+  const box = document.getElementById("hero-rotator");
+  if(!box) return;
+  idx = 0;
+  box.textContent = rotatingPhrases[lang][idx];
+  if(rotTimer) clearInterval(rotTimer);
+  rotTimer = setInterval(()=>{
+    idx = (idx+1) % rotatingPhrases[lang].length;
+    box.classList.add("fadeout");
+    setTimeout(()=>{
+      box.textContent = rotatingPhrases[lang][idx];
+      box.classList.remove("fadeout");
+    }, 180);
+  }, 3800);
+}
+
+/* micro fade (não precisa CSS extra, mas usa a classe) */
+const css = document.createElement('style');
+css.textContent = `
+#hero-rotator{transition:opacity .18s ease}
+#hero-rotator.fadeout{opacity:.08}
+`;
+document.head.appendChild(css);
