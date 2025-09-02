@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- HEADER (igual em todas as páginas) -->
   <header class="site-header">
     <div class="brand" data-i18n="brand">Gabriela Barbosa</div>
     <nav class="nav">
-      <a href="index.html"    id="nav-home"     data-i18n="nav.home"     aria-current="page">Home</a>
+      <a href="index.html"    id="nav-home"     data-i18n="nav.home" aria-current="page">Home</a>
       <a href="about.html"    id="nav-about"    data-i18n="nav.about">About</a>
       <a href="projects.html" id="nav-projects" data-i18n="nav.projects">Projects</a>
       <a href="contact.html"  id="nav-contact"  data-i18n="nav.contact">Contact</a>
@@ -22,49 +23,39 @@
     </div>
   </header>
 
- <main class="container">
-  <section class="section">
-    <h2 class="section-title" data-i18n="about.title">Quem eu sou</h2>
+  <!-- MAIN -->
+  <main class="container">
+    <section class="hero hero--stacked">
+      <!-- Frases de impacto -->
+      <div class="impact">
+        <h1 data-i18n="hero.title">Bem-vinda ao meu universo.</h1>
+        <p class="hero-lead" data-i18n="hero.lead">
+          Conhecimento move, tecnologia multiplica — com propósito humano.
+        </p>
+      </div>
 
-    <!-- Foto redonda, menor -->
-    <div class="about-photo-center">
-      <img class="about-avatar" src="assets/img/photos/about.jpg" alt="Gabriela" data-i18n-alt="about.photoAlt">
-    </div>
+      <!-- Bio curta + foto redonda -->
+      <div class="mini-bio">
+        <img class="avatar-round sm" src="assets/img/photos/about.jpg" alt="Gabriela">
+        <p class="hero-bio" data-i18n="hero.subtitle">
+          Sou Gabriela Barbosa, brasileira, estudante de Medicina e apaixonada por aprender. Busco unir
+          saúde, música e tecnologia. Criei o Universo Laia, um espaço para transformar ideias em projetos
+          e compartilhar meus universos com o mundo.
+        </p>
+      </div>
 
-    <!-- ÁREAS: apenas circulares (removemos o bloco quadrado duplicado) -->
-    <h3 class="section-subtitle" data-i18n="about.areas">Áreas</h3>
-    <div class="circle-grid">
-      <a class="circle" href="cultures.html" id="area-travel">
-        <img src="assets/img/photos/travel.jpg" alt=""><span data-i18n="areas.travel">Travel</span>
-      </a>
-      <a class="circle" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
-        <img src="assets/img/photos/yoga.jpg" alt=""><span data-i18n="areas.yoga">Yoga</span>
-      </a>
-      <a class="circle" href="https://laiamusictesting.netlify.app/" target="_blank" rel="noopener">
-        <img src="assets/img/photos/music.jpg" alt=""><span data-i18n="areas.music">Music</span>
-      </a>
-      <a class="circle" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
-        <img src="assets/img/photos/languages.jpg" alt=""><span data-i18n="areas.languages">Languages</span>
-      </a>
-      <a class="circle" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
-        <img src="assets/img/photos/tech.jpg" alt=""><span data-i18n="areas.tech">Tech</span>
-      </a>
-      <a class="circle" href="medicine.html">
-        <img src="assets/img/photos/medicine.jpg" alt=""><span data-i18n="areas.medicine">Medicine</span>
-      </a>
-    </div>
+      <!-- Frases que mudam -->
+      <p id="hero-rotator">Aprender é meu superpoder.</p>
 
-    <!-- TEXTO longo (usa chaves do app.js) -->
-    <div class="about-text">
-      <p data-i18n="about.p1">…</p>
-      <p data-i18n="about.p2">…</p>
-      <p data-i18n="about.p3">…</p>
-    </div>
-  </section>
-</main>
+      <!-- Botão -->
+      <a class="cta" href="projects.html" data-i18n="hero.cta">Abrir Projetos</a>
+    </section>
+  </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
 
+  <!-- JS -->
   <script src="assets/js/app.js"></script>
 </body>
 </html>
