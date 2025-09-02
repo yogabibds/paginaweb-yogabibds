@@ -1,182 +1,264 @@
+/* =========================================================
+   LAIA — style.css (completo, atualizado)
+   Mantém estrutura existente e aplica o visual “AuraGlow”
+   ========================================================= */
 
-:root{ --bg:#0f1620;--panel:#121a25;--text:#e6ecf3;--muted:#a8b3c3;--ring:#233142;
-  --card:#0f1722;--shadow:0 10px 30px rgba(0,0,0,.35);--b1:#6d6af7;--b2:#19b2cc;}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
-a{text-decoration:none;color:inherit}.container{max-width:1100px;margin:0 auto;padding:24px}
-/* header */
-.site-header{position:sticky;top:0;z-index:20;display:flex;gap:16px;align-items:center;justify-content:space-between;
-  padding:14px 24px;background:rgba(8,12,18,.6);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--ring)}
-.brand{font-weight:800}
-.nav{display:flex;gap:18px;flex-wrap:wrap}
-.lang{display:flex;gap:8px}
-.lang button{border:0;padding:8px 12px;border-radius:12px;cursor:pointer;color:#dfe7ff;
-  background:linear-gradient(145deg, rgba(106,141,255,.25), rgba(30,199,216,.22));
-  box-shadow:0 0 0 1px rgba(255,255,255,.12) inset, 0 6px 18px rgba(0,0,0,.35);font-weight:700;font-size:13px}
-.lang button.active{background:linear-gradient(145deg,var(--b1),var(--b2));color:#041018;box-shadow:0 8px 20px rgba(25,178,204,.35)}
-.lang button:focus{outline:2px solid var(--b2);outline-offset:2px}
-.site-footer{padding:28px 24px;border-top:1px solid var(--ring);opacity:.8}
-.section{margin:28px 0}
-h1{font-size:clamp(28px,4vw,46px);margin:0 0 12px}
-h2{font-size:clamp(24px,3vw,34px);margin:0 0 10px}
-.muted{color:var(--muted)}
-.btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(145deg,var(--b1),var(--b2));color:#041018;font-weight:800}
-/* About */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
-.about-photo{background:#0a111a;border:1px solid #243246;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.35)}
-.fit-cover{width:100%;height:100%;object-fit:cover}
-/* Areas */
-.circle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;margin-top:12px}
-.circle{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-.circle img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:1px solid #263142;box-shadow:0 0 0 6px rgba(255,255,255,.03), 0 1px 0 var(--ring) inset, 0 18px 40px rgba(0,0,0,.35)}
-/* Projects */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.project-card{background:var(--panel);border:1px solid var(--ring);border-radius:18px;padding:16px 16px 18px;text-align:center;box-shadow:0 16px 50px rgba(0,0,0,.35)}
-.logo-circle{width:100px;height:100px;border-radius:50%;margin:6px auto 6px;display:grid;place-items:center;background:#fff;
-  box-shadow:0 0 0 8px rgba(255,255,255,.04), 0 8px 28px rgba(0,0,0,.35)}
-.logo-circle img{max-width:78%;max-height:78%}
-.project-card h3{margin:6px 0 4px}
-.project-card p{font-size:14px;color:var(--muted);min-height:42px}
-/* Contacts */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:10px}
-.contact-pill{display:flex;align-items:center;gap:10px;background:var(--panel);padding:12px 14px;border-radius:50px;
-  box-shadow:0 1px 0 var(--ring) inset, 0 14px 40px rgba(0,0,0,.35)}
-.contact-pill img{width:26px;height:26px;border-radius:6px;object-fit:contain;background:#fff;padding:4px}
-.contact-pill.is-disabled{opacity:.5;pointer-events:none}
-/* Cultures small */
-.cult-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;margin-top:10px}
-.cult-item{display:flex;flex-direction:column;align-items:center;gap:8px}
-.cult-item img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:1px solid #263142;box-shadow:0 0 0 5px rgba(255,255,255,.03), 0 14px 40px rgba(0,0,0,.35)}
-@media (max-width:900px){
-  .about-grid{grid-template-columns:1fr}
-  .circle img{width:140px;height:140px}
-  .logo-circle{width:92px;height:92px}
-}
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+img { max-width: 100%; display:block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
 
-/* ==== AuraGlow – append seguro ==== */
 :root{
-  --glow:#7fe7d0;
-  --bg1:#0b1217;
-  --card:#121a22;
-  --muted:#9fb3c8;
-  --radius:18px;
-}
-.hero {
-  display:grid; grid-template-columns: 1.4fr .9fr; gap:32px;
-  align-items:center; padding:56px 0 24px;
-}
-.hero h1{
-  font-size: clamp(28px, 4vw, 48px); line-height:1.15; margin:0 0 10px;
-  letter-spacing:.2px;
-}
-.hero .glow {
-  position:relative;
-  background: radial-gradient(120px 120px at 30% 40%, var(--glow)/.35, transparent 60%),
-              radial-gradient(220px 220px at 60% 50%, var(--glow)/.18, transparent 70%);
-  border-radius: var(--radius);
-  padding: 28px;
-}
-.hero p{ color:var(--muted); margin:0 0 18px; }
-.hero .cta {
-  display:inline-flex; align-items:center; gap:10px;
-  padding:12px 18px; border-radius:12px;
-  background: linear-gradient(135deg, #6ddcff, #7fe7d0);
-  color:#0b1217; font-weight:700; text-decoration:none; box-shadow:0 6px 24px rgba(127,231,208,.25);
-}
-.hero-photo{
-  width:100%; max-width:360px; aspect-ratio:1/1; border-radius:22px;
-  object-fit:cover; justify-self:end; box-shadow:0 10px 30px rgba(0,0,0,.35);
-}
-@media (max-width:900px){
-  .hero{ grid-template-columns:1fr; }
-  .hero-photo{ justify-self:start; max-width:280px; }
+  --bg: #0e1514;
+  --surface: #111a1a;
+  --card: #121c1c;
+  --text: #eaf7f3;
+  --muted: #a7c5bd;
+  --line: rgba(255,255,255,.08);
+
+  --brand1: #6ddcff;
+  --brand2: #7fe7d0;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  --shadow-1: 0 6px 18px rgba(0,0,0,.25);
+  --shadow-2: 0 10px 30px rgba(0,0,0,.35);
 }
 
-/* About: bolinhas das áreas logo após "Quem sou eu" */
-.area-grid{
-  margin: 26px 0 10px; display:grid;
-  grid-template-columns: repeat(6, minmax(110px,1fr)); gap:24px;
-}
-.area-card{
-  text-align:center; text-decoration:none; color:inherit;
-}
-.area-card .thumb{
-  width:120px; height:120px; border-radius:50%; object-fit:cover;
-  display:block; margin:0 auto 10px; box-shadow:0 4px 18px rgba(0,0,0,.25);
-}
-.area-card span{ font-weight:600; }
+html { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; }
+body { line-height: 1.6; }
 
-/* Sombrinha do seletor de idioma (mantém seu estilo; aqui só reforço luz) */
-.lang-toggle .active{
-  box-shadow:0 0 0 2px rgba(127,231,208,.45) inset, 0 6px 18px rgba(127,231,208,.25);
+/* ---------- Layout ---------- */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.section { padding: 28px 0; }
+.section-title { font-size: clamp(22px, 3vw, 28px); margin: 0 0 10px; }
+.section-subtitle { font-size: clamp(18px, 2.2vw, 22px); margin: 14px 0 8px; opacity:.9; }
+
+/* ---------- Header / Navbar ---------- */
+.site-header{
+  position: sticky; top:0; z-index: 10;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(8,12,12,.75), rgba(8,12,12,.25));
+  border-bottom: 1px solid var(--line);
+}
+.site-header > .brand,
+.site-header > .nav,
+.site-header > .lang{
+  display:inline-flex; align-items:center;
+}
+.site-header{
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 12px 4%;
+}
+.brand{ font-weight: 700; letter-spacing: .2px; }
+
+.nav a{
+  padding: 8px 10px; border-radius: 10px; margin: 0 2px;
+  opacity:.92;
+}
+.nav a[aria-current="page"]{
+  background: rgba(255,255,255,.06); border: 1px solid var(--line);
 }
 
-/* Texto do About – bloco grande mais elegante */
-.about-text{
-  border-top:1px solid rgba(255,255,255,.07);
-  margin-top:24px; padding-top:18px; color:var(--muted);
-  max-width: 80ch;
+.lang button{
+  margin-left:8px; padding: 6px 10px; border-radius: 10px; border:1px solid var(--line);
+  background: rgba(255,255,255,.04); color: var(--text); opacity:.9;
+}
+.lang button.active{
+  box-shadow: 0 0 0 2px rgba(127,231,208,.45) inset, 0 6px 18px rgba(127,231,208,.25);
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color:#06221e; border-color: transparent;
 }
 
-/* ==== AuraGlow Home Hero ==== */
-.hero {
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items:center;
-  padding: 48px 0;
-  position:relative;
+/* ---------- Footer ---------- */
+.site-footer{
+  border-top:1px solid var(--line);
+  padding: 18px 0; text-align:center; opacity:.9; margin-top: 28px;
 }
+
+/* =========================================================
+   HOME — hero com bio + foto redonda
+   (classes usadas no index.html atualizado)
+   ========================================================= */
+.hero{
+  display:grid; grid-template-columns: 1.25fr .75fr;
+  gap: 32px; align-items: center; padding: 48px 0; position: relative;
+}
+.hero .glow{
+  position:relative; border-radius: var(--radius); padding: 2px;
+  background: linear-gradient(135deg, rgba(109,220,255,.25), rgba(127,231,208,.18));
+}
+.hero .glow > *{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 2px);
+  padding: 22px;
+  display:block;
+}
+
 .hero h1{
   font-size: clamp(28px, 4vw, 48px);
-  font-weight:700;
-  margin-bottom:12px;
+  line-height:1.15; margin:0 0 8px; letter-spacing:.15px;
 }
-.hero p{
-  margin:0 0 14px;
-  color: var(--muted, #a7c5bd);
+.hero-lead{ color: var(--muted); margin:0 0 10px; }
+.hero-bio{ color: var(--muted); max-width: 62ch; margin: 0 0 12px; }
+
+#hero-rotator { transition: opacity .18s ease; }
+#hero-rotator.fadeout { opacity:.08; }
+
+.hero .cta{
+  display:inline-block; padding:12px 18px; border-radius: 12px; font-weight:700;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color:#0b1217; text-decoration:none; box-shadow: var(--shadow-1);
 }
-.hero .cta {
-  display:inline-block;
-  padding:12px 20px;
-  border-radius:12px;
-  background: linear-gradient(135deg,#6ddcff,#7fe7d0);
-  color:#0b1217;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(127,231,208,.25);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.hero .cta:hover{
-  transform: translateY(-2px);
-  box-shadow:0 10px 28px rgba(127,231,208,.35);
+.hero .cta:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(127,231,208,.35); }
+
+.hero-media{ display:flex; justify-content:center; align-items:center; }
+.avatar-round{
+  width:min(280px, 38vw); aspect-ratio:1/1; border-radius:50%; object-fit:cover;
+  box-shadow: var(--shadow-2);
 }
 
-/* Glow de fundo */
-.glow::after{
-  content:"";
-  position:absolute;
-  top:-10%; left:-10%; right:-10%; bottom:-10%;
-  background: radial-gradient(circle at 40% 40%, rgba(127,231,208,.25), transparent 60%);
-  filter: blur(60px);
-  z-index:-1;
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; }
+  .avatar-round{ width: 200px; }
 }
 
-/* Foto lateral */
-.hero-photo{
-  width:100%;
-  max-width:320px;
-  aspect-ratio:1/1;
-  border-radius:22px;
-  object-fit:cover;
-  justify-self:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.35);
+/* =========================================================
+   ABOUT — foto redonda + grid de círculos + texto
+   (classes usadas no about.html atualizado)
+   ========================================================= */
+.about-photo-center{ display:flex; justify-content:center; }
+.about-avatar{
+  width: 200px; aspect-ratio:1/1; border-radius:50%; object-fit:cover;
+  box-shadow: var(--shadow-1); margin: 8px 0 18px;
 }
 
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;}
-  .hero-photo{max-width:240px;}
+.about-text{
+  border-top: 1px solid var(--line);
+  margin-top: 18px; padding-top: 16px; color: var(--muted);
+  max-width: 85ch;
 }
 
-/* Fade usado no rotator */
-#hero-rotator{transition:opacity .18s ease}
-#hero-rotator.fadeout{opacity:.08}
+/* Círculos reutilizáveis */
+.circle-grid{
+  display:grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 10px 0 22px;
+}
+.circle{
+  display:flex; flex-direction:column; align-items:center; text-decoration:none;
+}
+.circle img{
+  width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+  box-shadow: var(--shadow-1); transition: transform .15s ease;
+  background: #fff; /* fundo neutro caso a foto tenha PNG com transparência */
+}
+.circle span{ margin-top: 8px; font-weight: 600; }
+.circle:hover img{ transform: translateY(-2px); }
+
+@media (max-width:560px){
+  .circle-grid{ grid-template-columns: repeat(2, 1fr); }
+  .circle img{ width:120px; height:120px; }
+}
+
+/* =========================================================
+   PROJECTS — cards com círculo/logotipo + descrição
+   (funciona para logos PNG com transparência)
+   ========================================================= */
+.projects-header { margin-bottom: 10px; }
+
+.project-grid{
+  display:grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.project-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 14px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+}
+
+.project-circle{
+  width: 120px; height: 120px; border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  background: #fff;          /* fundo branco para destacar logos escuros */
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  margin-bottom: 10px; overflow:hidden;
+}
+.project-circle img{ width: 80%; height: 80%; object-fit: contain; }
+
+.project-title{ font-weight:700; margin: 2px 0 6px; }
+.project-desc{ color: var(--muted); font-size: .95rem; min-height: 44px; }
+
+.project-actions{ margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+.project-actions .button{
+  padding:8px 12px; border-radius: 10px; font-weight:600;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color:#0b1217; box-shadow: var(--shadow-1);
+}
+
+/* Cards menores no mobile */
+@media (max-width:560px){
+  .project-circle{ width:100px; height:100px; }
+}
+
+/* =========================================================
+   CONTACT — ícones redondos
+   (mantém suas classes originais e melhora o visual)
+   ========================================================= */
+.contact-hero{ margin-top: 8px; }
+.contact-note{ opacity:.78; font-size:.95rem; margin-bottom:12px; }
+
+.icon-grid{ display:flex; gap:1rem; flex-wrap:wrap; align-items:center }
+.icon-col{ display:flex; flex-direction:column; align-items:center; width:82px }
+
+.icon-btn{
+  width:64px; height:64px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background: linear-gradient(135deg, #242b3a, #1a1f2b);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  font-size:28px; color:#e6ecff; text-decoration:none;
+}
+.icon-btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+.icon-caption{ font-size:.9rem; opacity:.85; text-align:center; margin-top:.5rem }
+
+/* Se tiver SVG nos ícones, ajuda a equalizar tamanho */
+.icon-btn svg{ width:28px; height:28px; display:block; }
+
+/* =========================================================
+   Utilidades & pequenos detalhes
+   ========================================================= */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px; box-shadow: var(--shadow-1);
+}
+.small { font-size: .92rem; opacity:.85; }
+
+/* Links com foco visível */
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--brand2);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Tabelas (se você usar em alguma página) */
+table{ width:100%; border-collapse: collapse; }
+th, td{ padding:10px; border-bottom:1px solid var(--line); text-align:left; }
+thead th{ font-weight:700; }
+
+/* =========================================================
+   Fim
+   ========================================================= */
