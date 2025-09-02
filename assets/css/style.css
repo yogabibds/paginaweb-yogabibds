@@ -259,6 +259,72 @@ table{ width:100%; border-collapse: collapse; }
 th, td{ padding:10px; border-bottom:1px solid var(--line); text-align:left; }
 thead th{ font-weight:700; }
 
+/* ====== HOME: layout 2 colunas + rotator + CTA ====== */
+.hero.hero--split{
+  display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center; padding:44px 0 24px;
+}
+.impact h1{ font-size:clamp(28px,4vw,48px); margin:0 0 6px; text-align:center; }
+.hero-lead{ color:var(--muted,#a7c5bd); margin:0; text-align:center; }
+
+.mini-bio.center{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.mini-title{ margin:0 0 8px; opacity:.9; }
+.avatar-round.sm{
+  width:140px; height:140px; border-radius:50%; object-fit:cover; box-shadow:0 8px 22px rgba(0,0,0,.28);
+}
+.hero-bio{ max-width:60ch; color:var(--muted,#a7c5bd); margin:10px 0 0; }
+.rotator-center{ text-align:center; margin:10px 0 0; transition:opacity .18s ease; }
+.rotator-center.fadeout{ opacity:.08; }
+.cta-wrap{ display:flex; justify-content:center; margin-top:10px; }
+.cta{ display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700;
+  background:linear-gradient(135deg,#6ddcff,#7fe7d0); color:#0b1217; text-decoration:none;
+  box-shadow:0 6px 18px rgba(127,231,208,.25);
+}
+.cta:hover{ transform:translateY(-1px); box-shadow:0 10px 28px rgba(127,231,208,.35); }
+
+@media(max-width:900px){
+  .hero.hero--split{ grid-template-columns:1fr; }
+}
+
+/* ====== ABOUT: foto + texto lado a lado, centrado ====== */
+.about-split .center{text-align:center;}
+.about-two{ display:grid; grid-template-columns: 280px 1fr; gap:24px; align-items:center; justify-content:center; }
+.about-avatar.lg{
+  width:220px; height:220px; border-radius:50%; object-fit:cover; box-shadow:0 10px 26px rgba(0,0,0,.3);
+  justify-self:center;
+}
+.about-text{ color:var(--muted,#a7c5bd); max-width:70ch; justify-self:center; }
+@media(max-width:900px){ .about-two{ grid-template-columns:1fr; } .about-avatar.lg{ width:200px; height:200px; } }
+
+/* ====== Áreas: círculos menores e centralizados ====== */
+.circle-grid.center{ justify-items:center; }
+.circle-grid.small .circle img{ width:120px; height:120px; }
+.circle-grid.small .circle span{ font-size:.95rem; }
+
+/* ====== Projects: cards menores ====== */
+.project-grid{ grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.project-circle{ width:100px; height:100px; }
+.project-circle img{ width:78%; height:78%; }
+.project-title{ font-size:1rem; }
+.project-desc{ font-size:.9rem; min-height:40px; }
+
+/* ====== Buttons (sombreamento global) ====== */
+.nav a,
+.button,
+.cta,
+.project-actions .button,
+.lang button{
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+.nav a[aria-current="page"]{
+  box-shadow:0 6px 18px rgba(0,0,0,.22) inset;
+}
+
+/* ====== Contact: ícones menores ====== */
+.icon-btn{ width:56px; height:56px; }
+.icon-col{ width:74px; }
+.icon-btn svg, .icon-btn span{ transform:scale(.9); }
+
+
 /* =========================================================
    Fim
    ========================================================= */
