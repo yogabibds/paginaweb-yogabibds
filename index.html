@@ -24,33 +24,37 @@
   </header>
 
   <!-- MAIN -->
-  <main class="container">
-    <section class="hero hero--stacked">
-      <!-- Frases de impacto -->
-      <div class="impact">
-        <h1 data-i18n="hero.title">Bem-vinda ao meu universo.</h1>
-        <p class="hero-lead" data-i18n="hero.lead">
-          Conhecimento move, tecnologia multiplica — com propósito humano.
-        </p>
-      </div>
+<main class="container">
+  <!-- HERO 2 colunas: esquerda (impacto) / direita (quem sou eu) -->
+  <section class="hero hero--split">
+    <!-- ESQUERDA: título de impacto -->
+    <div class="impact">
+      <h1 data-i18n="hero.title">Bem-vinda ao meu universo.</h1>
+      <p class="hero-lead" data-i18n="hero.lead">
+        Conhecimento move, tecnologia multiplica — com propósito humano.
+      </p>
+    </div>
 
-      <!-- Bio curta + foto redonda -->
-      <div class="mini-bio">
-        <img class="avatar-round sm" src="assets/img/photos/about.jpg" alt="Gabriela">
-        <p class="hero-bio" data-i18n="hero.subtitle">
-          Sou Gabriela Barbosa, brasileira, estudante de Medicina e apaixonada por aprender. Busco unir
-          saúde, música e tecnologia. Criei o Universo Laia, um espaço para transformar ideias em projetos
-          e compartilhar meus universos com o mundo.
-        </p>
-      </div>
+    <!-- DIREITA: Quem sou eu curto + foto redonda -->
+    <div class="mini-bio center">
+      <h3 class="mini-title" data-i18n="about.title">Quem eu sou</h3>
+      <img class="avatar-round sm" src="assets/img/photos/about.jpg" alt="Gabriela">
+      <p class="hero-bio" data-i18n="hero.subtitle">
+        Sou Gabriela Barbosa, brasileira, estudante de Medicina e apaixonada por aprender. Busco unir
+        saúde, música e tecnologia. Criei o Universo Laia, um espaço para transformar ideias em projetos
+        e compartilhar meus universos com o mundo.
+      </p>
+    </div>
+  </section>
 
-      <!-- Frases que mudam -->
-      <p id="hero-rotator">Aprender é meu superpoder.</p>
+  <!-- Frases rotativas abaixo da apresentação -->
+  <p id="hero-rotator" class="rotator-center">Aprender é meu superpoder.</p>
 
-      <!-- Botão -->
-      <a class="cta" href="projects.html" data-i18n="hero.cta">Abrir Projetos</a>
-    </section>
-  </main>
+  <!-- CTA centralizada -->
+  <div class="cta-wrap">
+    <a class="cta" href="projects.html" data-i18n="hero.cta">Abrir Projetos</a>
+  </div>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
