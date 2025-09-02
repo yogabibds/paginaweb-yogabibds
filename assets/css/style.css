@@ -116,3 +116,67 @@ h2{font-size:clamp(24px,3vw,34px);margin:0 0 10px}
   margin-top:24px; padding-top:18px; color:var(--muted);
   max-width: 80ch;
 }
+
+/* ==== AuraGlow Home Hero ==== */
+.hero {
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items:center;
+  padding: 48px 0;
+  position:relative;
+}
+.hero h1{
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight:700;
+  margin-bottom:12px;
+}
+.hero p{
+  margin:0 0 14px;
+  color: var(--muted, #a7c5bd);
+}
+.hero .cta {
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:12px;
+  background: linear-gradient(135deg,#6ddcff,#7fe7d0);
+  color:#0b1217;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(127,231,208,.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hero .cta:hover{
+  transform: translateY(-2px);
+  box-shadow:0 10px 28px rgba(127,231,208,.35);
+}
+
+/* Glow de fundo */
+.glow::after{
+  content:"";
+  position:absolute;
+  top:-10%; left:-10%; right:-10%; bottom:-10%;
+  background: radial-gradient(circle at 40% 40%, rgba(127,231,208,.25), transparent 60%);
+  filter: blur(60px);
+  z-index:-1;
+}
+
+/* Foto lateral */
+.hero-photo{
+  width:100%;
+  max-width:320px;
+  aspect-ratio:1/1;
+  border-radius:22px;
+  object-fit:cover;
+  justify-self:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-photo{max-width:240px;}
+}
+
+/* Fade usado no rotator */
+#hero-rotator{transition:opacity .18s ease}
+#hero-rotator.fadeout{opacity:.08}
