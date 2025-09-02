@@ -13,17 +13,22 @@
   <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
 </header>
 <main class="container">
-  <section class="section">
-    <h2 class="section-title" data-i18n="about.title">Quem eu sou</h2>
+  <section class="section about-split">
+    <h2 class="section-title center" data-i18n="about.title">Quem eu sou</h2>
 
-    <!-- Foto redonda, menor -->
-    <div class="about-photo-center">
-      <img class="about-avatar" src="assets/img/photos/about.jpg" alt="Gabriela" data-i18n-alt="about.photoAlt">
+    <!-- Foto e texto lado a lado, centralizados -->
+    <div class="about-two">
+      <img class="about-avatar lg" src="assets/img/photos/about.jpg" alt="Gabriela" data-i18n-alt="about.photoAlt">
+      <div class="about-text">
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <p data-i18n="about.p3"></p>
+      </div>
     </div>
 
-    <!-- ÁREAS: apenas circulares (removemos o bloco quadrado duplicado) -->
-    <h3 class="section-subtitle" data-i18n="about.areas">Áreas</h3>
-    <div class="circle-grid">
+    <!-- Áreas: somente círculos pequenos -->
+    <h3 class="section-subtitle center" data-i18n="about.areas">Áreas</h3>
+    <div class="circle-grid small center">
       <a class="circle" href="cultures.html" id="area-travel">
         <img src="assets/img/photos/travel.jpg" alt=""><span data-i18n="areas.travel">Travel</span>
       </a>
@@ -42,13 +47,6 @@
       <a class="circle" href="medicine.html">
         <img src="assets/img/photos/medicine.jpg" alt=""><span data-i18n="areas.medicine">Medicine</span>
       </a>
-    </div>
-
-    <!-- TEXTO longo (usa chaves do app.js) -->
-    <div class="about-text">
-      <p data-i18n="about.p1">…</p>
-      <p data-i18n="about.p2">…</p>
-      <p data-i18n="about.p3">…</p>
     </div>
   </section>
 </main>
