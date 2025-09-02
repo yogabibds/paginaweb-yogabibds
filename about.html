@@ -13,60 +13,45 @@
   <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
 </header>
 <main class="container">
-<section class="section">
-  <h2 class="section-title" data-i18n="about.title">Quem eu sou</h2>
+  <section class="section">
+    <h2 class="section-title" data-i18n="about.title">Quem eu sou</h2>
 
-  <div class="about-grid">
-    <figure class="about-photo">
-      <img src="assets/img/photos/about.jpg"
-           alt="Gabriela"
-           data-i18n-alt="about.photoAlt" />
-      <figcaption>Gabriela</figcaption>
-    </figure>
+    <!-- Foto redonda, menor -->
+    <div class="about-photo-center">
+      <img class="about-avatar" src="assets/img/photos/about.jpg" alt="Gabriela" data-i18n-alt="about.photoAlt">
+    </div>
 
-    <!-- IMPORTANTE: nada de texto fixo aqui; deixa o JS preencher -->
-    <div class="about-text" data-i18n="about.lead"></div>
-  </div>
+    <!-- ÁREAS: apenas circulares (removemos o bloco quadrado duplicado) -->
+    <h3 class="section-subtitle" data-i18n="about.areas">Áreas</h3>
+    <div class="circle-grid">
+      <a class="circle" href="cultures.html" id="area-travel">
+        <img src="assets/img/photos/travel.jpg" alt=""><span data-i18n="areas.travel">Travel</span>
+      </a>
+      <a class="circle" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
+        <img src="assets/img/photos/yoga.jpg" alt=""><span data-i18n="areas.yoga">Yoga</span>
+      </a>
+      <a class="circle" href="https://laiamusictesting.netlify.app/" target="_blank" rel="noopener">
+        <img src="assets/img/photos/music.jpg" alt=""><span data-i18n="areas.music">Music</span>
+      </a>
+      <a class="circle" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
+        <img src="assets/img/photos/languages.jpg" alt=""><span data-i18n="areas.languages">Languages</span>
+      </a>
+      <a class="circle" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
+        <img src="assets/img/photos/tech.jpg" alt=""><span data-i18n="areas.tech">Tech</span>
+      </a>
+      <a class="circle" href="medicine.html">
+        <img src="assets/img/photos/medicine.jpg" alt=""><span data-i18n="areas.medicine">Medicine</span>
+      </a>
+    </div>
 
-  <h3 class="section-subtitle" data-i18n="about.areas">Áreas</h3>
+    <!-- TEXTO longo (usa chaves do app.js) -->
+    <div class="about-text">
+      <p data-i18n="about.p1">…</p>
+      <p data-i18n="about.p2">…</p>
+      <p data-i18n="about.p3">…</p>
+    </div>
+  </section>
+</main>
 
-  <div class="areas">
-    <a id="area-travel"    class="area" href="#">
-      <img src="assets/img/photos/travel.jpg" alt="">
-      <span data-i18n="about.aTravel">Viagens</span>
-    </a>
-    <a id="area-yoga"      class="area" href="#">
-      <img src="assets/img/photos/yoga.jpg" alt="">
-      <span data-i18n="about.aYoga">Yoga</span>
-    </a>
-    <a id="area-music"     class="area" href="#">
-      <img src="assets/img/photos/music.jpg" alt="">
-      <span data-i18n="about.aMusic">Música</span>
-    </a>
-    <a id="area-languages" class="area" href="#">
-      <img src="assets/img/photos/languages.jpg" alt="">
-      <span data-i18n="about.aLang">Idiomas</span>
-    </a>
-    <a id="area-tech"      class="area" href="#">
-      <img src="assets/img/photos/tech.jpg" alt="">
-      <span data-i18n="about.aTech">Tech</span>
-    </a>
-    <a id="area-medicine"  class="area" href="#">
-      <img src="assets/img/photos/medicine.jpg" alt="">
-      <span data-i18n="about.aMed">Medicina</span>
-    </a>
-  </div>
-</section>
-<section class="section">
-  <h2 data-i18n="about.areas">Areas</h2>
-  <div class="circle-grid">
-    <a class="circle" id="area-travel" href="cultures.html"><img src="assets/img/photos/travel.jpg" alt=""><span data-i18n="areas.travel">Travel</span></a>
-    <a class="circle" href="https://laiamind.netlify.app/" target="_blank" rel="noopener"><img src="assets/img/photos/yoga.jpg" alt=""><span data-i18n="areas.yoga">Yoga</span></a>
-    <a class="circle" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener"><img src="assets/img/photos/music.jpg" alt=""><span data-i18n="areas.music">Music</span></a>
-    <a class="circle" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener"><img src="assets/img/photos/languages.jpg" alt=""><span data-i18n="areas.languages">Languages</span></a>
-    <a class="circle" href="https://laiatech.netlify.app/" target="_blank" rel="noopener"><img src="assets/img/photos/tech.jpg" alt=""><span data-i18n="areas.tech">Tech</span></a>
-    <a class="circle" href="medicine.html"><img src="assets/img/photos/medicine.jpg" alt=""><span data-i18n="areas.medicine">Medicine</span></a>
-  </div>
-</section>
-</main><footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
+<footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
 <script src="assets/js/app.js"></script></body></html>
