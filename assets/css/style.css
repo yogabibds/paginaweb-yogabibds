@@ -324,7 +324,60 @@ thead th{ font-weight:700; }
 .icon-col{ width:74px; }
 .icon-btn svg, .icon-btn span{ transform:scale(.9); }
 
+/* ===== Aura background global (ativa com <body class="aura">) ===== */
+body.aura{
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(127,231,208,.16), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(109,220,255,.12), transparent 60%),
+    var(--bg,#0e1514);
+}
 
+/* ===== Project cards menores e mais consistentes ===== */
+.project-grid.project-grid--compact{
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+.project-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line, rgba(255,255,255,.08));
+  border-radius: var(--radius,18px);
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.22);
+}
+.project-circle{
+  width: 96px; height: 96px; border-radius: 50%;
+  margin: 4px auto 8px;
+  display:flex; align-items:center; justify-content:center;
+  background: #fff; border:1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  overflow: hidden;
+}
+.project-circle img{ width: 78%; height: 78%; object-fit: contain; }
+.project-title{ font-weight:700; margin: 2px 0 4px; font-size: 1rem; }
+.project-desc{ color: var(--muted,#a7c5bd); font-size: .92rem; min-height: 38px; }
+
+/* ===== Botão com efeito Aura (brilho + sheen) ===== */
+.button.btn-aura{
+  display:inline-block; padding: 8px 12px; border-radius: 12px; font-weight: 700;
+  background: linear-gradient(135deg, #6ddcff, #7fe7d0);
+  color:#0b1217; text-decoration:none;
+  box-shadow: 0 6px 18px rgba(127,231,208,.25), inset 0 0 0 1px rgba(255,255,255,.35);
+  position: relative; overflow: hidden;
+}
+.button.btn-aura::after{
+  content:""; position:absolute; top:0; left:-120%;
+  width:120%; height:100%;
+  background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,.3) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  transition: left .6s ease;
+}
+.button.btn-aura:hover::after{ left:120%; }
+.button.btn-aura:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(127,231,208,.35); }
+
+/* ===== Ícones de contato menores (se quiser padronizar) ===== */
+.icon-btn{ width:56px; height:56px; }
+.icon-col{ width:74px; }
 
 
 
