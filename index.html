@@ -1,38 +1,181 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Gabriela Barbosa — Universo Laia</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Universo Laia — Gabriela Barbosa</title>
+  <meta name="description" content="Universo Laia: saúde, música, tecnologia, educação e bem-estar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN for quick deploy -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0e0f12',
+            fg: '#e8eaf2',
+            muted: '#aab0c0',
+            card: '#141622',
+            stroke: '#23263a',
+            brand: '#79ffe1',
+            brand2: '#a78bfa'
+          },
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html,body{background:#0e0f12;color:#e8eaf2;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    .shadow-card{box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    .glass{background:rgba(14,15,18,.8);backdrop-filter:saturate(180%) blur(8px)}
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="brand" data-i18n="brand">Gabriela Barbosa</div>
-    <nav class="nav">
-      <a href="index.html" id="nav-home" data-i18n="nav.home">Home</a>
-      <a href="about.html" id="nav-about" data-i18n="nav.about">About</a>
-      <a href="projects.html" id="nav-projects" data-i18n="nav.projects">Projects</a>
-      <a href="contact.html" id="nav-contact" data-i18n="nav.contact">Contact</a>
-    </nav>
-    <div class="lang">
-      <button data-lang="pt">PT</button>
-      <button data-lang="es">ES</button>
-      <button data-lang="en">EN</button>
+<body class="antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass border-b border-stroke">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-extrabold tracking-tight">Universo Laia</a>
+      <nav class="hidden md:flex gap-2 text-sm">
+        <a class="px-3 py-2 rounded-lg hover:bg-card" href="#home" data-i18n="nav.home">Home</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-card" href="#about" data-i18n="nav.about">Sobre</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-card" href="#projects" data-i18n="nav.projects">Projetos</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-card" href="#cultures" data-i18n="nav.cultures">Culturas</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-card" href="#documents" data-i18n="nav.documents">Documentos</a>
+        <a class="px-3 py-2 rounded-lg hover:bg-card" href="#contact" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="flex gap-2">
+        <button class="lang-btn px-3 py-1.5 rounded-lg border border-stroke bg-card" data-lang="pt">PT</button>
+        <button class="lang-btn px-3 py-1.5 rounded-lg border border-stroke bg-card" data-lang="es">ES</button>
+        <button class="lang-btn px-3 py-1.5 rounded-lg border border-stroke bg-card" data-lang="en">EN</button>
+      </div>
     </div>
   </header>
 
-  <main class="hero">
-    <h1 data-i18n="home.hero.title">Bem-vinda ao meu universo.</h1>
-    <div id="hero-rotator"></div>
-    <section class="intro">
-      <img src="assets/img/about.jpg" class="avatar" alt="Gabriela" data-i18n-alt="about.photoAlt"/>
-      <p data-i18n="home.hero.subtitle">Sou Gabriela Barbosa, estudante de Medicina e apaixonada por aprender...</p>
+  <main class="max-w-6xl mx-auto px-4">
+    <!-- HERO -->
+    <section id="home" class="py-16 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold" data-i18n="hero.title">Bem-vindo ao meu universo</h1>
+        <p class="text-muted mt-3" data-i18n="hero.tagline">Saúde, música e tecnologia</p>
+        <p class="mt-1 font-semibold" data-i18n="hero.sub">Aprender é meu superpoder</p>
+        <p class="opacity-90" data-i18n="hero.mantra">Respira, cria e compartilha</p>
+        <a href="#projects" class="inline-block mt-5 px-5 py-3 rounded-xl font-bold text-black"
+           style="background:linear-gradient(135deg,#79ffe1,#a78bfa)" data-i18n="hero.cta">Meus projetos</a>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <img src="assets/img/photos/about.jpg" alt="Gabriela Barbosa" class="w-56 h-56 rounded-full object-cover border-4 border-stroke shadow-card">
+      </div>
     </section>
-    <p><a class="button aura" href="projects.html" data-i18n="home.hero.cta">Abrir Projetos</a></p>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <img src="assets/img/photos/about.jpg" alt="Foto de Gabriela" class="rounded-2xl border border-stroke">
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold mb-2" data-i18n="about.title">Quem sou eu</h2>
+        <p class="text-muted" data-i18n="about.body">
+          Sou Gabriela Barbosa, estudante de Medicina, apaixonada por aprender e construir pontes entre saúde, música, educação e tecnologia.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16">
+      <h2 class="text-2xl font-bold mb-6" data-i18n="projects.title">Meus projetos</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card"
+           href="https://laiamusic.netlify.app/" target="_blank" rel="noopener">
+          <img src="assets/img/laia-music.png" alt="Laia Music" class="h-20 object-contain">
+          <h3 class="font-semibold">Laia Music</h3>
+        </a>
+        <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card"
+           href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
+          <img src="assets/img/laia-mind.png" alt="Laia Mind" class="h-20 object-contain">
+          <h3 class="font-semibold">Laia Mind</h3>
+        </a>
+        <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card"
+           href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
+          <img src="assets/img/laia-academy.png" alt="Laia Academy" class="h-20 object-contain">
+          <h3 class="font-semibold">Laia Academy</h3>
+        </a>
+        <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card"
+           href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
+          <img src="assets/img/laia-tech.png" alt="Laia Tech" class="h-20 object-contain">
+          <h3 class="font-semibold">Laia Tech</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- CULTURES -->
+    <section id="cultures" class="py-16">
+      <h2 class="text-2xl font-bold" data-i18n="cultures.title">Culturas que me transformaram</h2>
+      <p class="text-muted mb-4" data-i18n="cultures.subtitle">Explore meus destaques do Instagram</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="Panamá"><span>Panamá</span>
+        </a>
+        <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="Córdoba"><span>Córdoba</span>
+        </a>
+        <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="Rosario/UNR"><span>Rosario • UNR</span>
+        </a>
+        <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="Bahia"><span>Bahia</span>
+        </a>
+        <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="São Paulo"><span>São Paulo</span>
+        </a>
+        <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="Curaçao"><span>Curaçao</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section id="documents" class="py-16">
+      <h2 class="text-2xl font-bold mb-4" data-i18n="documents.title">Documentos e Referências</h2>
+      <ul class="list-disc pl-6 space-y-1 opacity-95">
+        <li><span data-i18n="documents.cv_es">CV em Espanhol</span></li>
+        <li><span data-i18n="documents.founder">Founder Laia Consultoria</span></li>
+        <li><span data-i18n="documents.branding">Branding Marca Pessoal</span></li>
+        <li><span data-i18n="documents.socials">Redes Sociais</span></li>
+        <li><span data-i18n="documents.webpdf">Mi Página Web.pdf</span></li>
+        <li><span data-i18n="documents.dossier">Dossiê atualizado</span></li>
+        <li><span data-i18n="documents.future">Futuro: DOIs de artigos acadêmicos</span></li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+      <h2 class="text-2xl font-bold mb-4" data-i18n="contact.title">Contato</h2>
+      <div class="grid md:grid-cols-2 gap-3">
+        <a class="bg-card border border-stroke rounded-xl px-4 py-3 flex items-center gap-3" href="mailto:gabibds@icloud.com">
+          <img src="assets/img/icons/email.png" alt="Email" class="w-5 h-5"><span>gabibds@icloud.com</span>
+        </a>
+        <a class="bg-card border border-stroke rounded-xl px-4 py-3 flex items-center gap-3" href="https://instagram.com/yogabibds" target="_blank" rel="noopener">
+          <img src="assets/img/icons/instagram.png" alt="Instagram" class="w-5 h-5"><span>@yogabibds</span>
+        </a>
+        <a class="bg-card border border-stroke rounded-xl px-4 py-3 flex items-center gap-3" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank" rel="noopener">
+          <span class="font-bold">in</span><span>LinkedIn</span>
+        </a>
+        <a class="bg-card border border-stroke rounded-xl px-4 py-3 flex items-center gap-3" href="https://github.com/yogabibds" target="_blank" rel="noopener">
+          <img src="assets/img/icons/github.png" alt="GitHub" class="w-5 h-5"><span>github.com/yogabibds</span>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
-  <script src="assets/js/app.js"></script>
+  <footer class="border-t border-stroke text-muted text-center py-6">
+    <p>&copy; <span id="year"></span> Universo Laia. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
