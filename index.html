@@ -21,14 +21,13 @@
     html,body{background:#0e0f12;color:#e8eaf2;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
     .glass{background:rgba(14,15,18,.8);backdrop-filter:saturate(180%) blur(8px)}
     .shadow-card{box-shadow:0 10px 24px rgba(0,0,0,.35)}
-    .flip { display:inline-block; min-width: 12ch; overflow:hidden; height:1.5em; vertical-align:bottom; }
-    .flip span { display:inline-block; }
-    .flip .stack { display:inline-flex; flex-direction:column; animation: slide 9s infinite; }
+    .flip { display:inline-block; min-width: 14ch; overflow:hidden; height:1.6em; vertical-align:bottom; }
+    .flip .stack { display:inline-flex; flex-direction:column; animation: slide 12s infinite; }
     @keyframes slide {
-      0%{transform:translateY(0%)} 28%{transform:translateY(0%)}
-      33%{transform:translateY(-100%)} 61%{transform:translateY(-100%)}
-      66%{transform:translateY(-200%)} 94%{transform:translateY(-200%)}
-      100%{transform:translateY(-300%)}
+      0%{transform:translateY(0%)} 22%{transform:translateY(0%)}
+      28%{transform:translateY(-100%)} 50%{transform:translateY(-100%)}
+      56%{transform:translateY(-200%)} 78%{transform:translateY(-200%)}
+      84%{transform:translateY(-300%)} 100%{transform:translateY(-300%)}
     }
   </style>
 </head>
@@ -52,15 +51,14 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-4">
+    <!-- HERO -->
     <section id="home" class="py-20">
       <div class="max-w-3xl mx-auto text-center">
         <div class="flex items-center justify-center gap-4 mb-4">
           <img src="assets/img/icons/universe.png" alt="Universo Laia" class="w-16 h-16 rounded-full object-cover border-2 border-stroke bg-card p-2">
           <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight" data-i18n="hero.title">Bem-vindo ao meu universo</h1>
         </div>
-        <p class="text-muted mt-3 text-lg">
-          <span class="flip"><span class="stack" id="flip"></span></span>
-        </p>
+        <p class="text-muted mt-3 text-lg"><span class="flip"><span class="stack" id="flip"></span></span></p>
         <p class="mt-1 font-semibold text-lg" data-i18n="hero.sub">Aprender é meu superpoder</p>
         <p class="opacity-90" data-i18n="hero.mantra">Respira, cria e compartilha</p>
         <a href="#projects" class="inline-block mt-6 px-6 py-3 rounded-xl font-bold text-black"
@@ -68,74 +66,83 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="py-20">
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <div class="flex justify-center md:justify-start">
+      <h2 class="text-3xl font-bold mb-10 text-center" data-i18n="about.title">Quem sou eu</h2>
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="flex justify-center">
           <img src="assets/img/photos/about.jpg" alt="Foto de Gabriela" class="w-56 h-56 rounded-full object-cover border-2 border-stroke shadow-card">
         </div>
-        <div>
-          <h2 class="text-3xl font-bold mb-4" data-i18n="about.title">Quem sou eu</h2>
-          <p class="text-muted mb-6" data-i18n="about.body">Sou Gabriela Barbosa, estudante de Medicina avançada, apaixonada por aprender e construir pontes entre saúde, música, educação e tecnologia.</p>
+        <div class="text-center md:text-left">
+          <p class="text-muted mb-6" data-i18n="about.body">
+            Sou Gabriela Barbosa, brasileira vivendo na Argentina. Trabalho há anos com tecnologia e hoje uno saúde, música, educação e inteligência artificial para resolver problemas reais. Atuo como estrategista criativa, gerente de projetos e desenvolvedora de experiências digitais. Aqui você encontra minhas frentes: divulgação do legado musical do meu pai, programas de meditação, cursos de idiomas e consultoria técnica.
+          </p>
           <div class="bg-card border border-stroke rounded-xl p-5 mb-5">
             <h3 class="font-semibold mb-1" data-i18n="about.med.title">Formação em Medicina — UNR</h3>
             <p class="text-sm text-muted" data-i18n="about.med.body">Universidade Nacional de Rosario (UNR). Rotações, projetos e dossiês acadêmicos.</p>
-            <div class="flex flex-wrap gap-2 mt-3">
+            <div class="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
               <a href="assets/docs/CV-PT.pdf" target="_blank" rel="noopener" class="px-3 py-2 border border-stroke rounded-lg hover:bg-card text-sm">Ver CV (PT)</a>
               <a href="assets/docs/CV-ES.pdf" target="_blank" rel="noopener" class="px-3 py-2 border border-stroke rounded-lg hover:bg-card text-sm">Ver CV (ES)</a>
               <a href="assets/docs/CV-EN.pdf" target="_blank" rel="noopener" class="px-3 py-2 border border-stroke rounded-lg hover:bg-card text-sm">View CV (EN)</a>
             </div>
           </div>
-          <div class="bg-card border border-stroke rounded-xl p-5">
-            <h3 class="font-semibold mb-3" id="publicacoes" data-i18n="about.pub.title">Publicações Acadêmicas</h3>
-            <div class="space-y-4 text-sm">
-              <div>
-                <h4 class="font-semibold" data-i18n="pub.t1">1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral</h4>
-                <p class="opacity-80"><span data-i18n="pub.r1">International Journal of Health Science (2024)</span> — DOI: <a class="underline" target="_blank" rel="noopener" href="https://doi.org/10.22533/at.ed.1594672409077">10.22533/at.ed.1594672409077</a></p>
-                <p class="mt-1" data-i18n="pub.d1">Exames (TC/RM), biomarcadores, terapia cirúrgica/UTI e prognóstico.</p>
-                <a href="assets/docs/tbi-avancos-2024.pdf" target="_blank" rel="noopener" class="inline-block mt-2 px-3 py-1.5 border border-stroke rounded-lg text-xs hover:bg-card" data-i18n="pub.btn">PDF local</a>
-              </div>
-              <div>
-                <h4 class="font-semibold" data-i18n="pub.t2">2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</h4>
-                <p class="opacity-80"><span data-i18n="pub.r2">Revista Eletrônica Acervo Saúde (REAS) (2025)</span> — DOI: <a class="underline" target="_blank" rel="noopener" href="https://doi.org/10.25248/REAS.e19108.2025">10.25248/REAS.e19108.2025</a></p>
-                <p class="mt-1" data-i18n="pub.d2">Critérios cirúrgicos, inovação em quimio/radioterapia, desafios e qualidade de vida.</p>
-                <a href="assets/docs/gliomas-astrocitomas-2025.pdf" target="_blank" rel="noopener" class="inline-block mt-2 px-3 py-1.5 border border-stroke rounded-lg text-xs hover:bg-card" data-i18n="pub.btn">PDF local</a>
-              </div>
+          <div class="bg-card border border-stroke rounded-2xl p-6">
+            <h3 class="font-semibold mb-4 text-center" data-i18n="about.pub.title">Publicações Acadêmicas</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <article class="border border-stroke rounded-xl p-4 flex flex-col gap-2">
+                <h4 class="font-semibold" data-i18n="pub.t1"></h4>
+                <p class="text-sm opacity-80"><span data-i18n="pub.r1"></span></p>
+                <p class="text-sm" data-i18n="pub.d1"></p>
+                <div class="mt-2 flex items-center gap-2 justify-center md:justify-start">
+                  <a href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-stroke hover:bg-card text-xs">DOI</a>
+                  <a href="assets/docs/tbi-avancos-2024.pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-stroke hover:bg-card text-xs" data-i18n="pub.pdf">PDF</a>
+                </div>
+              </article>
+              <article class="border border-stroke rounded-xl p-4 flex flex-col gap-2">
+                <h4 class="font-semibold" data-i18n="pub.t2"></h4>
+                <p class="text-sm opacity-80"><span data-i18n="pub.r2"></span></p>
+                <p class="text-sm" data-i18n="pub.d2"></p>
+                <div class="mt-2 flex items-center gap-2 justify-center md:justify-start">
+                  <a href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-stroke hover:bg-card text-xs">DOI</a>
+                  <a href="assets/docs/gliomas-astrocitomas-2025.pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-stroke hover:bg-card text-xs" data-i18n="pub.pdf">PDF</a>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="py-16">
       <h2 class="text-2xl font-bold mb-6" data-i18n="projects.title">Meus projetos</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card" href="https://laiamusic.netlify.app/" target="_blank" rel="noopener">
-          <img src="assets/img/laia-music.png?v=4" alt="Laia Music" class="h-20 object-contain">
-          <h3 class="font-semibold">Laia Music</h3>
+          <img src="assets/img/laia-music.png?v=7" alt="Laia Music" class="h-20 object-contain"><h3 class="font-semibold">Laia Music</h3>
           <p class="text-xs text-muted text-center" data-i18n="proj.mus">Gestão do legado musical de Edney Fernandes.</p>
         </a>
         <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
-          <img src="assets/img/laia-mind.png?v=4" alt="Laia Mind" class="h-20 object-contain">
-          <h3 class="font-semibold">Laia Mind</h3>
+          <img src="assets/img/laia-mind.png?v=7" alt="Laia Mind" class="h-20 object-contain"><h3 class="font-semibold">Laia Mind</h3>
           <p class="text-xs text-muted text-center" data-i18n="proj.mind">Programa de meditação e bem-estar (mindfulness).</p>
         </a>
         <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
-          <img src="assets/img/laia-academy.png?v=4" alt="Laia Academy" class="h-20 object-contain">
-          <h3 class="font-semibold">Laia Academy</h3>
+          <img src="assets/img/laia-academy.png?v=7" alt="Laia Academy" class="h-20 object-contain"><h3 class="font-semibold">Laia Academy</h3>
           <p class="text-xs text-muted text-center" data-i18n="proj.acad">Idiomas, trocas de intercâmbio e educação.</p>
         </a>
         <a class="bg-card border border-stroke rounded-2xl p-4 flex flex-col items-center gap-2 hover:-translate-y-0.5 transition shadow-card" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
-          <img src="assets/img/laia-tech.png?v=4" alt="Laia Tech" class="h-20 object-contain">
-          <h3 class="font-semibold">Laia Tech</h3>
+          <img src="assets/img/laia-tech.png?v=7" alt="Laia Tech" class="h-20 object-contain"><h3 class="font-semibold">Laia Tech</h3>
           <p class="text-xs text-muted text-center" data-i18n="proj.tech">Consultoria técnica: sites, soluções e gestão de projetos.</p>
         </a>
       </div>
     </section>
 
+    <!-- CULTURES -->
     <section id="cultures" class="py-16">
-      <h2 class="text-2xl font-bold" data-i18n="cultures.title">Culturas que me transformaram</h2>
-      <p class="text-muted mb-4" data-i18n="cultures.subtitle">Explore meus destaques do Instagram</p>
-      <div class="flex flex-wrap gap-4">
+      <h2 class="text-2xl font-bold text-center" data-i18n="cultures.title">Culturas que me transformaram</h2>
+      <p class="text-muted mb-6 text-center" data-i18n="cultures.subtitle">
+        Viajar muda o corpo e a mente. Conectar-se com outras línguas e costumes ensina humildade, escuta e criatividade. Estas imagens guardam memórias de lugares que expandiram meu olhar.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
         <a class="flex flex-col items-center gap-2" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank" rel="noopener">
           <img src="assets/img/photos/travel-panama.jpg" class="w-24 h-24 rounded-full object-cover ring-2 ring-brand2" alt="Panamá"><span>Panamá</span>
         </a>
@@ -157,6 +164,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="py-16">
       <h2 class="text-2xl font-bold mb-4" data-i18n="contact.title">Contato</h2>
       <div class="grid md:grid-cols-2 gap-3">
