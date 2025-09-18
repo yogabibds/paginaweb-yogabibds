@@ -1,1 +1,1 @@
-// main js placeholder
+// Reserved for future interactions.
