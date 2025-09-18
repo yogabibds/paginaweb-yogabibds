@@ -8,7 +8,7 @@
       "about.pub.title":"Publicações Acadêmicas",
       "pub.t1":"1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral",
       "pub.r1":"International Journal of Health Science (2024)",
-      "pub.d1":"Exames (TC/RM), biomarcadores, manejo cirúrgico/UTI e prognóstico.",
+      "pub.d1":"Imagens (TC/RM), biomarcadores, manejo cirúrgico/UTI e prognóstico.",
       "pub.t2":"2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos",
       "pub.r2":"Revista Eletrônica Acervo Saúde (REAS) (2025)",
       "pub.d2":"Critérios cirúrgicos, inovações em quimio/radioterapia e qualidade de vida.",
@@ -18,8 +18,8 @@
       "proj.tech":"Consultoria técnica: sites, soluções e gestão de projetos.",
       "proj.acad":"Idiomas, trocas de intercâmbio e educação.",
       "cultures.title":"Culturas que me transformaram",
-      "cultures.subtitle":"Viajar muda o corpo e a mente. Conectar-se com outras línguas e costumes ensina humildade, escuta e criatividade. Estas imagens guardam memórias de lugares que expandiram meu olhar.",
-      "contact.title":"Contato","footer.rights":"Todos os direitos reservados." },
+      "cultures.subtitle":"Viajar transforma corpo e mente. Entre línguas e costumes, ampliamos a visão de mundo, cultivamos curiosidade e empatia e voltamos diferentes. Estas imagens guardam aprendizados que me movem.",
+      "contact.title":"Contato","form.name":"Nome","form.msg":"Mensagem","form.send":"Enviar","footer.rights":"Todos os direitos reservados." },
     es:{ "nav.home":"Inicio","nav.about":"Sobre mí","nav.projects":"Proyectos","nav.cultures":"Culturas","nav.contact":"Contacto",
       "hero.title":"Bienvenid@ a mi universo","hero.sub":"Aprender es mi superpoder","hero.mantra":"Respira, crea y comparte","hero.cta":"Mis proyectos",
       "about.title":"Quién soy",
@@ -28,7 +28,7 @@
       "about.pub.title":"Publicaciones académicas",
       "pub.t1":"1) Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para el traumatismo craneoencefálico",
       "pub.r1":"International Journal of Health Science (2024)",
-      "pub.d1":"Imagen (TC/RM), biomarcadores, manejo quirúrgico/UCI y pronóstico.",
+      "pub.d1":"Imágenes (TC/RM), biomarcadores, manejo quirúrgico/UCI y pronóstico.",
       "pub.t2":"2) Astrocitomas y gliomas: abordajes quirúrgicos, desafíos y avances terapéuticos",
       "pub.r2":"Revista Electrónica Acervo Salud (REAS) (2025)",
       "pub.d2":"Criterios quirúrgicos, innovaciones en quimio/radioterapia y calidad de vida.",
@@ -38,8 +38,8 @@
       "proj.tech":"Consultoría técnica: sitios, soluciones y gestión de proyectos.",
       "proj.acad":"Idiomas, intercambios y educación.",
       "cultures.title":"Culturas que me transformaron",
-      "cultures.subtitle":"Viajar transforma cuerpo y mente. Conectarse con otras lenguas y costumbres enseña humildad, escucha y creatividad. Estas imágenes guardan recuerdos de lugares que ampliaron mi mirada.",
-      "contact.title":"Contacto","footer.rights":"Todos los derechos reservados." },
+      "cultures.subtitle":"Viajar transforma cuerpo y mente. Entre idiomas y costumbres ampliamos la mirada, cultivamos curiosidad y empatía y volvemos distintos. Estas imágenes guardan aprendizajes que me mueven.",
+      "contact.title":"Contacto","form.name":"Nombre","form.msg":"Mensaje","form.send":"Enviar","footer.rights":"Todos los derechos reservados." },
     en:{ "nav.home":"Home","nav.about":"About","nav.projects":"Projects","nav.cultures":"Cultures","nav.contact":"Contact",
       "hero.title":"Welcome to my universe","hero.sub":"Learning is my superpower","hero.mantra":"Breathe, create, and share","hero.cta":"My projects",
       "about.title":"About me",
@@ -58,8 +58,8 @@
       "proj.tech":"Tech consulting: websites, solutions and project management.",
       "proj.acad":"Languages, exchange and education.",
       "cultures.title":"Cultures that shaped me",
-      "cultures.subtitle":"Travel reshapes body and mind. Meeting other languages and cultures teaches humility, listening, and creativity. These images hold places that expanded my view.",
-      "contact.title":"Contact","footer.rights":"All rights reserved." }
+      "cultures.subtitle":"Travel reshapes body and mind. Across languages and cultures we widen our view, grow curiosity and empathy, and return changed. These images hold lessons that move me.",
+      "contact.title":"Contact","form.name":"Name","form.msg":"Message","form.send":"Send","footer.rights":"All rights reserved." }
   };
 
   const flips = {
