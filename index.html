@@ -1,167 +1,119 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
+<!doctype html><html lang="pt"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Universo Laia — Gabriela Barbosa</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<title>Universo Laia</title>
 <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header class="glass">
-  <div class="container nav-wrap">
-    <a href="#home" class="brand">Universo Laia</a>
-    <nav class="nav">
-      <a href="#home" data-i18n="nav.home">Home</a>
-      <a href="#about" data-i18n="nav.about">Sobre</a>
-      <a href="#projects" data-i18n="nav.projects">Projetos</a>
-      <a href="#cultures" data-i18n="nav.cultures">Culturas</a>
-      <a href="#contact" data-i18n="nav.contact">Contato</a>
-    </nav>
-    <div class="langs">
-      <button class="lang-btn" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="es">ES</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-    </div>
+</head><body>
+<nav><div class="bar container"><strong>Universo Laia</strong><div class="lang">
+<button class="active" data-lang="PT">PT</button>
+<button data-lang="ES">ES</button>
+<button data-lang="EN">EN</button>
+</div></div></nav>
+
+<section class="hero container" id="home">
+  <div>
+    <h1>Bem-vindo ao meu universo</h1>
+    <div class="rotator"></div>
+    <p style="margin:10px 0 0;font-weight:700">Aprender é meu superpoder</p>
+    <p style="margin:2px 0 0">Respirar, inspirar, criar e compartilhar</p>
+    <div class="cta"><a href="#projects" class="btn">Meus projetos</a></div>
   </div>
-</header>
+  <div class="circle"><img src="assets/img/hero-brain.png" alt="Universe icon"></div>
+</section>
 
-<main class="container">
-  <!-- Hero -->
-  <section id="home" class="section hero">
-    <div class="hero-head">
-      <img src="assets/img/icons/universe.png" alt="Universo" class="hero-icon">
-      <h1 class="hero-title" data-i18n="hero.title">Bem-vindo ao meu universo</h1>
-    </div>
-    <p class="hero-rotator"><span class="flip"><span class="stack" id="flip"></span></span></p>
-    <p class="hero-sub" data-i18n="hero.sub">Aprender é meu superpoder</p>
-    <p class="hero-mantra" data-i18n="hero.mantra">Respira, inspira, cria e compartilha</p>
-    <a href="#projects" class="btn" data-i18n="hero.cta">Meus projetos</a>
-  </section>
+<section class="section container about" id="about">
+  <div class="photo"><img src="assets/img/about.jpg" alt="Gabriela"></div>
+  <div>
+    <h2>Quem sou eu</h2>
+    <div class="badges"><span class="badge unr"><span class="dot"></span> UNR Stories</span></div>
+    <p>Sou Gabriela Barbosa, brasileira na Argentina. Trabalho com tecnologia há anos e hoje conecto saúde, música, educação e IA para resolver problemas reais. Atuo como estrategista criativa, gestora de projetos e construtora de experiências digitais.</p>
+    <h3 style="margin:18px 0 6px">Formação em Medicina — UNR</h3>
+    <p>Universidad Nacional de Rosario (PBL, foco em pensamento crítico, prática clínica precoce e trabalho em equipe). <a href="https://unr.edu.ar" target="_blank">unr.edu.ar</a></p>
+    <p>
+      <a class="tag doi" href="assets/docs/cv-pt.pdf" target="_blank">Ver CV (PT)</a>
+      <a class="tag doi" href="assets/docs/cv-es.pdf" target="_blank">Ver CV (ES)</a>
+      <a class="tag doi" href="assets/docs/cv-en.pdf" target="_blank">View CV (EN)</a>
+    </p>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2 class="h2 center" data-i18n="about.title">Quem sou eu</h2>
-    <div class="about-wrap">
-      <div class="center"><img src="assets/img/photos/about-circle.png" alt="Gabriela Barbosa" class="about-photo"></div>
-      <div>
-        <p data-i18n="about.body">Sou Gabriela Barbosa de Sousa, brasileira vivendo na Argentina. Estudante de Medicina na UNR (método PBL). Uno saúde, tecnologia, música e IA para construir soluções e experiências transformadoras.</p>
-        <p><strong data-i18n="about.med.title">Formação em Medicina — UNR</strong> — <a href="https://www.unr.edu.ar/" target="_blank" rel="noopener">unr.edu.ar</a></p>
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-          <a class="badge" href="assets/docs/CV-PT.pdf" target="_blank">PT</a>
-          <a class="badge" href="assets/docs/CV-ES.pdf" target="_blank">ES</a>
-          <a class="badge" href="assets/docs/CV-EN.pdf" target="_blank">EN</a>
+<section class="section container" id="pubs">
+  <h2>Publicações acadêmicas</h2>
+  <div class="pubs">
+    <article class="pub">
+      <div class="thumb"><img src="assets/img/photos/pub-tbi.jpg" alt="TBI"></div>
+      <div class="meta">
+        <div class="title">Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral</div>
+        <div class="journal">International Journal of Health Science (2024)</div>
+        <div class="actions">
+          <a class="tag doi" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
+          <a class="tag pdf" href="assets/docs/tbi.pdf" target="_blank">PDF</a>
         </div>
       </div>
-    </div>
-
-    <div class="card" style="padding:18px;max-width:980px;margin:16px auto 0">
-      <h3 class="center" style="margin:0 0 12px" data-i18n="about.pub.title">Publicações Acadêmicas</h3>
-      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-        <article class="card" style="padding:12px">
-          <div style="display:flex;gap:10px">
-            <img src="assets/img/photos/pub-tbi.jpg" style="width:60px;height:60px;border-radius:999px;object-fit:cover;border:2px solid var(--brand2)">
-            <div>
-              <h4 data-i18n="pub.t1">1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral</h4>
-              <p style="color:var(--muted);font-size:.9rem"><span data-i18n="pub.r1">International Journal of Health Science (2024)</span></p>
-              <div style="display:flex;gap:.4rem">
-                <a class="badge" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
-                <a class="badge" href="assets/docs/tbi-avancos-2024.pdf" target="_blank" data-i18n="pub.pdf">PDF</a>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="card" style="padding:12px">
-          <div style="display:flex;gap:10px">
-            <img src="assets/img/photos/pub-glioma.jpg" style="width:60px;height:60px;border-radius:999px;object-fit:cover;border:2px solid var(--brand2)">
-            <div>
-              <h4 data-i18n="pub.t2">2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</h4>
-              <p style="color:var(--muted);font-size:.9rem"><span data-i18n="pub.r2">REAS (2025)</span></p>
-              <div style="display:flex;gap:.4rem">
-                <a class="badge" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
-                <a class="badge" href="assets/docs/gliomas-astrocitomas-2025.pdf" target="_blank" data-i18n="pub.pdf">PDF</a>
-              </div>
-            </div>
-          </div>
-        </article>
+    </article>
+    <article class="pub">
+      <div class="thumb"><img src="assets/img/photos/pub-glioma.jpg" alt="Glioma"></div>
+      <div class="meta">
+        <div class="title">Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</div>
+        <div class="journal">REAS — Revista Eletrônica Acervo Saúde (2025)</div>
+        <div class="actions">
+          <a class="tag doi" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
+          <a class="tag pdf" href="assets/docs/glioma.pdf" target="_blank">PDF</a>
+        </div>
       </div>
+    </article>
+  </div>
+</section>
+
+<section class="section container" id="projects">
+  <h2>Projetos</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="assets/img/logos/laia-music.png" alt="Laia Music">
+      <strong>Laia Music</strong>
+      <p>Gestão do legado musical de Edney Fernandes.</p>
     </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2 class="h2" data-i18n="projects.title">Meus projetos</h2>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-      <a class="card p" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px" href="https://laiamusic.netlify.app/" target="_blank">
-        <img src="assets/img/laia-music.png" style="height:80px;object-fit:contain" alt="Laia Music"><strong>Laia Music</strong>
-        <p style="color:var(--muted);font-size:.85rem" data-i18n="proj.mus">Gestão do legado musical de Edney Fernandes.</p></a>
-      <a class="card p" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px" href="https://laiatech.netlify.app/" target="_blank">
-        <img src="assets/img/laia-tech.png" style="height:80px;object-fit:contain" alt="Laia Tech"><strong>Laia Tech</strong>
-        <p style="color:var(--muted);font-size:.85rem" data-i18n="proj.tech">Consultoria técnica: sites, soluções e gestão de projetos.</p></a>
-      <a class="card p" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px" href="https://proyectolaia.netlify.app/" target="_blank">
-        <img src="assets/img/laia-academy.png" style="height:80px;object-fit:contain" alt="Laia Academy"><strong>Laia Academy</strong>
-        <p style="color:var(--muted);font-size:.85rem" data-i18n="proj.acad">Idiomas, trocas de intercâmbio e educação.</p></a>
-      <a class="card p" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px" href="https://laiamind.netlify.app/" target="_blank">
-        <img src="assets/img/laia-mind.png" style="height:80px;object-fit:contain" alt="Laia Mind"><strong>Laia Mind</strong>
-        <p style="color:var(--muted);font-size:.85rem" data-i18n="proj.mind">Meditação, bem‑estar e mindfulness.</p></a>
+    <div class="card">
+      <img src="assets/img/logos/laia-tech.png" alt="Laia Tech">
+      <strong>Laia Tech</strong>
+      <p>Consultoria técnica: sites, soluções e gestão de projetos.</p>
     </div>
-  </section>
-
-  <!-- Cultures -->
-  <section id="cultures" class="section">
-    <h2 class="h2 center" data-i18n="cultures.title">Culturas que me transformaram</h2>
-    <p class="center" style="color:var(--muted);max-width:760px;margin:0 auto 14px" data-i18n="cultures.subtitle">
-      Viajar transforma corpo e mente. Entre línguas e costumes, ampliamos a visão de mundo e cultivamos humildade, escuta e criatividade.
-    </p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-      <a class="center" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank"><img src="assets/img/photos/travel-panama.jpg" class="img-circle"><div>Panamá</div></a>
-      <a class="center" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank"><img src="assets/img/photos/travel-cordoba.jpg" class="img-circle"><div>Córdoba</div></a>
-      <a class="center" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank"><img src="assets/img/photos/travel-rosario.jpg" class="img-circle"><div>Rosário</div></a>
-      <a class="center" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank"><img src="assets/img/photos/travel-bahia.jpg" class="img-circle"><div>Bahia</div></a>
-      <a class="center" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank"><img src="assets/img/photos/travel-saopaulo.jpg" class="img-circle"><div>São Paulo</div></a>
-      <a class="center" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank"><img src="assets/img/photos/travel-curacao.jpg" class="img-circle"><div>Curaçao</div></a>
+    <div class="card">
+      <img src="assets/img/logos/laia-academy.png" alt="Laia Academy">
+      <strong>Laia Academy</strong>
+      <p>Idiomas, trocas e educação.</p>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2 class="h2" data-i18n="contact.title">Contato</h2>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-      <a class="card" style="padding:10px;display:flex;align-items:center;gap:8px" href="mailto:gabibds@icloud.com"><img src="assets/img/icons/email.png" style="width:18px;height:18px">gabibds@icloud.com</a>
-      <a class="card" style="padding:10px;display:flex;align-items:center;gap:8px" href="mailto:universolaia06@gmail.com"><img src="assets/img/icons/email.png" style="width:18px;height:18px">universolaia06@gmail.com</a>
-      <a class="card" style="padding:10px;display:flex;align-items:center;gap:8px" href="https://instagram.com/yogabibds" target="_blank"><img src="assets/img/icons/instagram.png" style="width:18px;height:18px">@yogabibds</a>
-      <a class="card" style="padding:10px;display:flex;align-items:center;gap:8px" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank"><img src="assets/img/icons/linkedin.png" style="width:18px;height:18px">LinkedIn</a>
-      <a class="card" style="padding:10px;display:flex;align-items:center;gap:8px" href="https://github.com/yogabibds" target="_blank"><img src="assets/img/icons/github.png" style="width:18px;height:18px">github.com/yogabibds</a>
-      <a class="card" style="padding:10px;display:flex;align-items:center;gap:8px" href="https://wa.me/5493413739528" target="_blank"><img src="assets/img/icons/whatsapp.png" style="width:18px;height:18px">WhatsApp: +54 9 341 373-9528</a>
+    <div class="card">
+      <img src="assets/img/logos/laia-mind.png" alt="Laia Mind">
+      <strong>Laia Mind</strong>
+      <p>Meditação, bem-estar e mindfulness.</p>
     </div>
-    <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="card" style="padding:16px;margin-top:12px;max-width:740px">
-      <input type="hidden" name="form-name" value="contato"><p style="display:none"><label>Do not fill: <input name="bot-field"></label></p>
-      <div class="grid" style="grid-template-columns:1fr 1fr">
-        <div><label>Nome</label><input name="name" required></div>
-        <div><label>Email</label><input type="email" name="email" required></div>
-      </div>
-      <div style="margin-top:.6rem"><label>Mensagem</label><textarea name="message" required rows="5"></textarea></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:.6rem"><button class="btn" type="submit">Enviar</button></div>
-    </form>
-  </section>
-</main>
+  </div>
+</section>
 
-<footer><p>&copy; <span id="y"></span> Universo Laia — <span data-i18n="footer.rights">Todos os direitos reservados.</span></p></footer>
+<section class="section container" id="cultures">
+  <h2>Culturas que me transformaram</h2>
+  <p class="lead">Viajar transforma corpo e mente. Conectar-se com outras culturas é expandir horizontes, aprender novos idiomas, compreender costumes e enxergar o mundo de novas formas. Essas experiências ampliam nossa visão, despertam humildade, empatia, criatividade e nos recordam que somos parte de algo maior.</p>
+  <div class="stories">
+    <div class="story"><img src="assets/img/photos/travel-panama.jpg" alt="Panamá"></div>
+    <div class="story"><img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba"></div>
+    <div class="story"><img src="assets/img/photos/travel-rosario.jpg" alt="Rosário"></div>
+    <div class="story"><img src="assets/img/photos/travel-bahia.jpg" alt="Bahia"></div>
+    <div class="story"><img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo"></div>
+    <div class="story"><img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao"></div>
+  </div>
+</section>
 
-<script src="assets/js/i18n.js"></script>
-<script>
-// Montar as frases rotativas com base no idioma atual (i18n.js injeta ao trocar idioma)
-(function(){
-  const lang = document.documentElement.lang || 'pt';
-  const flips = {
-    pt:["Saúde que acolhe","Música que conecta","Tecnologia que transforma","Construindo uma ponte entre Ciência, Arte e Bem‑Estar"],
-    es:["Salud que acoge","Música que conecta","Tecnología que transforma","Construyendo un puente entre ciencia, arte y bienestar"],
-    en:["Health that cares","Music that connects","Technology that transforms","Building a bridge between science, art and wellbeing"]
-  };
-  const arr = flips[lang] || flips.pt;
-  const wrap = document.getElementById('flip'); if(!wrap) return;
-  wrap.innerHTML = arr.map(t=>`<span>${t}</span>`).join("");
-})();
-</script>
+<section class="section container" id="contact">
+  <h2>Contato</h2>
+  <div class="contact">
+    <a class="iconbtn" href="mailto:gabibds@icloud.com"><img src="assets/img/icons/email.svg" alt=""><span>gabibds@icloud.com</span></a>
+    <a class="iconbtn" href="https://instagram.com/yogabibds" target="_blank"><img src="assets/img/icons/instagram.svg" alt=""><span>@yogabibds</span></a>
+    <a class="iconbtn" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank"><img src="assets/img/icons/linkedin.svg" alt=""><span>LinkedIn</span></a>
+    <a class="iconbtn" href="https://github.com/yogabibds" target="_blank"><img src="assets/img/icons/github.svg" alt=""><span>GitHub</span></a>
+    <a class="iconbtn" href="https://wa.me/5493413739528" target="_blank"><img src="assets/img/icons/whatsapp.svg" alt=""><span>WhatsApp</span></a>
+  </div>
+</section>
+
+<footer>© Universo Laia</footer>
 <script src="assets/js/app.js"></script>
 </body></html>
