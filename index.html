@@ -2,247 +2,195 @@
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Universo Laia</title>
-  <link rel="icon" href="assets/img/icons/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Favicon (opcional) -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <!-- Header -->
-  <header class="topbar">
+  <header class="site-header">
     <div class="brand">
-      <img class="brand__logo" src="assets/img/logos/laia-logo.png" alt="Universo Laia" />
-      <span class="brand__name">Universo Laia</span>
+      <img class="brand__logo" src="assets/img/logos/laia-music.png" alt="Universo Laia" />
+      <span class="brand__title">Universo Laia</span>
     </div>
-    <div class="lang">
+    <nav class="lang">
       <button class="lang__btn is-active" data-lang="pt">PT</button>
       <button class="lang__btn" data-lang="es">ES</button>
       <button class="lang__btn" data-lang="en">EN</button>
-    </div>
+    </nav>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section id="hero" class="section hero">
-      <div class="hero__badge">
-        <img src="assets/img/logos/laia-logo.png" alt="Logo" />
+    <!-- HERO -->
+    <section class="section hero" id="inicio">
+      <div class="hero__logo">
+        <img src="assets/img/photos/hero-logo.png" alt="Logo Universo" />
       </div>
-      <h1 class="hero__title i18n" data-i18n="hero_title">Bem-vindo ao meu universo</h1>
-      <p class="hero__lead i18n" data-i18n="hero_lead">Saúde que acolhe</p>
-      <p class="hero__sub i18n" data-i18n="hero_sub"><strong>Aprender é meu superpoder</strong><br/>Respira, cria e compartilha</p>
-      <a class="btn btn-gradient" href="#projects">
-        <span class="i18n" data-i18n="cta_projects">Meus projetos</span>
-      </a>
+      <h1 class="hero__title">Bem-vindo ao meu universo</h1>
+      <p class="hero__subtitle">Saúde que acolhe</p>
+      <p class="hero__sub">Aprender é meu superpoder<br/>Respira, cria e compartilha</p>
+      <a class="btn btn--gradient" href="#projetos">Meus projetos</a>
     </section>
 
-    <!-- Quem sou eu -->
-    <section id="about" class="section about">
-      <h2 class="section__title i18n" data-i18n="about_title">Quem sou eu</h2>
+    <!-- QUEM SOU EU -->
+    <section class="section about" id="sobre">
+      <h2 class="section__title">Quem sou eu</h2>
 
-      <div class="about__photo">
-        <img src="assets/img/photos/profile.jpg" alt="Gabriela" />
-      </div>
+      <div class="card about__card">
+        <div class="about__photo">
+          <img src="assets/img/photos/about-photo.jpg" alt="Gabriela Barbosa" />
+        </div>
 
-      <div class="card card--pad">
-        <h3 class="i18n" data-i18n="med_title">Formação em Medicina — UNR</h3>
-        <p class="i18n" data-i18n="med_text">
-          Universidade Nacional de Rosario (UNR), Argentina. Currículo com <strong>PBL</strong> (Problem-Based Learning), integração precoce à prática clínica, pesquisa em neurociências e foco em pensamento crítico e trabalho em equipe. <a href="https://unr.edu.ar" target="_blank" rel="noopener">unr.edu.ar</a>
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-ghost" href="assets/docs/cv-pt.pdf" target="_blank">Ver CV (PT)</a>
-          <a class="btn btn-ghost" href="assets/docs/cv-es.pdf" target="_blank">Ver CV (ES)</a>
-          <a class="btn btn-ghost" href="assets/docs/cv-en.pdf" target="_blank">View CV (EN)</a>
+        <div class="about__content">
+          <h3 class="about__heading">Formação em Medicina — UNR</h3>
+          <p class="about__text">
+            Universidade Nacional de Rosario (UNR), Argentina. Currículo com <strong>PBL</strong> (Problem-Based Learning), integração precoce à prática clínica, pesquisa em neurociências e foco em pensamento crítico e trabalho em equipe.
+            <br><a class="link" href="https://unr.edu.ar" target="_blank" rel="noopener">unr.edu.ar</a>
+          </p>
+
+          <div class="btn-grid">
+            <a class="btn" href="assets/docs/cv-pt.pdf" target="_blank">Ver CV (PT)</a>
+            <a class="btn" href="assets/docs/cv-es.pdf" target="_blank">Ver CV (ES)</a>
+            <a class="btn" href="assets/docs/cv-en.pdf" target="_blank">View CV (EN)</a>
+          </div>
         </div>
       </div>
 
-      <!-- Bio curta (parágrafo depois do card, como no site bom) -->
-      <p class="about__bio i18n" data-i18n="bio_text">
-        Sou Gabriela Barbosa, brasileira vivendo na Argentina. Trabalho há anos com tecnologia e hoje uno saúde, música, educação e inteligência artificial para resolver problemas reais. Atuo como estrategista criativa, gerente de projetos e desenvolvedora de experiências digitais.
+      <p class="about__intro">
+        Sou Gabriela Barbosa, brasileira vivendo na Argentina. Trabalho há anos com tecnologia e hoje uno saúde, música, educação e inteligência artificial para resolver problemas reais. Atuo como estrategista criativa, gerente de projetos e desenvolvedora de experiências digitais. Aqui você encontra minhas frentes: divulgação do legado musical do meu pai, programas de meditação, cursos de idiomas e consultoria técnica.
       </p>
     </section>
 
-    <!-- Publicações Acadêmicas -->
-    <section id="pubs" class="section">
-      <h2 class="section__title i18n" data-i18n="pubs_title">Publicações Acadêmicas</h2>
+    <!-- PUBLICAÇÕES -->
+    <section class="section pubs" id="pubs">
+      <h2 class="section__title">Publicações Acadêmicas</h2>
 
       <article class="card pub">
-        <div class="pub__avatar">
-          <img src="assets/img/photos/pub-tbi.jpg" alt="TBI" />
-        </div>
-        <div class="pub__body">
-          <h3 class="pub__title i18n" data-i18n="pub1_t">
-            Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral
-          </h3>
-          <p class="pub__meta i18n" data-i18n="pub1_meta">
-            International Journal of Health Science (2024). Imagens (TC/RM), biomarcadores, manejo cirúrgico/UTI e prognóstico.
-          </p>
-          <div class="btn-row">
-            <a class="chip" href="https://doi.org/xx.xxxx/doi-demo" target="_blank" rel="noopener">DOI</a>
-            <a class="chip chip--red" href="assets/docs/tbi-paper.pdf" target="_blank">PDF</a>
-            <a class="chip chip--green" href="https://www.bing.com/images/create" target="_blank" rel="noopener">DALL·E</a>
+        <div class="pub__badge pub__badge--green">DALL·E</div>
+        <div class="pub__content">
+          <h3>1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral</h3>
+          <p>International Journal of Health Science (2024). Imagens (TC/RM), biomarcadores, manejo cirúrgico/UTI e prognóstico.</p>
+          <div class="btn-grid">
+            <a class="btn" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank" rel="noopener">DOI</a>
+            <a class="btn btn--red" href="assets/docs/tbi-paper.pdf" target="_blank">PDF</a>
           </div>
         </div>
       </article>
 
       <article class="card pub">
-        <div class="pub__avatar">
-          <img src="assets/img/photos/pub-glioma.jpg" alt="Glioma" />
-        </div>
-        <div class="pub__body">
-          <h3 class="pub__title i18n" data-i18n="pub2_t">
-            Algoritmos e biomarcadores para estratificação de gliomas
-          </h3>
-          <p class="pub__meta i18n" data-i18n="pub2_meta">
-            Revisão integrativa com foco em IA, imagem avançada e sobrevida.
-          </p>
-          <div class="btn-row">
-            <a class="chip" href="#" target="_blank">DOI</a>
-            <a class="chip chip--red" href="assets/docs/glioma.pdf" target="_blank">PDF</a>
-            <a class="chip chip--green" href="https://www.bing.com/images/create" target="_blank" rel="noopener">DALL·E</a>
+        <div class="pub__badge pub__badge--green">DALL·E</div>
+        <div class="pub__content">
+          <h3>2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</h3>
+          <p>Revisão 2025.</p>
+          <div class="btn-grid">
+            <a class="btn" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank" rel="noopener">DOI</a>
+            <a class="btn btn--red" href="assets/docs/glioma.pdf" target="_blank">PDF</a>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- Projetos -->
-    <section id="projects" class="section">
-  <h2 class="section__title i18n" data-i18n="projects_title">Meus projetos</h2>
+    <!-- PROJETOS -->
+    <section class="section projects" id="projetos">
+      <h2 class="section__title">Meus projetos</h2>
 
-  <div class="cards">
-    <article class="card project">
-      <img class="project__logo" src="assets/img/logos/laia-music.png" alt="Laia Music" />
-      <h3>Laia Music</h3>
-      <p>Gestão do legado musical de Edney Fernandes.</p>
-      <a class="btn btn-ghost" href="https://laiamusictesting.netlify.app" target="_blank" rel="noopener">Abrir</a>
-    </article>
+      <div class="proj-grid">
+        <a class="card proj" href="https://laiamusictesting.netlify.app" target="_blank" rel="noopener">
+          <img class="proj__logo" src="assets/img/logos/laia-music.png" alt="Laia Music">
+          <h3>Laia Music</h3>
+          <p>Gestão do legado musical de Edney Fernandes.</p>
+        </a>
 
-    <article class="card project">
-      <img class="project__logo" src="assets/img/logos/laia-tech.png" alt="Laia Tech" />
-      <h3>Laia Tech</h3>
-      <p>Consultoria técnica: sites, soluções e gestão de projetos.</p>
-      <a class="btn btn-ghost" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">Abrir</a>
-    </article>
+        <a class="card proj" href="https://laiatech.netlify.app/" target="_blank" rel="noopener">
+          <img class="proj__logo" src="assets/img/logos/laia-tech.png" alt="Laia Tech">
+          <h3>Laia Tech</h3>
+          <p>Consultoria técnica: sites, soluções e gestão de projetos.</p>
+        </a>
 
-    <article class="card project">
-      <img class="project__logo" src="assets/img/logos/laia-academy.png" alt="Laia Academy" />
-      <h3>Laia Academy</h3>
-      <p>Idiomas, trocas de intercâmbio e educação.</p>
-      <a class="btn btn-ghost" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">Abrir</a>
-    </article>
+        <a class="card proj" href="https://proyectolaia.netlify.app/" target="_blank" rel="noopener">
+          <img class="proj__logo" src="assets/img/logos/laia-academy.png" alt="Laia Academy">
+          <h3>Laia Academy</h3>
+          <p>Idiomas, trocas de intercâmbio e educação.</p>
+        </a>
 
-    <article class="card project">
-      <img class="project__logo" src="assets/img/logos/laia-mind.png" alt="Laia Mind" />
-      <h3>Laia Mind</h3>
-      <p>Meditação, saúde integrativa e IA aplicada.</p>
-      <a class="btn btn-ghost" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">Abrir</a>
-    </article>
-  </div>
-</section>
+        <a class="card proj" href="https://laiamind.netlify.app/" target="_blank" rel="noopener">
+          <img class="proj__logo" src="assets/img/logos/laia-mind.png" alt="Laia Mind">
+          <h3>Laia Mind</h3>
+          <p>Respira, cria e compartilha.</p>
+        </a>
+      </div>
+    </section>
 
-    <!-- Culturas que me transformaram -->
-    <section id="travel" class="section">
-      <h2 class="section__title i18n" data-i18n="travel_title">Culturas que me transformaram</h2>
-      <p class="section__sub i18n" data-i18n="travel_sub">
-        Viajar transforma corpo e mente. Entre línguas e costumes, ampliamos a visão de mundo.
-      </p>
+    <!-- CULTURAS (VIAGENS) -->
+    <section class="section travel" id="travel">
+      <h2 class="section__title">Culturas que me transformaram</h2>
+      <p class="section__sub">Viajar transforma corpo e mente. Estas imagens guardam aprendizados que me movem.</p>
 
-      <ul class="story-grid">
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-panama.jpg" alt="Panamá" />
-            <span>Panamá</span>
-          </a>
-        </li>
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba" />
-            <span>Córdoba</span>
-          </a>
-        </li>
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-rosario.jpg" alt="Rosário" />
-            <span>Rosário</span>
-          </a>
-        </li>
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-unr.jpg" alt="UNR Acadêmico" />
-            <span>UNR • Acadêmico</span>
-          </a>
-        </li>
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-bahia.jpg" alt="Bahia" />
-            <span>Bahia</span>
-          </a>
-        </li>
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo" />
-            <span>São Paulo</span>
-          </a>
-        </li>
-        <li class="story">
-          <a href="#" class="story__link">
-            <img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao" />
-            <span>Curaçao</span>
-          </a>
-        </li>
+      <div class="travel-grid">
+        <a class="story" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-panama.jpg" alt="Panamá"><span>Panamá</span>
+        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba"><span>Córdoba</span>
+        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-rosario.jpg" alt="Rosário"><span>Rosário</span>
+        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-unr.jpg" alt="UNR"><span>UNR • Acadêmico</span>
+        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-bahia.jpg" alt="Bahia"><span>Bahia</span>
+        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo"><span>São Paulo</span>
+        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank" rel="noopener">
+          <img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao"><span>Curaçao</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact" id="contato">
+      <h2 class="section__title">Contato</h2>
+
+      <ul class="contact__list">
+        <li><a class="contact__item" href="mailto:gabibds@icloud.com">📧 gabibds@icloud.com</a></li>
+        <li><a class="contact__item" href="mailto:universolaia06@gmail.com">📧 universolaia06@gmail.com</a></li>
+        <li><a class="contact__item" href="mailto:mind@universolaia.com">📧 mind@universolaia.com</a></li>
+        <li><a class="contact__item" target="_blank" rel="noopener" href="https://instagram.com/yogabibds">📷 @yogabibds</a></li>
+        <li><a class="contact__item" target="_blank" rel="noopener" href="https://www.linkedin.com/in/gabrielabarbosadesousa/">💼 LinkedIn</a></li>
+        <li><a class="contact__item" target="_blank" rel="noopener" href="https://github.com/yogabibds">💻 github.com/yogabibds</a></li>
+        <li><a class="contact__item" target="_blank" rel="noopener" href="https://wa.me/5493413739528">📱 WhatsApp: +54 9 341 373 9528</a></li>
       </ul>
-    </section>
 
-    <!-- Contato -->
-  <section id="contact" class="section">
-  <h2 class="section__title i18n" data-i18n="contact_title">Contato</h2>
-
-  <div class="contact-list">
-    <a class="contact" href="mailto:gabibds@icloud.com" target="_blank">
-      <img src="assets/img/icons/mail.svg" alt="" /> gabibds@icloud.com
-    </a>
-    <a class="contact" href="mailto:universolaia06@gmail.com" target="_blank">
-      <img src="assets/img/icons/mail.svg" alt="" /> universolaia06@gmail.com
-    </a>
-    <a class="contact" href="mailto:mind@universolaia.com" target="_blank">
-      <img src="assets/img/icons/mail.svg" alt="" /> mind@universolaia.com
-    </a>
-    <a class="contact" href="https://instagram.com/yogabibds" target="_blank" rel="noopener">
-      <img src="assets/img/icons/instagram.svg" alt="" /> @yogabibds
-    </a>
-    <a class="contact" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank" rel="noopener">
-      <img src="assets/img/icons/linkedin.svg" alt="" /> LinkedIn
-    </a>
-    <a class="contact" href="https://github.com/yogabibds" target="_blank" rel="noopener">
-      <img src="assets/img/icons/github.svg" alt="" /> github.com/yogabibds
-    </a>
-    <a class="contact" href="https://wa.me/5493413739528" target="_blank" rel="noopener">
-      <img src="assets/img/icons/whatsapp.svg" alt="" /> WhatsApp: +54 9 341 373 9528
-    </a>
-  </div>
-
-      <!-- Form (Netlify) -->
-      <form name="contact" method="POST" data-netlify="true" class="card card--pad">
-        <input type="hidden" name="form-name" value="contact" />
+      <form class="form" name="contact" netlify>
         <label>Nome
-          <input name="name" type="text" placeholder="Seu nome" required />
+          <input type="text" name="name" placeholder="Seu nome" required />
         </label>
         <label>Email
-          <input name="email" type="email" placeholder="seu@email.com" required />
+          <input type="email" name="email" placeholder="seu@email.com" required />
         </label>
         <label>Mensagem
-          <textarea name="message" rows="5" placeholder="Como posso ajudar?"></textarea>
+          <textarea name="message" rows="6" placeholder="Como posso ajudar?"></textarea>
         </label>
-        <button class="btn btn-gradient" type="submit">Enviar</button>
-        <p class="netlify-tip">No Netlify, ative a notificação por email para <strong>universolaia06@gmail.com</strong>.</p>
+        <button class="btn btn--gradient" type="submit">Enviar</button>
+        <p class="form__note">No Netlify, ative a notificação por email para <strong>universolaia06@gmail.com</strong>.</p>
       </form>
     </section>
   </main>
 
-  <footer class="footer">
-    <small>© 2025 Universo Laia. Todos os direitos reservados.</small>
+  <footer class="site-footer">
+    © 2025 Universo Laia. Todos os direitos reservados.
   </footer>
 
-  <script src="assets/js/i18n.js"></script>
+  <!-- JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
