@@ -35,7 +35,7 @@ const I18N = {
     "contact.msg":"Mensagem",
     "contact.send":"Enviar"
   },
-  es:{ /* traducciones resumidas */ 
+  es:{
     "hero.title":"Bienvenido a mi universo",
     "hero.subtitle":"Aprender es mi superpoder",
     "hero.cta":"Mis proyectos",
@@ -62,7 +62,7 @@ const I18N = {
     "projects.academy":"Idiomas, intercambio y educación.",
     "projects.mind":"Meditación, bienestar y mindfulness.",
     "cult.title":"Culturas que me transformaron",
-    "cult.lead":"Viajar transforma cuerpo y mente…",
+    "cult.lead":"Viajar transforma cuerpo y mente. Entre lenguas y costumbres ampliamos la mirada del mundo.",
     "contact.title":"Contacto","contact.name":"Nombre","contact.email":"Email","contact.msg":"Mensaje","contact.send":"Enviar"
   },
   en:{
@@ -92,15 +92,16 @@ const I18N = {
     "projects.academy":"Languages, exchange and education.",
     "projects.mind":"Meditation, wellbeing and mindfulness.",
     "cult.title":"Cultures that shaped me",
-    "cult.lead":"Travel reshapes body and mind…",
+    "cult.lead":"Travel reshapes body and mind. These images keep lessons that move me.",
     "contact.title":"Contact","contact.name":"Name","contact.email":"Email","contact.msg":"Message","contact.send":"Send"
   }
 };
 
-// ===== aplica idioma =====
-const $ = s=>document.querySelector(s);
-const $$ = s=>document.querySelectorAll(s);
+// ===== helpers =====
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
 
+// ===== idioma =====
 function applyLang(lang){
   document.documentElement.lang = lang;
   $$("[data-i18n]").forEach(el=>{
@@ -114,23 +115,30 @@ function applyLang(lang){
   // ativa botão
   $$(".lang-btn").forEach(b=>b.classList.toggle("active", b.dataset.lang===lang));
 }
-$$(".lang-btn").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
 
+// ===== rotator (15s) =====
 const ROTATION = {
-  items: I18N.pt.ROTATOR, index:0, timer:null,
+  items: I18N.pt.ROTATOR,
+  index: 0,
+  timer: null,
   tick(immediate=false){
-    if(!this.items.length) return;
-    $("#rotator").textContent = this.items[this.index];
-    if(this.timer) clearTimeout(this.timer);
-    // mais lento: troca a cada 15s
+    if(!this.items || !this.items.length) return;
+    const el = $("#rotator");
+    if (el) el.textContent = this.items[this.index];
+    if (this.timer) clearTimeout(this.timer);
     this.timer = setTimeout(()=>{
-      this.index = (this.index+1)%this.items.length;
+      this.index = (this.index + 1) % this.items.length;
       this.tick();
-    }, immediate?15000:15000);
+    }, 15000);
   }
 };
 
-document.addEventListener("DOMContentLoaded",()=>{
+// ===== init =====
+document.addEventListener("DOMContentLoaded", ()=>{
+  // idioma inicial
   applyLang("pt");
+  // bind botões
+  $$(".lang-btn").forEach(b=>b.addEventListener("click", ()=>applyLang(b.dataset.lang)));
+  // inicia rotator
   ROTATION.tick(true);
 });
