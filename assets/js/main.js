@@ -1,10 +1,10 @@
 // ===== I18N (PT default) =====
 const I18N = {
   pt: {
-    "hero.title":"Bem-vindo ao meu universo",
+    "hero.title.l1":"Bem-vindos",
+    "hero.title.l2":"ao meu universo",
     "hero.subtitle":"Aprender é meu superpoder",
     "hero.cta":"Meus projetos",
-    // rotativas
     ROTATOR:[
       "Respirar, inspirar, criar e compartilhar.",
       "Construindo uma ponte entre Ciência, Arte e Bem-Estar.",
@@ -15,6 +15,8 @@ const I18N = {
     "about.edu.title":"Formação em Medicina — UNR",
     "about.edu.text":"Universidade Nacional de Rosário (PBL, foco em pensamento crítico, prática clínica precoce e trabalho em equipe). unr.edu.ar",
     "about.cv.pt":"Ver CV (PT)","about.cv.es":"Ver CV (ES)","about.cv.en":"View CV (EN)",
+    "unr.title":"UNR • Acadêmico",
+    "unr.sub":"Destaques da Universidade Nacional de Rosário.",
     "pubs.title":"Publicações Acadêmicas",
     "pubs.p1.title":"1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral",
     "pubs.p1.meta":"International Journal of Health Science (2024)",
@@ -29,14 +31,11 @@ const I18N = {
     "projects.mind":"Meditação, bem-estar e mindfulness.",
     "cult.title":"Culturas que me transformaram",
     "cult.lead":"Viajar transforma corpo e mente. Entre línguas e costumes, ampliamos a visão de mundo, cultivamos curiosidade e empatia e voltamos diferentes. Estas imagens guardam aprendizados que me movem.",
-    "contact.title":"Contato",
-    "contact.name":"Nome",
-    "contact.email":"Email",
-    "contact.msg":"Mensagem",
-    "contact.send":"Enviar"
+    "contact.title":"Contato","contact.name":"Nome","contact.email":"Email","contact.msg":"Mensagem","contact.send":"Enviar"
   },
   es:{
-    "hero.title":"Bienvenido a mi universo",
+    "hero.title.l1":"Bienvenidos",
+    "hero.title.l2":"a mi universo",
     "hero.subtitle":"Aprender es mi superpoder",
     "hero.cta":"Mis proyectos",
     ROTATOR:[
@@ -49,6 +48,8 @@ const I18N = {
     "about.edu.title":"Formación en Medicina — UNR",
     "about.edu.text":"Universidad Nacional de Rosario (PBL, pensamiento crítico, práctica clínica temprana y trabajo en equipo). unr.edu.ar",
     "about.cv.pt":"Ver CV (PT)","about.cv.es":"Ver CV (ES)","about.cv.en":"Ver CV (EN)",
+    "unr.title":"UNR • Académico",
+    "unr.sub":"Destacados de la Universidad Nacional de Rosario.",
     "pubs.title":"Publicaciones Académicas",
     "pubs.p1.title":"1) Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para TCE",
     "pubs.p1.meta":"International Journal of Health Science (2024)",
@@ -62,11 +63,12 @@ const I18N = {
     "projects.academy":"Idiomas, intercambio y educación.",
     "projects.mind":"Meditación, bienestar y mindfulness.",
     "cult.title":"Culturas que me transformaron",
-    "cult.lead":"Viajar transforma cuerpo y mente. Entre lenguas y costumbres ampliamos la mirada del mundo.",
+    "cult.lead":"Viajar transforma cuerpo y mente…",
     "contact.title":"Contacto","contact.name":"Nombre","contact.email":"Email","contact.msg":"Mensaje","contact.send":"Enviar"
   },
   en:{
-    "hero.title":"Welcome to my universe",
+    "hero.title.l1":"Welcome",
+    "hero.title.l2":"to my universe",
     "hero.subtitle":"Learning is my superpower",
     "hero.cta":"My projects",
     ROTATOR:[
@@ -79,6 +81,8 @@ const I18N = {
     "about.edu.title":"Medical Training — UNR",
     "about.edu.text":"National University of Rosario (PBL, early clinical exposure, teamwork). unr.edu.ar",
     "about.cv.pt":"View CV (PT)","about.cv.es":"View CV (ES)","about.cv.en":"View CV (EN)",
+    "unr.title":"UNR • Academic",
+    "unr.sub":"Highlights from the National University of Rosario.",
     "pubs.title":"Academic Publications",
     "pubs.p1.title":"1) Recent advances in diagnostic, therapeutic and prognostic strategies for TBI",
     "pubs.p1.meta":"International Journal of Health Science (2024)",
@@ -92,16 +96,16 @@ const I18N = {
     "projects.academy":"Languages, exchange and education.",
     "projects.mind":"Meditation, wellbeing and mindfulness.",
     "cult.title":"Cultures that shaped me",
-    "cult.lead":"Travel reshapes body and mind. These images keep lessons that move me.",
+    "cult.lead":"Travel reshapes body and mind…",
     "contact.title":"Contact","contact.name":"Name","contact.email":"Email","contact.msg":"Message","contact.send":"Send"
   }
 };
 
 // ===== helpers =====
-const $ = s => document.querySelector(s);
-const $$ = s => document.querySelectorAll(s);
+const $ = s=>document.querySelector(s);
+const $$ = s=>document.querySelectorAll(s);
 
-// ===== idioma =====
+// aplica idioma
 function applyLang(lang){
   document.documentElement.lang = lang;
   $$("[data-i18n]").forEach(el=>{
@@ -112,33 +116,26 @@ function applyLang(lang){
   ROTATION.items = I18N[lang].ROTATOR || [];
   ROTATION.index = 0;
   ROTATION.tick(true);
-  // ativa botão
+  // botão ativo
   $$(".lang-btn").forEach(b=>b.classList.toggle("active", b.dataset.lang===lang));
 }
+$$(".lang-btn").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
 
-// ===== rotator (15s) =====
+// rotator
 const ROTATION = {
-  items: I18N.pt.ROTATOR,
-  index: 0,
-  timer: null,
+  items: I18N.pt.ROTATOR, index:0, timer:null,
   tick(immediate=false){
-    if(!this.items || !this.items.length) return;
-    const el = $("#rotator");
-    if (el) el.textContent = this.items[this.index];
-    if (this.timer) clearTimeout(this.timer);
+    if(!this.items.length) return;
+    $("#rotator").textContent = this.items[this.index];
+    if(this.timer) clearTimeout(this.timer);
     this.timer = setTimeout(()=>{
-      this.index = (this.index + 1) % this.items.length;
+      this.index = (this.index+1)%this.items.length;
       this.tick();
     }, 15000);
   }
 };
 
-// ===== init =====
-document.addEventListener("DOMContentLoaded", ()=>{
-  // idioma inicial
+document.addEventListener("DOMContentLoaded",()=>{
   applyLang("pt");
-  // bind botões
-  $$(".lang-btn").forEach(b=>b.addEventListener("click", ()=>applyLang(b.dataset.lang)));
-  // inicia rotator
   ROTATION.tick(true);
 });
