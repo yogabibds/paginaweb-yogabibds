@@ -60,7 +60,7 @@ const I18N = {
     "about.title":"Quién soy",
     "about.blurb":"Soy Gabriela Barbosa, brasileña viviendo en Argentina. Trabajo hace años con tecnología y hoy uno salud, música, educación e inteligencia artificial para resolver problemas reales. Actúo como estratega creativa, gestora de proyectos y creadora de experiencias digitales. Aquí están mis frentes: difusión del legado musical de mi padre, programas de meditación, cursos de idiomas y consultoría técnica.",
     "about.edu.title":"Formación en Medicina — UNR",
-    "about.edu.text":"Universidade Nacional de Rosario (UNR), Argentina. Currículo con PBL (Problem-Based Learning), integración precoz a la práctica clínica, investigación en neurociencias y foco en pensamiento crítico y trabajo en equipo. unr.edu.ar",
+    "about.edu.text":"Universidad Nacional de Rosario (UNR), Argentina. PBL, práctica clínica temprana, investigación en neurociencias y trabajo en equipo. unr.edu.ar",
     "about.cv.pt":"Ver CV (PT)","about.cv.es":"Ver CV (ES)","about.cv.en":"View CV (EN)",
 
     "pubs.title":"Publicaciones académicas",
@@ -160,6 +160,6 @@ const ROTATION = {
 
 // ===== init =====
 document.addEventListener("DOMContentLoaded",()=>{
-  applyLang("pt");           // default
+  applyLang("pt"); // idioma padrão
   ROTATION.tick(true);
 });
