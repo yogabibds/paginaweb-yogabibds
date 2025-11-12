@@ -4,30 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Universo Laia</title>
-
-  <!-- Preloads úteis -->
   <link rel="preload" href="assets/img/icons/universe.png" as="image">
-  <link rel="preload" href="assets/img/photos/hero-brain.jpg" as="image">
-  <link rel="preload" href="assets/css/style.css" as="style">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <meta name="theme-color" content="#0b0f16">
 </head>
 <body>
 
-  <!-- ===== TOP BAR ===== -->
+  <!-- NAV -->
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="#home">Universo Laia</a>
-      <nav class="menu" aria-label="primary">
-        <a href="#home"     data-i18n="nav.home">Início</a>
-        <a href="#about"    data-i18n="nav.about">Sobre mim</a>
+      <nav class="menu">
+        <a href="#home"    data-i18n="nav.home">Início</a>
+        <a href="#about"   data-i18n="nav.about">Quem sou eu</a>
         <a href="#projects" data-i18n="nav.projects">Projetos</a>
         <a href="#cultures" data-i18n="nav.cultures">Culturas</a>
         <a href="#contact"  data-i18n="nav.contact">Contato</a>
       </nav>
-      <div class="langs" aria-label="language switcher">
+      <div class="langs">
         <button class="lang-btn active" data-lang="pt">PT</button>
         <button class="lang-btn" data-lang="es">ES</button>
         <button class="lang-btn" data-lang="en">EN</button>
@@ -35,54 +28,40 @@
     </div>
   </header>
 
-  <!-- ===== HERO (centralizado com imagem acima do título) ===== -->
+  <!-- HERO (CENTRALIZADO com imagem do cérebro ACIMA do título) -->
   <section id="home" class="hero">
-    <div class="wrap narrow">
-      <div class="hero-media">
-        <!-- use assets/img/photos/hero-brain.jpg (a arte do cérebro com os 5 ícones) -->
-        <img src="assets/img/photos/hero-brain.jpg" alt="Cérebro conectando Medicina, Música, Mind e Tech">
-      </div>
-
-      <div class="hero-inner">
-        <h1 data-i18n="hero.title">Bem-vindo ao meu universo</h1>
-        <p class="hero-subtop" id="rotator">Respirar, inspirar, criar e compartilhar.</p>
-        <p class="hero-sub" data-i18n="hero.subtitle">Aprender é meu superpoder</p>
-        <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
-      </div>
+    <img class="hero-badge" src="assets/img/photos/hero-brain.jpg" alt="" aria-hidden="true">
+    <div class="hero-inner">
+      <h1 data-i18n="hero.title">Bem-vindo ao meu universo</h1>
+      <p class="hero-subtop" id="rotator">Respirar, inspirar, criar e compartilhar.</p>
+      <p class="hero-sub" data-i18n="hero.subtitle">Aprender é meu superpoder</p>
+      <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
     </div>
   </section>
 
-  <!-- ===== ABOUT (título → foto redonda → texto “Quem sou” → Formação UNR) ===== -->
+  <!-- ABOUT (título → FOTO → texto → Formação UNR) -->
   <section id="about" class="section">
     <div class="wrap narrow">
       <h2 class="section-title" data-i18n="about.title">Quem sou eu</h2>
 
-      <!-- foto circular sem bordas brancas -->
-      <div class="about-photo" aria-hidden="true">
-        <!-- retrato: assets/img/photos/about.jpg -->
-        <img src="assets/img/photos/about.jpg" alt="Foto de Gabriela Barbosa">
+      <!-- FOTO CIRCULAR preechendo 100% -->
+      <div class="about-photo">
+        <img src="assets/img/photos/about.jpg" alt="Foto Gabriela">
       </div>
 
-      <!-- texto “Quem sou” (conteúdo em ES como você pediu; i18n cobre os 3 idiomas) -->
       <p class="lead" data-i18n="about.blurb">
-        Soy Gabriela Barbosa, brasileña viviendo en Argentina. Trabajo hace años con tecnología y hoy uno
-        salud, música, educación e inteligencia artificial para resolver problemas reales. Actúo como
-        estratega creativa, gestora de proyectos y creadora de experiencias digitales. Aquí están mis frentes:
-        difusión del legado musical de mi padre, programas de meditación, cursos de idiomas y consultoría técnica.
+        Sou Gabriela Barbosa, brasileira na Argentina. Trabalho com tecnologia há anos e hoje conecto saúde, música, educação e IA para resolver problemas reais. Atuo como estrategista criativa, gestora de projetos e desenvolvedora de experiências digitais. Aqui estão minhas frentes: divulgação do legado musical do meu pai, programas de meditação, cursos de idiomas e consultoria técnica.
       </p>
 
-      <!-- cartão Formação UNR com “UNR • Stories” redondo -->
       <article class="card edu">
         <header class="card-hd">
           <h3 data-i18n="about.edu.title">Formação em Medicina — UNR</h3>
         </header>
-
         <p data-i18n="about.edu.text">
-          Universidade Nacional de Rosário (UNR), Argentina. Currículo com PBL (Problem-Based Learning),
-          integração precoce à prática clínica, pesquisa em neurociências e foco em pensamento crítico
-          e trabalho em equipe. unr.edu.ar
+          Universidade Nacional de Rosário (UNR), Argentina. Currículo com PBL (Problem-Based Learning), integração precoce à prática clínica, pesquisa em neurociências e foco em pensamento crítico e trabalho em equipe. unr.edu.ar
         </p>
 
+        <!-- Destaque UNR (história única) -->
         <div class="stories">
           <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank" rel="noopener">
             <img src="assets/img/photos/travel-unr.jpg" alt="UNR">
@@ -99,28 +78,24 @@
     </div>
   </section>
 
-  <!-- ===== PUBLICACIONES ACADÉMICAS (layout com ícone circular à esquerda) ===== -->
+  <!-- PUBLICAÇÕES -->
   <section id="pubs" class="section">
     <div class="wrap">
-      <h2 class="section-title" data-i18n="pubs.title">Publicaciones académicas</h2>
+      <h2 class="section-title" data-i18n="pubs.title">Publicações Acadêmicas</h2>
 
       <div class="pub-grid">
         <!-- Pub 1 -->
         <article class="pub">
           <div class="pub-ico">
-            <img src="assets/img/photos/pub-tbi.jpg" alt="TCE">
+            <img src="assets/img/photos/pub-tbi.jpg" alt="TBI">
           </div>
           <div class="pub-body">
-            <h3 data-i18n="pubs.p1.title">
-              1) Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para el traumatismo craneoencefálico
-            </h3>
+            <h3 data-i18n="pubs.p1.title">1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral</h3>
             <p class="meta" data-i18n="pubs.p1.meta">International Journal of Health Science (2024)</p>
-            <p data-i18n="pubs.p1.desc">
-              Imágenes (TC/RM), biomarcadores, manejo quirúrgico/UCI y pronóstico.
-            </p>
+            <p data-i18n="pubs.p1.desc">Imagens (TC/RM), biomarcadores, manejo cirúrgico/UTI e prognóstico.</p>
             <div class="chips">
-              <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank" rel="noopener">DOI</a>
-              <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
+              <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank">PDF</a>
             </div>
           </div>
         </article>
@@ -128,19 +103,15 @@
         <!-- Pub 2 -->
         <article class="pub">
           <div class="pub-ico">
-            <img src="assets/img/photos/pub-glioma.jpg" alt="Gliomas">
+            <img src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
           </div>
           <div class="pub-body">
-            <h3 data-i18n="pubs.p2.title">
-              2) Astrocitomas y gliomas: abordajes quirúrgicos, desafíos y avances terapéuticos
-            </h3>
-            <p class="meta" data-i18n="pubs.p2.meta">Revista Electrónica Acervo Salud (REAS) (2025)</p>
-            <p data-i18n="pubs.p2.desc">
-              Criterios quirúrgicos, innovaciones en quimio/radioterapia y calidad de vida.
-            </p>
+            <h3 data-i18n="pubs.p2.title">2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</h3>
+            <p class="meta" data-i18n="pubs.p2.meta">Revista Eletrônica Acervo Saúde (REAS) (2025)</p>
+            <p data-i18n="pubs.p2.desc">Critérios cirúrgicos, inovações em quimio/radioterapia e qualidade de vida.</p>
             <div class="chips">
-              <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank" rel="noopener">DOI</a>
-              <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
+              <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank">PDF</a>
             </div>
           </div>
         </article>
@@ -148,7 +119,7 @@
     </div>
   </section>
 
-  <!-- ===== MEUS PROJETOS ===== -->
+  <!-- PROJETOS -->
   <section id="projects" class="section">
     <div class="wrap">
       <h2 class="section-title" data-i18n="projects.title">Meus projetos</h2>
@@ -181,59 +152,43 @@
     </div>
   </section>
 
-  <!-- ===== CULTURAS (somente fotos redondas) ===== -->
+  <!-- CULTURAS (bolinhas apenas com a foto, sem fundo roxo) -->
   <section id="cultures" class="section">
     <div class="wrap narrow">
       <h2 class="section-title" data-i18n="cult.title">Culturas que me transformaram</h2>
       <p class="lead center" data-i18n="cult.lead">
-        Viajar transforma corpo e mente. Entre línguas e costumes, ampliamos a visão de mundo, cultivamos
-        curiosidade e empatia e voltamos diferentes. Estas imagens guardam aprendizados que me movem.
+        Viajar transforma corpo e mente…
       </p>
-
       <div class="stories">
-        <a class="story" target="_blank" rel="noopener" href="https://www.instagram.com/stories/highlights/18074948018054911/">
-          <img src="assets/img/photos/travel-panama.jpg" alt="Panamá"><span>Panamá</span>
-        </a>
-        <a class="story" target="_blank" rel="noopener" href="https://www.instagram.com/stories/highlights/18101151847591152/">
-          <img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba"><span>Córdoba</span>
-        </a>
-        <a class="story" target="_blank" rel="noopener" href="https://www.instagram.com/stories/highlights/18142613215403020/">
-          <img src="assets/img/photos/travel-rosario.jpg" alt="Rosário"><span>Rosário</span>
-        </a>
-        <a class="story" target="_blank" rel="noopener" href="https://www.instagram.com/stories/highlights/18054605081571365/">
-          <img src="assets/img/photos/travel-bahia.jpg" alt="Bahia"><span>Bahia</span>
-        </a>
-        <a class="story" target="_blank" rel="noopener" href="https://www.instagram.com/stories/highlights/17970345023356845/">
-          <img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo"><span>São Paulo</span>
-        </a>
-        <a class="story" target="_blank" rel="noopener" href="https://www.instagram.com/stories/highlights/18173849404351038/">
-          <img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao"><span>Curaçao</span>
-        </a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank"><img src="assets/img/photos/travel-panama.jpg" alt="Panamá"><span>Panamá</span></a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank"><img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba"><span>Córdoba</span></a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank"><img src="assets/img/photos/travel-rosario.jpg" alt="Rosário"><span>Rosário</span></a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank"><img src="assets/img/photos/travel-bahia.jpg" alt="Bahia"><span>Bahia</span></a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank"><img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo"><span>São Paulo</span></a>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank"><img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao"><span>Curaçao</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTATO ===== -->
+  <!-- CONTATO -->
   <section id="contact" class="section">
     <div class="wrap narrow">
       <h2 class="section-title" data-i18n="contact.title">Contato</h2>
       <ul class="contact">
         <li><img src="assets/img/icons/email.png" alt=""><a href="mailto:gabibds@icloud.com">gabibds@icloud.com</a></li>
         <li><img src="assets/img/icons/email.png" alt=""><a href="mailto:universolaia06@gmail.com">universolaia06@gmail.com</a></li>
-        <li><img src="assets/img/icons/instagram.png" alt=""><a target="_blank" rel="noopener" href="https://instagram.com/yogabibds">@yogabibds</a></li>
-        <li><img src="assets/img/icons/linkedin.png" alt=""><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/gabrielabarbosadesousa/">LinkedIn</a></li>
-        <li><img src="assets/img/icons/github.png" alt=""><a target="_blank" rel="noopener" href="https://github.com/yogabibds">github.com/yogabibds</a></li>
-        <li><img src="assets/img/icons/whatsapp.png" alt=""><a target="_blank" rel="noopener" href="https://wa.me/5493413739528">WhatsApp: +54 9 341 373 9528</a></li>
+        <li><img src="assets/img/icons/instagram.png" alt=""><a target="_blank" href="https://instagram.com/yogabibds">@yogabibds</a></li>
+        <li><img src="assets/img/icons/linkedin.png" alt=""><a target="_blank" href="https://www.linkedin.com/in/gabrielabarbosadesousa/">LinkedIn</a></li>
+        <li><img src="assets/img/icons/github.png" alt=""><a target="_blank" href="https://github.com/yogabibds">github.com/yogabibds</a></li>
+        <li><img src="assets/img/icons/whatsapp.png" alt=""><a target="_blank" href="https://wa.me/5493413739528">WhatsApp: +54 9 341 373 9528</a></li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="wrap">© 2025 Universo Laia.</div>
   </footer>
 
-  <!-- JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
