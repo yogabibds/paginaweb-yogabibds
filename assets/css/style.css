@@ -1,306 +1,256 @@
-/* ================================
-   UNIVERSO LAIA — RELUME STYLE
-   Faixas coloridas + Hero com imagem
-================================ */
+/* ------------------------------------------------------ */
+/* RESET & ROOT                                            */
+/* ------------------------------------------------------ */
 
-/* Fonte */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+:root{
+  --font-main: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial;
 
-:root {
-  --purple-hero: #4A2BBF;
-  --purple-strong: #5227B8;
-  --purple-dark: #3A177C;
-  --lilac: #EFEAFF;
-  --white: #FFFFFF;
-  --black-soft: #111113;
-  --text-dark: #1A1A1A;
-  --text-light: #FAFAFA;
-  --chip-doi: #4B22B3;
-  --chip-pdf: #6C2DE9;
-  --radius: 16px;
+  --bg: #0e0e14;
+  --text: #f3f2ff;
+  --muted: #a9a7c4;
+
+  /* Paleta Relume Purple */
+  --purple-dark: #1a102a;
+  --purple: #5b4e9f;
+  --purple-light: #7e6cff;
+  --purple-band: #2c1e47;
+
+  /* Painéis */
+  --panel: rgba(255,255,255,0.06);
+  --panel2: rgba(255,255,255,0.03);
+
+  --accent1: #a98bff;
+  --accent2: #7cf3d0;
+
+  --white: #fff;
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--white);
-  color: var(--text-dark);
-  line-height: 1.6;
+html,body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-main);
+  font-size:16px;
+  line-height:1.6;
 }
 
-/* CONTAINERS */
-.wrap {
-  width: min(1200px, 90%);
-  margin: auto;
+img{
+  max-width:100%;
+  display:block;
 }
 
-.wrap.narrow {
-  width: min(900px, 90%);
-  margin: auto;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-/* NAV */
-.topbar {
-  background: var(--white);
-  padding: 18px 0;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+.wrap{
+  width:min(1100px,90%);
+  margin:0 auto;
 }
 
-.topbar .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.wrap.narrow{
+  width:min(860px,90%);
 }
 
-.menu a {
-  margin-left: 24px;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--text-dark);
+/* ------------------------------------------------------ */
+/* TOPBAR                                                  */
+/* ------------------------------------------------------ */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(14px) saturate(150%);
+  border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-.langs button {
-  margin-left: 12px;
+.topbar .wrap{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  padding:16px 0;
 }
 
-/* ================================
-   HERO COM IMAGEM + OVERLAY
-================================ */
-
-.hero {
-  position: relative;
-  padding: 160px 0;
-  text-align: center;
-
-  /* Fundo imagem */
-  background-image: url('../img/photos/hero-brain.jpg');
-  background-size: cover;
-  background-position: center;
+.brand{
+  font-size:1.1rem;
+  font-weight:700;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, #3A177CCC, #4A2BBFCC);
-  backdrop-filter: blur(2px);
+.menu{
+  display:flex;
+  gap:22px;
+  flex:1;
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 2;
+.menu a{
+  color:var(--muted);
+  font-weight:500;
 }
 
-.hero h1 {
-  font-size: 56px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 16px;
+.menu a:hover{
+  color:var(--text);
 }
 
-.hero-subtop {
-  font-size: 20px;
-  color: #E4DDF7;
-  margin-bottom: 10px;
+.langs{
+  display:flex;
+  gap:8px;
 }
 
-.hero-sub {
-  font-size: 22px;
-  color: #fff;
-  opacity: 0.9;
-  margin-bottom: 28px;
+.lang-btn{
+  padding:6px 12px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:transparent;
+  color:var(--text);
+  border-radius:8px;
+  cursor:pointer;
 }
 
-.cta {
-  background: #fff;
-  color: var(--purple-dark);
-  padding: 14px 32px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
+.lang-btn.active{
+  background:rgba(126,108,255,0.25);
+  border-color:var(--purple-light);
 }
 
-/* ================================
-   SEÇÕES — FAIXAS COLORIDAS
-================================ */
+/* ------------------------------------------------------ */
+/* SECTIONS / FAIXAS                                       */
+/* ------------------------------------------------------ */
 
-.section {
-  padding: 120px 0;
+.section{
+  padding:80px 0;
 }
 
-/* Quem sou eu → faixa roxa */
-#about {
-  background: var(--purple-strong);
-  color: var(--white);
+.hero-band{
+  background: linear-gradient(180deg, #3d2d76, #271d4f 70%, #1d1636);
 }
 
-/* Formação → branca */
-.edu {
-  background: var(--white);
-  color: var(--text-dark);
+.band-purple{
+  background:var(--purple-dark);
 }
 
-/* Publicações → lilás */
-#pubs {
-  background: var(--lilac);
+.band-purple-light{
+  background:#3a2e63;
 }
 
-/* Projetos → roxo muito escuro */
-#projects {
-  background: var(--purple-dark);
-  color: var(--white);
+.band-dark{
+  background:#14121f;
 }
 
-/* Culturas → branca */
-#cultures {
-  background: var(--white);
+/* ------------------------------------------------------ */
+/* HERO                                                    */
+/* ------------------------------------------------------ */
+
+.hero{
+  text-align:center;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap:22px;
+  padding-top:60px;
 }
 
-/* Contato → preto suave */
-#contact {
-  background: var(--black-soft);
-  color: var(--white);
+.hero-badge{
+  width:140px;
+  height:140px;
+  object-fit:contain;
+  border-radius:50%;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 28px rgba(169,139,255,0.45));
 }
 
-/* ================================
-   CARDS / ELEMENTOS INTERNOS
-================================ */
-
-.about-photo img {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 18px auto 32px;
-  display: block;
+.hero-inner h1{
+  font-size:clamp(2.4rem, 6vw, 4rem);
+  font-weight:800;
+  letter-spacing:-0.5px;
 }
 
-.card {
-  background: var(--white);
-  padding: 40px;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-  margin-top: 40px;
+.hero-subtop{
+  color:var(--muted);
+  font-weight:600;
+  margin-top:8px;
 }
 
-/* Publicações cards */
-.pub-grid {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+.hero-sub{
+  color:var(--muted);
+  font-size:1.05rem;
 }
 
-.pub {
-  background: var(--white);
-  padding: 32px;
-  border-radius: var(--radius);
-  display: flex;
-  gap: 24px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+.cta{
+  margin-top:12px;
+  padding:14px 22px;
+  font-weight:700;
+  background:linear-gradient(135deg, var(--accent1), var(--accent2));
+  color:#0b0f15;
+  border-radius:14px;
+  display:inline-block;
 }
 
-.pub-ico img {
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
-  object-fit: cover;
+/* ------------------------------------------------------ */
+/* ABOUT                                                   */
+/* ------------------------------------------------------ */
+
+.section-title{
+  font-size:2.1rem;
+  margin-bottom:26px;
+  font-weight:800;
 }
 
-.chips a {
-  padding: 6px 14px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
+.lead{
+  color:var(--muted);
+  font-size:1.1rem;
+  margin-bottom:30px;
 }
 
-.chips a:nth-child(1) { background: var(--chip-doi); }
-.chips a:nth-child(2) { background: var(--chip-pdf); }
-
-/* Projetos */
-.proj-grid {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.about-photo{
+  display:flex;
+  justify-content:center;
+  margin-bottom:22px;
 }
 
-.proj {
-  text-align: center;
-  padding: 32px;
-  background: #ffffff10;
-  border-radius: var(--radius);
-  backdrop-filter: blur(6px);
-  border: 1px solid #ffffff22;
-  text-decoration: none;
-  color: white;
+.about-photo img{
+  width:190px;
+  height:190px;
+  object-fit:cover;
+  border-radius:50%;
+  border:6px solid transparent;
+  box-shadow:0 0 0 4px rgba(126,108,255,1), 0 0 42px rgba(126,108,255,0.3);
 }
 
-.proj img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-bottom: 16px;
+/* ------------------------------------------------------ */
+/* CARD                                                    */
+/* ------------------------------------------------------ */
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.00));
+  border:1px solid rgba(255,255,255,0.1);
+  padding:22px;
+  border-radius:18px;
 }
 
-/* Culturas Stories */
-.stories {
-  margin-top: 32px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+.card-hd h3{
+  font-size:1.3rem;
+  margin-bottom:10px;
 }
 
-.story img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
+.btns{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
-/* Contato */
-.contact li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
+.btn.ghost{
+  padding:10px 16px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.18);
+  font-size:0.95rem;
 }
 
-.contact a {
-  color: #fff;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 40px;
-  color: #fff;
-  background: #0C0C0E;
-}
-
-/* ================================
-   ANIMAÇÃO FADE-UP (Relume Style)
-================================ */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+.btn.
