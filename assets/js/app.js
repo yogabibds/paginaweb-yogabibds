@@ -1,108 +1,77 @@
 /* ======================================================
-   APP.JS — Animações Avançadas (Parallax, Microinterações)
+   APP.JS — Animações Avançadas (Compatível com Main.js)
 ====================================================== */
 
 /* ------------------------------------------------------
-   1) PARALLAX SUAVE NO HERO (imagem do cérebro)
+   PARALLAX SUAVE NO HERO (CÉREBRO)
 ------------------------------------------------------ */
 window.addEventListener("scroll", () => {
-  const sc = window.scrollY * 0.15; // mais suave
-  const heroImg = document.querySelector(".hero-badge");
+  const sc = window.scrollY * 0.20;
+  const badge = document.querySelector(".hero-badge");
 
-  if (heroImg) {
-    heroImg.style.transform = `translateY(${sc}px) scale(1.03)`;
+  if (badge) {
+    badge.style.transform = `translateY(${sc}px) scale(1.03)`;
+    badge.style.transition = "transform 0.1s linear";
   }
 });
 
 
 /* ------------------------------------------------------
-   2) FADE E SLIDE EM TÍTULOS ao rolar
+   FADE PROGRESSIVO EM TÍTULOS E ELEMENTOS IMPORTANTES
 ------------------------------------------------------ */
-const titles = document.querySelectorAll(".section-title");
+function fadeOnScroll() {
+  const els = document.querySelectorAll(
+    ".section-title, .lead, .story, .proj, .pub, .about-photo"
+  );
 
-function animateTitles() {
-  titles.forEach((t) => {
-    const box = t.getBoundingClientRect();
-
+  els.forEach(el => {
+    const box = el.getBoundingClientRect();
     if (box.top < window.innerHeight - 120) {
-      t.style.opacity = 1;
-      t.style.transform = "translateY(0)";
-      t.style.transition = "1s ease";
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+      el.style.transition = "0.9s ease";
     }
   });
 }
 
-window.addEventListener("scroll", animateTitles);
-animateTitles();
+window.addEventListener("scroll", fadeOnScroll);
+window.addEventListener("load", fadeOnScroll);
 
 
 /* ------------------------------------------------------
-   3) MICRO-INTERAÇÃO EM CARDS DE PROJETOS
+   MICRO-ANIMAÇÕES EM PROJETOS
 ------------------------------------------------------ */
-const cards = document.querySelectorAll(".proj");
-
-cards.forEach((c) => {
-  c.addEventListener("mouseenter", () => {
-    c.style.transform = "translateY(-6px)";
-    c.style.boxShadow = "0 12px 26px rgba(0,0,0,0.25)";
-    c.style.transition = "0.3s ease";
+document.querySelectorAll(".proj").forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-8px)";
+    card.style.boxShadow = "0 14px 32px rgba(0,0,0,0.22)";
   });
 
-  c.addEventListener("mouseleave", () => {
-    c.style.transform = "translateY(0)";
-    c.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0px)";
+    card.style.boxShadow = "0 8px 18px rgba(0,0,0,0.14)";
   });
 });
 
 
 /* ------------------------------------------------------
-   4) EFEITO FLOAT (levitação suave) nos ícones de contato
+   MICRO-ANIMAÇÃO NAS FOTOS DE CULTURAS (Stories)
 ------------------------------------------------------ */
-const contactItems = document.querySelectorAll(".contact-item");
-
-contactItems.forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    item.style.transform = "translateY(-4px)";
-    item.style.transition = "0.25s ease";
-  });
-
-  item.addEventListener("mouseleave", () => {
-    item.style.transform = "translateY(0)";
-  });
-});
-
-
-/* ------------------------------------------------------
-   5) PULSE SUAVE no botão CTA do HERO
------------------------------------------------------- */
-const cta = document.querySelector(".cta");
-
-if (cta) {
-  cta.addEventListener("mouseenter", () => {
-    cta.style.transform = "scale(1.06)";
-    cta.style.boxShadow = "0 10px 25px rgba(0,0,0,0.22)";
-    cta.style.transition = "0.3s";
-  });
-
-  cta.addEventListener("mouseleave", () => {
-    cta.style.transform = "scale(1)";
-    cta.style.boxShadow = "0 6px 14px rgba(0,0,0,0.15)";
-  });
-}
-
-
-/* ------------------------------------------------------
-   6) STORY CARDS — zoom suave
------------------------------------------------------- */
-const stories = document.querySelectorAll(".story img");
-
-stories.forEach((img) => {
+document.querySelectorAll(".story img").forEach(img => {
   img.addEventListener("mouseenter", () => {
-    img.style.transform = "scale(1.05)";
-    img.style.transition = "0.35s ease";
+    img.style.transform = "scale(1.08)";
+    img.style.transition = "0.25s";
   });
 
   img.addEventListener("mouseleave", () => {
     img.style.transform = "scale(1)";
   });
+});
+
+
+/* ------------------------------------------------------
+   SMOOTH APPEAR ON LOAD (EVITA FLICKER)
+------------------------------------------------------ */
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.style.opacity = 1;
 });
