@@ -1,236 +1,435 @@
-/* =============================
-    RESET & BASE
-=============================*/
-:root{
-  --purple1:#5B4E9F;
-  --purple2:#3A2D7E;
-  --purple3:#2E255C;
-  --purple-light:#695BC9;
-  --dark1:#0b0b12;
-  --dark2:#0f0f18;
-  --text:#f2f2ff;
-  --muted:#b8b6d9;
-  --white:#ffffff;
+/* ---------------------------------------------------
+   VARIÁVEIS GERAIS / DESIGN SYSTEM (Relume Style)
+--------------------------------------------------- */
+:root {
+  --purple-900:#11071F;
+  --purple-800:#1A0F2E;
+  --purple-700:#3C1F69;
+  --purple-500:#6E3FF3;
+  --purple-300:#A88CFF;
+
+  --dark-900:#0A0A0C;
+  --dark-800:#111115;
+  --dark-700:#1B1B21;
+
+  --light-100:#F7F7FA;
+  --light-200:#ECECF4;
+
+  --radius-lg:24px;
+  --radius-md:14px;
+  --radius-sm:8px;
+
+  --font-display:"Space Grotesk", sans-serif;
+  --font-body:"Inter", sans-serif;
+
+  --max-w:980px;
+  --pad-section:110px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  font-family:'Inter', 'Sora', sans-serif;
-  color:var(--text);
-  background:var(--dark1);
-  scroll-behavior:smooth;
+/* ---------------------------------------------------
+   BASE
+--------------------------------------------------- */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:var(--font-body);
+  background:var(--purple-900);
+  color:white;
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
-img{display:block;max-width:100%}
-a{text-decoration:none;color:var(--text)}
+img{max-width:100%;display:block;}
 
-.wrap{width:min(1100px,92%);margin:auto}
-.wrap.narrow{width:min(820px,92%)}
-
-/* =============================
-    NAVIGATION
-=============================*/
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:rgba(0,0,0,.4);
-  padding:14px 0;
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.06);
+.wrap{
+  width:100%;
+  max-width:var(--max-w);
+  margin:auto;
+  padding:0 22px;
 }
-.topbar .wrap{display:flex;align-items:center;gap:24px}
-.brand{font-weight:700;font-size:1.1rem}
 
-.menu{display:flex;gap:18px;flex:1}
-.menu a{color:var(--muted);font-weight:400}
-.menu a:hover{color:var(--white)}
-
-.langs{display:flex;gap:8px}
-.lang-btn{
-  padding:6px 12px;
-  background:#0003;border:1px solid #ffffff22;
-  border-radius:10px;color:var(--text);cursor:pointer
-}
-.lang-btn.active{background:var(--purple-light);border-color:#ffffff55}
-
-/* =============================
-    SECTION COLORS (FAIXAS)
-=============================*/
-.section{padding:90px 0}
-
-.section-purple{background:var(--purple3)}
-.section-purple-mid{background:var(--purple2)}
-.section-purple-light{background:var(--purple-light)}
-.section-dark{background:var(--dark1)}
-
-/* =============================
-    HERO
-=============================*/
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+.section-title{
+  font-family:var(--font-display);
+  font-size:2.4rem;
+  margin-bottom:40px;
   text-align:center;
-  position:relative;
+  font-weight:600;
 }
 
-.hero-brain{
-  width:160px;
-  height:160px;
+/* ---------------------------------------------------
+   SEÇÕES DARK / LIGHT (faixas alternadas estilo Relume)
+--------------------------------------------------- */
+
+.section-dark{
+  background:var(--purple-900);
+  padding:var(--pad-section) 0;
+}
+
+.section-mid{
+  background:var(--purple-800);
+  padding:var(--pad-section) 0;
+}
+
+.section-light{
+  background:var(--light-100);
+  color:#111;
+  padding:var(--pad-section) 0;
+}
+
+/* ---------------------------------------------------
+   NAVBAR
+--------------------------------------------------- */
+
+.topbar{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:70px;
+  backdrop-filter:blur(14px);
+  background:rgba(10,10,20,0.35);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  align-items:center;
+  z-index:999;
+}
+
+.topbar .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  font-weight:700;
+  color:white;
+  letter-spacing:-0.3px;
+  text-decoration:none;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-size:0.95rem;
+  font-weight:500;
+  transition:0.2s;
+}
+
+.menu a:hover{
+  opacity:0.55;
+}
+
+.langs button{
+  margin-left:10px;
+  padding:6px 10px;
+  font-size:0.7rem;
+  border-radius:6px;
+  border:1px solid #fff3;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.langs .active{
+  background:white;
+  color:black;
+  font-weight:600;
+}
+
+/* ---------------------------------------------------
+   HERO (faixa roxa premium)
+--------------------------------------------------- */
+
+.hero{
+  padding-top:130px;
+  padding-bottom:150px;
+  text-align:center;
+  background:var(--purple-700);
+}
+
+.hero-inner{
+  max-width:700px;
+  margin:auto;
+  animation:fadeIn 1.3s ease forwards;
+}
+
+.hero-badge{
+  width:150px;
+  height:150px;
   border-radius:50%;
   object-fit:cover;
-  margin-bottom:22px;
-  animation:pulse 4s infinite;
-  box-shadow:0 0 40px rgba(255,255,255,.15);
-}
-
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.07)}
-  100%{transform:scale(1)}
+  margin:auto;
+  margin-bottom:28px;
+  box-shadow:0 0 40px rgba(255,255,255,0.08);
 }
 
 .hero h1{
-  font-size:clamp(2.4rem,6vw,4.2rem);
+  font-family:var(--font-display);
+  font-size:3rem;
   font-weight:700;
+  margin-bottom:12px;
 }
-.hero-subtop{color:var(--muted);margin-top:8px;font-size:1rem}
-.hero-sub{color:var(--muted);margin-top:4px;font-size:1.1rem}
+
+.hero-sub{
+  font-size:1.1rem;
+  margin-top:12px;
+  margin-bottom:32px;
+  opacity:0.85;
+}
+
+#rotator{
+  font-size:1.15rem;
+  font-weight:500;
+  opacity:0.9;
+  margin-bottom:6px;
+}
 
 .cta{
-  margin-top:20px;
-  padding:14px 24px;
-  background:linear-gradient(135deg,var(--purple-light),var(--purple1));
-  color:#fff;
-  border-radius:14px;
-  font-weight:700;
-  transition:0.3s;
+  display:inline-block;
+  background:white;
+  color:black;
+  padding:14px 32px;
+  border-radius:var(--radius-md);
+  text-decoration:none;
+  font-weight:600;
+  transition:0.25s;
 }
+
 .cta:hover{
   transform:translateY(-4px);
-  box-shadow:0 6px 20px rgba(0,0,0,.3);
+  opacity:0.92;
 }
 
-/* =============================
-    ABOUT & PHOTO
-=============================*/
+/* ---------------------------------------------------
+   ABOUT
+--------------------------------------------------- */
+
 .about-photo{
-  display:flex;justify-content:center;margin:20px 0;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  overflow:hidden;
+  margin:0 auto 30px auto;
+  box-shadow:0 0 35px rgba(255,255,255,0.08);
 }
+
 .about-photo img{
-  width:190px;height:190px;border-radius:50%;object-fit:cover;
-  box-shadow:0 0 0 4px #ffffff55,0 0 40px rgba(255,255,255,.15);
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* =============================
-    CARDS
-=============================*/
+.lead{
+  font-size:1.15rem;
+  line-height:1.75;
+  margin-bottom:45px;
+  text-align:center;
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* ---------------------------------------------------
+   CARDS
+--------------------------------------------------- */
+
 .card{
-  background:rgba(255,255,255,.05);
-  border-radius:16px;
-  padding:22px;
-  border:1px solid rgba(255,255,255,.08);
-  margin-top:20px;
+  background:white;
+  color:#222;
+  border-radius:var(--radius-lg);
+  padding:34px;
+  margin-top:25px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.08);
+  transition:0.3s;
 }
 
-/* =============================
-    STORIES
-=============================*/
+.card:hover{
+  transform:translateY(-7px);
+}
+
+/* ---------------------------------------------------
+   STORIES (UNR + viagem)
+--------------------------------------------------- */
+
 .stories{
-  display:flex;flex-wrap:wrap;gap:22px;margin-top:16px;
+  display:flex;
+  gap:22px;
+  margin:30px 0;
+  flex-wrap:wrap;
+  justify-content:center;
 }
+
 .story{
-  display:flex;flex-direction:column;align-items:center;gap:8px;
+  text-decoration:none;
+  color:inherit;
+  text-align:center;
+  font-size:0.85rem;
+  transition:0.2s;
 }
+
 .story img{
-  width:84px;height:84px;border-radius:50%;object-fit:cover;
-  box-shadow:0 0 0 4px rgba(255,255,255,.4);
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:6px;
+  border:2px solid rgba(255,255,255,0.4);
 }
 
-/* =============================
-    PUBLICAÇÕES
-=============================*/
+.story:hover{
+  opacity:0.7;
+}
+
+/* ---------------------------------------------------
+   PUBLICAÇÕES
+--------------------------------------------------- */
+
 .pub-grid{
-  display:grid;gap:22px;
+  display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-}
-
-.pub{
-  background:rgba(0,0,0,.25);
-  border-radius:18px;
-  padding:22px;
-  display:flex;gap:18px;
+  gap:40px;
 }
 
 .pub-ico img{
-  width:70px;height:70px;border-radius:50%;object-fit:cover;
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:var(--radius-md);
+  margin-bottom:16px;
+}
+
+.meta{
+  font-size:0.85rem;
+  opacity:0.7;
+  margin-bottom:6px;
+}
+
+.chips{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
 }
 
 .chip{
-  padding:6px 12px;border-radius:999px;
-  font-size:.82rem;
+  padding:6px 14px;
+  border-radius:var(--radius-sm);
+  font-size:0.8rem;
+  text-decoration:none;
+  background:black;
+  color:white;
+  transition:0.2s;
 }
 
-.chip-doi{background:#8b5cff;color:white}
-.chip-pdf{background:#ffffff22;color:white}
+.chip:hover{
+  opacity:0.65;
+}
 
-/* =============================
-    PROJETOS
-=============================*/
+/* ---------------------------------------------------
+   PROJETOS
+--------------------------------------------------- */
+
 .proj-grid{
-  display:grid;gap:22px;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:32px;
 }
 
 .proj{
-  background:rgba(255,255,255,.05);
-  border-radius:20px;
-  padding:20px;
-  transition:.3s;
+  background:white;
+  color:black;
+  text-decoration:none;
+  border-radius:var(--radius-lg);
+  padding:30px;
   text-align:center;
+  transition:0.26s;
+  box-shadow:0 10px 24px rgba(0,0,0,0.12);
 }
+
+.proj img{
+  width:74px;
+  height:74px;
+  object-fit:contain;
+  margin:auto;
+  margin-bottom:14px;
+}
+
 .proj:hover{
   transform:translateY(-6px);
-  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  box-shadow:0 14px 30px rgba(0,0,0,0.18);
 }
 
-/* =============================
-    CONTATO
-=============================*/
+/* ---------------------------------------------------
+   CULTURES
+--------------------------------------------------- */
+
+.stories img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.stories span{
+  display:block;
+  text-align:center;
+  margin-top:6px;
+}
+
+/* ---------------------------------------------------
+   CONTATO
+--------------------------------------------------- */
+
 .contact{
   list-style:none;
-  display:grid;gap:14px;
-  margin-top:20px;
+  padding:0;
 }
+
 .contact li{
-  display:flex;align-items:center;gap:12px;
-}
-.contact li img{
-  width:18px;height:18px;opacity:.85;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
 }
 
-/* =============================
-    FOOTER
-=============================*/
+.contact img{
+  width:22px;
+  height:22px;
+  opacity:0.85;
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+
 .footer{
-  padding:30px 0;
-  background:var(--dark2);
-  color:var(--muted);
   text-align:center;
+  padding:40px 0;
+  font-size:0.95rem;
+  opacity:0.75;
 }
 
-/* =============================
-    ANIMAÇÕES RELUME
-=============================*/
+/* ---------------------------------------------------
+   ANIMAÇÕES (Relume)
+--------------------------------------------------- */
+
+.fade-in{
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
+}
+
 .fade-up{
-  opacity:0;transform:translateY(30px);
-  animation:fade-up .8s forwards ease-out;
-}
-@keyframes fade-up{
-  to{opacity:1;transform:translateY(0)}
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeUp 1s ease forwards;
 }
 
-.fade-up-delay{animation-delay:.15s}
-.fade-up-delay2{animation-delay:.3s}
-.fade-up-delay3{animation-delay:.45s}
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0);}
+}
