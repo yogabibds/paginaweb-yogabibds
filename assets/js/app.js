@@ -1,108 +1,176 @@
 /* ======================================================
-   APP.JS — animações avançadas / efeitos extras
-   Compatível 100% com main.js sem conflitos
+   I18N (TRADUÇÃO)
 ====================================================== */
+const I18N = {
+  pt: {
+    "nav.home":"Início",
+    "nav.about":"Quem sou eu",
+    "nav.projects":"Projetos",
+    "nav.pubs":"Publicações",
+    "nav.cultures":"Culturas",
+    "nav.contact":"Contato",
 
-/* ======================================================
-   1) SCROLL SUAVE PARA LINKS DO MENU
-====================================================== */
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-  link.addEventListener("click", e=>{
-    const target = document.querySelector(link.getAttribute("href"));
-    if(target){
-      e.preventDefault();
-      window.scrollTo({
-        top: target.offsetTop - 80,
-        behavior: "smooth"
-      });
-    }
-  });
-});
+    "hero.title":"Bem-vindo ao meu universo",
+    "hero.subtitle":"Aprender é meu superpoder",
+    "hero.cta":"Meus projetos",
 
+    ROTATOR:[
+      "Respirar, inspirar, criar e compartilhar.",
+      "Construindo uma ponte entre Ciência, Arte e Bem-Estar.",
+      "Tecnologia a serviço das pessoas."
+    ],
 
-/* ======================================================
-   2) PARALLAX SUAVE NO HERO
-====================================================== */
-const hero = document.querySelector(".hero-bg");
-window.addEventListener("scroll", ()=>{
-  const sc = window.scrollY * 0.25;
-  if(hero){
-    hero.style.transform = `translateY(${sc}px)`;
+    "about.title":"Quem sou eu",
+
+    "pubs.title":"Publicações Acadêmicas",
+    "projects.title":"Meus projetos",
+
+    "cult.title":"Culturas que me transformaram",
+    "cult.lead":"Viajar transforma corpo e mente…",
+
+    "contact.title":"Contato"
+  },
+
+  es: {
+    "nav.home":"Inicio",
+    "nav.about":"Sobre mí",
+    "nav.projects":"Proyectos",
+    "nav.pubs":"Publicaciones",
+    "nav.cultures":"Culturas",
+    "nav.contact":"Contacto",
+
+    "hero.title":"Bienvenid@ a mi universo",
+    "hero.subtitle":"Aprender es mi superpoder",
+    "hero.cta":"Mis proyectos",
+
+    ROTATOR:[
+      "Respirar, inspirar, crear y compartir.",
+      "Tendiendo un puente entre Ciencia, Arte y Bienestar.",
+      "Tecnología al servicio de las personas."
+    ],
+
+    "about.title":"Quién soy",
+
+    "pubs.title":"Publicaciones Académicas",
+    "projects.title":"Mis proyectos",
+
+    "cult.title":"Culturas que me transformaron",
+    "cult.lead":"Viajar transforma cuerpo y mente…",
+
+    "contact.title":"Contacto"
+  },
+
+  en: {
+    "nav.home":"Home",
+    "nav.about":"About",
+    "nav.projects":"Projects",
+    "nav.pubs":"Publications",
+    "nav.cultures":"Cultures",
+    "nav.contact":"Contact",
+
+    "hero.title":"Welcome to my universe",
+    "hero.subtitle":"Learning is my superpower",
+    "hero.cta":"My projects",
+
+    ROTATOR:[
+      "Breathe, inspire, create and share.",
+      "Bridging Science, Art and Well-being.",
+      "Technology serving people."
+    ],
+
+    "about.title":"About me",
+
+    "pubs.title":"Academic Publications",
+    "projects.title":"My projects",
+
+    "cult.title":"Cultures that shaped me",
+    "cult.lead":"Travel reshapes body and mind…",
+
+    "contact.title":"Contact"
   }
-});
-
+};
 
 /* ======================================================
-   3) FADE + SLIDE PARA TODOS OS ELEMENTOS SECTION
+   HELPERS
 ====================================================== */
-function advancedScrollAnimations(){
-  const animated = document.querySelectorAll(".fade-adv");
+const $  = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
 
-  const obs = new IntersectionObserver((entries)=>{
+/* ======================================================
+   FUNÇÃO DE TROCA DE IDIOMA
+====================================================== */
+function applyLang(lang){
+  document.documentElement.lang = lang;
+
+  $$("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(I18N[lang][key]) el.textContent = I18N[lang][key];
+  });
+
+  // Frases rotativas
+  ROTATION.items = I18N[lang].ROTATOR;
+  ROTATION.index = 0;
+  ROTATION.tick(true);
+
+  // Botão ativo
+  $$(".lang-btn").forEach(b=>{
+    b.classList.toggle("active", b.dataset.lang === lang);
+  });
+}
+
+$$(".lang-btn").forEach(btn =>
+  btn.addEventListener("click", ()=> applyLang(btn.dataset.lang))
+);
+
+/* ======================================================
+   ROTATOR (FRASES)
+====================================================== */
+const ROTATION = {
+  items: I18N.pt.ROTATOR,
+  index: 0,
+  timer: null,
+
+  tick(immediate=false){
+    const rot = $("#rotator");
+    if(!rot) return;
+
+    rot.textContent = this.items[this.index];
+
+    if(this.timer) clearTimeout(this.timer);
+
+    this.timer = setTimeout(()=>{
+      this.index = (this.index + 1) % this.items.length;
+      this.tick();
+    }, immediate ? 12000 : 12000);
+  }
+};
+
+/* ======================================================
+   ANIMAÇÃO NO SCROLL
+====================================================== */
+function animateOnScroll(){
+  const elements = document.querySelectorAll(".fade-up, .fade-in");
+
+  const obs = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        entry.target.classList.add("visible");
+        entry.target.style.animationPlayState = "running";
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
-  animated.forEach(el => obs.observe(el));
+  elements.forEach(el=>{
+    el.style.animationPlayState = "paused";
+    obs.observe(el);
+  });
 }
 
-advancedScrollAnimations();
-
-
 /* ======================================================
-   4) HIGHLIGHT DO MENU CONFORME A SEÇÃO VISÍVEL
+   INIT
 ====================================================== */
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".menu a");
-
-function highlightMenu(){
-  let index = sections.length;
-
-  while(--index && window.scrollY + 120 < sections[index].offsetTop) {}
-
-  navLinks.forEach(link => link.classList.remove("active"));
-  navLinks[index].classList.add("active");
-}
-
-highlightMenu();
-window.addEventListener("scroll", highlightMenu);
-
-
-/* ======================================================
-   5) BOTÃO VOLTAR AO TOPO
-====================================================== */
-const topBtn = document.createElement("button");
-topBtn.innerText = "↑";
-topBtn.className = "back-to-top";
-document.body.appendChild(topBtn);
-
-topBtn.addEventListener("click", ()=>{
-  window.scrollTo({ top:0, behavior:"smooth" });
-});
-
-window.addEventListener("scroll", ()=>{
-  if(window.scrollY > 500){
-    topBtn.classList.add("show");
-  } else {
-    topBtn.classList.remove("show");
-  }
-});
-
-
-/* ======================================================
-   6) ANIMAÇÃO LEVE NAS IMAGENS (stories + fotos)
-====================================================== */
-document.querySelectorAll("img").forEach(img=>{
-  img.addEventListener("mouseenter", ()=>{
-    img.style.transform = "scale(1.04)";
-    img.style.transition = "0.25s ease";
-  });
-
-  img.addEventListener("mouseleave", ()=>{
-    img.style.transform = "scale(1)";
-  });
+document.addEventListener("DOMContentLoaded", ()=>{
+  applyLang("pt");
+  ROTATION.tick(true);
+  animateOnScroll();
 });
