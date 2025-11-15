@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Universo Laia</title>
 
-  <!-- Ícone -->
-  <link rel="preload" href="assets/img/icons/universe.png" as="image">
-
-  <!-- Fontes estilo Relume -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
 <!-- ============================================================
@@ -41,15 +41,15 @@
 </header>
 
 <!-- ============================================================
-     HERO – Faixa roxa com imagem + texto
+     HERO — 560px / imagem viva / blur reduzido
 ============================================================ -->
-<section id="home" class="hero section-dark">
+<section id="home" class="hero">
 
-  <!-- Fundo -->
+  <!-- Fundo hero -->
   <div class="hero-bg"></div>
 
-  <!-- Cérebro -->
-  <img class="hero-badge fade-up" src="assets/img/photos/hero-brain.jpg" alt="Universo Laia">
+  <!-- Imagem do cérebro -->
+  <img class="hero-badge fade-up" src="assets/img/photos/hero-brain.jpg" alt="Hero Universo Laia">
 
   <div class="hero-inner fade-up">
     <h1 data-i18n="hero.title">Bem-vindo ao meu universo</h1>
@@ -67,7 +67,7 @@
 </section>
 
 <!-- ============================================================
-     ABOUT – Quem Sou Eu
+     QUEM SOU EU
 ============================================================ -->
 <section id="about" class="section section-light">
   <div class="wrap narrow">
@@ -78,23 +78,22 @@
       <img src="assets/img/photos/about.jpg" alt="Gabriela">
     </div>
 
-    <!-- Texto inspiracional (versão longa adaptada) -->
-    <p class="lead fade-up">
+    <p class="lead fade-up" data-i18n="about.blurb1">
       Sou Gabriela Barbosa de Sousa, brasileira vivendo em Rosario, Argentina, estudante de Medicina na UNR e criadora do Universo Laia — um ecossistema que integra saúde, tecnologia, música, educação e bem-estar.
     </p>
 
-    <p class="lead fade-up">
-      Cresci cercada por livros, computadores, cultura musical e pessoas construindo novas histórias. Desde cedo aprendi que conhecimento transforma vidas e que aprender é um superpoder.
+    <p class="lead fade-up" data-i18n="about.blurb2">
+      Cresci cercada por livros, computadores, cultura musical e pessoas criando novas histórias. Desde cedo aprendi que o conhecimento transforma vidas — e que aprender é um superpoder.
     </p>
 
-    <p class="lead fade-up">
-      Acredito na união entre ciência e criatividade para resolver problemas reais. Hoje aplico essa visão tanto na área da saúde quanto nos meus projetos digitais: desenvolvo sites, estruturo processos, crio soluções e compartilho práticas de bem-estar.
+    <p class="lead fade-up" data-i18n="about.blurb3">
+      Acredito na união entre ciência e criatividade para resolver problemas reais. Nos meus projetos, desenvolvo sites, organizo processos, crio soluções digitais e compartilho práticas de bem-estar.
     </p>
 
     <ul class="pillars fade-up">
-      <li>🧠 Cuidar do corpo e da mente</li>
-      <li>📚 Compartilhar conhecimento</li>
-      <li>🌍 Construir pontes entre pessoas, culturas e tecnologias</li>
+      <li data-i18n="about.p1">🧠 Cuidar do corpo e da mente</li>
+      <li data-i18n="about.p2">📚 Compartilhar conhecimento</li>
+      <li data-i18n="about.p3">🌍 Construir pontes entre pessoas, culturas e tecnologias</li>
     </ul>
 
     <!-- Formação -->
@@ -115,16 +114,17 @@
       </div>
 
       <div class="btns">
-        <a class="btn ghost" href="assets/docs/cv-pt.pdf" target="_blank">CV PT</a>
-        <a class="btn ghost" href="assets/docs/cv-es.pdf" target="_blank">CV ES</a>
-        <a class="btn ghost" href="assets/docs/cv-en.pdf" target="_blank">CV EN</a>
+        <a class="btn ghost" href="assets/docs/cv-pt.pdf">CV PT</a>
+        <a class="btn ghost" href="assets/docs/cv-es.pdf">CV ES</a>
+        <a class="btn ghost" href="assets/docs/cv-en.pdf">CV EN</a>
       </div>
     </article>
+
   </div>
 </section>
 
 <!-- ============================================================
-     PUBLICAÇÕES ACADÊMICAS
+     PUBLICAÇÕES — lado a lado
 ============================================================ -->
 <section id="pubs" class="section section-dark">
   <div class="wrap">
@@ -135,49 +135,45 @@
 
       <!-- PUB 1 -->
       <article class="pub fade-up">
-        <div class="pub-ico">
-          <img src="assets/img/photos/pub-tbi.jpg" alt="TBI">
-        </div>
+        <img src="assets/img/photos/pub-tbi.jpg" class="pub-img" alt="TCE">
 
-        <div class="pub-body">
-          <h3 data-i18n="pubs.p1.title">
-            1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral
-          </h3>
+        <h3 data-i18n="pubs.p1.title">
+          Avanços diagnósticos e terapêuticos no Trauma Cranioencefálico
+        </h3>
 
-          <p class="meta" data-i18n="pubs.p1.meta">International Journal of Health Science (2024)</p>
+        <p class="meta" data-i18n="pubs.p1.meta">
+          International Journal of Health Science — 2024
+        </p>
 
-          <p data-i18n="pubs.p1.desc">
-            Revisão completa sobre TCE: neuroimagem (TC/RM), biomarcadores, manejo cirúrgico e UTI, escalas prognósticas e novas abordagens terapêuticas.
-          </p>
+        <p data-i18n="pubs.p1.desc">
+          Revisão sobre neuroimagem, biomarcadores, manejo em UTI, abordagem cirúrgica e prognóstico em TCE.
+        </p>
 
-          <div class="chips">
-            <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
-            <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank">PDF</a>
-          </div>
+        <div class="chips">
+          <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
+          <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank">PDF</a>
         </div>
       </article>
 
       <!-- PUB 2 -->
       <article class="pub fade-up">
-        <div class="pub-ico">
-          <img src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
-        </div>
+        <img src="assets/img/photos/pub-glioma.jpg" class="pub-img" alt="Glioma">
 
-        <div class="pub-body">
-          <h3 data-i18n="pubs.p2.title">
-            2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos
-          </h3>
+        <h3 data-i18n="pubs.p2.title">
+          Gliomas: técnicas cirúrgicas, avanços e impacto terapêutico
+        </h3>
 
-          <p class="meta" data-i18n="pubs.p2.meta">REAS (2025)</p>
+        <p class="meta" data-i18n="pubs.p2.meta">
+          Revista REAS — 2025
+        </p>
 
-          <p data-i18n="pubs.p2.desc">
-            Discussão das indicações cirúrgicas, riscos, neuroimagem avançada, terapias combinadas e impacto na qualidade de vida dos pacientes.
-          </p>
+        <p data-i18n="pubs.p2.desc">
+          Abordagens cirúrgicas, terapias combinadas, neuroimagem avançada e impacto na qualidade de vida.
+        </p>
 
-          <div class="chips">
-            <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
-            <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank">PDF</a>
-          </div>
+        <div class="chips">
+          <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
+          <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank">PDF</a>
         </div>
       </article>
 
@@ -198,25 +194,33 @@
       <a class="proj" href="https://laiamusictesting.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-music.png" alt="Laia Music">
         <h3>Laia Music</h3>
-        <p data-i18n="projects.music">Gestão do legado musical de Edney Fernandes.</p>
+        <p data-i18n="projects.music">
+          Gestão do legado musical de Edney Fernandes.
+        </p>
       </a>
 
       <a class="proj" href="https://laiatech.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-tech.png" alt="Laia Tech">
         <h3>Laia Tech</h3>
-        <p data-i18n="projects.tech">Consultoria técnica e desenvolvimento digital.</p>
+        <p data-i18n="projects.tech">
+          Consultoria técnica e desenvolvimento digital.
+        </p>
       </a>
 
       <a class="proj" href="https://proyectolaia.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-academy.png" alt="Laia Academy">
         <h3>Laia Academy</h3>
-        <p data-i18n="projects.academy">Idiomas, educação e intercâmbios culturais.</p>
+        <p data-i18n="projects.academy">
+          Idiomas, educação e intercâmbios culturais.
+        </p>
       </a>
 
       <a class="proj" href="https://laiamind.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-mind.png" alt="Laia Mind">
         <h3>Laia Mind</h3>
-        <p data-i18n="projects.mind">Meditação, bem-estar e neurociências.</p>
+        <p data-i18n="projects.mind">
+          Meditação, bem-estar e neurociências.
+        </p>
       </a>
 
     </div>
@@ -229,38 +233,36 @@
 <section id="cultures" class="section section-dark">
   <div class="wrap narrow">
 
-    <h2 class="section-title fade-up" data-i18n="cult.title">
-      Culturas que me transformaram
-    </h2>
+    <h2 class="section-title fade-up" data-i18n="cult.title">Culturas que me transformaram</h2>
 
     <p class="lead center fade-up" data-i18n="cult.lead">
-      Viajar transforma corpo e mente…
+      Viajar transforma corpo e mente...
     </p>
 
     <div class="stories fade-up">
 
-      <a class="story" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank">
-        <img src="assets/img/photos/travel-panama.jpg" alt="Panamá"><span>Panamá</span>
+      <a class="story" href="#" target="_blank">
+        <img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span>
       </a>
 
-      <a class="story" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank">
-        <img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba"><span>Córdoba</span>
+      <a class="story" href="#" target="_blank">
+        <img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span>
       </a>
 
-      <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank">
-        <img src="assets/img/photos/travel-rosario.jpg" alt="Rosário"><span>Rosário</span>
+      <a class="story" href="#" target="_blank">
+        <img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span>
       </a>
 
-      <a class="story" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank">
-        <img src="assets/img/photos/travel-bahia.jpg" alt="Bahia"><span>Bahia</span>
+      <a class="story" href="#" target="_blank">
+        <img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span>
       </a>
 
-      <a class="story" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank">
-        <img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo"><span>São Paulo</span>
+      <a class="story" href="#" target="_blank">
+        <img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span>
       </a>
 
-      <a class="story" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank">
-        <img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao"><span>Curaçao</span>
+      <a class="story" href="#" target="_blank">
+        <img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span>
       </a>
 
     </div>
