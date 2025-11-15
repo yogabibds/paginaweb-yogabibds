@@ -22,7 +22,7 @@ const I18N = {
     "about.title":"Quem sou eu",
     "about.blurb":"Sou Gabriela Barbosa, brasileira na Argentina. Trabalho com tecnologia há anos e hoje conecto saúde, música, educação e IA para resolver problemas reais.",
     "about.edu.title":"Formação em Medicina — UNR",
-    "about.edu.text":"Universidade Nacional de Rosário (UNR), Argentina. Currículo com PBL, prática clínica precoce e pesquisa em neurociências.",
+    "about.edu.text":"Universidade Nacional de Rosário (UNR), Argentina. Currículo com PBL, prática clínica precoce e pesquisa em neurocências.",
 
     "pubs.title":"Publicações Acadêmicas",
 
@@ -58,7 +58,7 @@ const I18N = {
     "about.title":"Quién soy",
     "about.blurb":"Soy Gabriela Barbosa, brasileña en Argentina. Conecto salud, música, educación e IA para resolver problemas reales.",
     "about.edu.title":"Formación en Medicina — UNR",
-    "about.edu.text":"Universidad Nacional de Rosario (UNR), Argentina. ABP, práctica clínica temprana e investigación en neurociencias.",
+    "about.edu.text":"Universidad Nacional de Rosario (UNR). ABP, práctica clínica temprana e investigación en neurociencias.",
 
     "pubs.title":"Publicaciones Académicas",
 
@@ -127,7 +127,7 @@ function applyLang(lang){
 
   $$("[data-i18n]").forEach(el=>{
     const key = el.getAttribute("data-i18n");
-    if(I18N[lang][key]) el.textContent = I18N[lang][key];
+    if(I18N[lang][key]) el.innerHTML = I18N[lang][key];
   });
 
   // Frases rotativas
@@ -135,9 +135,10 @@ function applyLang(lang){
   ROTATION.index = 0;
   ROTATION.tick(true);
 
-  $$(".lang-btn").forEach(b => {
-    b.classList.toggle("active", b.dataset.lang === lang);
-  });
+  // Botão ativo
+  $$(".lang-btn").forEach(b =>
+    b.classList.toggle("active", b.dataset.lang === lang)
+  );
 }
 
 $$(".lang-btn").forEach(btn =>
@@ -146,7 +147,7 @@ $$(".lang-btn").forEach(btn =>
 
 
 /* ======================================================
-   ROTATOR
+   ROTATOR – Frase dinâmica
 ====================================================== */
 const ROTATION = {
   items: I18N.pt.ROTATOR,
@@ -157,45 +158,54 @@ const ROTATION = {
     const el = $("#rotator");
     if(!el) return;
 
-    el.textContent = this.items[this.index];
+    el.style.opacity = 0;
+
+    setTimeout(()=>{
+      el.textContent = this.items[this.index];
+      el.style.opacity = 1;
+    }, 400);
 
     if(this.timer) clearTimeout(this.timer);
 
     this.timer = setTimeout(()=>{
       this.index = (this.index + 1) % this.items.length;
       this.tick();
-    }, immediate ? 14000 : 14000);
+    }, immediate ? 12000 : 12000);
   }
 };
 
 
 /* ======================================================
-   ANIMAÇÕES (Relume Style)
+   ANIMAÇÕES — Estilo Relume Premium
 ====================================================== */
 function animateOnScroll(){
-  const elements = document.querySelectorAll(".fade-in, .fade-up");
+  const animated = document.querySelectorAll(".fade-in, .fade-up");
 
-  const obs = new IntersectionObserver(entries=>{
+  const observer = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        entry.target.style.animationPlayState = "running";
-        obs.unobserve(entry.target);
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
       }
     });
   }, {threshold:0.2});
 
-  elements.forEach(el=>{
-    el.style.animationPlayState = "paused";
-    obs.observe(el);
-  });
+  animated.forEach(el => observer.observe(el));
 }
+
+
+/* ======================================================
+   FADE PARA ELEMENTOS GERAIS
+====================================================== */
+document.querySelectorAll("section, h2, p, img, .proj, .pub, .story")
+  .forEach(el => el.classList.add("fade-up"));
 
 
 /* ======================================================
    INIT
 ====================================================== */
 document.addEventListener("DOMContentLoaded", ()=>{
-  applyLang("pt");
-  ROTATION.tick(true);
-  animateOnScroll();
+  applyLang("pt");     // idioma padrão
+  ROTATION.tick(true); // inicia rotator
+  animateOnScroll();   // ativa animações
 });
