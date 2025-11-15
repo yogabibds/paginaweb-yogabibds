@@ -1,340 +1,445 @@
 /* ============================================================
-   GLOBAL – Fontes, Reset e Layout Base
+   RESET
 ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700;900&display=swap');
-
-:root {
-  --purple:#4b1f82;
-  --purple-light:#6b35bd;
-  --purple-dark:#2d0d55;
-  --text-light:#fafafa;
-  --text-dark:#1a1a1a;
-  --bg-light:#f7f7f7;
-  --bg-dark:#121212;
-  --radius:14px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+html{
+  scroll-behavior: smooth;
+}
 
-body {
+body{
   font-family:"Poppins", sans-serif;
-  background:#fff;
-  color:var(--text-dark);
+  background:#0e0a1a;
+  color:#fff;
   line-height:1.6;
 }
 
 /* Containers */
-.wrap { width:90%; max-width:1100px; margin:0 auto; }
-.wrap.narrow { max-width:760px; }
+.wrap{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.wrap.narrow{
+  max-width:800px;
+}
 
 /* ============================================================
    NAVBAR
 ============================================================ */
-.topbar {
-  background:var(--bg-dark);
-  color:#fff;
-  padding:16px 0;
+.topbar{
+  background:#0e0a1a;
+  padding:18px 0;
   position:sticky;
   top:0;
   z-index:999;
+  border-bottom:1px solid rgba(255,255,255,0.07);
 }
-.topbar .brand {
+
+.topbar .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  font-size:22px;
+  font-weight:600;
+  color:#fff;
+  text-decoration:none;
+}
+
+.menu a{
+  margin:0 14px;
+  text-decoration:none;
+  color:#dcdcdc;
+  font-weight:400;
+  transition:0.2s;
   font-family:"Work Sans", sans-serif;
-  font-weight:700;
-  color:white;
-  text-decoration:none;
-  font-size:1.4rem;
 }
-.menu a {
-  color:white;
-  margin:0 12px;
-  text-decoration:none;
-  font-weight:500;
-  font-family:"Poppins";
+
+.menu a:hover{
+  color:#b47cff;
 }
-.langs button {
-  background:none;
-  border:1px solid #fff3;
-  color:white;
+
+.langs button{
   padding:6px 12px;
-  margin-left:6px;
+  background:transparent;
+  border:1px solid #b47cff;
+  color:#fff;
+  border-radius:6px;
+  margin-left:10px;
   cursor:pointer;
-  border-radius:var(--radius);
+  font-family:"Work Sans", sans-serif;
+  transition:0.3s;
 }
-.langs .active { background:white; color:black; }
 
-/* ============================================================
-   SECTION BASE
-============================================================ */
-.section {
-  padding:110px 0;
-}
-.section-light { background:var(--bg-light); }
-.section-dark  { background:var(--purple-dark); color:#fff; }
-
-.section-title {
-  font-family:"Work Sans";
-  font-size:2.4rem;
-  font-weight:700;
-  margin-bottom:40px;
-  text-align:center;
+.langs .active{
+  background:#b47cff;
 }
 
 /* ============================================================
    HERO
 ============================================================ */
-.hero {
-  background:var(--purple);
+.hero{
+  height:560px;
   position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
   overflow:hidden;
+  color:#fff;
 }
 
-.hero-bg {
-  background:url("../img/photos/hero-brain.jpg") center/cover no-repeat;
+/* Fundo */
+.hero-bg{
   position:absolute;
-  inset:0;
-  opacity:0.35; /* menos blur, imagem mais viva */
-  filter:blur(1.5px);
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background:#3c0c7e;
+  z-index:1;
 }
 
-.hero-badge {
-  width:200px;
+/* Imagem do cérebro */
+.hero-badge{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:900px;
+  max-width:none;
+  transform:translate(-50%,-50%);
+  opacity:0.32;          /* MAIS VISÍVEL */
+  filter:blur(2px);      /* BLUR LEVE */
+  z-index:2;
+}
+
+/* Conteúdo */
+.hero-inner{
   position:relative;
   z-index:3;
-  margin-bottom:20px;
+  max-width:800px;
 }
 
-.hero-inner {
-  position:relative;
-  z-index:5;
-  color:white;
+.hero h1{
+  font-size:46px;
+  font-family:"Work Sans", sans-serif;
+  font-weight:700;
 }
 
-.hero h1 {
-  font-family:"Work Sans";
-  font-size:2.6rem;
-  font-weight:900;
+.hero-sub{
+  margin-top:8px;
+  font-size:20px;
+  opacity:0.85;
 }
-.hero-sub {
-  font-size:1.3rem;
-  margin-top:10px;
-  font-weight:300;
-}
-.hero-rot { margin-top:6px; opacity:0.9; }
 
-.cta {
-  margin-top:25px;
+.hero-rot{
+  margin-top:15px;
+  font-style:italic;
+  color:#e3d7ff;
+  font-size:18px;
+}
+
+.cta{
   display:inline-block;
-  padding:14px 26px;
-  background:white;
-  color:var(--purple-dark);
-  border-radius:var(--radius);
-  text-decoration:none;
+  margin-top:20px;
+  padding:12px 28px;
+  background:#b47cff;
+  color:#fff;
+  border-radius:50px;
   font-weight:600;
-  transition:0.25s;
+  text-decoration:none;
+  transition:0.3s;
 }
-.cta:hover { transform:scale(1.05); }
+
+.cta:hover{
+  background:#d8bbff;
+  color:#000;
+}
+
+/* ============================================================
+   SEÇÕES
+============================================================ */
+.section{
+  padding:80px 0;
+}
+
+.section-light{
+  background:#f8f5ff;
+  color:#1a0933;
+}
+
+.section-dark{
+  background:#0e0a1a;
+  color:#fff;
+}
+
+/* Títulos */
+.section-title{
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:40px;
+  text-align:center;
+  font-family:"Work Sans", sans-serif;
+}
 
 /* ============================================================
    ABOUT
 ============================================================ */
-.about-photo img {
-  width:180px;
-  height:180px;
+.about-photo img{
+  width:170px;
+  height:170px;
   border-radius:50%;
   object-fit:cover;
-  margin:0 auto 25px;
   display:block;
+  margin:0 auto 25px auto;
 }
 
-.lead {
-  font-size:1.1rem;
+.lead{
+  font-size:18px;
   margin-bottom:20px;
-  font-family:"Poppins";
+  text-align:center;
+  font-weight:300;
 }
 
-.pillars {
+.pillars{
   list-style:none;
-  margin:20px 0 40px;
-  padding:0;
-  text-align:left;
-}
-.pillars li {
-  background:#fff;
-  padding:14px 18px;
-  margin-bottom:10px;
-  border-radius:var(--radius);
-  font-family:"Work Sans";
-  font-weight:600;
-  border:1px solid #eee;
+  margin:25px 0 40px;
+  text-align:center;
+  font-size:18px;
 }
 
-/* Formação – Card */
-.card {
-  background:white;
-  padding:26px;
-  border-radius:var(--radius);
-  box-shadow:0 4px 20px #0001;
+.pillars li{
+  margin:8px 0;
+  font-weight:500;
+}
+
+/* Card formação */
+.card{
+  background:#fff;
+  color:#000;
+  padding:25px;
+  border-radius:14px;
+  margin-top:25px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-hd{
+  margin-bottom:15px;
+  font-family:"Work Sans", sans-serif;
+}
+
+.btns{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
+}
+
+.btn.ghost{
+  padding:10px 22px;
+  border:1px solid #3c0c7e;
+  border-radius:8px;
+  text-decoration:none;
+  color:#3c0c7e;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.btn.ghost:hover{
+  background:#3c0c7e;
+  color:#fff;
 }
 
 /* ============================================================
    PUBLICAÇÕES
 ============================================================ */
-.pub-grid {
+.pub-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:26px;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
 
-.pub {
-  background:#fff1;
-  padding:22px;
-  border-radius:var(--radius);
-  backdrop-filter:blur(4px);
+.pub{
+  background:#1d1233;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
-.pub-body h3 {
-  font-family:"Work Sans";
-  font-size:1.2rem;
-  font-weight:700;
-  margin-bottom:8px;
-}
-.pub-body p { font-size:0.95rem; }
 
-.chip {
-  display:inline-block;
-  background:white;
-  padding:6px 12px;
-  border-radius:var(--radius);
-  color:var(--purple-dark);
+.pub-img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+.pub h3{
+  font-size:20px;
   font-weight:600;
-  margin-right:6px;
+  font-family:"Work Sans", sans-serif;
+}
+
+.meta{
+  font-size:14px;
+  opacity:0.7;
+  margin-bottom:10px;
+}
+
+.chips{
+  margin-top:15px;
+  display:flex;
+  gap:10px;
+}
+
+.chip{
+  background:#b47cff;
+  color:#fff;
+  padding:6px 16px;
   text-decoration:none;
+  border-radius:20px;
+  font-weight:500;
+  transition:0.2s;
+}
+
+.chip:hover{
+  background:#d8bbff;
+  color:#000;
 }
 
 /* ============================================================
    PROJETOS
 ============================================================ */
-.proj-grid {
+.proj-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:30px;
-  text-align:center;
 }
-.proj img { width:90px; margin-bottom:12px; }
+
+.proj{
+  background:#fff;
+  color:#000;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.proj:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 28px rgba(0,0,0,0.25);
+}
+
+.proj img{
+  width:80px;
+  margin-bottom:12px;
+}
+
+.proj h3{
+  font-size:20px;
+  font-family:"Work Sans", sans-serif;
+  margin-bottom:8px;
+}
 
 /* ============================================================
    CULTURAS
 ============================================================ */
-.stories {
+.stories{
+  margin-top:25px;
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
-  gap:24px;
+  flex-wrap:wrap;
+  gap:20px;
 }
 
-.story {
+.story{
   text-align:center;
   color:#fff;
-  font-family:"Work Sans";
-  font-weight:600;
+  font-family:"Poppins",sans-serif;
   text-decoration:none;
+  transition:0.3s;
 }
-.story img {
-  width:110px;
-  height:110px;
-  border-radius:50%;
+
+.story img{
+  width:120px;
+  height:120px;
   object-fit:cover;
-  border:3px solid #fff7;
-  transition:.25s;
+  border-radius:14px;
+  margin-bottom:8px;
 }
-.story:hover img { transform:scale(1.06); }
+
+.story span{
+  font-size:16px;
+  font-weight:600;
+}
 
 /* ============================================================
    CONTATO
 ============================================================ */
-.contact-grid {
+.contact-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
-.contact-item {
+.contact-item{
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:12px;
-  border-radius:var(--radius);
-  background:white;
-  color:black;
+  gap:10px;
   text-decoration:none;
-  font-family:"Poppins";
-  font-weight:500;
+  color:#3c0c7e;
+  font-weight:600;
+}
+
+.contact-item img{
+  width:22px;
 }
 
 /* ============================================================
    FOOTER
 ============================================================ */
-.footer {
-  background:var(--purple-dark);
-  color:white;
-  padding:35px 0;
+.footer{
   text-align:center;
-  font-family:"Work Sans";
-  font-weight:400;
+  padding:30px 0;
+  background:#0e0a1a;
+  color:#b47cff;
+  font-size:14px;
 }
 
 /* ============================================================
-   ANIMAÇÕES (Relume Style)
+   ANIMAÇÕES SCROLL
 ============================================================ */
-.fade-up {
-  animation:fadeUp .9s ease forwards;
+.fade-up{
   opacity:0;
-}
-@keyframes fadeUp {
-  0% { opacity:0; transform:translateY(25px); }
-  100% { opacity:1; transform:translateY(0); }
-}
-/* ======================================================
-   EXTRA (app.js)
-====================================================== */
-
-/* fade-adv (fade + slide) */
-.fade-adv {
-  opacity:0;
-  transform:translateY(35px);
-  transition:0.8s ease;
-}
-.fade-adv.visible {
-  opacity:1;
-  transform:translateY(0);
+  transform:translateY(25px);
+  animation:fadeUp 1s forwards ease-out;
+  animation-play-state:paused;
 }
 
-/* menu highlight */
-.menu a.active {
-  color:#d9b3ff !important;
-  font-weight:600;
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-/* botão voltar ao topo */
-.back-to-top {
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:white;
-  color:#4b1f82;
-  border:none;
-  border-radius:50%;
-  width:45px;
-  height:45px;
-  font-size:22px;
-  cursor:pointer;
+.fade-in{
   opacity:0;
-  pointer-events:none;
-  transition:0.3s ease;
-  box-shadow:0 4px 20px #0003;
+  animation:fadeIn 1s forwards ease-out;
+  animation-play-state:paused;
 }
-.back-to-top.show {
-  opacity:1;
-  pointer-events:auto;
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+  }
 }
