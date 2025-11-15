@@ -1,176 +1,108 @@
 /* ======================================================
-   I18N (TRADUÇÃO)
+   APP.JS — Animações Avançadas (Parallax, Microinterações)
 ====================================================== */
-const I18N = {
-  pt: {
-    "nav.home":"Início",
-    "nav.about":"Quem sou eu",
-    "nav.projects":"Projetos",
-    "nav.pubs":"Publicações",
-    "nav.cultures":"Culturas",
-    "nav.contact":"Contato",
 
-    "hero.title":"Bem-vindo ao meu universo",
-    "hero.subtitle":"Aprender é meu superpoder",
-    "hero.cta":"Meus projetos",
+/* ------------------------------------------------------
+   1) PARALLAX SUAVE NO HERO (imagem do cérebro)
+------------------------------------------------------ */
+window.addEventListener("scroll", () => {
+  const sc = window.scrollY * 0.15; // mais suave
+  const heroImg = document.querySelector(".hero-badge");
 
-    ROTATOR:[
-      "Respirar, inspirar, criar e compartilhar.",
-      "Construindo uma ponte entre Ciência, Arte e Bem-Estar.",
-      "Tecnologia a serviço das pessoas."
-    ],
-
-    "about.title":"Quem sou eu",
-
-    "pubs.title":"Publicações Acadêmicas",
-    "projects.title":"Meus projetos",
-
-    "cult.title":"Culturas que me transformaram",
-    "cult.lead":"Viajar transforma corpo e mente…",
-
-    "contact.title":"Contato"
-  },
-
-  es: {
-    "nav.home":"Inicio",
-    "nav.about":"Sobre mí",
-    "nav.projects":"Proyectos",
-    "nav.pubs":"Publicaciones",
-    "nav.cultures":"Culturas",
-    "nav.contact":"Contacto",
-
-    "hero.title":"Bienvenid@ a mi universo",
-    "hero.subtitle":"Aprender es mi superpoder",
-    "hero.cta":"Mis proyectos",
-
-    ROTATOR:[
-      "Respirar, inspirar, crear y compartir.",
-      "Tendiendo un puente entre Ciencia, Arte y Bienestar.",
-      "Tecnología al servicio de las personas."
-    ],
-
-    "about.title":"Quién soy",
-
-    "pubs.title":"Publicaciones Académicas",
-    "projects.title":"Mis proyectos",
-
-    "cult.title":"Culturas que me transformaron",
-    "cult.lead":"Viajar transforma cuerpo y mente…",
-
-    "contact.title":"Contacto"
-  },
-
-  en: {
-    "nav.home":"Home",
-    "nav.about":"About",
-    "nav.projects":"Projects",
-    "nav.pubs":"Publications",
-    "nav.cultures":"Cultures",
-    "nav.contact":"Contact",
-
-    "hero.title":"Welcome to my universe",
-    "hero.subtitle":"Learning is my superpower",
-    "hero.cta":"My projects",
-
-    ROTATOR:[
-      "Breathe, inspire, create and share.",
-      "Bridging Science, Art and Well-being.",
-      "Technology serving people."
-    ],
-
-    "about.title":"About me",
-
-    "pubs.title":"Academic Publications",
-    "projects.title":"My projects",
-
-    "cult.title":"Cultures that shaped me",
-    "cult.lead":"Travel reshapes body and mind…",
-
-    "contact.title":"Contact"
+  if (heroImg) {
+    heroImg.style.transform = `translateY(${sc}px) scale(1.03)`;
   }
-};
+});
 
-/* ======================================================
-   HELPERS
-====================================================== */
-const $  = sel => document.querySelector(sel);
-const $$ = sel => document.querySelectorAll(sel);
 
-/* ======================================================
-   FUNÇÃO DE TROCA DE IDIOMA
-====================================================== */
-function applyLang(lang){
-  document.documentElement.lang = lang;
+/* ------------------------------------------------------
+   2) FADE E SLIDE EM TÍTULOS ao rolar
+------------------------------------------------------ */
+const titles = document.querySelectorAll(".section-title");
 
-  $$("[data-i18n]").forEach(el=>{
-    const key = el.getAttribute("data-i18n");
-    if(I18N[lang][key]) el.textContent = I18N[lang][key];
-  });
+function animateTitles() {
+  titles.forEach((t) => {
+    const box = t.getBoundingClientRect();
 
-  // Frases rotativas
-  ROTATION.items = I18N[lang].ROTATOR;
-  ROTATION.index = 0;
-  ROTATION.tick(true);
-
-  // Botão ativo
-  $$(".lang-btn").forEach(b=>{
-    b.classList.toggle("active", b.dataset.lang === lang);
+    if (box.top < window.innerHeight - 120) {
+      t.style.opacity = 1;
+      t.style.transform = "translateY(0)";
+      t.style.transition = "1s ease";
+    }
   });
 }
 
-$$(".lang-btn").forEach(btn =>
-  btn.addEventListener("click", ()=> applyLang(btn.dataset.lang))
-);
+window.addEventListener("scroll", animateTitles);
+animateTitles();
 
-/* ======================================================
-   ROTATOR (FRASES)
-====================================================== */
-const ROTATION = {
-  items: I18N.pt.ROTATOR,
-  index: 0,
-  timer: null,
 
-  tick(immediate=false){
-    const rot = $("#rotator");
-    if(!rot) return;
+/* ------------------------------------------------------
+   3) MICRO-INTERAÇÃO EM CARDS DE PROJETOS
+------------------------------------------------------ */
+const cards = document.querySelectorAll(".proj");
 
-    rot.textContent = this.items[this.index];
+cards.forEach((c) => {
+  c.addEventListener("mouseenter", () => {
+    c.style.transform = "translateY(-6px)";
+    c.style.boxShadow = "0 12px 26px rgba(0,0,0,0.25)";
+    c.style.transition = "0.3s ease";
+  });
 
-    if(this.timer) clearTimeout(this.timer);
+  c.addEventListener("mouseleave", () => {
+    c.style.transform = "translateY(0)";
+    c.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
+  });
+});
 
-    this.timer = setTimeout(()=>{
-      this.index = (this.index + 1) % this.items.length;
-      this.tick();
-    }, immediate ? 12000 : 12000);
-  }
-};
 
-/* ======================================================
-   ANIMAÇÃO NO SCROLL
-====================================================== */
-function animateOnScroll(){
-  const elements = document.querySelectorAll(".fade-up, .fade-in");
+/* ------------------------------------------------------
+   4) EFEITO FLOAT (levitação suave) nos ícones de contato
+------------------------------------------------------ */
+const contactItems = document.querySelectorAll(".contact-item");
 
-  const obs = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.style.animationPlayState = "running";
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+contactItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    item.style.transform = "translateY(-4px)";
+    item.style.transition = "0.25s ease";
+  });
 
-  elements.forEach(el=>{
-    el.style.animationPlayState = "paused";
-    obs.observe(el);
+  item.addEventListener("mouseleave", () => {
+    item.style.transform = "translateY(0)";
+  });
+});
+
+
+/* ------------------------------------------------------
+   5) PULSE SUAVE no botão CTA do HERO
+------------------------------------------------------ */
+const cta = document.querySelector(".cta");
+
+if (cta) {
+  cta.addEventListener("mouseenter", () => {
+    cta.style.transform = "scale(1.06)";
+    cta.style.boxShadow = "0 10px 25px rgba(0,0,0,0.22)";
+    cta.style.transition = "0.3s";
+  });
+
+  cta.addEventListener("mouseleave", () => {
+    cta.style.transform = "scale(1)";
+    cta.style.boxShadow = "0 6px 14px rgba(0,0,0,0.15)";
   });
 }
 
-/* ======================================================
-   INIT
-====================================================== */
-document.addEventListener("DOMContentLoaded", ()=>{
-  applyLang("pt");
-  ROTATION.tick(true);
-  animateOnScroll();
+
+/* ------------------------------------------------------
+   6) STORY CARDS — zoom suave
+------------------------------------------------------ */
+const stories = document.querySelectorAll(".story img");
+
+stories.forEach((img) => {
+  img.addEventListener("mouseenter", () => {
+    img.style.transform = "scale(1.05)";
+    img.style.transition = "0.35s ease";
+  });
+
+  img.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1)";
+  });
 });
