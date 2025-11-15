@@ -185,4 +185,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
   applyLang("pt");
   ROTATION.tick(true);
   animateOnScroll();
-});
+}); 
