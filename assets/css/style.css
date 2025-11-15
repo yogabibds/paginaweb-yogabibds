@@ -1,439 +1,297 @@
 /* ============================================================
-   RESET
+   GLOBAL – Fontes, Reset e Layout Base
 ============================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --purple:#4b1f82;
+  --purple-light:#6b35bd;
+  --purple-dark:#2d0d55;
+  --text-light:#fafafa;
+  --text-dark:#1a1a1a;
+  --bg-light:#f7f7f7;
+  --bg-dark:#121212;
+  --radius:14px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0e0e16;
-  color: #fff;
-  line-height: 1.6;
+  font-family:"Poppins", sans-serif;
+  background:#fff;
+  color:var(--text-dark);
+  line-height:1.6;
 }
 
-/* ============================================================
-   PALETA
-============================================================ */
-:root {
-  --roxo-dark: #1a1027;
-  --roxo-mid: #3a1c5e;
-  --roxo-light: #9c6df0;
-  --white: #ffffff;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-/* ============================================================
-   WRAPPER
-============================================================ */
-.wrap {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.wrap.narrow {
-  max-width: 850px;
-}
+/* Containers */
+.wrap { width:90%; max-width:1100px; margin:0 auto; }
+.wrap.narrow { max-width:760px; }
 
 /* ============================================================
    NAVBAR
 ============================================================ */
 .topbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(10, 8, 16, 0.55);
-  backdrop-filter: blur(12px);
-  z-index: 999;
-  padding: 15px 0;
+  background:var(--bg-dark);
+  color:#fff;
+  padding:16px 0;
+  position:sticky;
+  top:0;
+  z-index:999;
 }
-
-.topbar .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.topbar .brand {
+  font-family:"Work Sans", sans-serif;
+  font-weight:700;
+  color:white;
+  text-decoration:none;
+  font-size:1.4rem;
 }
-
-.brand {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--white);
-  text-decoration: none;
-}
-
 .menu a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #ddd;
-  font-size: 0.95rem;
-  transition: 0.3s;
+  color:white;
+  margin:0 12px;
+  text-decoration:none;
+  font-weight:500;
+  font-family:"Poppins";
 }
-
-.menu a:hover {
-  color: var(--white);
+.langs button {
+  background:none;
+  border:1px solid #fff3;
+  color:white;
+  padding:6px 12px;
+  margin-left:6px;
+  cursor:pointer;
+  border-radius:var(--radius);
 }
-
-/* idioma */
-.langs .lang-btn {
-  background: transparent;
-  border: 1px solid #aaa;
-  padding: 4px 10px;
-  border-radius: 6px;
-  margin-left: 10px;
-  color: #ccc;
-  cursor: pointer;
-}
-
-.langs .lang-btn.active {
-  background: var(--roxo-light);
-  border-color: var(--roxo-light);
-  color: #000;
-}
+.langs .active { background:white; color:black; }
 
 /* ============================================================
-   SEÇÕES
+   SECTION BASE
 ============================================================ */
 .section {
-  padding: 120px 0;
+  padding:110px 0;
 }
+.section-light { background:var(--bg-light); }
+.section-dark  { background:var(--purple-dark); color:#fff; }
 
-.section-dark {
-  background: var(--roxo-dark);
-}
-
-.section-light {
-  background: #f7f7f7;
-  color: #111;
-}
-
-/* títulos */
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-  text-align: center;
-  color: var(--white);
-}
-
-.section-light .section-title {
-  color: #111;
-}
-
-.lead {
-  font-size: 1.15rem;
-  margin: 20px 0;
-  color: #fff;
-}
-
-.section-light .lead {
-  color: #333;
+  font-family:"Work Sans";
+  font-size:2.4rem;
+  font-weight:700;
+  margin-bottom:40px;
+  text-align:center;
 }
 
 /* ============================================================
    HERO
 ============================================================ */
 .hero {
-  position: relative;
-  height: 550px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+  background:var(--purple);
+  position:relative;
+  text-align:center;
+  overflow:hidden;
 }
 
-/* Fundo roxo */
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(26, 16, 39, 0.75),
-    rgba(26, 16, 39, 0.75)
-  );
-  z-index: 1;
+  background:url("../img/photos/hero-brain.jpg") center/cover no-repeat;
+  position:absolute;
+  inset:0;
+  opacity:0.35; /* menos blur, imagem mais viva */
+  filter:blur(1.5px);
 }
 
-/* Imagem do cérebro */
 .hero-badge {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.55;
-  z-index: 0;
+  width:200px;
+  position:relative;
+  z-index:3;
+  margin-bottom:20px;
 }
 
-/* Texto */
 .hero-inner {
-  z-index: 10;
-  max-width: 750px;
+  position:relative;
+  z-index:5;
+  color:white;
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-family:"Work Sans";
+  font-size:2.6rem;
+  font-weight:900;
 }
-
 .hero-sub {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin-bottom: 20px;
+  font-size:1.3rem;
+  margin-top:10px;
+  font-weight:300;
 }
+.hero-rot { margin-top:6px; opacity:0.9; }
 
 .cta {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 8px;
-  background: var(--roxo-light);
-  color: #000;
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 10px;
-  box-shadow: var(--shadow-soft);
-  transition: 0.3s;
+  margin-top:25px;
+  display:inline-block;
+  padding:14px 26px;
+  background:white;
+  color:var(--purple-dark);
+  border-radius:var(--radius);
+  text-decoration:none;
+  font-weight:600;
+  transition:0.25s;
 }
-
-.cta:hover {
-  background: #b98aff;
-}
+.cta:hover { transform:scale(1.05); }
 
 /* ============================================================
-   QUEM SOU EU
+   ABOUT
 ============================================================ */
-.about-photo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
 .about-photo img {
-  width: 160px;
-  height: 160px;
-  border-radius: 100%;
-  object-fit: cover;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:0 auto 25px;
+  display:block;
 }
 
-/* pilares */
+.lead {
+  font-size:1.1rem;
+  margin-bottom:20px;
+  font-family:"Poppins";
+}
+
 .pillars {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
+  list-style:none;
+  margin:20px 0 40px;
+  padding:0;
+  text-align:left;
 }
-
 .pillars li {
-  margin: 8px 0;
-  font-size: 1.05rem;
-  color: #eee;
+  background:#fff;
+  padding:14px 18px;
+  margin-bottom:10px;
+  border-radius:var(--radius);
+  font-family:"Work Sans";
+  font-weight:600;
+  border:1px solid #eee;
 }
 
-/* card UNR */
+/* Formação – Card */
 .card {
-  margin-top: 40px;
-  padding: 25px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  box-shadow: var(--shadow-soft);
-}
-
-.section-light .card {
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card-hd h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-/* stories */
-.stories {
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-
-.story {
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  font-size: .9rem;
-}
-
-.story img {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  object-fit: cover;
-}
-
-/* botões CV */
-.btns {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.btn.ghost {
-  border: 1px solid var(--roxo-light);
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: var(--roxo-light);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn.ghost:hover {
-  background: var(--roxo-light);
-  color: #000;
+  background:white;
+  padding:26px;
+  border-radius:var(--radius);
+  box-shadow:0 4px 20px #0001;
 }
 
 /* ============================================================
    PUBLICAÇÕES
 ============================================================ */
 .pub-grid {
-  display: grid;
-  gap: 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:26px;
 }
 
 .pub {
-  display: flex;
-  gap: 25px;
-  background: rgba(255,255,255,0.04);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-soft);
+  background:#fff1;
+  padding:22px;
+  border-radius:var(--radius);
+  backdrop-filter:blur(4px);
 }
-
-.pub img {
-  width: 130px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
 .pub-body h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-family:"Work Sans";
+  font-size:1.2rem;
+  font-weight:700;
+  margin-bottom:8px;
 }
-
-.chips {
-  margin-top: 10px;
-}
+.pub-body p { font-size:0.95rem; }
 
 .chip {
-  display: inline-block;
-  padding: 7px 15px;
-  margin-right: 10px;
-  background: var(--roxo-light);
-  color: #000;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.chip:hover {
-  background: #b98aff;
+  display:inline-block;
+  background:white;
+  padding:6px 12px;
+  border-radius:var(--radius);
+  color:var(--purple-dark);
+  font-weight:600;
+  margin-right:6px;
+  text-decoration:none;
 }
 
 /* ============================================================
    PROJETOS
 ============================================================ */
 .proj-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  text-align:center;
 }
-
-.proj {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  color: #111;
-  text-decoration: none;
-  box-shadow: var(--shadow-soft);
-}
-
-.proj img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-}
+.proj img { width:90px; margin-bottom:12px; }
 
 /* ============================================================
    CULTURAS
 ============================================================ */
-.stories img {
-  border: 3px solid var(--roxo-light);
+.stories {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:24px;
 }
 
-.stories span {
-  display: block;
-  margin-top: 6px;
-  font-weight: 600;
-  color: #fff;
+.story {
+  text-align:center;
+  color:#fff;
+  font-family:"Work Sans";
+  font-weight:600;
+  text-decoration:none;
 }
+.story img {
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff7;
+  transition:.25s;
+}
+.story:hover img { transform:scale(1.06); }
 
 /* ============================================================
    CONTATO
 ============================================================ */
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
-  margin-top: 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
 }
 
 .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  padding: 12px;
-  border-radius: 8px;
-  background: #fff;
-  color: #111;
-  font-weight: 500;
-  box-shadow: var(--shadow-soft);
-}
-
-.contact-item img {
-  width: 24px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:var(--radius);
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-family:"Poppins";
+  font-weight:500;
 }
 
 /* ============================================================
    FOOTER
 ============================================================ */
 .footer {
-  background: #000;
-  padding: 30px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #bbb;
+  background:var(--purple-dark);
+  color:white;
+  padding:35px 0;
+  text-align:center;
+  font-family:"Work Sans";
+  font-weight:400;
 }
 
 /* ============================================================
-   ANIMAÇÕES
+   ANIMAÇÕES (Relume Style)
 ============================================================ */
 .fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
+  animation:fadeUp .9s ease forwards;
+  opacity:0;
 }
-
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity:0; transform:translateY(25px); }
+  100% { opacity:1; transform:translateY(0); }
 }
