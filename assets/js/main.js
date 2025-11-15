@@ -6,6 +6,7 @@ const I18N = {
     "nav.home":"Início",
     "nav.about":"Quem sou eu",
     "nav.projects":"Projetos",
+    "nav.pubs":"Publicações",
     "nav.cultures":"Culturas",
     "nav.contact":"Contato",
 
@@ -20,13 +21,8 @@ const I18N = {
     ],
 
     "about.title":"Quem sou eu",
-    "about.blurb":"Sou Gabriela Barbosa, brasileira vivendo na Argentina. Estudante de Medicina, consultora digital e apaixonada por aprender. Acredito que o conhecimento transforma vidas e que ciência, criatividade e tecnologia caminham juntas.",
-
-    "about.edu.title":"Formação em Medicina — UNR",
-    "about.edu.text":"Universidade Nacional de Rosário (UNR), Argentina. Currículo com PBL, prática clínica precoce e pesquisa em neurociências.",
 
     "pubs.title":"Publicações Acadêmicas",
-
     "projects.title":"Meus projetos",
 
     "cult.title":"Culturas que me transformaram",
@@ -39,6 +35,7 @@ const I18N = {
     "nav.home":"Inicio",
     "nav.about":"Sobre mí",
     "nav.projects":"Proyectos",
+    "nav.pubs":"Publicaciones",
     "nav.cultures":"Culturas",
     "nav.contact":"Contacto",
 
@@ -53,13 +50,8 @@ const I18N = {
     ],
 
     "about.title":"Quién soy",
-    "about.blurb":"Soy Gabriela Barbosa, brasileña viviendo en Argentina. Estudiante de Medicina, consultora digital y apasionada por aprender.",
-
-    "about.edu.title":"Formación en Medicina — UNR",
-    "about.edu.text":"Universidad Nacional de Rosario (UNR). ABP, práctica clínica temprana e investigación en neurociencias.",
 
     "pubs.title":"Publicaciones Académicas",
-
     "projects.title":"Mis proyectos",
 
     "cult.title":"Culturas que me transformaron",
@@ -72,6 +64,7 @@ const I18N = {
     "nav.home":"Home",
     "nav.about":"About",
     "nav.projects":"Projects",
+    "nav.pubs":"Publications",
     "nav.cultures":"Cultures",
     "nav.contact":"Contact",
 
@@ -86,13 +79,8 @@ const I18N = {
     ],
 
     "about.title":"About me",
-    "about.blurb":"I'm Gabriela Barbosa, a Brazilian living in Argentina. Medical student, digital consultant and passionate learner.",
-
-    "about.edu.title":"Medical Training — UNR",
-    "about.edu.text":"National University of Rosario (UNR). PBL curriculum, clinical immersion and neuroscience research.",
 
     "pubs.title":"Academic Publications",
-
     "projects.title":"My projects",
 
     "cult.title":"Cultures that shaped me",
@@ -185,4 +173,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
   applyLang("pt");
   ROTATION.tick(true);
   animateOnScroll();
-}); 
+});
