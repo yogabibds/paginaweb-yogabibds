@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Universo Laia</title>
 
-  <!-- FONTS (Relume Style: Inter + Space Grotesk) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Ícone -->
+  <link rel="preload" href="assets/img/icons/universe.png" as="image">
 
+  <!-- Fonte Relume Style (Inter + Display) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preload" as="image" href="assets/img/photos/hero-brain.jpg">
 </head>
-
 <body>
 
-<!-- NAV -->
-<header class="topbar fade-in">
+<!-- =========================================
+     NAVBAR
+========================================= -->
+<header class="topbar">
   <div class="wrap">
     <a class="brand" href="#home">Universo Laia</a>
 
@@ -35,44 +39,61 @@
   </div>
 </header>
 
-
-<!-- HERO -->
+<!-- =========================================
+     HERO SECTION (fundo roxo + cérebro)
+========================================= -->
 <section id="home" class="hero section-dark">
+  
+  <!-- Fundo imagem -->
+  <div class="hero-bg"></div>
+
+  <!-- Cérebro sobre o fundo -->
+  <img class="hero-badge fade-up" src="assets/img/photos/hero-brain.jpg" alt="" aria-hidden="true">
+
   <div class="hero-inner fade-up">
-    <img class="hero-img" src="assets/img/photos/hero-brain.jpg" alt="Cérebro">
     <h1 data-i18n="hero.title">Bem-vindo ao meu universo</h1>
-    <p id="rotator" class="hero-rotator">Respirar, inspirar, criar e compartilhar.</p>
-    <p class="hero-sub" data-i18n="hero.subtitle">Aprender é meu superpoder</p>
+
+    <p class="hero-rot" id="rotator">
+      Respirar, inspirar, criar e compartilhar.
+    </p>
+
+    <p class="hero-sub" data-i18n="hero.subtitle">
+      Aprender é meu superpoder
+    </p>
+
     <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
   </div>
 </section>
 
+<!-- =========================================
+     ABOUT
+========================================= -->
+<section id="about" class="section section-light">
+  <div class="wrap narrow">
 
-<!-- ABOUT -->
-<section id="about" class="section-light">
-  <div class="wrap narrow fade-up">
-    <h2 class="section-title" data-i18n="about.title">Quem sou eu</h2>
+    <h2 class="section-title fade-up" data-i18n="about.title">Quem sou eu</h2>
 
-    <div class="about-photo">
-      <img src="assets/img/photos/about.jpg" alt="Gabriela">
+    <div class="about-photo fade-up">
+      <img src="assets/img/photos/about.jpg" alt="Foto Gabriela">
     </div>
 
-    <p class="lead" data-i18n="about.blurb">
-      Sou Gabriela Barbosa…
+    <p class="lead fade-up" data-i18n="about.blurb">
+      Sou Gabriela Barbosa, brasileira na Argentina. Trabalho com tecnologia há anos e hoje conecto saúde, música, educação e IA para resolver problemas reais.
     </p>
 
-    <article class="card edu">
+    <article class="card edu fade-up">
       <header class="card-hd">
         <h3 data-i18n="about.edu.title">Formação em Medicina — UNR</h3>
       </header>
 
       <p data-i18n="about.edu.text">
-        Universidade Nacional de Rosário…
+        Universidade Nacional de Rosário (UNR), Argentina. Currículo com PBL, prática clínica precoce e pesquisa em neurociências.
       </p>
 
       <div class="stories">
         <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank">
-          <img src="assets/img/photos/travel-unr.jpg"><span>UNR • Stories</span>
+          <img src="assets/img/photos/travel-unr.jpg" alt="UNR">
+          <span>UNR • Stories</span>
         </a>
       </div>
 
@@ -81,133 +102,211 @@
         <a class="btn ghost" href="assets/docs/cv-es.pdf" target="_blank">CV ES</a>
         <a class="btn ghost" href="assets/docs/cv-en.pdf" target="_blank">CV EN</a>
       </div>
-
     </article>
+
   </div>
 </section>
 
-
-<!-- PUBLICAÇÕES -->
-<section id="pubs" class="section-dark">
-  <div class="wrap fade-up">
-    <h2 class="section-title" data-i18n="pubs.title">Publicações Acadêmicas</h2>
+<!-- =========================================
+     PUBLICAÇÕES ACADÊMICAS
+========================================= -->
+<section id="pubs" class="section section-dark">
+  <div class="wrap">
+    <h2 class="section-title fade-up" data-i18n="pubs.title">
+      Publicações Acadêmicas
+    </h2>
 
     <div class="pub-grid">
 
-      <article class="pub card hover-up">
-        <img class="pub-img" src="assets/img/photos/pub-tbi.jpg">
-        <h3 data-i18n="pubs.p1.title">Avanços TBI</h3>
-        <p class="meta">International Journal of Health Science (2024)</p>
-        <p data-i18n="pubs.p1.desc">Imagens, prognóstico…</p>
-        <div class="chips">
-          <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077">DOI</a>
-          <a class="chip" href="assets/docs/pub-tbi.pdf">PDF</a>
+      <!-- PUB 1 -->
+      <article class="pub fade-up">
+        <div class="pub-ico">
+          <img src="assets/img/photos/pub-tbi.jpg" alt="TBI">
+        </div>
+
+        <div class="pub-body">
+          <h3 data-i18n="pubs.p1.title">
+            1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral
+          </h3>
+
+          <p class="meta" data-i18n="pubs.p1.meta">
+            International Journal of Health Science (2024)
+          </p>
+
+          <p data-i18n="pubs.p1.desc">
+            Imagens, biomarcadores, manejo cirúrgico/UTI e prognóstico. Revisão completa das principais abordagens atualizadas.
+          </p>
+
+          <div class="chips">
+            <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
+            <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank">PDF</a>
+          </div>
+
         </div>
       </article>
 
-      <article class="pub card hover-up">
-        <img class="pub-img" src="assets/img/photos/pub-glioma.jpg">
-        <h3 data-i18n="pubs.p2.title">Gliomas</h3>
-        <p class="meta">REAS (2025)</p>
-        <p data-i18n="pubs.p2.desc">Critérios cirúrgicos…</p>
-        <div class="chips">
-          <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025">DOI</a>
-          <a class="chip" href="assets/docs/pub-glioma.pdf">PDF</a>
+      <!-- PUB 2 -->
+      <article class="pub fade-up">
+        <div class="pub-ico">
+          <img src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
+        </div>
+
+        <div class="pub-body">
+          <h3 data-i18n="pubs.p2.title">
+            2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos
+          </h3>
+
+          <p class="meta" data-i18n="pubs.p2.meta">
+            Revista Eletrônica Acervo Saúde (2025)
+          </p>
+
+          <p data-i18n="pubs.p2.desc">
+            Critérios cirúrgicos, inovações recentes em quimio e radioterapia, além da análise de qualidade de vida.
+          </p>
+
+          <div class="chips">
+            <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
+            <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank">PDF</a>
+          </div>
+
         </div>
       </article>
 
     </div>
-
   </div>
 </section>
 
+<!-- =========================================
+     PROJETOS
+========================================= -->
+<section id="projects" class="section section-light">
+  <div class="wrap">
+    <h2 class="section-title fade-up" data-i18n="projects.title">Meus projetos</h2>
 
-<!-- PROJETOS -->
-<section id="projects" class="section-light">
-  <div class="wrap fade-up">
-    <h2 class="section-title">Meus projetos</h2>
+    <div class="proj-grid fade-up">
 
-    <div class="proj-grid">
-
-      <a class="proj card hover-up" href="https://laiamusictesting.netlify.app">
-        <img src="assets/img/logos/laia-music.png">
+      <a class="proj" href="https://laiamusictesting.netlify.app" target="_blank">
+        <img src="assets/img/logos/laia-music.png" alt="Laia Music">
         <h3>Laia Music</h3>
-        <p>Legado musical de Edney Fernandes.</p>
+        <p data-i18n="projects.music">Gestão do legado musical de Edney Fernandes.</p>
       </a>
 
-      <a class="proj card hover-up" href="https://laiatech.netlify.app">
-        <img src="assets/img/logos/laia-tech.png">
+      <a class="proj" href="https://laiatech.netlify.app" target="_blank">
+        <img src="assets/img/logos/laia-tech.png" alt="Laia Tech">
         <h3>Laia Tech</h3>
-        <p>Consultoria técnica.</p>
+        <p data-i18n="projects.tech">Consultoria técnica: sites, soluções e gestão de projetos.</p>
       </a>
 
-      <a class="proj card hover-up" href="https://proyectolaia.netlify.app">
-        <img src="assets/img/logos/laia-academy.png">
+      <a class="proj" href="https://proyectolaia.netlify.app" target="_blank">
+        <img src="assets/img/logos/laia-academy.png" alt="Laia Academy">
         <h3>Laia Academy</h3>
-        <p>Idiomas e intercâmbio.</p>
+        <p data-i18n="projects.academy">Idiomas, trocas de intercâmbio e educação.</p>
       </a>
 
-      <a class="proj card hover-up" href="https://laiamind.netlify.app">
-        <img src="assets/img/logos/laia-mind.png">
+      <a class="proj" href="https://laiamind.netlify.app" target="_blank">
+        <img src="assets/img/logos/laia-mind.png" alt="Laia Mind">
         <h3>Laia Mind</h3>
-        <p>Meditação e bem-estar.</p>
+        <p data-i18n="projects.mind">Meditação, bem-estar e mindfulness.</p>
       </a>
 
     </div>
   </div>
 </section>
 
+<!-- =========================================
+     CULTURAS
+========================================= -->
+<section id="cultures" class="section section-dark">
+  <div class="wrap narrow">
 
-<!-- CULTURAS -->
-<section id="cultures" class="section-dark">
-  <div class="wrap narrow fade-up">
-    <h2 class="section-title" data-i18n="cult.title">Culturas que me transformaram</h2>
+    <h2 class="section-title fade-up" data-i18n="cult.title">
+      Culturas que me transformaram
+    </h2>
 
-    <p class="lead center" data-i18n="cult.lead">
-      Viajar transforma corpo e mente.
+    <p class="lead center fade-up" data-i18n="cult.lead">
+      Viajar transforma corpo e mente…
     </p>
 
-    <div class="stories travel-grid">
+    <div class="stories fade-up">
 
-      <a class="story hover-up" href="https://www.instagram.com/stories/highlights/18074948018054911/"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
-      <a class="story hover-up" href="https://www.instagram.com/stories/highlights/18101151847591152/"><img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span></a>
-      <a class="story hover-up" href="https://www.instagram.com/stories/highlights/18142613215403020/"><img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span></a>
-      <a class="story hover-up" href="https://www.instagram.com/stories/highlights/18054605081571365/"><img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span></a>
-      <a class="story hover-up" href="https://www.instagram.com/stories/highlights/17970345023356845/"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
-      <a class="story hover-up" href="https://www.instagram.com/stories/highlights/18173849404351038/"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank">
+        <img src="assets/img/photos/travel-panama.jpg" alt="Panamá"><span>Panamá</span>
+      </a>
+
+      <a class="story" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank">
+        <img src="assets/img/photos/travel-cordoba.jpg" alt="Córdoba"><span>Córdoba</span>
+      </a>
+
+      <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank">
+        <img src="assets/img/photos/travel-rosario.jpg" alt="Rosário"><span>Rosário</span>
+      </a>
+
+      <a class="story" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank">
+        <img src="assets/img/photos/travel-bahia.jpg" alt="Bahia"><span>Bahia</span>
+      </a>
+
+      <a class="story" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank">
+        <img src="assets/img/photos/travel-saopaulo.jpg" alt="São Paulo"><span>São Paulo</span>
+      </a>
+
+      <a class="story" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank">
+        <img src="assets/img/photos/travel-curacao.jpg" alt="Curaçao"><span>Curaçao</span>
+      </a>
 
     </div>
 
   </div>
 </section>
 
-
-<!-- CONTATO -->
-<section id="contact" class="section-light">
+<!-- =========================================
+     CONTATO
+========================================= -->
+<section id="contact" class="section section-light">
   <div class="wrap narrow fade-up">
-    <h2 class="section-title">Contato</h2>
 
-    <ul class="contact">
-      <li><img class="icon" src="assets/img/icons/email.png"><a href="mailto:gabibds@icloud.com">gabibds@icloud.com</a></li>
-      <li><img class="icon" src="assets/img/icons/email.png"><a href="mailto:universolaia06@gmail.com">universolaia06@gmail.com</a></li>
-      <li><img class="icon" src="assets/img/icons/instagram.png"><a href="https://instagram.com/yogabibds">@yogabibds</a></li>
-      <li><img class="icon" src="assets/img/icons/linkedin.png"><a href="https://www.linkedin.com/in/gabrielabarbosadesousa/">LinkedIn</a></li>
-      <li><img class="icon" src="assets/img/icons/github.png"><a href="https://github.com/yogabibds">GitHub</a></li>
-      <li><img class="icon" src="assets/img/icons/whatsapp.png"><a href="https://wa.me/5493413739528">WhatsApp</a></li>
-    </ul>
+    <h2 class="section-title" data-i18n="contact.title">Contato</h2>
+
+    <div class="contact-grid">
+
+      <a class="contact-item" href="mailto:gabibds@icloud.com">
+        <img src="assets/img/icons/email.png" alt=""> gabibds@icloud.com
+      </a>
+
+      <a class="contact-item" href="mailto:universolaia06@gmail.com">
+        <img src="assets/img/icons/email.png" alt=""> universolaia06@gmail.com
+      </a>
+
+      <a class="contact-item" href="https://instagram.com/yogabibds" target="_blank">
+        <img src="assets/img/icons/instagram.png" alt=""> @yogabibds
+      </a>
+
+      <a class="contact-item" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank">
+        <img src="assets/img/icons/linkedin.png" alt=""> LinkedIn
+      </a>
+
+      <a class="contact-item" href="https://github.com/yogabibds" target="_blank">
+        <img src="assets/img/icons/github.png" alt=""> github.com/yogabibds
+      </a>
+
+      <a class="contact-item" href="https://wa.me/5493413739528" target="_blank">
+        <img src="assets/img/icons/whatsapp.png" alt=""> WhatsApp
+      </a>
+
+    </div>
 
   </div>
 </section>
 
-
-<!-- FOOTER -->
-<footer class="footer section-dark">
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer">
   <div class="wrap">
-    © 2025 Universo Laia — Feito com ❤️ e tecnologia  
+    © 2025 Universo Laia — Feito com ❤️ e tecnologia
   </div>
 </footer>
 
-
+<!-- JS -->
 <script src="assets/js/main.js"></script>
 
 </body>
