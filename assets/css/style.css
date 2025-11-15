@@ -295,3 +295,46 @@ body {
   0% { opacity:0; transform:translateY(25px); }
   100% { opacity:1; transform:translateY(0); }
 }
+/* ======================================================
+   EXTRA (app.js)
+====================================================== */
+
+/* fade-adv (fade + slide) */
+.fade-adv {
+  opacity:0;
+  transform:translateY(35px);
+  transition:0.8s ease;
+}
+.fade-adv.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* menu highlight */
+.menu a.active {
+  color:#d9b3ff !important;
+  font-weight:600;
+}
+
+/* botão voltar ao topo */
+.back-to-top {
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:white;
+  color:#4b1f82;
+  border:none;
+  border-radius:50%;
+  width:45px;
+  height:45px;
+  font-size:22px;
+  cursor:pointer;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s ease;
+  box-shadow:0 4px 20px #0003;
+}
+.back-to-top.show {
+  opacity:1;
+  pointer-events:auto;
+}
