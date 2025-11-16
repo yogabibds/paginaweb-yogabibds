@@ -6,7 +6,6 @@ const I18N = {
     "nav.home":"Início",
     "nav.about":"Quem sou eu",
     "nav.projects":"Projetos",
-    "nav.pubs":"Publicações",
     "nav.cultures":"Culturas",
     "nav.contact":"Contato",
 
@@ -16,11 +15,15 @@ const I18N = {
 
     ROTATOR:[
       "Respirar, inspirar, criar e compartilhar.",
-      "Tecnologia a serviço das pessoas.",
-      "Construindo pontes entre ciência e criatividade."
+      "Construindo uma ponte entre Ciência, Arte e Bem-Estar.",
+      "Tecnologia a serviço das pessoas."
     ],
 
     "about.title":"Quem sou eu",
+    "about.blurb":"Sou Gabriela Barbosa, brasileira vivendo na Argentina. Estudante de Medicina, consultora digital e apaixonada por aprender. Acredito que o conhecimento transforma vidas e que ciência e criatividade caminham juntas.",
+
+    "about.edu.title":"Formação em Medicina — UNR",
+    "about.edu.text":"Universidade Nacional de Rosário (UNR), Argentina. PBL, prática clínica precoce e pesquisa em neurociências.",
 
     "pubs.title":"Publicações Acadêmicas",
 
@@ -36,7 +39,6 @@ const I18N = {
     "nav.home":"Inicio",
     "nav.about":"Sobre mí",
     "nav.projects":"Proyectos",
-    "nav.pubs":"Publicaciones",
     "nav.cultures":"Culturas",
     "nav.contact":"Contacto",
 
@@ -46,15 +48,23 @@ const I18N = {
 
     ROTATOR:[
       "Respirar, inspirar, crear y compartir.",
-      "Tecnología al servicio de las personas.",
-      "Construyendo puentes entre ciencia y creatividad."
+      "Tendiendo un puente entre Ciencia, Arte y Bienestar.",
+      "Tecnología al servicio de las personas."
     ],
 
     "about.title":"Quién soy",
+    "about.blurb":"Soy Gabriela Barbosa, brasileña viviendo en Argentina. Estudiante de Medicina, consultora digital y apasionada por aprender.",
+
+    "about.edu.title":"Formación en Medicina — UNR",
+    "about.edu.text":"Universidad Nacional de Rosario (UNR). ABP, práctica clínica temprana e investigación.",
+
     "pubs.title":"Publicaciones Académicas",
+
     "projects.title":"Mis proyectos",
+
     "cult.title":"Culturas que me transformaron",
-    "cult.lead":"Viajar transforma el cuerpo y la mente…",
+    "cult.lead":"Viajar transforma cuerpo y mente…",
+
     "contact.title":"Contacto"
   },
 
@@ -62,7 +72,6 @@ const I18N = {
     "nav.home":"Home",
     "nav.about":"About",
     "nav.projects":"Projects",
-    "nav.pubs":"Publications",
     "nav.cultures":"Cultures",
     "nav.contact":"Contact",
 
@@ -72,24 +81,36 @@ const I18N = {
 
     ROTATOR:[
       "Breathe, inspire, create and share.",
-      "Technology serving people.",
-      "Building bridges between science and creativity."
+      "Bridging Science, Art and Well-being.",
+      "Technology serving people."
     ],
 
     "about.title":"About me",
+    "about.blurb":"I'm Gabriela Barbosa, a Brazilian living in Argentina. Medical student, digital consultant and passionate learner.",
+
+    "about.edu.title":"Medical Training — UNR",
+    "about.edu.text":"National University of Rosario (UNR). PBL, early clinical practice and neuroscience research.",
+
     "pubs.title":"Academic Publications",
+
     "projects.title":"My projects",
+
     "cult.title":"Cultures that shaped me",
-    "cult.lead":"Travel transforms body and mind…",
+    "cult.lead":"Travel reshapes body and mind…",
+
     "contact.title":"Contact"
   }
 };
 
-/* HELPERS */
-const $ = sel => document.querySelector(sel);
+/* ======================================================
+   HELPERS
+====================================================== */
+const $  = sel => document.querySelector(sel);
 const $$ = sel => document.querySelectorAll(sel);
 
-/* TROCA DE IDIOMA */
+/* ======================================================
+   APLICA IDIOMA
+====================================================== */
 function applyLang(lang){
   document.documentElement.lang = lang;
 
@@ -103,49 +124,63 @@ function applyLang(lang){
   ROTATION.tick(true);
 
   $$(".lang-btn").forEach(b=>{
-    b.classList.toggle("active", b.dataset.lang===lang);
+    b.classList.toggle("active", b.dataset.lang === lang);
   });
 }
 
 $$(".lang-btn").forEach(btn =>
-  btn.addEventListener("click", ()=>applyLang(btn.dataset.lang))
+  btn.addEventListener("click", ()=> applyLang(btn.dataset.lang))
 );
 
-/* ROTATOR */
+/* ======================================================
+   ROTATOR
+====================================================== */
 const ROTATION = {
   items: I18N.pt.ROTATOR,
-  index:0,
-  timer:null,
+  index: 0,
+  timer: null,
+
   tick(immediate=false){
-    const el=$("#rotator");
-    el.textContent=this.items[this.index];
-    clearTimeout(this.timer);
-    this.timer=setTimeout(()=>{
-      this.index=(this.index+1)%this.items.length;
+    const rot = $("#rotator");
+    if(!rot) return;
+
+    rot.textContent = this.items[this.index];
+
+    if(this.timer) clearTimeout(this.timer);
+
+    this.timer = setTimeout(()=>{
+      this.index = (this.index + 1) % this.items.length;
       this.tick();
-    }, immediate?9000:9000);
+    }, immediate ? 11000 : 11000);
   }
 };
 
-/* SCROLL ANIMAÇÕES */
-function fadeScroll(){
-  const els=document.querySelectorAll(".fade-up");
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.style.animationPlayState="running";
-        obs.unobserve(e.target);
+/* ======================================================
+   ANIMAÇÕES SIMPLES (scroll)
+====================================================== */
+function animateOnScroll(){
+  const elements = document.querySelectorAll(".fade-up, .fade-in");
+
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.style.animationPlayState = "running";
+        obs.unobserve(entry.target);
       }
     });
-  },{threshold:0.2});
-  els.forEach(el=>{
-    el.style.animationPlayState="paused";
+  }, { threshold: 0.2 });
+
+  elements.forEach(el=>{
+    el.style.animationPlayState = "paused";
     obs.observe(el);
   });
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
+/* ======================================================
+   INIT
+====================================================== */
+document.addEventListener("DOMContentLoaded", ()=>{
   applyLang("pt");
   ROTATION.tick(true);
-  fadeScroll();
+  animateOnScroll();
 });
