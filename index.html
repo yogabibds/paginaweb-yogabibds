@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Universo Laia</title>
 
   <!-- Fonts -->
@@ -16,7 +17,9 @@
 
 <body>
 
-<!-- NAV -->
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#home">Universo Laia</a>
@@ -38,22 +41,43 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ============================================================
+     HERO
+============================================================ -->
 <section id="home" class="hero">
+
+  <!-- Imagem de fundo -->
   <div class="hero-bg"></div>
+
+  <!-- Overlay -->
   <div class="hero-overlay"></div>
 
-  <img class="hero-badge" src="assets/img/photos/hero-brain.jpg" alt="Cérebro">
+  <!-- Badge Central -->
+  <img class="hero-badge" src="assets/img/photos/hero-brain.jpg" alt="Cérebro Universo Laia">
 
+  <!-- Conteúdo -->
   <div class="hero-inner">
-    <h1 class="hero-title" data-i18n="hero.title">Bem-vindo ao meu universo</h1>
-    <p id="rotator" class="hero-rot">Respirar, inspirar, criar e compartilhar.</p>
-    <p class="hero-sub" data-i18n="hero.subtitle">Aprender é meu superpoder</p>
-    <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
+      <h1 class="hero-title" data-i18n="hero.title">
+        Bem-vindo ao meu universo
+      </h1>
+
+      <p id="rotator" class="hero-rot">
+        Respirar, inspirar, criar e compartilhar.
+      </p>
+
+      <p class="hero-sub" data-i18n="hero.subtitle">
+        Aprender é meu superpoder
+      </p>
+
+      <a class="cta" href="#projects" data-i18n="hero.cta">
+        Meus projetos
+      </a>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ============================================================
+     ABOUT (QUEM SOU EU)
+============================================================ -->
 <section id="about" class="section section-dark">
   <div class="wrap narrow">
 
@@ -64,27 +88,71 @@
     </div>
 
     <p class="lead" data-i18n="about.p1">
-      Sou Gabriela Barbosa de Sousa, brasileira vivendo em Rosario […]
+      Sou Gabriela Barbosa de Sousa, brasileira vivendo em Rosario, Argentina. 
+      Estudante de Medicina na UNR e criadora do Universo Laia — um ecossistema que integra saúde, tecnologia, música, educação e bem-estar.
     </p>
 
     <p class="lead" data-i18n="about.p2">
-      Cresci cercada por livros, computadores […]
+      Cresci cercada por livros, computadores, cultura musical e pessoas construindo novas histórias. 
+      Desde cedo aprendi que conhecimento transforma vidas e que aprender é um superpoder.
     </p>
 
     <p class="lead" data-i18n="about.p3">
-      Acredito na união entre ciência e criatividade […]
+      Acredito na união entre ciência e criatividade para resolver problemas reais. 
+      Desenvolvo sites, estruturo processos, crio soluções e utilizo IA para potencializar projetos.
     </p>
 
-    <ul class="pillars fade-up">
-      <li data-i18n="about.pillar1">🧠 Cuidar do corpo e da mente</li>
-      <li data-i18n="about.pillar2">📚 Compartilhar conhecimento</li>
-      <li data-i18n="about.pillar3">🌍 Construir pontes entre culturas</li>
-    </ul>
+    <!-- PILARES COM ÍCONES (BODY–MIND–SOUL) -->
+    <div class="pillars-icons">
+        <div class="pillar-card">
+            <img src="assets/img/icons/pillar-body.png" alt="Body">
+            <h4 data-i18n="about.pillar1_title">Corpo</h4>
+            <p data-i18n="about.pillar1">Cuidar do corpo e da mente</p>
+        </div>
+
+        <div class="pillar-card">
+            <img src="assets/img/icons/pillar-mind.png" alt="Mind">
+            <h4 data-i18n="about.pillar2_title">Mente</h4>
+            <p data-i18n="about.pillar2">Compartilhar conhecimento</p>
+        </div>
+
+        <div class="pillar-card">
+            <img src="assets/img/icons/pillar-soul.png" alt="Soul">
+            <h4 data-i18n="about.pillar3_title">Alma</h4>
+            <p data-i18n="about.pillar3">Construir pontes entre pessoas, culturas e tecnologias</p>
+        </div>
+    </div>
+
+    <!-- Formação Medicina -->
+    <article class="card edu fade-up">
+      <header class="card-hd">
+        <h3 data-i18n="about.edu.title">Formação em Medicina — UNR</h3>
+      </header>
+
+      <p data-i18n="about.edu.text">
+        Universidade Nacional de Rosário (UNR). Currículo PBL, prática clínica precoce, pesquisa em neurociências e foco em pensamento crítico.
+      </p>
+
+      <div class="stories">
+        <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank">
+          <img src="assets/img/photos/travel-unr.jpg" alt="UNR">
+          <span>UNR • Stories</span>
+        </a>
+      </div>
+
+      <div class="btns">
+        <a class="btn ghost" href="assets/docs/cv-pt.pdf" target="_blank">CV PT</a>
+        <a class="btn ghost" href="assets/docs/cv-es.pdf" target="_blank">CV ES</a>
+        <a class="btn ghost" href="assets/docs/cv-en.pdf" target="_blank">CV EN</a>
+      </div>
+    </article>
 
   </div>
 </section>
 
-<!-- PUBLICAÇÕES -->
+<!-- ============================================================
+     PUBLICAÇÕES
+============================================================ -->
 <section id="pubs" class="section section-light">
   <div class="wrap">
 
@@ -92,9 +160,9 @@
 
     <div class="pub-grid">
 
-      <!-- PUB 1 -->
+      <!-- TBI -->
       <article class="pub">
-        <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg" alt="TBI">
+        <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg" alt="TCE">
 
         <div class="pub-body">
           <h3 data-i18n="pubs.p1.title">Avanços recentes nas estratégias diagnósticas…</h3>
@@ -102,7 +170,7 @@
           <p class="meta" data-i18n="pubs.p1.meta">International Journal of Health Science (2024)</p>
 
           <p data-i18n="pubs.p1.desc">
-            Revisão completa sobre TCE […]
+            Revisão completa sobre TCE: neuroimagem, biomarcadores, manejo cirúrgico e novas abordagens terapêuticas.
           </p>
 
           <div class="chips">
@@ -112,7 +180,7 @@
         </div>
       </article>
 
-      <!-- PUB 2 -->
+      <!-- Glioma -->
       <article class="pub">
         <img class="pub-ico" src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
 
@@ -122,7 +190,7 @@
           <p class="meta" data-i18n="pubs.p2.meta">REAS (2025)</p>
 
           <p data-i18n="pubs.p2.desc">
-            Discussão sobre indicações cirúrgicas […]
+            Discussão sobre indicações cirúrgicas, terapias modernas e impacto na qualidade de vida.
           </p>
 
           <div class="chips">
@@ -136,27 +204,64 @@
   </div>
 </section>
 
-<!-- PROJETOS (FUNDO BRANCO) -->
+<!-- ============================================================
+     PROJETOS
+============================================================ -->
 <section id="projects" class="section section-white">
   <div class="wrap">
 
     <h2 class="section-title" data-i18n="projects.title">Meus projetos</h2>
 
-    <div class="proj-grid fade-up">
-      <a class="proj" href="https://laiamusictesting.netlify.app"><img src="assets/img/logos/laia-music.png"><h3>Laia Music</h3><p data-i18n="projects.music"></p></a>
-      <a class="proj" href="https://laiatech.netlify.app"><img src="assets/img/logos/laia-tech.png"><h3>Laia Tech</h3><p data-i18n="projects.tech"></p></a>
-      <a class="proj" href="https://proyectolaia.netlify.app"><img src="assets/img/logos/laia-academy.png"><h3>Laia Academy</h3><p data-i18n="projects.academy"></p></a>
-      <a class="proj" href="https://laiamind.netlify.app"><img src="assets/img/logos/laia-mind.png"><h3>Laia Mind</h3><p data-i18n="projects.mind"></p></a>
+    <div class="proj-grid">
+
+      <a class="proj" href="https://laiamusictesting.netlify.app" target="_blank">
+        <div class="proj-card">
+          <div class="proj-logo-box"><img src="assets/img/logos/laia-music.png"></div>
+          <h3>Laia Music</h3>
+          <p data-i18n="projects.music">Gestão do legado musical…</p>
+        </div>
+      </a>
+
+      <a class="proj" href="https://laiatech.netlify.app" target="_blank">
+        <div class="proj-card">
+          <div class="proj-logo-box"><img src="assets/img/logos/laia-tech.png"></div>
+          <h3>Laia Tech</h3>
+          <p data-i18n="projects.tech">Consultoria técnica…</p>
+        </div>
+      </a>
+
+      <a class="proj" href="https://proyectolaia.netlify.app" target="_blank">
+        <div class="proj-card">
+          <div class="proj-logo-box"><img src="assets/img/logos/laia-academy.png"></div>
+          <h3>Laia Academy</h3>
+          <p data-i18n="projects.academy">Educação e intercâmbios…</p>
+        </div>
+      </a>
+
+      <a class="proj" href="https://laiamind.netlify.app" target="_blank">
+        <div class="proj-card">
+          <div class="proj-logo-box"><img src="assets/img/logos/laia-mind.png"></div>
+          <h3>Laia Mind</h3>
+          <p data-i18n="projects.mind">Meditação, bem-estar…</p>
+        </div>
+      </a>
+
     </div>
 
   </div>
 </section>
 
-<!-- CULTURAS -->
+<!-- ============================================================
+     CULTURAS
+============================================================ -->
 <section id="cultures" class="section section-dark">
   <div class="wrap narrow">
+
     <h2 class="section-title" data-i18n="cult.title">Culturas que me transformaram</h2>
-    <p class="lead center" data-i18n="cult.text"></p>
+
+    <p class="lead center" data-i18n="cult.text">
+      Viajar expande a mente e abre portas que mudam destinos…
+    </p>
 
     <div class="stories">
       <a class="story" href="#"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
@@ -166,10 +271,14 @@
       <a class="story" href="#"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
       <a class="story" href="#"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
     </div>
+
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- ============================================================
+     CONTATO
+============================================================ -->
+
 <section id="contact" class="section section-light">
   <div class="wrap narrow">
     <h2 class="section-title" data-i18n="contact.title">Contato</h2>
