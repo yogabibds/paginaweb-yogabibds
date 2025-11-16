@@ -1,446 +1,416 @@
 /* ============================================================
-   BASE
+   RESET & BASE
 ============================================================ */
-:root{
-  --purple:#5b2d82;
-  --purple-dark:#3d1d57;
-  --white:#ffffff;
-  --black:#111;
-  --gray:#666;
-  --gray-light:#ddd;
-
-  --font-body:'Work Sans', sans-serif;
-  --font-title:'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  font-family:var(--font-body);
-  line-height:1.6;
-  background:#fafafa;
-  color:#111;
+body {
+  font-family: "Work Sans", sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
 }
 
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.wrap{
-  width:100%;
-  max-width:1200px;
-  margin:auto;
-  padding:0 20px;
-}
-
-.wrap.narrow{
-  max-width:850px;
-}
-
-.section{
-  padding:80px 0;
-}
-
-.section-light{
-  background:#fff;
-}
-
-.section-dark{
-  background:#0f0f0f;
-  color:#fff;
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* ============================================================
-   TITLES
+   COLORS & TOKENS
 ============================================================ */
-.section-title{
-  font-family:var(--font-title);
-  font-weight:600;
-  text-align:center;
-  font-size:2.2rem;
-  margin-bottom:50px;
+:root {
+  --purple: #4b1fcf;
+  --purple-dark: #35139a;
+  --purple-soft: #5c2ff5;
+  --light: #f7f7f7;
+  --dark: #0d0d0d;
+  --text-light: #ffffff;
+}
+
+/* ============================================================
+   WRAPPERS
+============================================================ */
+.wrap {
+  width: 90%;
+  max-width: 1180px;
+  margin: auto;
+}
+
+.wrap.narrow {
+  max-width: 760px;
 }
 
 /* ============================================================
    NAVBAR
 ============================================================ */
-.topbar{
-  width:100%;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  position:sticky;
-  top:0;
-  z-index:1000;
+.topbar {
+  width: 100%;
+  padding: 16px 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-.topbar .wrap{
-  height:70px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.topbar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.brand{
-  font-family:var(--font-title);
-  font-size:1.4rem;
-  font-weight:600;
-  color:#5b2d82;
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--purple);
+  text-decoration: none;
 }
 
-.menu{
-  display:flex;
-  gap:25px;
+.menu {
+  display: flex;
+  gap: 24px;
 }
 
-.menu a{
-  font-size:0.95rem;
-  font-weight:500;
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.langs{
-  display:flex;
-  gap:10px;
+.langs {
+  display: flex;
+  gap: 6px;
 }
 
-.lang-btn{
-  background:#eee;
-  border:none;
-  padding:6px 12px;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:600;
+.lang-btn {
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
 }
 
-.lang-btn.active{
-  background:#5b2d82;
-  color:#fff;
-}
-
-/* ============================================================
-   HERO — RELUME A + OVERLAY 20%
-============================================================ */
-.hero{
-  position:relative;
-  width:100%;
-  height:620px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
-  color:#fff;
-}
-
-/* Fundo */
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background:url('../img/photos/hero-brain.jpg') center/cover no-repeat;
-  filter:brightness(1.12);
-  z-index:-3;
-}
-
-/* Overlay roxo 20% */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(91,45,130,0.20);
-  z-index:-2;
-}
-
-/* Badge (cérebro menor e suave) */
-.hero-badge{
-  position:absolute;
-  top:20%;
-  width:160px;
-  opacity:0.95;
-  z-index:3;
-}
-
-/* Textos */
-.hero-inner{
-  position:relative;
-  z-index:5;
-  max-width:700px;
-  margin-top:120px;
-}
-
-.hero-title{
-  font-family:var(--font-title);
-  font-size:2.4rem;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.hero-rot{
-  font-size:1.1rem;
-  font-weight:400;
-  margin-bottom:10px;
-}
-
-.hero-sub{
-  font-size:1.2rem;
-  margin-bottom:25px;
-  opacity:0.9;
-}
-
-.cta{
-  background:#5b2d82;
-  padding:14px 26px;
-  border-radius:8px;
-  font-size:1rem;
-  font-weight:600;
-  color:#fff;
-  display:inline-block;
-  transition:0.3s;
-}
-
-.cta:hover{
-  background:#3d1d57;
-}
-
-/* Mobile HERO */
-@media(max-width:600px){
-  .hero{
-    height:560px;
-  }
-  .hero-title{ font-size:1.9rem; }
-  .hero-sub{ font-size:1.1rem; }
-  .hero-badge{ width:130px; top:18%; }
+.lang-btn.active {
+  background: var(--purple);
+  color: white;
+  border-color: var(--purple);
 }
 
 /* ============================================================
-   ABOUT
+   SECTIONS
 ============================================================ */
-.about-photo{
-  width:180px;
-  height:180px;
-  margin:0 auto 30px;
-  border-radius:50%;
-  overflow:hidden;
+.section {
+  padding: 80px 0;
 }
 
-.lead{
-  font-size:1.1rem;
-  margin-bottom:20px;
-  color:#333;
+.section-light {
+  background: #fff;
 }
 
-.pillars{
-  margin:25px 0 40px;
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  font-size:1.05rem;
-  color:#222;
-  font-weight:500;
+.section-dark {
+  background: var(--purple);
+  color: white;
 }
 
-/* Card */
-.card{
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.08);
-  margin-top:30px;
-}
-
-.card-hd h3{
-  font-family:var(--font-title);
-  font-size:1.4rem;
-  margin-bottom:15px;
+.section-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* ============================================================
-   PUBLICAÇÕES
+   HERO — OPÇÃO A (FAIXA + IMG DE FUNDO + TEXTO ABAIXO DO CÉREBRO)
 ============================================================ */
-.pub-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(430px,1fr));
-  gap:35px;
+
+.hero {
+  width: 100%;
+  padding: 120px 0 140px;
+  position: relative;
+  background: var(--purple);   /* Faixa roxa */
+  text-align: center;
+  overflow: hidden;
 }
 
-.pub{
-  background:#141414;
-  padding:22px;
-  border-radius:12px;
-  display:flex;
-  gap:20px;
+/* Imagem de fundo */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/photos/hero-brain.jpg");
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 1; /* imagem visível */
+  z-index: 1;
 }
 
-.pub-ico{
-  width:110px;
-  border-radius:10px;
-  object-fit:cover;
+/* Overlay de cor */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 0, 90, 0.45); /* leve violeta para contraste */
+  z-index: 2;
 }
 
-.pub-body h3{
-  font-family:var(--font-title);
-  font-size:1.2rem;
-  font-weight:600;
-  margin-bottom:8px;
+/* Badge removido como bloco solto — agora só serve como ajuste se quiser */
+.hero-badge {
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
-.pub .meta{
-  font-size:0.9rem;
-  color:#bbb;
-  margin-bottom:10px;
+/* Container do conteúdo */
+.hero-inner {
+  position: relative;
+  z-index: 4;
+  margin-top: 260px; /* empurra o texto para baixo do cérebro */
 }
 
-.chips{
-  margin-top:12px;
-  display:flex;
-  gap:12px;
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
 }
 
-.chip{
-  padding:8px 16px;
-  background:#5b2d82;
-  color:#fff;
-  font-size:0.9rem;
-  border-radius:8px;
-  font-weight:600;
+.hero-sub,
+.hero-rot {
+  font-size: 18px;
+  color: white;
+  opacity: 0.9;
 }
 
-.chip:hover{
-  background:#3d1d57;
+.cta {
+  display: inline-block;
+  background: var(--purple-soft);
+  padding: 14px 26px;
+  border-radius: 40px;
+  margin-top: 24px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
 }
 
 /* ============================================================
-   PROJETOS
+   ABOUT SECTION
 ============================================================ */
-.proj-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
+.about-photo {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 30px;
 }
 
-.proj{
-  background:#fff;
-  padding:20px;
-  text-align:center;
-  border-radius:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  transition:0.3s;
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.proj img{
-  width:100px;
-  height:100px;
-  margin:auto;
-  object-fit:contain;
-}
-
-.proj h3{
-  font-family:var(--font-title);
-  margin-top:10px;
-  margin-bottom:8px;
-  font-size:1.2rem;
-}
-
-.proj p{
-  font-size:0.95rem;
-  color:#444;
-}
-
-.proj:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 24px rgba(0,0,0,0.18);
+.lead {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 /* ============================================================
-   CULTURAS
+   PILLARS
 ============================================================ */
-.lead.center{
-  text-align:center;
-  margin-bottom:30px;
+.pillars {
+  list-style: none;
+  margin: 20px 0 40px;
 }
 
-.stories{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:25px;
-  margin-top:30px;
-}
-
-.story{
-  text-align:center;
-}
-
-.story img{
-  width:120px;
-  height:120px;
-  border-radius:20px;
-  object-fit:cover;
-  margin:auto;
-}
-
-.story span{
-  display:block;
-  margin-top:8px;
-  font-family:var(--font-title);
-  font-weight:500;
+.pillars li {
+  padding: 10px 0;
+  font-size: 18px;
 }
 
 /* ============================================================
-   CONTATO — 2 COLUNAS
+   EDUCATION CARD
 ============================================================ */
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+.card.edu {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-.contact-item{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:14px 10px;
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.08);
+.card-hd h3 {
+  margin-bottom: 16px;
+  font-weight: 700;
 }
 
-.contact-item img{
-  width:22px;
-  opacity:0.8;
+.stories {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.story img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn.ghost {
+  padding: 10px 18px;
+  border: 1px solid var(--purple);
+  border-radius: 12px;
+  background: white;
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ============================================================
+   PUBLICATIONS
+============================================================ */
+.pub-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.pub {
+  background: rgba(255,255,255,0.08);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.pub img {
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.meta {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.chips {
+  margin-top: 12px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 6px 12px;
+  background: white;
+  color: var(--purple);
+  border-radius: 8px;
+  margin-right: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ============================================================
+   PROJECTS
+============================================================ */
+.proj-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.proj {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.proj img {
+  width: 140px;
+  margin: auto;
+}
+
+.proj h3 {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* ============================================================
+   CULTURES
+============================================================ */
+.section-dark .stories .story span {
+  color: white;
+}
+
+.section-dark .lead {
+  color: white;
+}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-item img {
+  width: 22px;
 }
 
 /* ============================================================
    FOOTER
 ============================================================ */
-.footer{
-  text-align:center;
-  padding:25px 0;
-  background:#f7f7f7;
-  font-size:0.9rem;
-  color:#333;
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  background: #111;
+  color: #eee;
+  font-size: 14px;
 }
 
 /* ============================================================
-   ANIMAÇÕES (fade)
+   MOBILE
 ============================================================ */
-.fade-up{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp 1s forwards;
-  animation-play-state:paused;
-}
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
 
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
+  .hero-bg {
+    background-size: 140%;
+    background-position: center top;
+  }
+
+  .hero-inner {
+    margin-top: 230px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-sub,
+  .hero-rot {
+    font-size: 16px;
+  }
+
+  .cta {
+    margin-top: 18px;
+    padding: 12px 20px;
   }
 }
