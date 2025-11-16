@@ -1,6 +1,19 @@
-/* ============================================================
-   RESET & BASE
-============================================================ */
+/* ===================================================================
+   BASE
+=================================================================== */
+:root {
+  --purple-dark: #1b0f29;
+  --purple-mid: #2c1844;
+  --purple-light: #6d4bc1;
+  --white: #ffffff;
+  --gray-100: #f6f6f6;
+  --gray-300: #ddd;
+  --gray-600: #999;
+  --gray-900: #222;
+
+  --radius: 14px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,31 +26,14 @@ html {
 
 body {
   font-family: "Work Sans", sans-serif;
-  color: #111;
-  background: #fff;
+  background: var(--white);
+  color: var(--gray-900);
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ============================================================
-   COLORS & TOKENS
-============================================================ */
-:root {
-  --purple: #4b1fcf;
-  --purple-dark: #35139a;
-  --purple-soft: #5c2ff5;
-  --light: #f7f7f7;
-  --dark: #0d0d0d;
-  --text-light: #ffffff;
-}
-
-/* ============================================================
+/* ===================================================================
    WRAPPERS
-============================================================ */
+=================================================================== */
 .wrap {
   width: 90%;
   max-width: 1180px;
@@ -45,17 +41,16 @@ img {
 }
 
 .wrap.narrow {
-  max-width: 760px;
+  max-width: 780px;
 }
 
-/* ============================================================
-   NAVBAR
-============================================================ */
+/* ===================================================================
+   TOPBAR
+=================================================================== */
 .topbar {
   width: 100%;
-  padding: 16px 0;
-  background: white;
-  border-bottom: 1px solid #eee;
+  background: var(--purple-dark);
+  padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -63,26 +58,26 @@ img {
 
 .topbar .wrap {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .brand {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--purple);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
   text-decoration: none;
-}
-
-.menu {
-  display: flex;
-  gap: 24px;
 }
 
 .menu a {
-  color: #333;
+  margin: 0 10px;
+  color: var(--white);
   text-decoration: none;
   font-weight: 500;
+}
+
+.menu a:hover {
+  opacity: 0.85;
 }
 
 .langs {
@@ -91,326 +86,429 @@ img {
 }
 
 .lang-btn {
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fff;
+  background: var(--purple-light);
+  color: var(--white);
+  border: none;
   cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .lang-btn.active {
-  background: var(--purple);
-  color: white;
-  border-color: var(--purple);
+  background: var(--white);
+  color: var(--purple-dark);
 }
 
-/* ============================================================
-   SECTIONS
-============================================================ */
-.section {
-  padding: 80px 0;
-}
-
-.section-light {
-  background: #fff;
-}
-
-.section-dark {
-  background: var(--purple);
-  color: white;
-}
-
-.section-title {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* ============================================================
-   HERO — OPÇÃO A (FAIXA + IMG DE FUNDO + TEXTO ABAIXO DO CÉREBRO)
-============================================================ */
+/* ===================================================================
+   HERO — PALETA B2
+=================================================================== */
 
 .hero {
-  width: 100%;
-  padding: 120px 0 140px;
   position: relative;
-  background: var(--purple);   /* Faixa roxa */
-  text-align: center;
+  width: 100%;
+  padding: 120px 0;
+  background: var(--purple-mid);
   overflow: hidden;
+  text-align: center;
 }
 
-/* Imagem de fundo */
+/* imagem fixa de fundo — SEM DUPLICAR */
 .hero-bg {
   position: absolute;
-  inset: 0;
-  background-image: url("../img/photos/hero-brain.jpg");
-  background-size: contain;
-  background-position: center top;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/photos/hero-brain.jpg');
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  opacity: 1; /* imagem visível */
   z-index: 1;
 }
 
-/* Overlay de cor */
+/* overlay 20% */
 .hero-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(27, 0, 90, 0.45); /* leve violeta para contraste */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 15, 41, 0.20);
   z-index: 2;
 }
 
-/* Badge removido como bloco solto — agora só serve como ajuste se quiser */
-.hero-badge {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
-/* Container do conteúdo */
+/* conteúdo */
 .hero-inner {
   position: relative;
-  z-index: 4;
-  margin-top: 260px; /* empurra o texto para baixo do cérebro */
+  z-index: 5;
+  width: 90%;
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+  margin-top: 90px;
 }
 
+.hero-badge {
+  width: 180px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+/* textos */
 .hero-title {
-  font-size: 42px;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
   font-weight: 700;
-  color: white;
-  margin-bottom: 12px;
+  color: var(--white);
+  margin-bottom: 10px;
 }
 
-.hero-sub,
 .hero-rot {
   font-size: 18px;
-  color: white;
-  opacity: 0.9;
+  color: var(--gray-100);
+  margin-bottom: 10px;
 }
 
+.hero-sub {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+/* botão */
 .cta {
-  display: inline-block;
-  background: var(--purple-soft);
-  padding: 14px 26px;
-  border-radius: 40px;
-  margin-top: 24px;
-  font-weight: 600;
-  color: white;
+  background: var(--purple-light);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
 }
 
-/* ============================================================
-   ABOUT SECTION
-============================================================ */
-.about-photo {
-  width: 220px;
-  height: 220px;
-  margin: 0 auto 30px;
+.cta:hover {
+  background: #8b6ef0;
 }
+
+/* MOBILE HERO */
+@media (max-width: 760px) {
+  .hero {
+    padding: 90px 0 120px;
+  }
+
+  .hero-badge {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+}
+
+/* ===================================================================
+   SECTIONS
+=================================================================== */
+.section {
+  padding: 90px 0;
+}
+
+.section-dark {
+  background: var(--purple-dark);
+  color: var(--white);
+}
+
+.section-light {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ===================================================================
+   ABOUT
+=================================================================== */
 
 .about-photo img {
-  width: 100%;
-  height: 100%;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  margin: 0 auto 30px;
+  display: block;
 }
 
 .lead {
   font-size: 18px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-/* ============================================================
-   PILLARS
-============================================================ */
 .pillars {
   list-style: none;
-  margin: 20px 0 40px;
-}
-
-.pillars li {
-  padding: 10px 0;
+  margin-top: 20px;
+  text-align: center;
   font-size: 18px;
 }
 
-/* ============================================================
-   EDUCATION CARD
-============================================================ */
-.card.edu {
-  background: white;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+.pillars li {
+  margin-bottom: 6px;
+}
+
+/* UNR card */
+.card {
+  background: var(--purple-mid);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 30px;
+  color: var(--white);
 }
 
 .card-hd h3 {
-  margin-bottom: 16px;
-  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
-.stories {
-  display: flex;
-  gap: 10px;
-  margin: 18px 0;
+/* UNR stories */
+.story {
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
 }
 
 .story img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
 .btns {
-  display: flex;
-  gap: 10px;
+  margin-top: 20px;
 }
 
 .btn.ghost {
+  border: 1px solid var(--white);
   padding: 10px 18px;
-  border: 1px solid var(--purple);
-  border-radius: 12px;
-  background: white;
-  color: var(--purple);
+  border-radius: 8px;
+  color: var(--white);
   text-decoration: none;
-  font-weight: 600;
+  margin-right: 10px;
 }
 
-/* ============================================================
-   PUBLICATIONS
-============================================================ */
+.btn.ghost:hover {
+  background: var(--white);
+  color: var(--purple-dark);
+}
+
+/* ===================================================================
+   PUBLICAÇÕES
+=================================================================== */
+
 .pub-grid {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
 
 .pub {
-  background: rgba(255,255,255,0.08);
-  padding: 24px;
-  border-radius: 16px;
+  display: flex;
+  gap: 20px;
 }
 
-.pub img {
-  border-radius: 12px;
-  margin-bottom: 16px;
+.pub-ico {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.pub-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .meta {
   font-size: 14px;
-  opacity: 0.8;
+  color: var(--gray-300);
+  margin-bottom: 10px;
 }
 
 .chips {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .chip {
   display: inline-block;
   padding: 6px 12px;
-  background: white;
-  color: var(--purple);
+  background: var(--purple-light);
+  color: white;
   border-radius: 8px;
-  margin-right: 10px;
-  font-weight: 600;
   text-decoration: none;
+  margin-right: 8px;
 }
 
-/* ============================================================
-   PROJECTS
-============================================================ */
+.chip:hover {
+  background: #8b6ef0;
+}
+
+/* MOBILE PUBLICAÇÕES */
+@media (max-width: 760px) {
+  .pub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pub {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ===================================================================
+   PROJETOS
+=================================================================== */
+
 .proj-grid {
   display: grid;
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
 .proj {
   text-align: center;
   text-decoration: none;
   color: inherit;
+  background: var(--purple-mid);
+  padding: 22px;
+  border-radius: var(--radius);
+  transition: 0.3s;
 }
 
 .proj img {
-  width: 140px;
-  margin: auto;
+  width: 85px;
+  margin-bottom: 12px;
 }
 
 .proj h3 {
-  margin-top: 10px;
-  font-weight: 700;
-  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--white);
 }
 
-/* ============================================================
-   CULTURES
-============================================================ */
-.section-dark .stories .story span {
-  color: white;
+.proj p {
+  color: var(--gray-200);
 }
 
-.section-dark .lead {
-  color: white;
+/* MOBILE PROJETOS */
+@media(max-width: 900px){
+  .proj-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
 }
 
-/* ============================================================
-   CONTACT
-============================================================ */
+@media(max-width: 600px){
+  .proj-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================================
+   CULTURAS
+=================================================================== */
+
+.stories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.story img {
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.story span {
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* ===================================================================
+   CONTATO
+=================================================================== */
+
 .contact-grid {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
 
 .contact-item {
+  background: var(--purple-mid);
+  padding: 14px;
+  border-radius: var(--radius);
+  color: var(--white);
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: inherit;
-  text-decoration: none;
 }
 
 .contact-item img {
   width: 22px;
+  opacity: 0.9;
 }
 
-/* ============================================================
+@media(max-width:760px){
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================================
    FOOTER
-============================================================ */
+=================================================================== */
 .footer {
   padding: 30px 0;
+  background: var(--purple-dark);
   text-align: center;
-  background: #111;
-  color: #eee;
+  color: var(--white);
   font-size: 14px;
 }
 
-/* ============================================================
-   MOBILE
-============================================================ */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 80px;
-    padding-bottom: 120px;
-  }
+/* ===================================================================
+   ANIMAÇÕES
+=================================================================== */
 
-  .hero-bg {
-    background-size: 140%;
-    background-position: center top;
-  }
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+  animation-play-state: paused;
+}
 
-  .hero-inner {
-    margin-top: 230px;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-sub,
-  .hero-rot {
-    font-size: 16px;
-  }
-
-  .cta {
-    margin-top: 18px;
-    padding: 12px 20px;
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
