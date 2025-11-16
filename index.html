@@ -13,7 +13,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
 <!-- ============================================================
@@ -40,39 +39,40 @@
   </div>
 </header>
 
-
 <!-- ============================================================
-     HERO — OPÇÃO A FINAL
+     HERO – LATERAL MODERNO (B2)
 ============================================================ -->
-<section id="home" class="hero">
+<section id="home" class="hero hero-modern">
 
-  <!-- Fundo + overlay -->
-  <div class="hero-bg"></div>
-  <div class="hero-fade"></div>
+  <div class="hero-bg-modern"></div>
+  <div class="hero-overlay-modern"></div>
 
-  <!-- Conteúdo -->
-  <div class="hero-inner">
+  <div class="hero-wrap">
 
-    <h1 class="hero-title" data-i18n="hero.title">
-      Bem-vindo ao meu universo
-    </h1>
+    <!-- COLUNA ESQUERDA -->
+    <div class="hero-left fade-up">
+      <h1 class="hero-title" data-i18n="hero.title">
+        Bem-vindo ao meu universo
+      </h1>
 
-    <p id="rotator" class="hero-rot">
-      Respirar, inspirar, criar e compartilhar.
-    </p>
+      <p id="rotator" class="hero-rot">
+        Respirar, inspirar, criar e compartilhar.
+      </p>
 
-    <p class="hero-sub" data-i18n="hero.subtitle">
-      Aprender é meu superpoder
-    </p>
+      <p class="hero-sub" data-i18n="hero.subtitle">
+        Aprender é meu superpoder
+      </p>
 
-    <a class="cta" href="#projects" data-i18n="hero.cta">
-      Meus projetos
-    </a>
+      <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
+    </div>
+
+    <!-- COLUNA DIREITA (B2 – Imagem média com bordas arredondadas) -->
+    <div class="hero-right fade-up">
+      <img src="assets/img/photos/hero-brain.jpg" alt="Universo Laia Brain" class="hero-img hero-img-b2">
+    </div>
 
   </div>
-
 </section>
-
 
 <!-- ============================================================
      ABOUT
@@ -95,7 +95,7 @@
     </p>
 
     <p class="lead fade-up" data-i18n="about.p3">
-      Acredito na união entre ciência e criatividade para resolver problemas reais. Desenvolvo sites, organizo dados, crio processos inteligentes e compartilho práticas de bem-estar.
+      Acredito na união entre ciência e criatividade para resolver problemas reais. Desenvolvo sites, estruturo processos, crio soluções e compartilho práticas de bem-estar.
     </p>
 
     <ul class="pillars fade-up">
@@ -104,6 +104,7 @@
       <li data-i18n="about.pillar3">🌍 Construir pontes entre pessoas, culturas e tecnologias</li>
     </ul>
 
+    <!-- Formação -->
     <article class="card edu fade-up">
       <header class="card-hd">
         <h3 data-i18n="about.edu.title">Formação em Medicina — UNR</h3>
@@ -114,8 +115,9 @@
       </p>
 
       <div class="stories">
-        <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/18142613215403020/">
-          <img src="assets/img/photos/travel-unr.jpg" alt="UNR"><span>UNR • Stories</span>
+        <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank">
+          <img src="assets/img/photos/travel-unr.jpg" alt="UNR">
+          <span>UNR • Stories</span>
         </a>
       </div>
 
@@ -129,7 +131,6 @@
   </div>
 </section>
 
-
 <!-- ============================================================
      PUBLICAÇÕES
 ============================================================ -->
@@ -141,35 +142,31 @@
     <div class="pub-grid">
 
       <article class="pub fade-up">
-        <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg">
-
+        <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg" alt="TCE">
         <div class="pub-body">
           <h3 data-i18n="pubs.p1.title">Avanços recentes nas estratégias diagnósticas…</h3>
           <p class="meta" data-i18n="pubs.p1.meta">International Journal of Health Science (2024)</p>
           <p data-i18n="pubs.p1.desc">
-            Revisão sobre TCE: neuroimagem, biomarcadores, manejo cirúrgico e novas abordagens terapêuticas.
+            Revisão sobre neuroimagem, biomarcadores, manejo cirúrgico e terapias emergentes.
           </p>
-
           <div class="chips">
-            <a class="chip" target="_blank" href="https://doi.org/10.22533/at.ed.1594672409077">DOI</a>
-            <a class="chip" target="_blank" href="assets/docs/pub-tbi.pdf">PDF</a>
+            <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
+            <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank">PDF</a>
           </div>
         </div>
       </article>
 
       <article class="pub fade-up">
-        <img class="pub-ico" src="assets/img/photos/pub-glioma.jpg">
-
+        <img class="pub-ico" src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
         <div class="pub-body">
           <h3 data-i18n="pubs.p2.title">Astrocitomas e gliomas…</h3>
           <p class="meta" data-i18n="pubs.p2.meta">REAS (2025)</p>
           <p data-i18n="pubs.p2.desc">
             Discussão sobre indicações cirúrgicas, terapias modernas e impacto na qualidade de vida.
           </p>
-
           <div class="chips">
-            <a class="chip" target="_blank" href="https://doi.org/10.25248/REAS.e19108.2025">DOI</a>
-            <a class="chip" target="_blank" href="assets/docs/pub-glioma.pdf">PDF</a>
+            <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
+            <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank">PDF</a>
           </div>
         </div>
       </article>
@@ -178,45 +175,48 @@
   </div>
 </section>
 
-
 <!-- ============================================================
      PROJETOS
 ============================================================ -->
 <section id="projects" class="section section-light">
   <div class="wrap">
-
     <h2 class="section-title" data-i18n="projects.title">Meus projetos</h2>
 
     <div class="proj-grid fade-up">
 
-      <a class="proj" target="_blank" href="https://laiamusictesting.netlify.app">
+      <a class="proj" href="https://laiamusictesting.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-music.png" alt="Laia Music">
         <h3>Laia Music</h3>
-        <p data-i18n="projects.music">Gestão, documentação e revitalização do legado musical de Edney Fernandes.</p>
+        <p data-i18n="projects.music">Gestão e documentação do legado musical de Edney Fernandes.</p>
       </a>
 
-      <a class="proj" target="_blank" href="https://laiatech.netlify.app">
+      <a class="proj" href="https://laiatech.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-tech.png" alt="Laia Tech">
         <h3>Laia Tech</h3>
-        <p data-i18n="projects.tech">Consultoria técnica, automação, desenvolvimento e gestão de projetos digitais.</p>
+        <p data-i18n="projects.tech">
+          Automação, sites, soluções digitais e gestão de projetos.
+        </p>
       </a>
 
-      <a class="proj" target="_blank" href="https://proyectolaia.netlify.app">
+      <a class="proj" href="https://proyectolaia.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-academy.png" alt="Laia Academy">
         <h3>Laia Academy</h3>
-        <p data-i18n="projects.academy">Educação, idiomas, intercâmbio cultural e produção de conteúdo educacional.</p>
+        <p data-i18n="projects.academy">
+          Educação, idiomas, intercâmbios e conteúdo cultural.
+        </p>
       </a>
 
-      <a class="proj" target="_blank" href="https://laiamind.netlify.app">
+      <a class="proj" href="https://laiamind.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-mind.png" alt="Laia Mind">
         <h3>Laia Mind</h3>
-        <p data-i18n="projects.mind">Meditação, mindfulness, neurociências e bem-estar.</p>
+        <p data-i18n="projects.mind">
+          Meditação, mindfulness e neurociências aplicadas.
+        </p>
       </a>
 
     </div>
   </div>
 </section>
-
 
 <!-- ============================================================
      CULTURAS
@@ -228,38 +228,21 @@
 
     <p class="lead center fade-up" data-i18n="cult.text">
       Viajar expande a mente, fortalece o corpo e abre portas que mudam destinos.
-      Cada país que visitei marcou minha trajetória com novas histórias, idiomas, sabores e pessoas.  
+      Cada país trouxe histórias, sabores, idiomas e novas perspectivas.
+      Levo todas as culturas comigo – elas inspiram tudo o que eu crio.
     </p>
 
     <div class="stories fade-up">
-      <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/18074948018054911/">
-        <img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span>
-      </a>
-
-      <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/18101151847591152/">
-        <img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span>
-      </a>
-
-      <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/18142613215403020/">
-        <img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span>
-      </a>
-
-      <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/18054605081571365/">
-        <img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span>
-      </a>
-
-      <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/17970345023356845/">
-        <img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span>
-      </a>
-
-      <a class="story" target="_blank" href="https://www.instagram.com/stories/highlights/18173849404351038/">
-        <img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span>
-      </a>
+      <a class="story" href="#"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
+      <a class="story" href="#"><img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span></a>
+      <a class="story" href="#"><img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span></a>
+      <a class="story" href="#"><img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span></a>
+      <a class="story" href="#"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
+      <a class="story" href="#"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
     </div>
 
   </div>
 </section>
-
 
 <!-- ============================================================
      CONTATO
@@ -279,19 +262,19 @@
         <img src="assets/img/icons/email.png"> universolaia06@gmail.com
       </a>
 
-      <a class="contact-item" target="_blank" href="https://instagram.com/yogabibds">
+      <a class="contact-item" href="https://instagram.com/yogabibds" target="_blank">
         <img src="assets/img/icons/instagram.png"> @yogabibds
       </a>
 
-      <a class="contact-item" target="_blank" href="https://www.linkedin.com/in/gabrielabarbosadesousa/">
+      <a class="contact-item" href="https://www.linkedin.com/in/gabrielabarbosadesousa/" target="_blank">
         <img src="assets/img/icons/linkedin.png"> LinkedIn
       </a>
 
-      <a class="contact-item" target="_blank" href="https://github.com/yogabibds">
+      <a class="contact-item" href="https://github.com/yogabibds" target="_blank">
         <img src="assets/img/icons/github.png"> github.com/yogabibds
       </a>
 
-      <a class="contact-item" target="_blank" href="https://wa.me/5493413739528">
+      <a class="contact-item" href="https://wa.me/5493413739528" target="_blank">
         <img src="assets/img/icons/whatsapp.png"> WhatsApp
       </a>
 
@@ -299,7 +282,6 @@
 
   </div>
 </section>
-
 
 <!-- ============================================================
      FOOTER
