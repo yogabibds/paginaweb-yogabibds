@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Universo Laia</title>
 
-  <!-- FONTS -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
 <!-- ============================================================
@@ -40,46 +41,36 @@
 </header>
 
 <!-- ============================================================
-     HERO – LATERAL MODERNO (B2)
+     HERO – IMAGEM DO CÉREBRO + PALETA B2
 ============================================================ -->
-<section id="home" class="hero hero-modern">
+<section id="home" class="hero">
 
-  <div class="hero-bg-modern"></div>
-  <div class="hero-overlay-modern"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-  <div class="hero-wrap">
+  <div class="hero-inner fade-up">
+    <img class="hero-badge" src="assets/img/photos/hero-brain.jpg" alt="Hero Brain">
 
-    <!-- COLUNA ESQUERDA -->
-    <div class="hero-left fade-up">
-      <h1 class="hero-title" data-i18n="hero.title">
-        Bem-vindo ao meu universo
-      </h1>
+    <h1 class="hero-title" data-i18n="hero.title">
+      Bem-vindo ao meu universo
+    </h1>
 
-      <p id="rotator" class="hero-rot">
-        Respirar, inspirar, criar e compartilhar.
-      </p>
+    <p id="rotator" class="hero-rot">
+      Respirar, inspirar, criar e compartilhar.
+    </p>
 
-      <p class="hero-sub" data-i18n="hero.subtitle">
-        Aprender é meu superpoder
-      </p>
+    <p class="hero-sub" data-i18n="hero.subtitle">Aprender é meu superpoder</p>
 
-      <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
-    </div>
-
-    <!-- COLUNA DIREITA (B2 – Imagem média com bordas arredondadas) -->
-    <div class="hero-right fade-up">
-      <img src="assets/img/photos/hero-brain.jpg" alt="Universo Laia Brain" class="hero-img hero-img-b2">
-    </div>
-
+    <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
   </div>
 </section>
 
 <!-- ============================================================
-     ABOUT
+     QUEM SOU EU — TEXTO FINAL
 ============================================================ -->
-<section id="about" class="section section-light">
+<section id="about" class="section section-dark">
   <div class="wrap narrow">
-
+    
     <h2 class="section-title" data-i18n="about.title">Quem sou eu</h2>
 
     <div class="about-photo fade-up">
@@ -134,21 +125,30 @@
 <!-- ============================================================
      PUBLICAÇÕES
 ============================================================ -->
-<section id="pubs" class="section section-dark">
+<section id="pubs" class="section section-light">
   <div class="wrap">
 
     <h2 class="section-title" data-i18n="pubs.title">Publicações Acadêmicas</h2>
 
     <div class="pub-grid">
 
+      <!-- PUB 1 -->
       <article class="pub fade-up">
-        <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg" alt="TCE">
+        <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg" alt="TBI">
         <div class="pub-body">
-          <h3 data-i18n="pubs.p1.title">Avanços recentes nas estratégias diagnósticas…</h3>
-          <p class="meta" data-i18n="pubs.p1.meta">International Journal of Health Science (2024)</p>
-          <p data-i18n="pubs.p1.desc">
-            Revisão sobre neuroimagem, biomarcadores, manejo cirúrgico e terapias emergentes.
+
+          <h3 data-i18n="pubs.p1.title">
+            Avanços recentes nas estratégias diagnósticas…
+          </h3>
+
+          <p class="meta" data-i18n="pubs.p1.meta">
+            International Journal of Health Science (2024)
           </p>
+
+          <p data-i18n="pubs.p1.desc">
+            Revisão completa sobre TCE: neuroimagem, biomarcadores, manejo cirúrgico e novas abordagens terapêuticas.
+          </p>
+
           <div class="chips">
             <a class="chip" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
             <a class="chip" href="assets/docs/pub-tbi.pdf" target="_blank">PDF</a>
@@ -156,18 +156,26 @@
         </div>
       </article>
 
+      <!-- PUB 2 -->
       <article class="pub fade-up">
         <img class="pub-ico" src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
         <div class="pub-body">
-          <h3 data-i18n="pubs.p2.title">Astrocitomas e gliomas…</h3>
+
+          <h3 data-i18n="pubs.p2.title">
+            Astrocitomas e gliomas…
+          </h3>
+
           <p class="meta" data-i18n="pubs.p2.meta">REAS (2025)</p>
+
           <p data-i18n="pubs.p2.desc">
             Discussão sobre indicações cirúrgicas, terapias modernas e impacto na qualidade de vida.
           </p>
+
           <div class="chips">
             <a class="chip" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
             <a class="chip" href="assets/docs/pub-glioma.pdf" target="_blank">PDF</a>
           </div>
+
         </div>
       </article>
 
@@ -178,8 +186,9 @@
 <!-- ============================================================
      PROJETOS
 ============================================================ -->
-<section id="projects" class="section section-light">
+<section id="projects" class="section section-dark">
   <div class="wrap">
+
     <h2 class="section-title" data-i18n="projects.title">Meus projetos</h2>
 
     <div class="proj-grid fade-up">
@@ -187,14 +196,16 @@
       <a class="proj" href="https://laiamusictesting.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-music.png" alt="Laia Music">
         <h3>Laia Music</h3>
-        <p data-i18n="projects.music">Gestão e documentação do legado musical de Edney Fernandes.</p>
+        <p data-i18n="projects.music">
+          Gestão, documentação e revitalização do legado musical de Edney Fernandes.
+        </p>
       </a>
 
       <a class="proj" href="https://laiatech.netlify.app" target="_blank">
         <img src="assets/img/logos/laia-tech.png" alt="Laia Tech">
         <h3>Laia Tech</h3>
         <p data-i18n="projects.tech">
-          Automação, sites, soluções digitais e gestão de projetos.
+          Consultoria técnica, automação, desenvolvimento e gestão de projetos digitais.
         </p>
       </a>
 
@@ -202,7 +213,7 @@
         <img src="assets/img/logos/laia-academy.png" alt="Laia Academy">
         <h3>Laia Academy</h3>
         <p data-i18n="projects.academy">
-          Educação, idiomas, intercâmbios e conteúdo cultural.
+          Educação, idiomas, intercâmbio cultural e produção de conteúdo educacional.
         </p>
       </a>
 
@@ -210,7 +221,7 @@
         <img src="assets/img/logos/laia-mind.png" alt="Laia Mind">
         <h3>Laia Mind</h3>
         <p data-i18n="projects.mind">
-          Meditação, mindfulness e neurociências aplicadas.
+          Meditação, mindfulness, neurociências e bem-estar.
         </p>
       </a>
 
@@ -221,24 +232,26 @@
 <!-- ============================================================
      CULTURAS
 ============================================================ -->
-<section id="cultures" class="section section-dark">
+<section id="cultures" class="section section-light">
   <div class="wrap narrow">
 
-    <h2 class="section-title" data-i18n="cult.title">Culturas que me transformaram</h2>
+    <h2 class="section-title" data-i18n="cult.title">
+      Culturas que me transformaram
+    </h2>
 
     <p class="lead center fade-up" data-i18n="cult.text">
       Viajar expande a mente, fortalece o corpo e abre portas que mudam destinos.
-      Cada país trouxe histórias, sabores, idiomas e novas perspectivas.
-      Levo todas as culturas comigo – elas inspiram tudo o que eu crio.
+      Cada país que visitei marcou minha trajetória com novas histórias, idiomas, sabores, pessoas e formas de ver o mundo.
+      Carrego cada cultura comigo — e é isso que inspira meus projetos.
     </p>
 
     <div class="stories fade-up">
-      <a class="story" href="#"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/18074948018054911/" target="_blank"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/18101151847591152/" target="_blank"><img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/18142613215403020/" target="_blank"><img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/18054605081571365/" target="_blank"><img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/17970345023356845/" target="_blank"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
+      <a class="story" href="https://www.instagram.com/stories/highlights/18173849404351038/" target="_blank"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
     </div>
 
   </div>
@@ -247,7 +260,7 @@
 <!-- ============================================================
      CONTATO
 ============================================================ -->
-<section id="contact" class="section section-light">
+<section id="contact" class="section section-dark">
   <div class="wrap narrow">
 
     <h2 class="section-title" data-i18n="contact.title">Contato</h2>
@@ -287,12 +300,10 @@
      FOOTER
 ============================================================ -->
 <footer class="footer">
-  <div class="wrap">
-    © 2025 Universo Laia — Feito com ❤️ e tecnologia.
-  </div>
+  <div class="wrap">© 2025 Universo Laia</div>
 </footer>
 
-<!-- JS -->
+<!-- SCRIPTS -->
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/app.js"></script>
