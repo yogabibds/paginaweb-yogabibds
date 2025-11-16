@@ -1,35 +1,43 @@
 /* ============================================================
-   BASE
+   FONTES
 ============================================================ */
+:root {
+  --font-body: "Work Sans", sans-serif;
+  --font-title: "Poppins", sans-serif;
+
+  --c-dark: #0b0b14;
+  --c-light: #f7f7f7;
+  --c-white: #ffffff;
+  --c-purple: #371f99;
+  --c-purple-deep: #2a167d;
+
+  --c-accent: #b28aff;
+  --c-gray: #8a8a8a;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
-  background: #fafafa;
-  color: #222;
+body {
+  background: var(--c-light);
+  color: var(--c-dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
+/* Wrappers */
 .wrap {
-  width: 100%;
-  max-width: 1120px;
+  width: min(1300px, 90%);
   margin: auto;
-  padding: 0 24px;
 }
 
 .wrap.narrow {
-  max-width: 780px;
+  width: min(900px, 90%);
+  margin: auto;
 }
 
 /* ============================================================
@@ -37,236 +45,248 @@ img {
 ============================================================ */
 .topbar {
   width: 100%;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(14px);
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
-  z-index: 2000;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 999;
 }
 
 .topbar .wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
+  padding: 14px 0;
 }
 
 .brand {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: white;
   font-size: 1.3rem;
-  font-weight: 700;
-  color: #222;
   text-decoration: none;
-}
-
-.menu {
-  display: flex;
-  gap: 28px;
 }
 
 .menu a {
+  margin: 0 14px;
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: .93rem;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.menu a:hover {
+  color: var(--c-accent);
 }
 
 .langs {
   display: flex;
-  gap: 6px;
+  gap: 8px;
 }
 
 .lang-btn {
-  padding: 5px 10px;
-  font-size: .8rem;
-  border: 1px solid #bbb;
+  padding: 6px 10px;
   border-radius: 6px;
+  border: 1px solid #fff3;
+  background: transparent;
+  color: white;
+  font-size: 0.8rem;
   cursor: pointer;
-  background: white;
 }
 
 .lang-btn.active {
-  background: #222;
-  color: white;
-  border-color: #222;
-}
-
-/* MOBILE NAV */
-@media (max-width: 768px){
-  .menu {
-    display: none;
-  }
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: black;
 }
 
 /* ============================================================
-   HERO
-============================================================ */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 540px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: rgba(10,0,40,0.25); /* overlay leve */
-  z-index: 2;
-}
-
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .92; /* imagem viva */
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 720px;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.hero-sub {
-  font-size: 1.1rem;
-  margin-top: 10px;
-  opacity: .85;
-}
-
-.cta {
-  margin-top: 26px;
-  display: inline-block;
-  padding: 10px 20px;
-  background: white;
-  color: #333;
-  border-radius: 8px;
-  font-size: .95rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: .2s;
-}
-
-.cta:hover {
-  transform: translateY(-2px);
-}
-
-/* MOBILE HERO */
-@media (max-width: 768px){
-  .hero {
-    height: 460px;
-  }
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-  .hero-sub {
-    font-size: 1rem;
-  }
-}
-
-/* ============================================================
-   SEÇÕES BASE
+   SEÇÕES
 ============================================================ */
 .section {
   padding: 80px 0;
 }
 
-.section.light {
-  background: #fafafa;
-  color: #222;
+.section-light {
+  background: var(--c-light);
+  color: var(--c-dark);
 }
 
-.section.dark {
-  background: #0F0130;
+.section-dark {
+  background: var(--c-purple);
   color: white;
 }
 
+/* Títulos */
 .section-title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 600;
   text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
   margin-bottom: 40px;
+}
+
+/* ============================================================
+   HERO — overlay 20%
+============================================================ */
+.hero {
+  position: relative;
+  padding: 120px 0 140px;
+  text-align: center;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.hero-badge {
+  position: absolute;
+  width: 120%;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  opacity: 0.65; /* mais visível */
+  filter: brightness(1.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bg {
+  background: linear-gradient(
+    rgba(20, 5, 80, 0.20),
+    rgba(20, 5, 80, 0.20)
+  );
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 5;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  opacity: 0.85;
+}
+
+.hero-rot {
+  margin-top: 6px;
+  font-size: 1rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.cta {
+  display: inline-block;
+  background: white;
+  padding: 12px 26px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 22px;
+  color: var(--c-dark);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: var(--c-accent);
+  color: black;
 }
 
 /* ============================================================
    ABOUT
 ============================================================ */
 .about-photo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-photo img {
   width: 160px;
   height: 160px;
-  margin: 0 auto 24px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .lead {
-  font-size: 1.1rem;
-  margin-bottom: 18px;
-  line-height: 1.6;
-  font-weight: 400;
+  margin: 18px 0;
+  font-size: 1.05rem;
 }
 
 .pillars {
-  margin: 24px 0 40px;
+  margin-top: 20px;
   list-style: none;
-  padding: 0;
 }
 
 .pillars li {
-  background: #eee;
+  margin: 8px 0;
+  background: #fff;
+  padding: 10px 16px;
   border-radius: 10px;
-  padding: 12px 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Card formação */
+.card {
+  background: white;
+  padding: 22px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card-hd h3 {
+  font-family: var(--font-title);
   margin-bottom: 10px;
-  font-size: .95rem;
+}
+
+/* Stories */
+.stories {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.story {
+  text-align: center;
+  text-decoration: none;
+  color: black;
   font-weight: 500;
 }
 
-/* Educação */
-.card.edu {
-  background: white;
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
-  margin-top: 20px;
-}
-
-.edu-img {
-  width: 90px;
-  height: 90px;
+.story img {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  margin: 16px auto;
   object-fit: cover;
 }
 
+/* CV buttons */
 .btns {
-  margin-top: 12px;
+  margin-top: 15px;
   display: flex;
-  gap: 8px;
-  justify-content: center;
+  gap: 10px;
 }
 
 .btn.ghost {
-  padding: 8px 16px;
-  border: 1px solid #222;
-  color: #222;
+  padding: 8px 14px;
   border-radius: 6px;
-  font-size: .85rem;
-  text-decoration: none;
+  border: 1px solid var(--c-purple);
+  background: transparent;
+  color: var(--c-purple);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* ============================================================
@@ -274,36 +294,26 @@ img {
 ============================================================ */
 .pub-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 24px;
 }
 
 .pub {
-  background: rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.25);
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.pub-ico {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
   border-radius: 10px;
-  padding: 20px;
 }
 
-.pub h3 {
-  font-size: 1.2rem;
-  margin: 12px 0;
-}
-
-.pub .meta {
-  font-size: .9rem;
-  opacity: .8;
-  margin-bottom: 8px;
-}
-
-.pub p {
-  line-height: 1.5;
-}
-
-/* mobile */
-@media (max-width: 780px){
-  .pub-grid {
-    grid-template-columns: 1fr;
-  }
+.pub-body h3 {
+  font-size: 1.1rem;
+  margin-top: 12px;
 }
 
 /* ============================================================
@@ -311,61 +321,43 @@ img {
 ============================================================ */
 .proj-grid {
   display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-top: 40px;
-}
-
-.proj {
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   text-align: center;
-  transition: .25s;
-  box-shadow: 0 5px 16px rgba(0,0,0,0.08);
-}
-
-.proj:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
 }
 
 .proj img {
-  width: 70px;
-  margin: 0 auto 10px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.proj h3 {
+  margin-top: 10px;
+  font-family: var(--font-title);
+  font-size: 1.2rem;
 }
 
 .proj p {
-  font-size: .95rem;
-  opacity: .8;
   margin-top: 6px;
-  line-height: 1.45;
+  font-size: 0.95rem;
+  color: var(--c-dark);
 }
 
 /* ============================================================
    CULTURAS
 ============================================================ */
-.culture-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
+#cultures .lead {
   text-align: center;
-}
-
-.culture img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
+  max-width: 720px;
   margin: auto;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
 }
 
-.culture span {
-  display: block;
-  margin-top: 10px;
-  font-size: .95rem;
-  font-weight: 500;
+.stories {
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ============================================================
@@ -373,31 +365,76 @@ img {
 ============================================================ */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  margin-top: 40px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: .95rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--c-dark);
 }
 
 .contact-item img {
-  width: 26px;
-  opacity: 0.8;
+  width: 28px;
 }
 
 /* ============================================================
    FOOTER
 ============================================================ */
 .footer {
-  background: #0a0020;
-  color: white;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  font-size: .9rem;
+  padding: 40px 0;
+  background: var(--c-purple-deep);
+  color: white;
+}
+
+/* ============================================================
+   ANIMAÇÕES
+============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-play-state: paused;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 120px 0;
+    min-height: 430px;
+  }
+
+  .hero-badge {
+    width: 160%;
+    top: 50%;
+    opacity: 0.55;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .pub-grid {
+    grid-template-columns: 1fr;
+  }
 }
