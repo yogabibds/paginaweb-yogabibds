@@ -22,14 +22,11 @@ const i18nData = {
       title: "Quem sou eu",
 
       p1: "Sou Gabriela Barbosa de Sousa, brasileira vivendo em Rosario, Argentina. Estudante de Medicina na UNR e criadora do Universo Laia — um ecossistema que integra saúde, tecnologia, música, educação e bem-estar.",
-
       p2: "Cresci cercada por livros, computadores, cultura musical e pessoas construindo novas histórias. Desde cedo aprendi que conhecimento transforma vidas e que aprender é um superpoder.",
+      p3: "Acredito na união entre ciência e criatividade para resolver problemas reais. Desenvolvo sites, estruturo processos, crio soluções e utilizo IA para potencializar projetos.",
 
-      p3: "Acredito na união entre ciência e criatividade para resolver problemas reais. Desenvolvo sites, estruturo processos, crio soluções e compartilho práticas de bem-estar.",
-
-      pillar1: "🧠 Cuidar do corpo e da mente",
-      pillar2: "📚 Compartilhar conhecimento",
-      pillar3: "🌍 Construir pontes entre pessoas, culturas e tecnologias",
+      pillarsText:
+        "Conecto corpo, mente e alma para criar uma vida integrada — onde o conhecimento inspira ação, a criatividade abre caminhos e o bem-estar orienta cada escolha.",
 
       edu: {
         title: "Formação em Medicina — UNR",
@@ -63,7 +60,7 @@ const i18nData = {
 
     cult: {
       title: "Culturas que me transformaram",
-      text: "Viajar expande a mente, fortalece o corpo e abre portas que mudam destinos. Cada país que visitei marcou minha trajetória com novas histórias, idiomas, sabores e formas de ver o mundo — e tudo isso inspira meus projetos."
+      text: "Viajar expande a mente e abre portas que mudam destinos…"
     },
 
     contact: {
@@ -97,19 +94,16 @@ const i18nData = {
     about: {
       title: "Quién soy",
 
-      p1: "Soy Gabriela Barbosa de Sousa, brasileña viviendo en Rosario, Argentina. Estudiante de Medicina en la UNR y creadora del Universo Laia, un ecosistema que integra salud, tecnología, música, educación y bienestar.",
-
+      p1: "Soy Gabriela Barbosa de Sousa, brasileña viviendo en Rosario, Argentina. Estudiante de Medicina en la UNR y creadora del Universo Laia — un ecosistema que integra salud, tecnología, música, educación y bienestar.",
       p2: "Crecí rodeada de libros, computadoras, cultura musical y personas creando nuevas historias. Desde temprano entendí que el conocimiento transforma vidas y que aprender es un superpoder.",
+      p3: "Creo en la unión entre ciencia y creatividad para resolver problemas reales. Desarrollo sitios web, organizo procesos, creo soluciones y utilizo IA para potenciar proyectos.",
 
-      p3: "Creo en la unión entre ciencia y creatividad para resolver problemas reales. Desarrollo sitios web, organizo procesos, creo soluciones y comparto prácticas de bienestar.",
-
-      pillar1: "🧠 Cuidar del cuerpo y la mente",
-      pillar2: "📚 Compartir conocimiento",
-      pillar3: "🌍 Construir puentes entre personas, culturas y tecnologías",
+      pillarsText:
+        "Conecto cuerpo, mente y alma para crear una vida integrada — donde el conocimiento inspira acción, la creatividad abre caminos y el bienestar guía cada decisión.",
 
       edu: {
         title: "Formación en Medicina — UNR",
-        text: "Universidad Nacional de Rosario (UNR). Plan de estudios PBL, práctica clínica temprana, investigación en neurociencias y enfoque en pensamiento crítico."
+        text: "Universidad Nacional de Rosario. PBL, práctica clínica temprana, investigación en neurociencias y pensamiento crítico."
       }
     },
 
@@ -117,7 +111,7 @@ const i18nData = {
       title: "Publicaciones Académicas",
 
       p1: {
-        title: "Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para lesión cerebral traumática",
+        title: "Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para la lesión cerebral traumática",
         meta: "International Journal of Health Science (2024)",
         desc: "Revisión completa sobre TCE: neuroimagen, biomarcadores, manejo quirúrgico y nuevas terapias."
       },
@@ -133,13 +127,13 @@ const i18nData = {
       title: "Mis proyectos",
       music: "Gestión, documentación y revitalización del legado musical de Edney Fernandes.",
       tech: "Consultoría técnica, automatización, desarrollo y gestión de proyectos digitales.",
-      academy: "Educación, idiomas, intercambio cultural y creación de contenido educativo.",
+      academy: "Educación, idiomas, intercambio cultural y contenido educativo.",
       mind: "Meditación, mindfulness, neurociencias y bienestar."
     },
 
     cult: {
       title: "Culturas que me transformaron",
-      text: "Viajar expande la mente, fortalece el cuerpo y abre puertas que cambian destinos. Cada país que visité marcó mi camino con nuevas historias, idiomas, sabores y formas de ver el mundo — y todo eso inspira mis proyectos."
+      text: "Viajar expande la mente y abre puertas que cambian destinos…"
     },
 
     contact: {
@@ -154,7 +148,7 @@ const i18nData = {
   en: {
     nav: {
       home: "Home",
-      about: "About me",
+      about: "About",
       projects: "Projects",
       pubs: "Publications",
       cultures: "Cultures",
@@ -173,19 +167,16 @@ const i18nData = {
     about: {
       title: "About me",
 
-      p1: "I am Gabriela Barbosa de Sousa, a Brazilian living in Rosario, Argentina. Medical student at UNR and creator of Universo Laia — an ecosystem integrating health, technology, music, education and well-being.",
-
+      p1: "I am Gabriela Barbosa de Sousa, a Brazilian living in Rosario, Argentina. Medical student at UNR and creator of Universo Laia — an ecosystem that integrates health, technology, music, education and well-being.",
       p2: "I grew up surrounded by books, computers, musical culture and people building new stories. Early on, I learned that knowledge transforms lives and that learning is a superpower.",
+      p3: "I believe in combining science and creativity to solve real problems. I develop websites, organize processes, create solutions and use AI to enhance projects.",
 
-      p3: "I believe in combining science and creativity to solve real problems. I develop websites, structure processes, create solutions and share well-being practices.",
-
-      pillar1: "🧠 Caring for body and mind",
-      pillar2: "📚 Sharing knowledge",
-      pillar3: "🌍 Building bridges between people, cultures and technologies",
+      pillarsText:
+        "I connect body, mind and soul to create an integrated life — where knowledge inspires action, creativity opens paths, and well-being guides every choice.",
 
       edu: {
         title: "Medical Training — UNR",
-        text: "National University of Rosario (UNR). PBL curriculum, early clinical practice, neuroscience research and focus on critical thinking."
+        text: "National University of Rosario. PBL curriculum, early clinical experience, neuroscience research and critical thinking."
       }
     },
 
@@ -195,27 +186,27 @@ const i18nData = {
       p1: {
         title: "Recent advances in diagnostic, therapeutic and prognostic strategies for traumatic brain injury",
         meta: "International Journal of Health Science (2024)",
-        desc: "Complete review on TBI: neuroimaging, biomarkers, surgical management and modern therapeutic approaches."
+        desc: "Comprehensive review: neuroimaging, biomarkers, surgical management and therapeutic innovations."
       },
 
       p2: {
-        title: "Astrocytomas and gliomas: surgical approaches, challenges and therapeutic advancements",
-        meta: "REAS Journal (2025)",
-        desc: "Discussion of surgical criteria, modern therapies and impact on quality of life."
+        title: "Astrocytomas and gliomas: surgical approaches, challenges and therapeutic advances",
+        meta: "REAS (2025)",
+        desc: "Discussion of surgical criteria, modern therapies and quality-of-life impact."
       }
     },
 
     projects: {
       title: "My projects",
-      music: "Management, documentation and revitalization of Edney Fernandes’ musical legacy.",
+      music: "Management, documentation and revitalization of Edney Fernandes' musical legacy.",
       tech: "Technical consulting, automation, development and digital project management.",
-      academy: "Education, languages, cultural exchange and educational content production.",
+      academy: "Education, languages, cultural exchange and educational content.",
       mind: "Meditation, mindfulness, neuroscience and well-being."
     },
 
     cult: {
       title: "Cultures that shaped me",
-      text: "Travel expands the mind, strengthens the body and opens doors that change destinies. Every country I visited shaped my path with new stories, languages, flavors and ways of seeing the world — and all of that inspires my projects."
+      text: "Travel expands the mind and opens doors that change destinies…"
     },
 
     contact: {
@@ -224,7 +215,10 @@ const i18nData = {
   }
 };
 
-// Aplicar tradução
+/* ============================================================
+   Função de tradução
+============================================================ */
+
 function applyTranslations(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const keys = el.dataset.i18n.split(".");
@@ -234,6 +228,7 @@ function applyTranslations(lang) {
   });
 }
 
+/* botões */
 document.querySelectorAll(".lang-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const lang = btn.dataset.lang;
@@ -245,5 +240,5 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
   });
 });
 
-// carregar PT como padrão
+/* carregar PT por padrão */
 applyTranslations("pt");
