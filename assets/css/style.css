@@ -256,6 +256,17 @@ body {
   margin: 30px 0 10px 0;
 }
 
+/* Texto explicativo dos pilares */
+.pillar-text {
+  max-width: 620px;
+  margin: 25px auto 0;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--white);
+  opacity: 0.92;
+}
+
 /* Card UNR */
 .card {
   background: var(--purple-mid);
