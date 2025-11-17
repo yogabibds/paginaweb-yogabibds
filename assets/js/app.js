@@ -1,5 +1,5 @@
 /* ======================================================
-   APP.JS — Animações Avançadas
+   APP.JS — Animações e interações adicionais
 ====================================================== */
 
 /* Parallax suave no HERO */
@@ -33,7 +33,7 @@ function animateTitles() {
 window.addEventListener("scroll", animateTitles);
 animateTitles();
 
-/* Micro-interação nos cards de projeto */
+/* Microinteração nos cards de projeto */
 const cards = document.querySelectorAll(".proj");
 
 cards.forEach((c) => {
