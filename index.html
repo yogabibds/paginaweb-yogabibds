@@ -46,37 +46,24 @@
 ============================================================ -->
 <section id="home" class="hero">
 
-  <!-- Imagem de fundo -->
   <div class="hero-bg"></div>
-
-  <!-- Overlay -->
   <div class="hero-overlay"></div>
 
-  <!-- Badge Central -->
   <img class="hero-badge" src="assets/img/photos/hero-brain.jpg" alt="Cérebro Universo Laia">
 
-  <!-- Conteúdo -->
   <div class="hero-inner">
-      <h1 class="hero-title" data-i18n="hero.title">
-        Bem-vindo ao meu universo
-      </h1>
+      <h1 class="hero-title" data-i18n="hero.title">Bem-vindo ao meu universo</h1>
 
-      <p id="rotator" class="hero-rot">
-        Respirar, inspirar, criar e compartilhar.
-      </p>
+      <p id="rotator" class="hero-rot">Respirar, inspirar, criar e compartilhar.</p>
 
-      <p class="hero-sub" data-i18n="hero.subtitle">
-        Aprender é meu superpoder
-      </p>
+      <p class="hero-sub" data-i18n="hero.subtitle">Aprender é meu superpoder</p>
 
-      <a class="cta" href="#projects" data-i18n="hero.cta">
-        Meus projetos
-      </a>
+      <a class="cta" href="#projects" data-i18n="hero.cta">Meus projetos</a>
   </div>
 </section>
 
 <!-- ============================================================
-     ABOUT (QUEM SOU EU)
+     ABOUT
 ============================================================ -->
 <section id="about" class="section section-dark">
   <div class="wrap narrow">
@@ -102,33 +89,92 @@
       Desenvolvo sites, estruturo processos, crio soluções e utilizo IA para potencializar projetos.
     </p>
 
-    <!-- PILARES COM ÍCONES (BODY–MIND–SOUL) -->
+
+    <!-- ============================================================
+         ÍCONE SVG GRADIENTE — PILARES (CORPO / MENTE / ALMA)
+         >>> Inserido aqui, como solicitado <<<
+    ============================================================ -->
+
+    <div class="pillars-svg">
+      <svg width="110" height="110" viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glowBody" cx="70" cy="120" r="55" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffcf99" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+
+          <radialGradient id="glowMind" cx="130" cy="120" r="55" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#c4b3ff" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+
+          <radialGradient id="glowSoul" cx="100" cy="60" r="55" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ff9fcf" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="70" cy="120" r="55" fill="url(#glowBody)" stroke="#7A5FFF" stroke-width="1.3"/>
+        <circle cx="130" cy="120" r="55" fill="url(#glowMind)" stroke="#7A5FFF" stroke-width="1.3"/>
+        <circle cx="100" cy="60" r="55" fill="url(#glowSoul)" stroke="#7A5FFF" stroke-width="1.3"/>
+
+        <text x="70" y="125" text-anchor="middle"
+              font-family="Poppins, sans-serif"
+              font-size="14" fill="#ffffff">
+          Corpo
+        </text>
+
+        <text x="130" y="125" text-anchor="middle"
+              font-family="Poppins, sans-serif"
+              font-size="14" fill="#ffffff">
+          Mente
+        </text>
+
+        <text x="100" y="63" text-anchor="middle"
+              font-family="Poppins, sans-serif"
+              font-size="14" fill="#ffffff">
+          Alma
+        </text>
+      </svg>
+    </div>
+
+
+    <!-- ============================================================
+         PILARES — CARDS BRANCOS COM BORDA ROXA
+         (Mantidos conforme pedido anteriormente)
+    ============================================================ -->
+
     <div class="pillars-icons">
-        <div class="pillar-card">
-            <img src="assets/img/icons/pillar-body.png" alt="Body">
+
+        <div class="pillar-card white-card">
+            <img src="assets/img/icons/pillar-body.png" alt="Body" class="pillar-icon">
             <h4 data-i18n="about.pillar1_title">Corpo</h4>
             <p data-i18n="about.pillar1">Cuidar do corpo e da mente</p>
         </div>
 
-        <div class="pillar-card">
-            <img src="assets/img/icons/pillar-mind.png" alt="Mind">
+        <div class="pillar-card white-card">
+            <img src="assets/img/icons/pillar-mind.png" alt="Mind" class="pillar-icon">
             <h4 data-i18n="about.pillar2_title">Mente</h4>
             <p data-i18n="about.pillar2">Compartilhar conhecimento</p>
         </div>
 
-        <div class="pillar-card">
-            <img src="assets/img/icons/pillar-soul.png" alt="Soul">
-            <h4 data-i18n="about.pillar3_title">Alma</h4>
-            <p data-i18n="about.pillar3">Construir pontes entre pessoas, culturas e tecnologias</p>
+        <div class="pillar-card white-card">
+            <h4 data-i18n="about.pillar3_title">Laia Academic</h4>
+            <p data-i18n="about.pillar3">
+              Construir pontes entre pessoas, culturas e tecnologias
+            </p>
         </div>
+
     </div>
 
-    <!-- Formação Medicina -->
+    <!-- ============================================================
+         FORMAÇÃO
+    ============================================================ -->
     <article class="card edu fade-up">
       <header class="card-hd">
         <h3 data-i18n="about.edu.title">Formação em Medicina — UNR</h3>
       </header>
-
       <p data-i18n="about.edu.text">
         Universidade Nacional de Rosário (UNR). Currículo PBL, prática clínica precoce, pesquisa em neurociências e foco em pensamento crítico.
       </p>
@@ -160,18 +206,12 @@
 
     <div class="pub-grid">
 
-      <!-- TBI -->
       <article class="pub">
         <img class="pub-ico" src="assets/img/photos/pub-tbi.jpg" alt="TCE">
-
         <div class="pub-body">
-          <h3 data-i18n="pubs.p1.title">Avanços recentes nas estratégias diagnósticas…</h3>
-
+          <h3 data-i18n="pubs.p1.title">Avanços recentes…</h3>
           <p class="meta" data-i18n="pubs.p1.meta">International Journal of Health Science (2024)</p>
-
-          <p data-i18n="pubs.p1.desc">
-            Revisão completa sobre TCE: neuroimagem, biomarcadores, manejo cirúrgico e novas abordagens terapêuticas.
-          </p>
+          <p data-i18n="pubs.p1.desc">Revisão completa…</p>
 
           <div class="chips">
             <a class="chip button" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">DOI</a>
@@ -180,18 +220,12 @@
         </div>
       </article>
 
-      <!-- Glioma -->
       <article class="pub">
         <img class="pub-ico" src="assets/img/photos/pub-glioma.jpg" alt="Glioma">
-
         <div class="pub-body">
           <h3 data-i18n="pubs.p2.title">Astrocitomas e gliomas…</h3>
-
           <p class="meta" data-i18n="pubs.p2.meta">REAS (2025)</p>
-
-          <p data-i18n="pubs.p2.desc">
-            Discussão sobre indicações cirúrgicas, terapias modernas e impacto na qualidade de vida.
-          </p>
+          <p data-i18n="pubs.p2.desc">Discussão sobre…</p>
 
           <div class="chips">
             <a class="chip button" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">DOI</a>
@@ -218,7 +252,7 @@
         <div class="proj-card">
           <div class="proj-logo-box"><img src="assets/img/logos/laia-music.png"></div>
           <h3>Laia Music</h3>
-          <p data-i18n="projects.music">Gestão do legado musical…</p>
+          <p data-i18n="projects.music">Gestão do legado…</p>
         </div>
       </a>
 
@@ -264,12 +298,12 @@
     </p>
 
     <div class="stories">
-      <a class="story" href="#"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
-      <a class="story" href="#"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
+      <a class="story"><img src="assets/img/photos/travel-panama.jpg"><span>Panamá</span></a>
+      <a class="story"><img src="assets/img/photos/travel-cordoba.jpg"><span>Córdoba</span></a>
+      <a class="story"><img src="assets/img/photos/travel-rosario.jpg"><span>Rosário</span></a>
+      <a class="story"><img src="assets/img/photos/travel-bahia.jpg"><span>Bahia</span></a>
+      <a class="story"><img src="assets/img/photos/travel-saopaulo.jpg"><span>São Paulo</span></a>
+      <a class="story"><img src="assets/img/photos/travel-curacao.jpg"><span>Curaçao</span></a>
     </div>
 
   </div>
@@ -278,7 +312,6 @@
 <!-- ============================================================
      CONTATO
 ============================================================ -->
-
 <section id="contact" class="section section-light">
   <div class="wrap narrow">
     <h2 class="section-title" data-i18n="contact.title">Contato</h2>
@@ -295,14 +328,12 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
     © 2025 Universo Laia — Feito com ❤️ e tecnologia.
   </div>
 </footer>
 
-<!-- JS -->
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/app.js"></script>
