@@ -1,58 +1,386 @@
+/* =========================================================
+   LAIA — style.css (completo, atualizado)
+   Mantém estrutura existente e aplica o visual “AuraGlow”
+   ========================================================= */
+
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+img { max-width: 100%; display:block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
 :root{
-  --bg:#0f1620;--panel:#121a25;--text:#e6ecf3;--muted:#a8b3c3;--ring:#233142;
-  --card:#111a24;--shadow:0 10px 30px rgba(0,0,0,.35);
+  --bg: #0e1514;
+  --surface: #111a1a;
+  --card: #121c1c;
+  --text: #eaf7f3;
+  --muted: #a7c5bd;
+  --line: rgba(255,255,255,.08);
+
+  --brand1: #6ddcff;
+  --brand2: #7fe7d0;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  --shadow-1: 0 6px 18px rgba(0,0,0,.25);
+  --shadow-2: 0 10px 30px rgba(0,0,0,.35);
 }
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
-a{text-decoration:none;color:inherit}
-.container{max-width:1040px;margin:0 auto;padding:32px 20px}
 
-/* header */
-.site-header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,#0f1620 0%,rgba(15,22,32,.7) 100%);backdrop-filter:blur(12px);display:flex;align-items:center;gap:18px;padding:16px 20px}
-.brand{font-weight:800;line-height:1}
-.nav{display:flex;gap:22px;margin-left:auto}
-.lang{display:flex;gap:8px;margin-left:12px}
-.lang button{border:1px solid #2b394d;color:var(--text);border-radius:14px;padding:6px 12px;cursor:pointer;background:#1b2433;box-shadow:inset 0 0 0 1px #1f2a3b, 0 10px 20px rgba(0,0,0,.25)}
-.lang button.active{background:linear-gradient(90deg,#6d6af7,#19b2cc);color:#0b1020;border-color:transparent;box-shadow:0 8px 22px rgba(25,178,204,.35)}
-.lang button:focus{outline:2px solid #19b2cc;outline-offset:2px}
+html { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; }
+body { line-height: 1.6; }
 
-/* cards Projects */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:18px}
-.card{background:var(--card);border:1px solid #1e2a3a;border-radius:20px;padding:22px;text-align:center;box-shadow:var(--shadow)}
-.card__logo{height:96px;width:96px;margin:6px auto 10px;border-radius:50%;display:grid;place-content:center;background:transparent;border:1px solid #243246;box-shadow:0 6px 16px rgba(0,0,0,.3)}
-.card__logo img{max-width:86px;max-height:86px;display:block}
-.card h3{margin:10px 0 6px;font-size:22px}
-.card p{color:var(--muted);min-height:48px}
-.btn{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,#6d6af7,#19b2cc);color:#0a0f17;font-weight:700}
+/* ---------- Layout ---------- */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.section { padding: 28px 0; }
+.section-title { font-size: clamp(22px, 3vw, 28px); margin: 0 0 10px; }
+.section-subtitle { font-size: clamp(18px, 2.2vw, 22px); margin: 14px 0 8px; opacity:.9; }
 
-/* About */
-.about-hero{display:grid;grid-template-columns:minmax(240px,360px) 1fr;gap:22px;align-items:start}
-.about-photo{width:100%;aspect-ratio:4/3;border-radius:18px;object-fit:cover;border:1px solid #243246;background:#0a111a}
-.about-text{margin:0}
-
-/* Áreas (bolinhas) */
-.areas-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;padding:0;margin:18px 0 40px}
-.area{display:flex;flex-direction:column;align-items:center;gap:10px}
-.area img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:1px solid #263142;box-shadow:var(--shadow)}
-.area span{font-weight:700}
-
-/* Contact */
-.contact-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px;padding:0;margin-top:14px}
-.contact-pill{display:flex;flex-direction:column;align-items:center;gap:10px;background:rgba(255,255,255,.02);border:1px solid #243246;border-radius:999px;padding:16px 10px}
-.contact-pill img{width:44px;height:44px;object-fit:contain}
-
-/* Cultures grid pequeno */
-.cult-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:22px;padding:0;margin-top:14px}
-.cult-item{display:flex;flex-direction:column;align-items:center;gap:10px}
-.cult-item img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:1px solid #263142;box-shadow:var(--shadow)}
-.cult-item span{font-weight:700}
-
-/* footer */
-.footer{padding:28px 20px;color:var(--muted);border-top:1px solid #1e2a3a;margin-top:40px}
-
-/* responsive */
-@media (max-width:760px){
-  .about-hero{grid-template-columns:1fr}
-  .area img{width:150px;height:150px}
-  .card__logo{height:84px;width:84px}
-  .card__logo img{max-width:76px;max-height:76px}
+/* ---------- Header / Navbar ---------- */
+.site-header{
+  position: sticky; top:0; z-index: 10;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(8,12,12,.75), rgba(8,12,12,.25));
+  border-bottom: 1px solid var(--line);
 }
+.site-header > .brand,
+.site-header > .nav,
+.site-header > .lang{
+  display:inline-flex; align-items:center;
+}
+.site-header{
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 12px 4%;
+}
+.brand{ font-weight: 700; letter-spacing: .2px; }
+
+.nav a{
+  padding: 8px 10px; border-radius: 10px; margin: 0 2px;
+  opacity:.92;
+}
+.nav a[aria-current="page"]{
+  background: rgba(255,255,255,.06); border: 1px solid var(--line);
+}
+
+.lang button{
+  margin-left:8px; padding: 6px 10px; border-radius: 10px; border:1px solid var(--line);
+  background: rgba(255,255,255,.04); color: var(--text); opacity:.9;
+}
+.lang button.active{
+  box-shadow: 0 0 0 2px rgba(127,231,208,.45) inset, 0 6px 18px rgba(127,231,208,.25);
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color:#06221e; border-color: transparent;
+}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  border-top:1px solid var(--line);
+  padding: 18px 0; text-align:center; opacity:.9; margin-top: 28px;
+}
+
+/* =========================================================
+   HOME — hero com bio + foto redonda
+   (classes usadas no index.html atualizado)
+   ========================================================= */
+.hero{
+  display:grid; grid-template-columns: 1.25fr .75fr;
+  gap: 32px; align-items: center; padding: 48px 0; position: relative;
+}
+.hero .glow{
+  position:relative; border-radius: var(--radius); padding: 2px;
+  background: linear-gradient(135deg, rgba(109,220,255,.25), rgba(127,231,208,.18));
+}
+.hero .glow > *{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 2px);
+  padding: 22px;
+  display:block;
+}
+
+.hero h1{
+  font-size: clamp(28px, 4vw, 48px);
+  line-height:1.15; margin:0 0 8px; letter-spacing:.15px;
+}
+.hero-lead{ color: var(--muted); margin:0 0 10px; }
+.hero-bio{ color: var(--muted); max-width: 62ch; margin: 0 0 12px; }
+
+#hero-rotator { transition: opacity .18s ease; }
+#hero-rotator.fadeout { opacity:.08; }
+
+.hero .cta{
+  display:inline-block; padding:12px 18px; border-radius: 12px; font-weight:700;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color:#0b1217; text-decoration:none; box-shadow: var(--shadow-1);
+}
+.hero .cta:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(127,231,208,.35); }
+
+.hero-media{ display:flex; justify-content:center; align-items:center; }
+.avatar-round{
+  width:min(280px, 38vw); aspect-ratio:1/1; border-radius:50%; object-fit:cover;
+  box-shadow: var(--shadow-2);
+}
+
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; }
+  .avatar-round{ width: 200px; }
+}
+
+/* =========================================================
+   ABOUT — foto redonda + grid de círculos + texto
+   (classes usadas no about.html atualizado)
+   ========================================================= */
+.about-photo-center{ display:flex; justify-content:center; }
+.about-avatar{
+  width: 200px; aspect-ratio:1/1; border-radius:50%; object-fit:cover;
+  box-shadow: var(--shadow-1); margin: 8px 0 18px;
+}
+
+.about-text{
+  border-top: 1px solid var(--line);
+  margin-top: 18px; padding-top: 16px; color: var(--muted);
+  max-width: 85ch;
+}
+
+/* Círculos reutilizáveis */
+.circle-grid{
+  display:grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 10px 0 22px;
+}
+.circle{
+  display:flex; flex-direction:column; align-items:center; text-decoration:none;
+}
+.circle img{
+  width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+  box-shadow: var(--shadow-1); transition: transform .15s ease;
+  background: #fff; /* fundo neutro caso a foto tenha PNG com transparência */
+}
+.circle span{ margin-top: 8px; font-weight: 600; }
+.circle:hover img{ transform: translateY(-2px); }
+
+@media (max-width:560px){
+  .circle-grid{ grid-template-columns: repeat(2, 1fr); }
+  .circle img{ width:120px; height:120px; }
+}
+
+/* =========================================================
+   PROJECTS — cards com círculo/logotipo + descrição
+   (funciona para logos PNG com transparência)
+   ========================================================= */
+.projects-header { margin-bottom: 10px; }
+
+.project-grid{
+  display:grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.project-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 14px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+}
+
+.project-circle{
+  width: 120px; height: 120px; border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  background: #fff;          /* fundo branco para destacar logos escuros */
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  margin-bottom: 10px; overflow:hidden;
+}
+.project-circle img{ width: 80%; height: 80%; object-fit: contain; }
+
+.project-title{ font-weight:700; margin: 2px 0 6px; }
+.project-desc{ color: var(--muted); font-size: .95rem; min-height: 44px; }
+
+.project-actions{ margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+.project-actions .button{
+  padding:8px 12px; border-radius: 10px; font-weight:600;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color:#0b1217; box-shadow: var(--shadow-1);
+}
+
+/* Cards menores no mobile */
+@media (max-width:560px){
+  .project-circle{ width:100px; height:100px; }
+}
+
+/* =========================================================
+   CONTACT — ícones redondos
+   (mantém suas classes originais e melhora o visual)
+   ========================================================= */
+.contact-hero{ margin-top: 8px; }
+.contact-note{ opacity:.78; font-size:.95rem; margin-bottom:12px; }
+
+.icon-grid{ display:flex; gap:1rem; flex-wrap:wrap; align-items:center }
+.icon-col{ display:flex; flex-direction:column; align-items:center; width:82px }
+
+.icon-btn{
+  width:64px; height:64px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background: linear-gradient(135deg, #242b3a, #1a1f2b);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  font-size:28px; color:#e6ecff; text-decoration:none;
+}
+.icon-btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+.icon-caption{ font-size:.9rem; opacity:.85; text-align:center; margin-top:.5rem }
+
+/* Se tiver SVG nos ícones, ajuda a equalizar tamanho */
+.icon-btn svg{ width:28px; height:28px; display:block; }
+
+/* =========================================================
+   Utilidades & pequenos detalhes
+   ========================================================= */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px; box-shadow: var(--shadow-1);
+}
+.small { font-size: .92rem; opacity:.85; }
+
+/* Links com foco visível */
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--brand2);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Tabelas (se você usar em alguma página) */
+table{ width:100%; border-collapse: collapse; }
+th, td{ padding:10px; border-bottom:1px solid var(--line); text-align:left; }
+thead th{ font-weight:700; }
+
+/* ====== HOME: layout 2 colunas + rotator + CTA ====== */
+.hero.hero--split{
+  display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center; padding:44px 0 24px;
+}
+.impact h1{ font-size:clamp(28px,4vw,48px); margin:0 0 6px; text-align:center; }
+.hero-lead{ color:var(--muted,#a7c5bd); margin:0; text-align:center; }
+
+.mini-bio.center{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.mini-title{ margin:0 0 8px; opacity:.9; }
+.avatar-round.sm{
+  width:140px; height:140px; border-radius:50%; object-fit:cover; box-shadow:0 8px 22px rgba(0,0,0,.28);
+}
+.hero-bio{ max-width:60ch; color:var(--muted,#a7c5bd); margin:10px 0 0; }
+.rotator-center{ text-align:center; margin:10px 0 0; transition:opacity .18s ease; }
+.rotator-center.fadeout{ opacity:.08; }
+.cta-wrap{ display:flex; justify-content:center; margin-top:10px; }
+.cta{ display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700;
+  background:linear-gradient(135deg,#6ddcff,#7fe7d0); color:#0b1217; text-decoration:none;
+  box-shadow:0 6px 18px rgba(127,231,208,.25);
+}
+.cta:hover{ transform:translateY(-1px); box-shadow:0 10px 28px rgba(127,231,208,.35); }
+
+@media(max-width:900px){
+  .hero.hero--split{ grid-template-columns:1fr; }
+}
+
+/* ====== ABOUT: foto + texto lado a lado, centrado ====== */
+.about-split .center{text-align:center;}
+.about-two{ display:grid; grid-template-columns: 280px 1fr; gap:24px; align-items:center; justify-content:center; }
+.about-avatar.lg{
+  width:220px; height:220px; border-radius:50%; object-fit:cover; box-shadow:0 10px 26px rgba(0,0,0,.3);
+  justify-self:center;
+}
+.about-text{ color:var(--muted,#a7c5bd); max-width:70ch; justify-self:center; }
+@media(max-width:900px){ .about-two{ grid-template-columns:1fr; } .about-avatar.lg{ width:200px; height:200px; } }
+
+/* ====== Áreas: círculos menores e centralizados ====== */
+.circle-grid.center{ justify-items:center; }
+.circle-grid.small .circle img{ width:120px; height:120px; }
+.circle-grid.small .circle span{ font-size:.95rem; }
+
+/* ====== Projects: cards menores ====== */
+.project-grid{ grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.project-circle{ width:100px; height:100px; }
+.project-circle img{ width:78%; height:78%; }
+.project-title{ font-size:1rem; }
+.project-desc{ font-size:.9rem; min-height:40px; }
+
+/* ====== Buttons (sombreamento global) ====== */
+.nav a,
+.button,
+.cta,
+.project-actions .button,
+.lang button{
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+.nav a[aria-current="page"]{
+  box-shadow:0 6px 18px rgba(0,0,0,.22) inset;
+}
+
+/* ====== Contact: ícones menores ====== */
+.icon-btn{ width:56px; height:56px; }
+.icon-col{ width:74px; }
+.icon-btn svg, .icon-btn span{ transform:scale(.9); }
+
+/* ===== Aura background global (ativa com <body class="aura">) ===== */
+body.aura{
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(127,231,208,.16), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(109,220,255,.12), transparent 60%),
+    var(--bg,#0e1514);
+}
+
+/* ===== Project cards menores e mais consistentes ===== */
+.project-grid.project-grid--compact{
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+.project-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--line, rgba(255,255,255,.08));
+  border-radius: var(--radius,18px);
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.22);
+}
+.project-circle{
+  width: 96px; height: 96px; border-radius: 50%;
+  margin: 4px auto 8px;
+  display:flex; align-items:center; justify-content:center;
+  background: #fff; border:1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  overflow: hidden;
+}
+.project-circle img{ width: 78%; height: 78%; object-fit: contain; }
+.project-title{ font-weight:700; margin: 2px 0 4px; font-size: 1rem; }
+.project-desc{ color: var(--muted,#a7c5bd); font-size: .92rem; min-height: 38px; }
+
+/* ===== Botão com efeito Aura (brilho + sheen) ===== */
+.button.btn-aura{
+  display:inline-block; padding: 8px 12px; border-radius: 12px; font-weight: 700;
+  background: linear-gradient(135deg, #6ddcff, #7fe7d0);
+  color:#0b1217; text-decoration:none;
+  box-shadow: 0 6px 18px rgba(127,231,208,.25), inset 0 0 0 1px rgba(255,255,255,.35);
+  position: relative; overflow: hidden;
+}
+.button.btn-aura::after{
+  content:""; position:absolute; top:0; left:-120%;
+  width:120%; height:100%;
+  background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,.3) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  transition: left .6s ease;
+}
+.button.btn-aura:hover::after{ left:120%; }
+.button.btn-aura:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(127,231,208,.35); }
+
+/* ===== Ícones de contato menores (se quiser padronizar) ===== */
+.icon-btn{ width:56px; height:56px; }
+.icon-col{ width:74px; }
+
+
+
+/* =========================================================
+   Fim
+   ========================================================= */

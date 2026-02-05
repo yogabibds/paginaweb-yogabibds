@@ -1,27 +1,65 @@
-<!doctype html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gabi Barbosa — LAIA</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gabriela Barbosa — LAIA</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="brand">Gabriela<br>Barbosa</div>
-  <nav class="nav">
-    <a href="index.html" data-i18n="nav.home">Home</a>
-    <a href="about.html" data-i18n="nav.about">About</a>
-    <a href="projects.html" data-i18n="nav.projects">Projects</a>
-    <a href="contact.html" data-i18n="nav.contact">Contact</a>
-  </nav>
-  <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
-</header>
+  <!-- HEADER (igual em todas as páginas) -->
+  <header class="site-header">
+    <div class="brand" data-i18n="brand">Gabriela Barbosa</div>
+    <nav class="nav">
+      <a href="index.html"    id="nav-home"     data-i18n="nav.home" aria-current="page">Home</a>
+      <a href="about.html"    id="nav-about"    data-i18n="nav.about">About</a>
+      <a href="projects.html" id="nav-projects" data-i18n="nav.projects">Projects</a>
+      <a href="contact.html"  id="nav-contact"  data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <button data-lang="pt">PT</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </header>
 
+  <!-- MAIN -->
 <main class="container">
-  <h1 data-i18n="home.title">Knowledge drives, technology multiplies.</h1>
-  <p data-i18n="home.subtitle">Purpose-driven education, human technology and a conscious lifestyle.</p>
-  <p><a class="btn" href="projects.html" data-i18n="home.cta">Open Projects</a></p>
+  <!-- HERO 2 colunas: esquerda (impacto) / direita (quem sou eu) -->
+  <section class="hero hero--split">
+    <!-- ESQUERDA: título de impacto -->
+    <div class="impact">
+      <h1 data-i18n="hero.title">Bem-vinda ao meu universo.</h1>
+      <p class="hero-lead" data-i18n="hero.lead">
+        Conhecimento move, tecnologia multiplica — com propósito humano.
+      </p>
+    </div>
+
+    <!-- DIREITA: Quem sou eu curto + foto redonda -->
+    <div class="mini-bio center">
+      <h3 class="mini-title" data-i18n="about.title">Quem eu sou</h3>
+      <img class="avatar-round sm" src="assets/img/photos/about.jpg" alt="Gabriela">
+      <p class="hero-bio" data-i18n="hero.subtitle">
+        Sou Gabriela Barbosa, brasileira, estudante de Medicina e apaixonada por aprender. Busco unir
+        saúde, música e tecnologia. Criei o Universo Laia, um espaço para transformar ideias em projetos
+        e compartilhar meus universos com o mundo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Frases rotativas abaixo da apresentação -->
+  <p id="hero-rotator" class="rotator-center">Aprender é meu superpoder.</p>
+
+  <!-- CTA centralizada -->
+  <div class="cta-wrap">
+    <a class="cta" href="projects.html" data-i18n="hero.cta">Abrir Projetos</a>
+  </div>
 </main>
 
-<footer class="footer"><span data-i18n="footer.copy">© 2025 Gabriela Barbosa — LAIA</span></footer>
-<script src="assets/js/app.js"></script>
-</body></html>
+  <!-- FOOTER -->
+  <footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
+
+  <!-- JS -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

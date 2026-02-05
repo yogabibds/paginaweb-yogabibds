@@ -1,71 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projects — Universo Laia</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Gabriela Barbosa</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-<header class="header">
-  <div class="container brandbar">
-    <div class="navrow">
-      <div class="brand">Gabriela Barbosa</div>
-      <nav class="menu">
-        <a id="nav-home" href="index.html">Home</a>
-        <a id="nav-about" href="about.html">About</a>
-        <a id="nav-projects" class="active" href="projects.html">Projects</a>
-        <a id="nav-contact" href="contact.html">Contact</a>
-      </nav>
-      <div class="lang"><button data-lang="pt">PT</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+<body class="aura"> <!-- classe 'aura' ativa o fundo glow -->
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand" data-i18n="brand">Gabriela Barbosa</div>
+    <nav class="nav">
+      <a href="index.html"    id="nav-home"     data-i18n="nav.home">Home</a>
+      <a href="about.html"    id="nav-about"    data-i18n="nav.about">About</a>
+      <a href="projects.html" id="nav-projects" data-i18n="nav.projects" aria-current="page">Projects</a>
+      <a href="contact.html"  id="nav-contact"  data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <button data-lang="pt">PT</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="en">EN</button>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="section">
-    <div class="container">
-      <h1 data-i18n="projects">Projects</h1>
+  <!-- MAIN -->
+  <main class="container">
+    <section class="section projects-header">
+      <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
+    </section>
 
-      <div id="laia-music" class="card project-card">
-        <div class="circle">
-          <img class="logo" src="assets/img/logos/laia-music.png" alt="Laia Music">
-        </div>
-        <h3>Laia Music</h3>
-        <p data-i18n="p_music_desc">Preserving and spreading Edney Fernandes’ musical legacy.</p>
-        <p><a class="button" href="https://example.com/laia-music" target="_blank" rel="noopener" data-i18n="open">Open Projects</a></p>
+    <section class="section">
+      <div class="project-grid project-grid--compact">
+        <!-- MUSIC -->
+        <article class="project-card">
+          <div class="project-circle"><img src="assets/img/logos/laia-music.png" alt="Laia Music"></div>
+          <h3 class="project-title">Laia Music</h3>
+          <p class="project-desc" data-i18n="projects.musicDesc">Preservando e difundindo o legado musical de Edney Fernandes.</p>
+          <div class="project-actions">
+            <a id="open-music" class="button btn-aura" data-i18n="projects.open" target="_blank" href="#">Abrir</a>
+          </div>
+        </article>
+
+        <!-- MIND -->
+        <article class="project-card">
+          <div class="project-circle"><img src="assets/img/logos/laia-mind.png" alt="Laia Mind"></div>
+          <h3 class="project-title">Laia Mind</h3>
+          <p class="project-desc" data-i18n="projects.mindDesc">Yoga, meditação e bem-estar.</p>
+          <div class="project-actions">
+            <a id="open-mind" class="button btn-aura" data-i18n="projects.open" target="_blank" href="#">Abrir</a>
+          </div>
+        </article>
+
+        <!-- ACADEMY -->
+        <article class="project-card">
+          <div class="project-circle"><img src="assets/img/logos/laia-academy.png" alt="Laia Academy"></div>
+          <h3 class="project-title">Laia Academy</h3>
+          <p class="project-desc" data-i18n="projects.academyDesc">Idiomas com foco multicultural e prático.</p>
+          <div class="project-actions">
+            <a id="open-academy" class="button btn-aura" data-i18n="projects.open" target="_blank" href="#">Abrir</a>
+          </div>
+        </article>
+
+        <!-- TECH -->
+        <article class="project-card">
+          <div class="project-circle"><img src="assets/img/logos/laia-tech.png" alt="Laia Tech"></div>
+          <h3 class="project-title">Laia Tech</h3>
+          <p class="project-desc" data-i18n="projects.techDesc">Consultoria e soluções digitais centradas no humano.</p>
+          <div class="project-actions">
+            <a id="open-tech" class="button btn-aura" data-i18n="projects.open" target="_blank" href="#">Abrir</a>
+          </div>
+        </article>
       </div>
+    </section>
+  </main>
 
-      <div id="laia-mind" class="card project-card">
-        <div class="circle">
-          <img class="logo" src="assets/img/logos/laia-mind.png" alt="Laia Mind">
-        </div>
-        <h3>Laia Mind</h3>
-        <p data-i18n="p_mind_desc">Yoga, meditation and well-being.</p>
-        <p><a class="button" href="https://example.com/laia-mind" target="_blank" rel="noopener" data-i18n="open">Open Projects</a></p>
-      </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">© <span id="year"></span> Gabriela Barbosa — LAIA</footer>
 
-      <div id="laia-academy" class="card project-card">
-        <div class="circle">
-          <img class="logo" src="assets/img/logos/laia-academy.png" alt="Laia Academy">
-        </div>
-        <h3>Laia Academy</h3>
-        <p data-i18n="p_acad_desc">Languages with multicultural, practical focus.</p>
-        <p><a class="button" href="https://example.com/laia-academy" target="_blank" rel="noopener" data-i18n="open">Open Projects</a></p>
-      </div>
-
-      <div id="laia-tech" class="card project-card">
-        <div class="circle">
-          <img class="logo" src="assets/img/logos/laia-tech.png" alt="Laia Tech">
-        </div>
-        <h3>Laia Tech</h3>
-        <p data-i18n="p_tech_desc">Human-centered digital solutions and consulting.</p>
-        <p><a class="button" href="https://example.com/laia-tech" target="_blank" rel="noopener" data-i18n="open">Open Projects</a></p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer"><div class="container small">© 2025 Gabriela Barbosa — LAIA</div></footer>
-<script src="assets/js/app.js"></script>
+  <!-- JS -->
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
