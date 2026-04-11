@@ -1,49 +1,44 @@
-/* ======================================================
-   APP.JS — Animações e interações adicionais
-====================================================== */
+const topbar = document.querySelector(".topbar");
+const hero = document.querySelector(".hero");
+const heroBg = document.querySelector(".hero-bg");
+const heroOverlay = document.querySelector(".hero-overlay");
+const progressBar = document.getElementById("progress-bar");
 
-/* Parallax suave no HERO */
-window.addEventListener("scroll", () => {
-  const sc = window.scrollY * 0.25;
-  const heroImg = document.querySelector(".hero-badge");
-  if (heroImg) {
-    heroImg.style.transform = `translateY(${sc}px) scale(1.05)`;
+function updateScrollEffects() {
+  const scroll = window.scrollY;
+  const pageHeight = document.body.scrollHeight - window.innerHeight;
+
+  if (topbar) {
+    topbar.classList.toggle("scrolled", scroll > 10);
   }
-});
 
-/* Fade progressivo dos títulos */
-const titles = document.querySelectorAll(".section-title");
+  if (hero) {
+    hero.classList.toggle("shrink", scroll > 80);
+  }
 
-titles.forEach((t) => {
-  t.style.opacity = 0;
-  t.style.transform = "translateY(20px)";
-});
+  if (heroBg) {
+    heroBg.style.transform = `translateY(${scroll * 0.18}px) scale(1.08)`;
+  }
 
-function animateTitles() {
-  titles.forEach((t) => {
-    const box = t.getBoundingClientRect();
-    if (box.top < window.innerHeight - 140) {
-      t.style.transition = "1s";
-      t.style.opacity = 1;
-      t.style.transform = "translateY(0)";
-    }
-  });
+  if (heroOverlay) {
+    const opacity = Math.min(0.78, 0.30 + scroll * 0.0006);
+    heroOverlay.style.background = `radial-gradient(circle at 50% 45%, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.50) 55%, rgba(0,0,0,${opacity}) 100%)`;
+  }
+
+  if (progressBar && pageHeight > 0) {
+    const progress = (scroll / pageHeight) * 100;
+    progressBar.style.width = `${progress}%`;
+  }
 }
 
-window.addEventListener("scroll", animateTitles);
-animateTitles();
+window.addEventListener("scroll", updateScrollEffects);
+window.addEventListener("load", updateScrollEffects);
 
-/* Microinteração nos cards de projeto */
-const cards = document.querySelectorAll(".proj");
-
-cards.forEach((c) => {
-  c.addEventListener("mouseenter", () => {
-    c.style.transform = "translateY(-6px)";
-    c.style.boxShadow = "0 12px 28px rgba(0,0,0,0.25)";
-  });
-
-  c.addEventListener("mouseleave", () => {
-    c.style.transform = "translateY(0)";
-    c.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth" });
   });
 });
