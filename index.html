@@ -14,13 +14,23 @@
 
 <body>
 
+<div class="page-loader" id="page-loader" aria-hidden="true">
+  <div class="page-loader-mark"></div>
+</div>
+
 <div id="progress-bar" aria-hidden="true"></div>
 
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#home">Universo Laia</a>
 
-    <nav class="menu">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="menu" id="site-menu">
       <a href="#home" data-i18n="nav.home">Início</a>
       <a href="#about" data-i18n="nav.about">Quem sou eu</a>
       <a href="#whatido" data-i18n="nav.whatido">O que eu faço</a>
