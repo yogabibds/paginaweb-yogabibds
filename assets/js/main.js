@@ -1,228 +1,179 @@
-/* ======================================================
-   I18N — TRADUÇÕES COMPLETAS
-====================================================== */
 const I18N = {
   pt: {
-    /* NAV */
     "nav.home": "Início",
     "nav.about": "Quem sou eu",
+    "nav.whatido": "O que eu faço",
     "nav.projects": "Projetos",
     "nav.pubs": "Publicações",
     "nav.cultures": "Culturas",
     "nav.contact": "Contato",
 
-    /* HERO */
-    "hero.title": "Bem-vindo ao meu universo",
-    "hero.subtitle": "Aprender é meu superpoder",
-    "hero.cta": "Meus projetos",
+    "hero.title": "Construindo projetos estratégicos entre cultura, tecnologia e sistemas criativos",
+    "hero.subtitle": "Desenho e executo iniciativas estruturadas que conectam estratégia digital, ativos culturais e impacto real.",
+    "hero.cta": "Ver projetos",
     ROTATOR: [
-      "Respirar, inspirar, criar e compartilhar.",
-      "Construindo uma ponte entre Ciência, Arte e Bem-Estar.",
-      "Tecnologia a serviço das pessoas."
+      "Estratégia, execução e visão de longo prazo.",
+      "Conectando cultura, sistemas e inovação.",
+      "Projetos com clareza, estrutura e impacto."
     ],
 
-    /* ABOUT */
     "about.title": "Quem sou eu",
-    "about.blurb.1":
-      "Sou Gabriela Barbosa de Sousa, brasileira vivendo em Rosario, Argentina, estudante de Medicina na UNR e criadora do Universo Laia — um ecossistema que integra saúde, tecnologia, música, educação e bem-estar.",
-    "about.blurb.2":
-      "Cresci cercada por livros, computadores, cultura musical e pessoas construindo novas histórias. Desde cedo aprendi que o conhecimento transforma vidas e que aprender é um superpoder.",
-    "about.blurb.3":
-      "Acredito na união entre ciência e criatividade para resolver problemas reais. Hoje aplico essa visão tanto na área da saúde quanto nos meus projetos digitais.",
+    "about.blurb.1": "Sou uma operadora estratégica de projetos focada em construir e escalar iniciativas entre cultura, tecnologia e sistemas criativos.",
+    "about.blurb.2": "Meu trabalho combina execução, pensamento sistêmico e estratégia estruturada — transformando ideias em projetos sustentáveis e escaláveis.",
+    "about.blurb.3": "Hoje desenvolvo iniciativas dentro do ecossistema LAIA, integrando cultura, música, tecnologia e inovação.",
+    "about.pillarsText": "Conecto corpo, mente e alma como parte de uma visão integrada de conhecimento, criatividade e construção com propósito.",
     "about.edu.title": "Formação em Medicina — UNR",
-    "about.edu.text":
-      "Universidade Nacional de Rosário (UNR), Argentina. Currículo baseado em PBL, prática clínica precoce e pesquisa em neurociências.",
+    "about.edu.text": "Universidade Nacional de Rosário (UNR), Argentina. Formação baseada em PBL, prática clínica precoce e pesquisa em neurociências.",
 
-    /* PILLARS */
-    "about.pillar.1": "🧠 Cuidar do corpo e da mente",
-    "about.pillar.2": "📚 Compartilhar conhecimento",
-    "about.pillar.3": "🌍 Construir pontes entre pessoas, culturas e tecnologias",
+    "whatido.title": "O que eu faço",
+    "whatido.s1.title": "Estratégia & Desenvolvimento de Projetos",
+    "whatido.s1.text": "Estruturo ideias em projetos escaláveis, definindo modelos, prioridades e caminhos de execução.",
+    "whatido.s2.title": "Operações & Sistemas",
+    "whatido.s2.text": "Desenho processos, organizo fluxos e aumento eficiência operacional em iniciativas em crescimento.",
+    "whatido.s3.title": "Estratégia Criativa & Cultural",
+    "whatido.s3.text": "Desenvolvo narrativas, ativos culturais, presença digital e iniciativas ligadas à economia criativa.",
 
-    /* PUBLICAÇÕES */
-    "pubs.title": "Publicações Acadêmicas",
+    "projects.title": "Projetos selecionados",
+    "projects.music": "Plataforma de catálogo musical e ativo cultural focada em preservação de legado, licenciamento e distribuição digital.",
+    "projects.tech": "Consultoria estratégica, sistemas, fluxos, automação e desenvolvimento de projetos digitais.",
+    "projects.academy": "Educação, idiomas, experiências de aprendizagem e iniciativas de intercâmbio cultural.",
+    "projects.mind": "Bem-estar, meditação, mindfulness e desenvolvimento humano com foco integral.",
 
-    "pubs.p1.title":
-      "1) Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral",
+    "pubs.title": "Publicações acadêmicas",
+    "pubs.p1.title": "Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral",
     "pubs.p1.meta": "International Journal of Health Science (2024)",
-    "pubs.p1.desc":
-      "Revisão completa sobre TCE: neuroimagem, biomarcadores, manejo cirúrgico, UTI, escalas prognósticas e novas abordagens terapêuticas.",
-
-    "pubs.p2.title":
-      "2) Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos",
+    "pubs.p1.desc": "Revisão completa sobre neuroimagem, biomarcadores, manejo cirúrgico, UTI, prognóstico e novas abordagens terapêuticas.",
+    "pubs.p2.title": "Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos",
     "pubs.p2.meta": "REAS (2025)",
-    "pubs.p2.desc":
-      "Discussão das indicações cirúrgicas, riscos, terapias combinadas e impacto na qualidade de vida dos pacientes.",
+    "pubs.p2.desc": "Discussão sobre critérios cirúrgicos, riscos, terapias combinadas e impacto na qualidade de vida.",
 
-    /* PROJECTS */
-    "projects.title": "Meus projetos",
-    "projects.music":
-      "Gestão do legado musical, preservação histórica, storytelling e presença digital.",
-    "projects.tech":
-      "Consultoria técnica, automações, websites, IA aplicada e gestão de projetos digitais.",
-    "projects.academy":
-      "Idiomas, educação e intercâmbios culturais — conectando pessoas ao mundo.",
-    "projects.mind":
-      "Meditação, bem-estar, neurociências e práticas de equilíbrio mental.",
-
-    /* CULTURAS */
     "cult.title": "Culturas que me transformaram",
-    "cult.lead":
-      "Viajar transforma corpo e mente…",
-    "cult.text":
-      "Viajar é expandir a própria história. Cada lugar me ensinou novas formas de viver, novas maneiras de sentir o mundo, novos idiomas e novas conexões. Conhecer culturas é aprender pela experiência — é deixar que o mundo também nos transforme.",
+    "cult.text": "Viajar expande perspectiva, linguagem e história pessoal. Cada lugar amplia a forma de ver, sentir e construir o mundo.",
 
-    /* CONTATO */
-    "contact.title": "Contato",
+    "global.title": "Perspectiva global",
+    "global.text": "Profissional trilíngue atuando na América Latina com mentalidade global, aberta a colaborações estratégicas e oportunidades internacionais.",
+
+    "contact.title": "Contato"
   },
 
-  /* ======================================================
-     ESPAÑOL
-  ====================================================== */
   es: {
     "nav.home": "Inicio",
     "nav.about": "Sobre mí",
+    "nav.whatido": "Qué hago",
     "nav.projects": "Proyectos",
     "nav.pubs": "Publicaciones",
     "nav.cultures": "Culturas",
     "nav.contact": "Contacto",
 
-    "hero.title": "Bienvenid@ a mi universo",
-    "hero.subtitle": "Aprender es mi superpoder",
-    "hero.cta": "Mis proyectos",
+    "hero.title": "Construyendo proyectos estratégicos entre cultura, tecnología y sistemas creativos",
+    "hero.subtitle": "Diseño y ejecuto iniciativas estructuradas que conectan estrategia digital, activos culturales e impacto real.",
+    "hero.cta": "Ver proyectos",
     ROTATOR: [
-      "Respirar, inspirar, crear y compartir.",
-      "Tendiendo un puente entre Ciencia, Arte y Bienestar.",
-      "Tecnología al servicio de las personas."
+      "Estrategia, ejecución y visión de largo plazo.",
+      "Conectando cultura, sistemas e innovación.",
+      "Proyectos con claridad, estructura e impacto."
     ],
 
     "about.title": "Quién soy",
-    "about.blurb.1":
-      "Soy Gabriela Barbosa, brasileña viviendo en Rosario, Argentina. Estudiante de Medicina en la UNR y creadora del Universo Laia — un ecosistema que integra salud, tecnología, música, educación y bienestar.",
-    "about.blurb.2":
-      "Crecí rodeada de libros, computadoras, cultura musical y personas creando nuevas historias.",
-    "about.blurb.3":
-      "Creo en unir ciencia y creatividad para resolver problemas reales.",
-
+    "about.blurb.1": "Soy una operadora estratégica de proyectos enfocada en construir y escalar iniciativas entre cultura, tecnología y sistemas creativos.",
+    "about.blurb.2": "Mi trabajo combina ejecución, pensamiento sistémico y estrategia estructurada — transformando ideas en proyectos sostenibles y escalables.",
+    "about.blurb.3": "Actualmente desarrollo iniciativas dentro del ecosistema LAIA, integrando cultura, música, tecnología e innovación.",
+    "about.pillarsText": "Conecto cuerpo, mente y alma como parte de una visión integrada de conocimiento, creatividad y construcción con propósito.",
     "about.edu.title": "Formación en Medicina — UNR",
-    "about.edu.text":
-      "Universidad Nacional de Rosario. PBL, práctica clínica temprana e investigación en neurociencias.",
+    "about.edu.text": "Universidad Nacional de Rosario. Formación con PBL, práctica clínica temprana e investigación en neurociencias.",
 
-    "about.pillar.1": "🧠 Cuidar el cuerpo y la mente",
-    "about.pillar.2": "📚 Compartir conocimiento",
-    "about.pillar.3":
-      "🌍 Conectar personas, culturas y tecnologías",
+    "whatido.title": "Qué hago",
+    "whatido.s1.title": "Estrategia & Desarrollo de Proyectos",
+    "whatido.s1.text": "Estructuro ideas en proyectos escalables, definiendo modelos, prioridades y rutas de ejecución.",
+    "whatido.s2.title": "Operaciones & Sistemas",
+    "whatido.s2.text": "Diseño procesos, organizo flujos y mejoro la eficiencia operativa en iniciativas en crecimiento.",
+    "whatido.s3.title": "Estrategia Creativa & Cultural",
+    "whatido.s3.text": "Desarrollo narrativas, activos culturales, presencia digital e iniciativas de economía creativa.",
 
-    "pubs.title": "Publicaciones Académicas",
+    "projects.title": "Proyectos seleccionados",
+    "projects.music": "Plataforma de catálogo musical y activo cultural enfocada en preservación de legado, licencias y distribución digital.",
+    "projects.tech": "Consultoría estratégica, sistemas, flujos, automatización y desarrollo de proyectos digitales.",
+    "projects.academy": "Educación, idiomas, experiencias de aprendizaje e iniciativas de intercambio cultural.",
+    "projects.mind": "Bienestar, meditación, mindfulness y desarrollo humano integral.",
 
-    "pubs.p1.title":
-      "1) Avances en diagnóstico, tratamiento y pronóstico del traumatismo craneoencefálico",
+    "pubs.title": "Publicaciones académicas",
+    "pubs.p1.title": "Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para lesión cerebral traumática",
     "pubs.p1.meta": "International Journal of Health Science (2024)",
-    "pubs.p1.desc":
-      "Revisión completa: neuroimagen, biomarcadores, manejo quirúrgico y cuidados intensivos.",
-
-    "pubs.p2.title":
-      "2) Astrocitomas y gliomas: técnicas quirúrgicas, desafíos y avances terapéuticos",
+    "pubs.p1.desc": "Revisión completa sobre neuroimagen, biomarcadores, manejo quirúrgico y nuevas terapias.",
+    "pubs.p2.title": "Astrocitomas y gliomas: abordajes quirúrgicos, desafíos y avances terapéuticos",
     "pubs.p2.meta": "REAS (2025)",
-    "pubs.p2.desc":
-      "Indicaciones quirúrgicas, riesgos y terapias combinadas.",
-
-    "projects.title": "Mis proyectos",
-    "projects.music":
-      "Gestión del legado musical, preservación histórica y presencia digital.",
-    "projects.tech":
-      "Consultoría técnica, automatizaciones, IA aplicada y desarrollo digital.",
-    "projects.academy":
-      "Idiomas, educación y experiencias de intercambio.",
-    "projects.mind":
-      "Meditación, bienestar y neurociencias.",
+    "pubs.p2.desc": "Discusión sobre criterios quirúrgicos, riesgos, terapias combinadas e impacto en calidad de vida.",
 
     "cult.title": "Culturas que me transformaron",
-    "cult.lead": "Viajar transforma cuerpo y mente…",
-    "cult.text":
-      "Viajar es expandir la propia historia. Cada lugar trae nuevas perspectivas, idiomas, conexiones y formas de ver el mundo.",
+    "cult.text": "Viajar expande perspectiva, lenguaje e historia personal. Cada lugar cambia la manera de ver, sentir y construir el mundo.",
 
-    "contact.title": "Contacto",
+    "global.title": "Perspectiva global",
+    "global.text": "Profesional trilingüe trabajando en América Latina con mentalidad global, abierta a colaboraciones estratégicas y oportunidades internacionales.",
+
+    "contact.title": "Contacto"
   },
 
-  /* ======================================================
-     ENGLISH
-  ====================================================== */
   en: {
     "nav.home": "Home",
     "nav.about": "About",
+    "nav.whatido": "What I Do",
     "nav.projects": "Projects",
     "nav.pubs": "Publications",
     "nav.cultures": "Cultures",
     "nav.contact": "Contact",
 
-    "hero.title": "Welcome to my universe",
-    "hero.subtitle": "Learning is my superpower",
-    "hero.cta": "My projects",
+    "hero.title": "Building strategic projects across culture, technology and creative systems",
+    "hero.subtitle": "I design and execute structured initiatives that connect digital strategy, cultural assets and real-world impact.",
+    "hero.cta": "View projects",
     ROTATOR: [
-      "Breathe, inspire, create and share.",
-      "Bridging Science, Art and Well-being.",
-      "Technology serving people."
+      "Strategy, execution and long-term vision.",
+      "Connecting culture, systems and innovation.",
+      "Projects built with clarity, structure and impact."
     ],
 
-    "about.title": "About me",
-    "about.blurb.1":
-      "I'm Gabriela Barbosa, a Brazilian living in Argentina. Medical student at UNR and creator of Universo Laia — an ecosystem that integrates health, technology, music, education and well-being.",
-    "about.blurb.2":
-      "I grew up surrounded by books, computers, music and people building new stories.",
-    "about.blurb.3":
-      "I believe in combining science and creativity to solve real problems.",
-
+    "about.title": "About",
+    "about.blurb.1": "I’m a strategic project operator focused on building and scaling initiatives across culture, technology and creative systems.",
+    "about.blurb.2": "My work combines execution, systems thinking and structured strategy — transforming ideas into scalable and sustainable projects.",
+    "about.blurb.3": "Currently, I develop initiatives within the LAIA ecosystem, integrating culture, music, technology and innovation.",
+    "about.pillarsText": "I connect body, mind and soul as part of an integrated vision of knowledge, creativity and purposeful building.",
     "about.edu.title": "Medical Training — UNR",
-    "about.edu.text":
-      "National University of Rosario. PBL, early clinical practice and neuroscience research.",
+    "about.edu.text": "National University of Rosario. PBL-based training, early clinical exposure and neuroscience research.",
 
-    "about.pillar.1": "🧠 Caring for body and mind",
-    "about.pillar.2": "📚 Sharing knowledge",
-    "about.pillar.3":
-      "🌍 Building bridges between people, cultures and technologies",
+    "whatido.title": "What I Do",
+    "whatido.s1.title": "Strategy & Project Development",
+    "whatido.s1.text": "I structure ideas into scalable projects, defining models, priorities and execution paths.",
+    "whatido.s2.title": "Operations & Systems",
+    "whatido.s2.text": "I design processes, organize workflows and improve operational efficiency for growing initiatives.",
+    "whatido.s3.title": "Creative & Cultural Strategy",
+    "whatido.s3.text": "I develop narratives, cultural assets, digital presence and creative economy initiatives.",
 
-    "pubs.title": "Academic Publications",
+    "projects.title": "Selected projects",
+    "projects.music": "Music catalog and cultural asset platform focused on legacy preservation, licensing and digital distribution.",
+    "projects.tech": "Strategic consulting, systems, workflows, automation and digital project development.",
+    "projects.academy": "Education, languages, learning experiences and cultural exchange initiatives.",
+    "projects.mind": "Well-being, meditation, mindfulness and human-centered development.",
 
-    "pubs.p1.title":
-      "1) Recent advances in diagnosis, treatment and prognosis of traumatic brain injury",
+    "pubs.title": "Academic publications",
+    "pubs.p1.title": "Recent advances in diagnostic, therapeutic and prognostic strategies for traumatic brain injury",
     "pubs.p1.meta": "International Journal of Health Science (2024)",
-    "pubs.p1.desc":
-      "Comprehensive review: neuroimaging, biomarkers, surgical and ICU management.",
-
-    "pubs.p2.title":
-      "2) Astrocytomas and gliomas: surgical approaches, challenges and therapeutic advances",
+    "pubs.p1.desc": "Comprehensive review on neuroimaging, biomarkers, surgery, ICU care and therapeutic innovations.",
+    "pubs.p2.title": "Astrocytomas and gliomas: surgical approaches, challenges and therapeutic advances",
     "pubs.p2.meta": "REAS (2025)",
-    "pubs.p2.desc":
-      "Surgical criteria, risks, combined therapies and QoL evaluation.",
-
-    "projects.title": "My projects",
-    "projects.music":
-      "Musical legacy management, storytelling and digital presence.",
-    "projects.tech":
-      "Technical consulting, automation, AI workflows and digital development.",
-    "projects.academy":
-      "Languages, education and cultural exchange.",
-    "projects.mind":
-      "Meditation, well-being and neuroscience.",
+    "pubs.p2.desc": "Discussion on surgical criteria, risks, combined therapies and quality-of-life impact.",
 
     "cult.title": "Cultures that shaped me",
-    "cult.lead": "Travel reshapes body and mind…",
-    "cult.text":
-      "Traveling expands your personal story. Every place brings new ways of living, feeling, learning and connecting.",
+    "cult.text": "Travel expands perspective, language and personal history. Each place changes how we see, feel and build the world.",
 
-    "contact.title": "Contact",
-  },
+    "global.title": "Global perspective",
+    "global.text": "Trilingual professional working across Latin America with a global mindset, open to strategic collaborations and international opportunities.",
+
+    "contact.title": "Contact"
+  }
 };
 
-/* ======================================================
-   HELPERS
-====================================================== */
 const $ = sel => document.querySelector(sel);
 const $$ = sel => document.querySelectorAll(sel);
 
-/* ======================================================
-   TROCA DE IDIOMA
-====================================================== */
 function applyLang(lang) {
   document.documentElement.lang = lang;
 
@@ -231,12 +182,10 @@ function applyLang(lang) {
     if (I18N[lang][k]) el.textContent = I18N[lang][k];
   });
 
-  /* ROTATION */
   ROTATION.items = I18N[lang].ROTATOR;
   ROTATION.index = 0;
   ROTATION.tick(true);
 
-  /* Botões */
   $$(".lang-btn").forEach(btn =>
     btn.classList.toggle("active", btn.dataset.lang === lang)
   );
@@ -246,9 +195,6 @@ $$(".lang-btn").forEach(btn =>
   btn.addEventListener("click", () => applyLang(btn.dataset.lang))
 );
 
-/* ======================================================
-   ROTATOR
-====================================================== */
 const ROTATION = {
   items: I18N.pt.ROTATOR,
   index: 0,
@@ -265,13 +211,10 @@ const ROTATION = {
     this.timer = setTimeout(() => {
       this.index = (this.index + 1) % this.items.length;
       this.tick();
-    }, first ? 12000 : 12000);
-  },
+    }, first ? 9000 : 9000);
+  }
 };
 
-/* ======================================================
-   ANIMAÇÕES DE ENTRADA
-====================================================== */
 function fadeScroll() {
   const els = document.querySelectorAll(".fade-up, .fade-in");
 
@@ -284,7 +227,7 @@ function fadeScroll() {
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.15 }
   );
 
   els.forEach(el => {
@@ -293,9 +236,6 @@ function fadeScroll() {
   });
 }
 
-/* ======================================================
-   INIT
-====================================================== */
 document.addEventListener("DOMContentLoaded", () => {
   applyLang("pt");
   ROTATION.tick(true);
