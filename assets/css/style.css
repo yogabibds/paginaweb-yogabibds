@@ -1,6 +1,3 @@
-/* ===================================================================
-   BASE
-=================================================================== */
 :root {
   --purple-dark: #1b0f29;
   --purple-mid: #2c1844;
@@ -19,9 +16,7 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: "Work Sans", sans-serif;
@@ -30,35 +25,39 @@ body {
   line-height: 1.6;
 }
 
-/* ===================================================================
-   WRAPPERS
-=================================================================== */
 .wrap {
   width: 90%;
   max-width: 1180px;
   margin: auto;
 }
 
-.wrap.narrow {
-  max-width: 780px;
-}
+.wrap.narrow { max-width: 780px; }
+.center { text-align: center; }
 
-/* ===================================================================
-   TOPBAR
-=================================================================== */
+/* TOPBAR */
 .topbar {
   width: 100%;
-  background: var(--purple-dark);
+  background: rgba(27, 15, 41, 0.95);
   padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 50;
+  transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.topbar.scrolled {
+  background: rgba(15, 8, 25, 0.58);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .topbar .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 18px;
 }
 
 .brand {
@@ -66,6 +65,13 @@ body {
   font-weight: 600;
   color: var(--white);
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .menu a {
@@ -75,9 +81,7 @@ body {
   font-weight: 500;
 }
 
-.menu a:hover {
-  opacity: 0.85;
-}
+.menu a:hover { opacity: 0.85; }
 
 .langs {
   display: flex;
@@ -100,38 +104,37 @@ body {
   color: var(--purple-dark);
 }
 
-/* ===================================================================
-   HERO
-=================================================================== */
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
-  padding: 120px 0;
-  background: var(--purple-mid);
+  min-height: 92vh;
+  display: grid;
+  place-items: center;
   overflow: hidden;
-  text-align: center;
+  background: var(--purple-mid);
 }
 
 .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-image: url('../img/photos/hero-brain.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transform: scale(1.06);
+  filter: saturate(0.95) contrast(0.95);
   z-index: 1;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(27, 15, 41, 0.20);
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(0,0,0,0.25) 0%,
+      rgba(0,0,0,0.55) 55%,
+      rgba(0,0,0,0.78) 100%);
   z-index: 2;
 }
 
@@ -139,36 +142,45 @@ body {
   position: relative;
   z-index: 5;
   width: 90%;
-  max-width: 760px;
-  margin: auto;
-  text-align: center;
-  margin-top: 90px;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 90px 0;
+  display: grid;
+  place-items: center;
 }
 
-.hero-badge {
-  width: 180px;
-  height: auto;
-  margin-bottom: 25px;
+.hero-card {
+  width: min(760px, 100%);
+  padding: 28px 26px;
+  border-radius: 18px;
+  background: rgba(10, 10, 18, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+  text-align: center;
 }
 
 .hero-title {
   font-family: "Poppins", sans-serif;
-  font-size: 40px;
+  font-size: clamp(32px, 4vw, 56px);
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .hero-rot {
-  font-size: 18px;
-  color: var(--gray-100);
+  font-size: 16px;
+  color: rgba(255,255,255,0.86);
   margin-bottom: 10px;
 }
 
 .hero-sub {
   font-size: 18px;
   font-weight: 400;
-  color: var(--white);
+  color: rgba(255,255,255,0.95);
   margin-bottom: 20px;
 }
 
@@ -180,47 +192,24 @@ body {
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  transition: transform .18s ease, background .18s ease;
 }
 
 .cta:hover {
   background: #8b6ef0;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 760px) {
-  .hero {
-    padding: 90px 0 120px;
-  }
-
-  .hero-badge {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
+  .hero-inner { padding: 70px 0; }
+  .hero-card { padding: 22px 18px; border-radius: 16px; }
 }
 
-/* ===================================================================
-   SECTIONS
-=================================================================== */
-.section {
-  padding: 90px 0;
-}
-
-.section-dark {
-  background: var(--purple-dark);
-  color: var(--white);
-}
-
-.section-light {
-  background: var(--gray-100);
-  color: var(--gray-900);
-}
-
-.section-white {
-  background: var(--white);
-}
+/* SECTIONS */
+.section { padding: 90px 0; }
+.section-dark { background: var(--purple-dark); color: var(--white); }
+.section-light { background: var(--gray-100); color: var(--gray-900); }
+.section-white { background: var(--white); }
 
 .section-title {
   font-family: "Poppins", sans-serif;
@@ -230,10 +219,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* ===================================================================
-   ABOUT
-=================================================================== */
-
+/* ABOUT */
 .about-photo img {
   width: 180px;
   height: 180px;
@@ -249,14 +235,12 @@ body {
   text-align: center;
 }
 
-/* SVG Pilares */
 .pillars-svg {
   display: flex;
   justify-content: center;
   margin: 30px 0 10px 0;
 }
 
-/* Texto explicativo dos pilares */
 .pillar-text {
   max-width: 620px;
   margin: 25px auto 0;
@@ -267,18 +251,63 @@ body {
   opacity: 0.92;
 }
 
-/* Card UNR */
+/* CARD */
 .card {
   background: var(--purple-mid);
   border-radius: var(--radius);
   padding: 24px;
   margin-top: 30px;
   color: var(--white);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.25);
 }
 
 .card-hd h3 {
   font-size: 22px;
   margin-bottom: 12px;
+}
+
+/* WHAT I DO */
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.what-card {
+  background: var(--white);
+  border: 2px solid var(--purple-light);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.what-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.what-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--purple-mid);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .what-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* STORIES */
+.stories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 40px;
 }
 
 .story {
@@ -287,18 +316,27 @@ body {
   text-align: center;
   text-decoration: none;
   color: var(--white);
+  transition: transform .2s ease;
 }
+
+.story:hover { transform: translateY(-3px); }
 
 .story img {
   width: 110px;
   height: 110px;
   border-radius: 12px;
   object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.10);
 }
 
-.btns {
-  margin-top: 20px;
+.story span {
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  text-align: center;
 }
+
+.btns { margin-top: 20px; }
 
 .btn.ghost {
   border: 1px solid var(--white);
@@ -307,17 +345,17 @@ body {
   color: var(--white);
   text-decoration: none;
   margin-right: 10px;
+  display: inline-block;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
 }
 
 .btn.ghost:hover {
   background: var(--white);
   color: var(--purple-dark);
+  transform: translateY(-2px);
 }
 
-/* ===================================================================
-   PUBLICAÇÕES
-=================================================================== */
-
+/* PUBLICAÇÕES */
 .pub-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -344,13 +382,11 @@ body {
 
 .meta {
   font-size: 14px;
-  color: var(--gray-300);
+  color: var(--gray-600);
   margin-bottom: 10px;
 }
 
-.chips {
-  margin-top: 10px;
-}
+.chips { margin-top: 10px; }
 
 .chip {
   display: inline-block;
@@ -360,17 +396,16 @@ body {
   border-radius: 8px;
   text-decoration: none;
   margin-right: 8px;
+  transition: transform .18s ease, background .18s ease;
 }
 
 .chip:hover {
   background: #8b6ef0;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 760px) {
-  .pub-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .pub-grid { grid-template-columns: 1fr; }
   .pub {
     flex-direction: column;
     align-items: center;
@@ -378,10 +413,7 @@ body {
   }
 }
 
-/* ===================================================================
-   PROJETOS — FUNDO BRANCO
-=================================================================== */
-
+/* PROJETOS */
 .proj-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -396,13 +428,13 @@ body {
   padding: 22px;
   border-radius: var(--radius);
   border: 2px solid var(--purple-light);
-  transition: 0.3s;
+  transition: transform .25s ease, box-shadow .25s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .proj:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
 }
 
 .proj img {
@@ -418,40 +450,14 @@ body {
 }
 
 @media(max-width: 900px){
-  .proj-grid{
-    grid-template-columns: repeat(2,1fr);
-  }
+  .proj-grid { grid-template-columns: repeat(2,1fr); }
 }
 
 @media(max-width: 600px){
-  .proj-grid{
-    grid-template-columns: 1fr;
-  }
+  .proj-grid { grid-template-columns: 1fr; }
 }
 
-/* ===================================================================
-   CULTURAS
-=================================================================== */
-
-.stories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 40px;
-}
-
-.story span {
-  display: block;
-  margin-top: 6px;
-  font-size: 15px;
-  text-align: center;
-}
-
-/* ===================================================================
-   CONTATO
-=================================================================== */
-
+/* CONTATO */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -467,6 +473,13 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.18);
 }
 
 .contact-item img {
@@ -475,14 +488,20 @@ body {
 }
 
 @media(max-width:760px){
+  .topbar .wrap {
+    flex-direction: column;
+  }
+
+  .menu {
+    gap: 8px 0;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ===================================================================
-   FOOTER
-=================================================================== */
+/* FOOTER */
 .footer {
   padding: 30px 0;
   background: var(--purple-dark);
@@ -491,10 +510,7 @@ body {
   font-size: 14px;
 }
 
-/* ===================================================================
-   ANIMAÇÕES
-=================================================================== */
-
+/* ANIMAÇÕES */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
