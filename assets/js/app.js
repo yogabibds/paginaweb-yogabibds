@@ -3,6 +3,12 @@ const hero = document.querySelector(".hero");
 const heroBg = document.querySelector(".hero-bg");
 const heroOverlay = document.querySelector(".hero-overlay");
 const progressBar = document.getElementById("progress-bar");
+const loader = document.getElementById("page-loader");
+
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("site-menu");
+const menuLinks = document.querySelectorAll(".menu a");
+const sections = document.querySelectorAll("section[id]");
 
 function updateScrollEffects() {
   const scroll = window.scrollY;
@@ -29,10 +35,51 @@ function updateScrollEffects() {
     const progress = (scroll / pageHeight) * 100;
     progressBar.style.width = `${progress}%`;
   }
+
+  updateActiveMenu();
 }
 
-window.addEventListener("scroll", updateScrollEffects);
-window.addEventListener("load", updateScrollEffects);
+function updateActiveMenu() {
+  let currentId = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 140;
+    const height = section.offsetHeight;
+    if (window.scrollY >= top && window.scrollY < top + height) {
+      currentId = section.getAttribute("id");
+    }
+  });
+
+  menuLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    link.classList.toggle("active", href === `#${currentId}`);
+  });
+}
+
+function toggleMenu(forceState) {
+  if (!menu || !menuToggle) return;
+
+  const willOpen = typeof forceState === "boolean"
+    ? forceState
+    : !menu.classList.contains("is-open");
+
+  menu.classList.toggle("is-open", willOpen);
+  menuToggle.classList.toggle("is-open", willOpen);
+  menuToggle.setAttribute("aria-expanded", String(willOpen));
+  document.body.classList.toggle("menu-open", willOpen);
+}
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => toggleMenu());
+}
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 860) {
+      toggleMenu(false);
+    }
+  });
+});
 
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
   anchor.addEventListener("click", function(e) {
@@ -41,4 +88,22 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     e.preventDefault();
     target.scrollIntoView({ behavior: "smooth" });
   });
+});
+
+window.addEventListener("scroll", updateScrollEffects);
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 860) {
+    toggleMenu(false);
+  }
+  updateScrollEffects();
+});
+
+window.addEventListener("load", () => {
+  updateScrollEffects();
+
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 380);
+  }
 });
