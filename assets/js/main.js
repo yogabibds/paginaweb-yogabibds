@@ -11,6 +11,7 @@ const I18N = {
     "hero.title": "Construindo conexões entre saúde, tecnologia, cultura e inovação",
     "hero.subtitle": "Desenvolvo projetos e sistemas que unem conhecimento, criatividade, execução e impacto real.",
     "hero.cta": "Explorar projetos",
+    "hero.ctaSecondary": "Vamos conversar",
     ROTATOR: [
       "Estratégia, sensibilidade e visão de longo prazo.",
       "Conectando conhecimento, estrutura e propósito.",
@@ -38,6 +39,12 @@ const I18N = {
     "projects.tech": "Consultoria estratégica em sistemas, processos, automação e desenvolvimento de projetos digitais orientados à execução.",
     "projects.academy": "Educação, idiomas, experiências formativas e iniciativas de intercâmbio cultural com visão de expansão.",
     "projects.mind": "Bem-estar, meditação, mindfulness e desenvolvimento humano como parte de uma abordagem integrada de vida e trabalho.",
+
+    "statement.text": "Eu construo coisas que funcionam — não apenas ideias que soam bem.",
+
+    "midcta.title": "Interessada(o) em construir algo comigo?",
+    "midcta.text": "Estou aberta a colaborações estratégicas, projetos com propósito e conexões de longo prazo.",
+    "midcta.button": "Entrar em contato",
 
     "pubs.title": "Publicações acadêmicas",
     "pubs.p1.title": "Avanços recentes nas estratégias diagnósticas, terapêuticas e prognósticas para lesão traumática cerebral",
@@ -69,6 +76,7 @@ const I18N = {
     "hero.title": "Construyendo conexiones entre salud, tecnología, cultura e innovación",
     "hero.subtitle": "Desarrollo proyectos y sistemas que unen conocimiento, creatividad, ejecución e impacto real.",
     "hero.cta": "Explorar proyectos",
+    "hero.ctaSecondary": "Conversemos",
     ROTATOR: [
       "Estrategia, sensibilidad y visión de largo plazo.",
       "Conectando conocimiento, estructura y propósito.",
@@ -96,6 +104,12 @@ const I18N = {
     "projects.tech": "Consultoría estratégica en sistemas, procesos, automatización y desarrollo de proyectos digitales orientados a la ejecución.",
     "projects.academy": "Educación, idiomas, experiencias formativas e iniciativas de intercambio cultural con visión de expansión.",
     "projects.mind": "Bienestar, meditación, mindfulness y desarrollo humano como parte de un enfoque integral de vida y trabajo.",
+
+    "statement.text": "Construyo cosas que funcionan — no solo ideas que suenan bien.",
+
+    "midcta.title": "¿Te interesa construir algo conmigo?",
+    "midcta.text": "Estoy abierta a colaboraciones estratégicas, proyectos con propósito y conexiones de largo plazo.",
+    "midcta.button": "Ponerse en contacto",
 
     "pubs.title": "Publicaciones académicas",
     "pubs.p1.title": "Avances recientes en estrategias diagnósticas, terapéuticas y pronósticas para lesión cerebral traumática",
@@ -127,6 +141,7 @@ const I18N = {
     "hero.title": "Building connections across health, technology, culture and innovation",
     "hero.subtitle": "I develop projects and systems that connect knowledge, creativity, execution and real-world impact.",
     "hero.cta": "Explore projects",
+    "hero.ctaSecondary": "Let's connect",
     ROTATOR: [
       "Strategy, sensitivity and long-term vision.",
       "Connecting knowledge, structure and purpose.",
@@ -154,6 +169,12 @@ const I18N = {
     "projects.tech": "Strategic consulting in systems, processes, automation and execution-oriented digital project development.",
     "projects.academy": "Education, languages, learning experiences and cultural exchange initiatives with an expansion mindset.",
     "projects.mind": "Well-being, meditation, mindfulness and human development as part of an integrated approach to life and work.",
+
+    "statement.text": "I build things that work — not just ideas that sound good.",
+
+    "midcta.title": "Interested in building something with me?",
+    "midcta.text": "I’m open to strategic collaborations, purposeful projects and long-term connections.",
+    "midcta.button": "Get in touch",
 
     "pubs.title": "Academic publications",
     "pubs.p1.title": "Recent advances in diagnostic, therapeutic and prognostic strategies for traumatic brain injury",
@@ -187,7 +208,7 @@ function applyLang(lang) {
 
   ROTATION.items = I18N[lang].ROTATOR;
   ROTATION.index = 0;
-  ROTATION.tick(true);
+  ROTATION.tick();
 
   $$(".lang-btn").forEach(btn =>
     btn.classList.toggle("active", btn.dataset.lang === lang)
@@ -203,7 +224,7 @@ const ROTATION = {
   index: 0,
   timer: null,
 
-  tick(first = false) {
+  tick() {
     const rot = $("#rotator");
     if (!rot) return;
 
@@ -219,13 +240,13 @@ const ROTATION = {
 };
 
 function fadeScroll() {
-  const els = document.querySelectorAll(".fade-up, .fade-in");
+  const els = document.querySelectorAll(".fade-up");
 
   const obs = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = "running";
+          entry.target.classList.add("visible");
           obs.unobserve(entry.target);
         }
       });
@@ -233,14 +254,10 @@ function fadeScroll() {
     { threshold: 0.15 }
   );
 
-  els.forEach(el => {
-    el.style.animationPlayState = "paused";
-    obs.observe(el);
-  });
+  els.forEach(el => obs.observe(el));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   applyLang("pt");
-  ROTATION.tick(true);
   fadeScroll();
 });
