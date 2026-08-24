@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gabriela B. de Sousa</title>
+<meta name="description" content="Gabriela B. de Sousa — estudante de medicina na Universidad Nacional de Rosario, com interesse em neurocirurgia vascular e neuro-oncologia. Saúde, lifestyle, viagens e os bastidores da graduação em medicina.">
+<meta property="og:title" content="Gabriela B. de Sousa">
+<meta property="og:description" content="Saúde, lifestyle, viagens e medicina — o dia a dia de uma estudante de medicina entre a Argentina e o Brasil.">
+<meta property="og:image" content="assets/foto-hero.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2b2620">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -52,6 +59,13 @@
     opacity:.85; transition:opacity .25s;
   }
   header nav a:hover{opacity:1;}
+  .lang-switch{display:flex; gap:10px; margin-left:22px; padding-left:22px; border-left:1px solid rgba(255,255,255,0.25);}
+  .lang-switch button{
+    background:none; border:none; color:#fff; opacity:.55; font-size:11px; letter-spacing:.1em;
+    text-transform:uppercase; cursor:pointer; font-family:'Inter',sans-serif; font-weight:500; padding:0;
+  }
+  .lang-switch button.active{opacity:1; border-bottom:1px solid #fff;}
+  .lang-switch button:hover{opacity:1;}
 
   /* HERO */
   .hero{
@@ -183,6 +197,17 @@
   .about .wrap{max-width:640px; margin:0 auto; text-align:center;}
   .about img{width:150px; height:150px; object-fit:cover; border-radius:50%; margin:0 auto 30px; display:block;}
   .about .kicker{font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:26px;}
+  .about .lede{
+    font-family:'Fraunces',serif; font-weight:300; font-size:clamp(22px,3vw,30px); line-height:1.5; font-style:italic; margin-bottom:26px;
+  }
+  .about .bio{font-size:15.5px; line-height:1.75; color:var(--ink-soft); font-weight:300; text-align:left; margin-bottom:34px;}
+  .about .bio + .bio{margin-top:-20px;}
+  .stat-row{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
+  .stat-chip{
+    border:1px solid var(--line); padding:9px 18px; border-radius:30px; font-size:11.5px;
+    letter-spacing:.04em; color:var(--ink); background:rgba(255,255,255,0.4);
+  }
+  .stat-chip strong{color:var(--bronze); font-weight:600;}
   .about p{
     font-family:'Fraunces',serif; font-weight:300; font-size:clamp(22px,3vw,32px); line-height:1.5; font-style:italic;
   }
@@ -200,6 +225,30 @@
   }
   footer .links a:hover{border-color:var(--stone);}
   footer .fine{font-size:11px; color:rgba(231,223,210,0.45); letter-spacing:.05em;}
+
+  /* REVEAL ANIMATIONS */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .9s ease, transform .9s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .card.reveal{transition-delay:calc(var(--i,0) * 90ms);}
+
+  /* CONTACT FORM */
+  .contact-form{
+    max-width:420px; margin:0 auto 60px; display:flex; flex-direction:column; gap:16px; text-align:left;
+  }
+  .contact-form input, .contact-form textarea{
+    background:rgba(246,242,233,0.06); border:1px solid rgba(231,223,210,0.25); border-radius:2px;
+    padding:14px 16px; color:var(--stone); font-family:'Inter',sans-serif; font-size:14px; font-weight:300;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(231,223,210,0.5);}
+  .contact-form input:focus, .contact-form textarea:focus{outline:none; border-color:var(--bronze);}
+  .contact-form textarea{resize:vertical; min-height:100px;}
+  .contact-form button{
+    background:var(--bronze); color:var(--ink); border:none; padding:14px 20px; font-size:12px;
+    letter-spacing:.14em; text-transform:uppercase; font-weight:600; cursor:pointer; border-radius:2px;
+    transition:background .25s;
+  }
+  .contact-form button:hover{background:#b89a68;}
+  .form-note{font-size:11px; color:rgba(231,223,210,0.5); text-align:center; margin-top:-8px;}
 </style>
 </head>
 <body>
@@ -209,128 +258,150 @@
 <header>
   <div class="mark">G. B. de Sousa</div>
   <nav>
-    <a href="#pilares">Pilares</a>
-    <a href="#publicacoes">Publicações</a>
-    <a href="#laia">Universo Laiá</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
+    <a href="#sobre" data-i18n="nav_sobre">Sobre</a>
+    <a href="#pilares" data-i18n="nav_pilares">Pilares</a>
+    <a href="#publicacoes" data-i18n="nav_pub">Publicações</a>
+    <a href="#laia" data-i18n="nav_projetos">Meus projetos</a>
+    <a href="#contato" data-i18n="nav_contato">Contato</a>
+    <span class="lang-switch">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="en">EN</button>
+    </span>
   </nav>
 </header>
 
 <section class="hero">
   <img class="photo" src="assets/foto-hero.jpg" alt="Foto de capa">
-  <div class="eyebrow">Um espaço só meu</div>
+  <div class="eyebrow" data-i18n="hero_eyebrow">Um espaço só meu</div>
   <h1>
-    Vida em<br>
+    <span data-i18n="hero_line1">Vida em</span><br>
     <span class="rotator">
-      <span>saúde.</span>
-      <span>lifestyle.</span>
-      <span>viagem.</span>
-      <span>medicina.</span>
+      <span data-i18n="rot1">saúde.</span>
+      <span data-i18n="rot2">lifestyle.</span>
+      <span data-i18n="rot3">viagem.</span>
+      <span data-i18n="rot4">medicina.</span>
     </span>
   </h1>
-  <p class="sub">Bem-vindo ao meu cantinho da internet — onde a rotina de estudante de medicina, os projetos que construo e a vida lá fora se encontram.</p>
-  <div class="scroll-cue">Rolar</div>
+  <p class="sub" data-i18n="hero_sub">Bem-vindo ao meu cantinho da internet — onde a rotina de estudante de medicina, os projetos que construo e a vida lá fora se encontram.</p>
+  <div class="scroll-cue" data-i18n="scroll_cue">Rolar</div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap">
+    <img src="assets/foto-sobre.jpg" alt="Gabriela">
+    <div class="kicker" data-i18n="about_kicker">Sobre mim</div>
+    <div class="lede" data-i18n="about_lede">Ciência e sensibilidade não competem — elas se completam.</div>
+    <div class="bio" data-i18n="about_bio1">Sou Gabriela, estudante do último ano de Medicina na Universidad Nacional de Rosario, com interesse consolidado em neurocirurgia vascular e neuro-oncologia. Sou coautora de dois artigos científicos publicados internacionalmente e vivi de perto a rotina cirúrgica em observership no Hospital Beneficência Portuguesa de São Paulo, acompanhando neurocirurgias vasculares e oncológicas ao lado de referências da área.</div>
+    <div class="bio" data-i18n="about_bio2">Fora do hospital, sou movida pelo que aprendi crescendo entre música, cultura e criação — um legado de família que carrego e transformo em projetos próprios, do jeito que faz sentido pra mim. Esse espaço é onde essas duas partes se encontram.</div>
+    <div class="stat-row">
+      <div class="stat-chip" data-i18n="stat1"><strong>2</strong> artigos publicados</div>
+      <div class="stat-chip" data-i18n="stat2">Observership em Neurocirurgia Vascular · BP</div>
+      <div class="stat-chip" data-i18n="stat3">UNR · Último ano de Medicina</div>
+    </div>
+    <div class="sign">Gabriela B. de Sousa</div>
+  </div>
 </section>
 
 <section class="pillars" id="pilares">
-  <div class="kicker">O que você vai encontrar aqui</div>
-  <h2>Quatro pilares, uma pessoa só</h2>
+  <div class="kicker" data-i18n="pillars_kicker">O que você vai encontrar aqui</div>
+  <h2 data-i18n="pillars_h2">Quatro pilares, uma pessoa só</h2>
   <div class="grid">
     <div class="card">
       <div class="num">01</div>
       <img src="assets/foto-saude.jpg" alt="Saúde">
-      <h3>Saúde</h3>
-      <p>Bem-estar de verdade, sem fórmula mágica — rotina, sono, treino e o que aprendo sobre o corpo estudando medicina.</p>
+      <h3 data-i18n="card1_title">Saúde</h3>
+      <p data-i18n="card1_desc">Bem-estar de verdade, sem fórmula mágica — rotina, sono, treino e o que aprendo sobre o corpo estudando medicina.</p>
     </div>
     <div class="card">
       <div class="num">02</div>
       <img src="assets/foto-lifestyle.jpg" alt="Lifestyle">
-      <h3>Lifestyle</h3>
-      <p>O dia a dia entre o plantão e a vida: estilo, rotina, recomendações e bastidores de quem construiu o Universo Laiá.</p>
+      <h3 data-i18n="card2_title">Lifestyle</h3>
+      <p data-i18n="card2_desc">O dia a dia entre o plantão e a vida: estilo, rotina e recomendações de quem circula entre a faculdade e o resto do mundo.</p>
     </div>
     <div class="card">
       <div class="num">03</div>
       <img src="assets/foto-viagens.jpg" alt="Viagens">
-      <h3>Viagens</h3>
-      <p>Roteiros de quem vive de mala pronta entre Rosário, São Paulo e o resto do mundo — os lugares que valem a pena.</p>
+      <h3 data-i18n="card3_title">Viagens</h3>
+      <p data-i18n="card3_desc">Roteiros de quem vive de mala pronta entre Rosário, São Paulo e o resto do mundo — os lugares que valem a pena.</p>
     </div>
     <div class="card">
       <div class="num">04</div>
       <img src="assets/foto-medicina.jpg" alt="Medicina">
-      <h3>Medicina</h3>
-      <p>Bastidores da graduação na Argentina, ciência, publicações e o caminho até a neurocirurgia.</p>
+      <h3 data-i18n="card4_title">Medicina</h3>
+      <p data-i18n="card4_desc">Bastidores da graduação na Argentina, ciência, publicações e o caminho até a neurocirurgia.</p>
     </div>
   </div>
 </section>
 
 <section class="pubs" id="publicacoes">
-  <div class="kicker">Produção científica</div>
-  <h2>Publicações</h2>
+  <div class="kicker" data-i18n="pubs_kicker">Produção científica</div>
+  <h2 data-i18n="pubs_h2">Publicações</h2>
   <div class="pub-list">
     <div class="pub">
       <div class="pub-main">
         <div class="venue">Revista Eletrônica Acervo Saúde (REAS) · fev. 2025</div>
         <h4>Astrocitomas e gliomas: abordagens cirúrgicas, desafios e avanços terapêuticos</h4>
-        <div class="meta">Coautora · Vol. 25</div>
+        <div class="meta" data-i18n="pub1_meta">Coautora · Vol. 25</div>
       </div>
-      <a class="doi" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank">Ver artigo →</a>
+      <a class="doi" href="https://doi.org/10.25248/REAS.e19108.2025" target="_blank" data-i18n="ver_artigo">Ver artigo →</a>
     </div>
     <div class="pub">
       <div class="pub-main">
         <div class="venue">International Journal of Health Science · 2024</div>
         <h4>Recent Advances in Diagnostic, Therapeutic and Prognostic Strategies for Traumatic Brain Injury</h4>
-        <div class="meta">Coautora · v.4 n.67</div>
+        <div class="meta" data-i18n="pub2_meta">Coautora · v.4 n.67</div>
       </div>
-      <a class="doi" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank">Ver artigo →</a>
+      <a class="doi" href="https://doi.org/10.22533/at.ed.1594672409077" target="_blank" data-i18n="ver_artigo">Ver artigo →</a>
     </div>
     <div class="pub">
       <div class="pub-main">
         <div class="venue">Material de atualização · 2026</div>
         <h4>ACV Isquémico Agudo: Actualizaciones de la Guía AHA/ASA 2026</h4>
-        <div class="meta">Coautoria · baseado em Prabhakaran S. et al., Stroke, 2026</div>
+        <div class="meta" data-i18n="pub3_meta">Coautoria · baseado em Prabhakaran S. et al., Stroke, 2026</div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="ecosystem" id="laia">
-  <div class="kicker">Além do conteúdo</div>
-  <h2>Universo Laiá</h2>
+  <div class="kicker" data-i18n="eco_kicker">Além do conteúdo</div>
+  <h2 data-i18n="eco_h2">Marcas e projetos</h2>
   <div class="brand-row">
     <a class="brand-card" href="https://laiatech.netlify.app" target="_blank">
       <img src="assets/laia-tech-logo.jpg" alt="Laiá Tech">
-      <div class="desc">Consultoria em automação e tecnologia para startups e pequenas empresas.</div>
-      <div class="visit">Visitar →</div>
+      <div class="desc" data-i18n="brand1_desc">Consultoria em automação e tecnologia para startups e pequenas empresas.</div>
+      <div class="visit" data-i18n="visitar">Visitar →</div>
     </a>
     <a class="brand-card" href="laia-wellness.html">
       <img src="assets/laia-wellness-logo.jpg" alt="Laiá Wellness">
-      <div class="desc">Meditação, Ho'oponopono e neurociência aplicada ao bem-estar mental.</div>
-      <div class="visit">Visitar →</div>
+      <div class="desc" data-i18n="brand2_desc">Meditação, Ho'oponopono e neurociência aplicada ao bem-estar mental.</div>
+      <div class="visit" data-i18n="visitar">Visitar →</div>
     </a>
     <div class="brand-card" style="cursor:default;">
-      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#a3875a" stroke-width="2" style="margin-bottom:16px;">
-        <circle cx="50" cy="50" r="34"/>
-        <circle cx="50" cy="50" r="6" fill="#a3875a" stroke="none"/>
-        <circle cx="50" cy="50" r="18"/>
-      </svg>
-      <div class="name">Laiá Music</div>
-      <div class="desc">Catálogos, direitos e legados musicais — Music · Rights · Culture · Legacy.</div>
+      <img src="assets/laia-music-logo.jpg" alt="Laiá Music">
+      <div class="desc" data-i18n="brand3_desc">Catálogos, direitos e legados musicais — Music · Rights · Culture · Legacy.</div>
+    </div>
+    <div class="brand-card" style="cursor:default;">
+      <img src="assets/laia-academy-logo.jpg" alt="Laiá Academy">
+      <div class="desc" data-i18n="brand4_desc">Ensino de idiomas — Learn languages. Expand your world.</div>
     </div>
   </div>
 </section>
 
-<section class="about" id="sobre">
-  <div class="wrap">
-    <img src="assets/foto-sobre.jpg" alt="Gabriela">
-    <div class="kicker">Sobre mim</div>
-    <p>"Estudante de medicina, e alguém que acredita que vida acadêmica e vida real não precisam estar em lados opostos."</p>
-    <div class="sign">Gabriela B. de Sousa</div>
-  </div>
-</section>
-
 <footer id="contato">
-  <div class="mark">Vamos conversar</div>
+  <div class="mark" data-i18n="footer_mark">Vamos conversar</div>
+
+  <form class="contact-form" name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contato">
+    <p style="display:none;"><label>Não preencha: <input name="bot-field"></label></p>
+    <input type="text" name="nome" data-i18n-ph="ph_nome" placeholder="Seu nome" required>
+    <input type="email" name="email" data-i18n-ph="ph_email" placeholder="Seu e-mail" required>
+    <textarea name="mensagem" data-i18n-ph="ph_msg" placeholder="Sua mensagem" required></textarea>
+    <button type="submit" data-i18n="btn_enviar">Enviar</button>
+  </form>
+  <div class="form-note" data-i18n="form_note">As mensagens caem direto no seu painel do Netlify (Forms).</div>
+
   <div class="links">
     <a href="https://instagram.com/yogabibds" target="_blank">Instagram</a>
     <a href="mailto:gabibds@icloud.com">E-mail</a>
@@ -339,6 +410,127 @@
   </div>
   <div class="fine">© 2026 Gabriela B. de Sousa</div>
 </footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.pillars .kicker, .pillars h2, .card, .pubs .kicker, .pubs h2, .pub, .ecosystem .kicker, .ecosystem h2, .brand-card, .about .wrap, footer .mark, .contact-form');
+  revealEls.forEach((el,i) => { el.classList.add('reveal'); el.style.setProperty('--i', i % 6); });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+  }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---- i18n ----
+  const translations = {
+    pt: {
+      nav_sobre:"Sobre", nav_pilares:"Pilares", nav_pub:"Publicações", nav_projetos:"Meus projetos", nav_contato:"Contato",
+      hero_eyebrow:"Um espaço só meu", hero_line1:"Vida em",
+      rot1:"saúde.", rot2:"lifestyle.", rot3:"viagem.", rot4:"medicina.",
+      hero_sub:"Bem-vindo ao meu cantinho da internet — onde a rotina de estudante de medicina, os projetos que construo e a vida lá fora se encontram.",
+      scroll_cue:"Rolar",
+      about_kicker:"Sobre mim",
+      about_lede:"Ciência e sensibilidade não competem — elas se completam.",
+      about_bio1:"Sou Gabriela, estudante do último ano de Medicina na Universidad Nacional de Rosario, com interesse consolidado em neurocirurgia vascular e neuro-oncologia. Sou coautora de dois artigos científicos publicados internacionalmente e vivi de perto a rotina cirúrgica em observership no Hospital Beneficência Portuguesa de São Paulo, acompanhando neurocirurgias vasculares e oncológicas ao lado de referências da área.",
+      about_bio2:"Fora do hospital, sou movida pelo que aprendi crescendo entre música, cultura e criação — um legado de família que carrego e transformo em projetos próprios, do jeito que faz sentido pra mim. Esse espaço é onde essas duas partes se encontram.",
+      stat1:"<strong>2</strong> artigos publicados", stat2:"Observership em Neurocirurgia Vascular · BP", stat3:"UNR · Último ano de Medicina",
+      pillars_kicker:"O que você vai encontrar aqui", pillars_h2:"Quatro pilares, uma pessoa só",
+      card1_title:"Saúde", card1_desc:"Bem-estar de verdade, sem fórmula mágica — rotina, sono, treino e o que aprendo sobre o corpo estudando medicina.",
+      card2_title:"Lifestyle", card2_desc:"O dia a dia entre o plantão e a vida: estilo, rotina e recomendações de quem circula entre a faculdade e o resto do mundo.",
+      card3_title:"Viagens", card3_desc:"Roteiros de quem vive de mala pronta entre Rosário, São Paulo e o resto do mundo — os lugares que valem a pena.",
+      card4_title:"Medicina", card4_desc:"Bastidores da graduação na Argentina, ciência, publicações e o caminho até a neurocirurgia.",
+      pubs_kicker:"Produção científica", pubs_h2:"Publicações",
+      pub1_meta:"Coautora · Vol. 25", pub2_meta:"Coautora · v.4 n.67", pub3_meta:"Coautoria · baseado em Prabhakaran S. et al., Stroke, 2026",
+      ver_artigo:"Ver artigo →",
+      eco_kicker:"Além do conteúdo", eco_h2:"Marcas e projetos",
+      brand1_desc:"Consultoria em automação e tecnologia para startups e pequenas empresas.",
+      brand2_desc:"Meditação, Ho'oponopono e neurociência aplicada ao bem-estar mental.",
+      brand3_desc:"Catálogos, direitos e legados musicais — Music · Rights · Culture · Legacy.",
+      brand4_desc:"Ensino de idiomas — Learn languages. Expand your world.",
+      visitar:"Visitar →",
+      footer_mark:"Vamos conversar",
+      ph_nome:"Seu nome", ph_email:"Seu e-mail", ph_msg:"Sua mensagem", btn_enviar:"Enviar",
+      form_note:"As mensagens caem direto no seu painel do Netlify (Forms)."
+    },
+    es: {
+      nav_sobre:"Sobre mí", nav_pilares:"Pilares", nav_pub:"Publicaciones", nav_projetos:"Mis proyectos", nav_contato:"Contacto",
+      hero_eyebrow:"Un espacio solo mío", hero_line1:"Vida en",
+      rot1:"salud.", rot2:"lifestyle.", rot3:"viajes.", rot4:"medicina.",
+      hero_sub:"Bienvenido a mi rincón de internet — donde la rutina de estudiante de medicina, los proyectos que construyo y la vida de afuera se encuentran.",
+      scroll_cue:"Desplazar",
+      about_kicker:"Sobre mí",
+      about_lede:"La ciencia y la sensibilidad no compiten — se completan.",
+      about_bio1:"Soy Gabriela, estudiante del último año de Medicina en la Universidad Nacional de Rosario, con interés consolidado en neurocirugía vascular y neuro-oncología. Soy coautora de dos artículos científicos publicados internacionalmente y viví de cerca la rutina quirúrgica en un observership en el Hospital Beneficência Portuguesa de São Paulo, acompañando neurocirugías vasculares y oncológicas junto a referentes del área.",
+      about_bio2:"Fuera del hospital, me mueve lo que aprendí creciendo entre música, cultura y creación — un legado familiar que llevo y transformo en proyectos propios, a mi manera. Este espacio es donde esas dos partes se encuentran.",
+      stat1:"<strong>2</strong> artículos publicados", stat2:"Observership en Neurocirugía Vascular · BP", stat3:"UNR · Último año de Medicina",
+      pillars_kicker:"Lo que vas a encontrar acá", pillars_h2:"Cuatro pilares, una sola persona",
+      card1_title:"Salud", card1_desc:"Bienestar de verdad, sin fórmula mágica — rutina, sueño, entrenamiento y lo que aprendo sobre el cuerpo estudiando medicina.",
+      card2_title:"Lifestyle", card2_desc:"El día a día entre la guardia y la vida: estilo, rutina y recomendaciones de alguien que circula entre la facultad y el resto del mundo.",
+      card3_title:"Viajes", card3_desc:"Guías de alguien que vive con la valija lista entre Rosario, São Paulo y el resto del mundo — los lugares que valen la pena.",
+      card4_title:"Medicina", card4_desc:"Detrás de escena de la carrera en Argentina, ciencia, publicaciones y el camino hacia la neurocirugía.",
+      pubs_kicker:"Producción científica", pubs_h2:"Publicaciones",
+      pub1_meta:"Coautora · Vol. 25", pub2_meta:"Coautora · v.4 n.67", pub3_meta:"Coautoría · basado en Prabhakaran S. et al., Stroke, 2026",
+      ver_artigo:"Ver artículo →",
+      eco_kicker:"Más allá del contenido", eco_h2:"Marcas y proyectos",
+      brand1_desc:"Consultoría en automatización y tecnología para startups y pequeñas empresas.",
+      brand2_desc:"Meditación, Ho'oponopono y neurociencia aplicada al bienestar mental.",
+      brand3_desc:"Catálogos, derechos y legados musicales — Music · Rights · Culture · Legacy.",
+      brand4_desc:"Enseñanza de idiomas — Learn languages. Expand your world.",
+      visitar:"Visitar →",
+      footer_mark:"Hablemos",
+      ph_nome:"Tu nombre", ph_email:"Tu e-mail", ph_msg:"Tu mensaje", btn_enviar:"Enviar",
+      form_note:"Los mensajes llegan directo a tu panel de Netlify (Forms)."
+    },
+    en: {
+      nav_sobre:"About", nav_pilares:"Pillars", nav_pub:"Publications", nav_projetos:"My projects", nav_contato:"Contact",
+      hero_eyebrow:"A space of my own", hero_line1:"A life in",
+      rot1:"health.", rot2:"lifestyle.", rot3:"travel.", rot4:"medicine.",
+      hero_sub:"Welcome to my corner of the internet — where med school routine, the projects I build and life outside the hospital meet.",
+      scroll_cue:"Scroll",
+      about_kicker:"About me",
+      about_lede:"Science and sensitivity don't compete — they complete each other.",
+      about_bio1:"I'm Gabriela, a final-year Medicine student at Universidad Nacional de Rosario, with a consolidated interest in vascular neurosurgery and neuro-oncology. I'm co-author of two internationally published scientific articles and closely lived the surgical routine during an observership at Hospital Beneficência Portuguesa de São Paulo, following vascular and oncological neurosurgeries alongside leading references in the field.",
+      about_bio2:"Outside the hospital, I'm driven by what I learned growing up surrounded by music, culture and creation — a family legacy I carry and turn into my own projects, in my own way. This space is where those two parts meet.",
+      stat1:"<strong>2</strong> published articles", stat2:"Vascular Neurosurgery Observership · BP", stat3:"UNR · Final year of Medicine",
+      pillars_kicker:"What you'll find here", pillars_h2:"Four pillars, one person",
+      card1_title:"Health", card1_desc:"Real wellness, no magic formula — routine, sleep, training and what I learn about the body studying medicine.",
+      card2_title:"Lifestyle", card2_desc:"Life between shifts and everything else: style, routine and recommendations from someone who moves between med school and the rest of the world.",
+      card3_title:"Travel", card3_desc:"Guides from someone always ready to pack a bag, between Rosario, São Paulo and the rest of the world — the places worth it.",
+      card4_title:"Medicine", card4_desc:"Behind the scenes of med school in Argentina, science, publications and the path toward neurosurgery.",
+      pubs_kicker:"Scientific work", pubs_h2:"Publications",
+      pub1_meta:"Co-author · Vol. 25", pub2_meta:"Co-author · v.4 n.67", pub3_meta:"Co-authorship · based on Prabhakaran S. et al., Stroke, 2026",
+      ver_artigo:"View article →",
+      eco_kicker:"Beyond the content", eco_h2:"Brands and projects",
+      brand1_desc:"Automation and tech consulting for startups and small businesses.",
+      brand2_desc:"Meditation, Ho'oponopono and neuroscience applied to mental wellness.",
+      brand3_desc:"Music catalogs, rights and legacies — Music · Rights · Culture · Legacy.",
+      brand4_desc:"Language teaching — Learn languages. Expand your world.",
+      visitar:"Visit →",
+      footer_mark:"Let's talk",
+      ph_nome:"Your name", ph_email:"Your e-mail", ph_msg:"Your message", btn_enviar:"Send",
+      form_note:"Messages land straight in your Netlify dashboard (Forms)."
+    }
+  };
+  const htmlLangMap = {pt:'pt-BR', es:'es', en:'en'};
+  function setLang(lang){
+    const dict = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if(dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+    });
+    document.documentElement.setAttribute('lang', htmlLangMap[lang]);
+    document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try{ localStorage.setItem('site-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+  let savedLang = 'pt';
+  try{ savedLang = localStorage.getItem('site-lang') || 'pt'; }catch(e){}
+  setLang(savedLang);
+</script>
 
 </body>
 </html>
