@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laiá Wellness — Mind · Body · Breath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#e7ddc9;
+    --stone-deep:#d9c9a8;
+    --ink:#20291f;
+    --ink-soft:#4e5a48;
+    --cream:#f6f1e4;
+    --forest:#37432f;
+    --sage:#6f7c5c;
+    --gold:#b99a58;
+    --line:rgba(32,41,31,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  .texture{
+    position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+    background:
+      repeating-linear-gradient(100deg, transparent 0 60px, rgba(32,41,31,0.025) 60px 62px),
+      repeating-linear-gradient(10deg, transparent 0 90px, rgba(32,41,31,0.02) 90px 92px);
+  }
+
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:28px 6vw; mix-blend-mode:difference;
+  }
+  header .mark{font-family:'Fraunces',serif; font-style:italic; font-size:19px; color:#fff; letter-spacing:.02em;}
+  header nav{display:flex; gap:26px;}
+  header nav a{
+    color:#fff; text-decoration:none; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
+    opacity:.85; transition:opacity .25s;
+  }
+  header nav a:hover{opacity:1;}
+
+  /* HERO */
+  .hero{
+    position:relative; min-height:100svh; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; padding:0 6vw;
+  }
+  .hero .lotus{width:46px; height:46px; margin-bottom:22px; opacity:.85;}
+  .hero .eyebrow{font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:26px;}
+  .hero h1{
+    font-family:'Fraunces',serif; font-weight:300; font-size:clamp(46px,8.6vw,108px); line-height:.98; letter-spacing:-.01em;
+  }
+  .rotator{
+    height:1.15em; overflow:hidden; display:inline-block; vertical-align:top; position:relative; min-width:6ch; text-align:left;
+  }
+  .rotator span{
+    display:block; opacity:0; transform:translateY(0.4em); animation:cycle 8s infinite;
+    font-style:italic; color:var(--sage); position:absolute; left:0; top:0;
+  }
+  .rotator span:nth-child(1){animation-delay:0s;}
+  .rotator span:nth-child(2){animation-delay:2s;}
+  .rotator span:nth-child(3){animation-delay:4s;}
+  .rotator span:nth-child(4){animation-delay:6s;}
+  @keyframes cycle{
+    0%{opacity:0; transform:translateY(.4em);} 4%{opacity:1; transform:translateY(0);}
+    22%{opacity:1; transform:translateY(0);} 27%{opacity:0; transform:translateY(-.4em);} 100%{opacity:0;}
+  }
+  .hero p.sub{margin-top:28px; max-width:480px; font-size:16px; line-height:1.6; color:var(--ink-soft); font-weight:300;}
+  .scroll-cue{
+    position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+    font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .scroll-cue::after{content:''; width:1px; height:34px; background:var(--ink-soft); animation:drop 2.2s infinite;}
+  @keyframes drop{0%{transform:scaleY(0); transform-origin:top;} 50%{transform:scaleY(1); transform-origin:top;} 50.01%{transform-origin:bottom;} 100%{transform:scaleY(0); transform-origin:bottom;}}
+
+  /* PILLARS */
+  .pillars{position:relative; background:var(--cream); padding:140px 6vw 100px;}
+  .pillars .kicker{font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--sage); text-align:center; margin-bottom:14px;}
+  .pillars h2{font-family:'Fraunces',serif; font-weight:300; font-size:clamp(30px,4vw,46px); text-align:center; margin-bottom:80px;}
+  .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); max-width:980px; margin:0 auto;}
+  .card{background:var(--cream); padding:52px 40px;}
+  .card .num{font-family:'Fraunces',serif; font-style:italic; font-size:13px; color:var(--gold);}
+  .card h3{font-family:'Fraunces',serif; font-weight:400; font-size:28px; margin:16px 0 14px;}
+  .card p{font-size:14.5px; line-height:1.7; color:var(--ink-soft); font-weight:300; max-width:34ch;}
+  @media (max-width:720px){.grid{grid-template-columns:1fr;} .card{padding:44px 6vw;}}
+
+  /* BLOG */
+  .blog{background:var(--stone-deep); padding:140px 6vw;}
+  .blog .kicker{font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin-bottom:14px;}
+  .blog h2{font-family:'Fraunces',serif; font-weight:300; font-size:clamp(30px,4vw,46px); text-align:center; margin-bottom:70px;}
+  .posts{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1080px; margin:0 auto;}
+  .post{background:var(--cream); border:1px solid var(--line); padding:32px 26px; display:flex; flex-direction:column; gap:14px;}
+  .post .tag{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);}
+  .post h4{font-family:'Fraunces',serif; font-weight:400; font-size:21px; line-height:1.3;}
+  .post p{font-size:13px; line-height:1.6; color:var(--ink-soft); font-weight:300;}
+  .post .soon{margin-top:auto; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); opacity:.6;}
+  @media (max-width:820px){.posts{grid-template-columns:1fr;}}
+
+  /* ABOUT */
+  .about{background:var(--forest); color:var(--stone); padding:140px 6vw; text-align:center;}
+  .about .wrap{max-width:640px; margin:0 auto;}
+  .about img{width:150px; height:150px; object-fit:cover; border-radius:50%; margin:0 auto 30px; display:block;}
+  .hero .photo{width:min(360px, 70vw); aspect-ratio:3/2; object-fit:cover; margin-bottom:30px; border-radius:2px;}
+  .about .kicker{font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:26px;}
+  .about p{font-family:'Fraunces',serif; font-weight:300; font-size:clamp(22px,3vw,32px); line-height:1.5; font-style:italic;}
+  .about .sign{margin-top:34px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:rgba(231,221,201,.7);}
+
+  footer{background:var(--ink); color:var(--stone); padding:90px 6vw 40px; text-align:center;}
+  footer .mark{font-family:'Fraunces',serif; font-style:italic; font-size:24px; margin-bottom:30px;}
+  footer .brand-link{
+    display:inline-flex; align-items:center; gap:12px; background:rgba(231,221,201,0.06);
+    border:1px solid rgba(231,221,201,0.18); border-radius:40px; padding:10px 22px 10px 10px;
+    text-decoration:none; color:var(--stone); margin-bottom:50px; transition:background .25s;
+  }
+  footer .brand-link:hover{background:rgba(231,221,201,0.12);}
+  footer .brand-link img{width:30px; height:30px; border-radius:50%; background:#fff; object-fit:contain; padding:3px;}
+  footer .brand-link span{font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;}
+  footer .links{display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin-bottom:56px;}
+  footer .links a{
+    color:var(--stone); text-decoration:none; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    border-bottom:1px solid rgba(231,221,201,0.3); padding-bottom:4px; transition:border-color .25s;
+  }
+  footer .links a:hover{border-color:var(--stone);}
+  footer .fine{font-size:11px; color:rgba(231,221,201,0.45); letter-spacing:.05em;}
+</style>
+</head>
+<body>
+
+<div class="texture"></div>
+
+<header>
+  <div class="mark">Laiá Wellness</div>
+  <nav>
+    <a href="#pilares">Pilares</a>
+    <a href="#blog">Blog</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="lotus" viewBox="0 0 100 100" fill="none" stroke="#b99a58" stroke-width="2.2">
+    <path d="M50 20 C55 40 55 55 50 65 C45 55 45 40 50 20Z"/>
+    <path d="M30 30 C40 42 46 55 50 65 C42 60 32 50 28 38Z"/>
+    <path d="M70 30 C60 42 54 55 50 65 C58 60 68 50 72 38Z"/>
+    <path d="M18 45 C32 48 42 55 50 65 C36 63 22 58 15 50Z"/>
+    <path d="M82 45 C68 48 58 55 50 65 C64 63 78 58 85 50Z"/>
+    <path d="M25 68 Q50 78 75 68" stroke-linecap="round"/>
+  </svg>
+  <img class="photo" src="assets/foto-wellness-hero.jpg" alt="Laiá Wellness">
+  <div class="eyebrow">Laiá Wellness</div>
+  <h1>
+    Presença em<br>
+    <span class="rotator">
+      <span>meditação.</span>
+      <span>yoga.</span>
+      <span>neurociência.</span>
+      <span>música.</span>
+    </span>
+  </h1>
+  <p class="sub">Onde a prática contemplativa encontra a ciência do cérebro — meditação, yoga, Ho'oponopono e música como caminhos de regulação e presença.</p>
+  <div class="scroll-cue">Rolar</div>
+</section>
+
+<section class="pillars" id="pilares">
+  <div class="kicker">O que você vai encontrar aqui</div>
+  <h2>Quatro caminhos, uma prática</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="num">01</div>
+      <h3>Meditação & Ho'oponopono</h3>
+      <p>Práticas guiadas, reflexões e a filosofia havaiana de perdão e reconciliação aplicada ao dia a dia.</p>
+    </div>
+    <div class="card">
+      <div class="num">02</div>
+      <h3>Yoga</h3>
+      <p>Corpo como ponto de entrada para a mente — sequências, respiração e o que a prática ensina fora do tapete.</p>
+    </div>
+    <div class="card">
+      <div class="num">03</div>
+      <h3>Neurociência do bem-estar</h3>
+      <p>O que a ciência do cérebro explica sobre estresse, foco e regulação emocional — traduzido de dentro da faculdade de medicina.</p>
+    </div>
+    <div class="card">
+      <div class="num">04</div>
+      <h3>Música</h3>
+      <p>Som como ferramenta de regulação do sistema nervoso — da escuta consciente à herança musical da família.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <div class="kicker">No tapete e no papel</div>
+  <h2>Do diário</h2>
+  <div class="posts">
+    <div class="post">
+      <div class="tag">Meditação</div>
+      <h4>O que o Ho'oponopono me ensinou sobre perdão</h4>
+      <p>Uma prática, quatro frases, e o que muda quando você as leva a sério.</p>
+      <div class="soon">Em breve</div>
+    </div>
+    <div class="post">
+      <div class="tag">Neurociência</div>
+      <h4>O cérebro em silêncio: o que a meditação muda de verdade</h4>
+      <p>Separando o que a evidência mostra do que é só bem-estar de vitrine.</p>
+      <div class="soon">Em breve</div>
+    </div>
+    <div class="post">
+      <div class="tag">Yoga</div>
+      <h4>Uma rotina de 15 minutos para dias de plantão</h4>
+      <p>O mínimo viável de prática para quem vive entre a faculdade e o resto da vida.</p>
+      <div class="soon">Em breve</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap">
+    <img src="assets/foto-wellness-sobre.jpg" alt="Gabriela">
+    <div class="kicker">Sobre</div>
+    <p>"Estudante de medicina com formação voltada à neurociência, e alguém que encontrou na meditação, no yoga e na música uma forma de sustentar essa jornada — e quer dividir isso com quem também precisa."</p>
+    <div class="sign">Gabriela B. de Sousa</div>
+  </div>
+</section>
+
+<footer>
+  <div class="mark">Laiá Wellness</div>
+  <a class="brand-link" href="https://laiatech.netlify.app" target="_blank">
+    <img src="assets/laia-tech-logo.jpg" alt="Laiá Tech">
+    <span>Laiá Tech</span>
+  </a>
+  <div class="links">
+    <a href="https://instagram.com/yogabibds" target="_blank">Instagram</a>
+    <a href="mailto:gabibds@icloud.com">E-mail</a>
+    <a href="index.html">Site pessoal</a>
+  </div>
+  <div class="fine">© 2026 Laiá Wellness</div>
+</footer>
+
+</body>
+</html>

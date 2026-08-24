@@ -68,13 +68,17 @@
   .lang-switch button:hover{opacity:1;}
 
   /* HERO */
-  .hero{
-    position:relative; min-height:100svh; display:flex; flex-direction:column;
-    align-items:center; justify-content:center; text-align:center; padding:0 6vw;
+  .hero-banner{
+    position:relative; width:100%; height:64vh; min-height:340px; max-height:640px; overflow:hidden;
   }
-  .hero .photo{
-    width:min(360px, 70vw); aspect-ratio:3/2; object-fit:cover; margin-bottom:34px;
-    border-radius:2px;
+  .hero-banner img{width:100%; height:100%; object-fit:cover; display:block;}
+  .hero-banner::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(43,38,32,0.15) 0%, rgba(43,38,32,0) 30%, rgba(43,38,32,0.05) 100%);
+  }
+  .hero{
+    position:relative; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; padding:64px 6vw 56px;
   }
   .hero .eyebrow{
     font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:26px;
@@ -110,7 +114,7 @@
     margin-top:28px; max-width:480px; font-size:16px; line-height:1.6; color:var(--ink-soft); font-weight:300;
   }
   .scroll-cue{
-    position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+    margin-top:48px;
     font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);
     display:flex; flex-direction:column; align-items:center; gap:10px;
   }
@@ -271,8 +275,10 @@
   </nav>
 </header>
 
+<div class="hero-banner">
+  <img src="assets/foto-hero.jpg" alt="Foto de capa">
+</div>
 <section class="hero">
-  <img class="photo" src="assets/foto-hero.jpg" alt="Foto de capa">
   <div class="eyebrow" data-i18n="hero_eyebrow">Um espaço só meu</div>
   <h1>
     <span data-i18n="hero_line1">Vida em</span><br>
